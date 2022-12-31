@@ -243,6 +243,10 @@ Error message and password prompt
 
 <li>3D Printer settings for dual extrusion</li>
 
+<li>Acer Aspire 3 A314-32 Linux tweaks</li>
+
+<li>Acer laptop can't get into BIOS after Linux install</li>
+
 <li>Adding page numbers to pdf files</li>
 
 <li>After installing new Android ROM</li>
@@ -425,6 +429,8 @@ Error message and password prompt
 
 <li>LibreOffice Base doesn't allow hyphens in names</li>
 
+<li>Linking Thinderbird to existing mbox files</li>
+
 <li>Links markup</li>
 
 <li>Lists and indents markup</li>
@@ -520,6 +526,8 @@ Error message and password prompt
 <li>Set up EPSON scanner</li>
 
 <li>Set up LEDE on WRT1200AC router with samba NAS</li>
+
+<li>Set up new Manjaro system</li>
 
 <li>Set up RPi from scratch</li>
 
@@ -10733,8 +10741,10 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div title="$:/status/UserName"><pre></pre></div>
-<div created="20220822001359857" creator="peterthevicar" list="[[Bash one-liners]] [[Useful Pages]]" modified="20220822001359857" modifier="peterthevicar" title="$:/StoryList">
+<div title="$:/status/UserName">
+<pre>peterthevicar</pre>
+</div>
+<div created="20221208133012408" creator="peterthevicar" list="[[Set up new Manjaro system]] [[Useful Pages]]" modified="20221208133012408" modifier="peterthevicar" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210315214255366" creator="Peter" modified="20210315214255366" modifier="Peter" title="$:/theme">
@@ -10897,6 +10907,42 @@ Printer Settings -&gt; Extruder 1/2 -&gt;
 *Wipe while retracting yes (with above setting forces a wipe on layer change which avoids holes at the seam)
 *Retraction when tool is disabled: 15 (Extra length on restart 0)
 See [[Calibrating a Replicator 1 dual with Sailfish firmware]] for custom G-code</pre>
+</div>
+<div created="20221126145822503" creator="peterthevicar" modified="20221126150321338" modifier="peterthevicar" tags="" title="Acer Aspire 3 A314-32 Linux tweaks">
+<pre>The Laptop works fine with Manjaro. The only strangeness was with the screens doing a re-configure every time a system beep, ~YouTube or other audio is played. Turns out it's the audio power save for some reason. The best way round is to disable the audio powersave. As root:
+
+```
+echo 0 &gt;/sys/module/snd_hda_intel/parameters/power_save
+```
+If that works you can make it permanent:
+
+```
+echo "options snd_hda_intel power_save=0" &gt; /etc/modprobe.d/audio-disable-powersave.conf
+```</pre>
+</div>
+<div created="20221124150910176" creator="peterthevicar" modified="20221124151651556" modifier="peterthevicar" tags="" title="Acer laptop can't get into BIOS after Linux install">
+<pre>Symptom: after installing Manjaro pressing F2 no longer gets you into the laptop BIOS (Acer A314-32). Instead you get a black screen with a white underscore at the top left.
+
+Solution:
+
+#Boot into Manjaro (either the installed one or via the installation stick)
+#`efibootmgr`
+#Look for the installed Linux entries, usually number 1 or 2 etc with Windows as 0
+#Put in the number of the Linux install (leading zeroes not required) and use `-B` to remove `sudo efibootmgr -b &lt;number&gt; -B`
+#Repeat to remove all installed Linux entries
+#You should now be able to get into the BIOS
+
+To get the laptop to boot Linux:
+
+#Enter BIOS (F2 at startup)
+#Put in a Supervisor password
+#Enable Secure Boot
+#Add EFI file to trusted list (find Manjaro/efi/bootmgrx64.efi or similar)
+#Disable Secure Boot
+#Clear Supervisor password
+#`F10` to save and exit
+#`F2` to re-enter BIOS
+#On boot tab should be able to re-arrange entries as you wish</pre>
 </div>
 <div changecount="6" created="20140410121800000" creator="Peter" modified="20210705203727858" modifier="Peter" title="Adding page numbers to pdf files" type="text/vnd.tiddlywiki">
 <pre>OR, easy way, use https://pdfcandy.com/add-page-numbers.html
@@ -11721,16 +11767,42 @@ xfce caches all its settings on start up and then writes them back again at log 
 #Copy the config files using a tty session
 #Reboot the machine from the tty session before starting xfce again</pre>
 </div>
-<div changecount="5" created="20160715122500000" creator="Peter" modified="20170710073600000" modifier="Peter" title="Correcting HDMI overscan for Asus TV monitor" type="text/x-tiddlywiki">
+<div changecount="5" created="20160715122500000" creator="Peter" modified="20221126145756686" modifier="peterthevicar" title="Correcting HDMI overscan for Asus TV monitor" type="text/vnd.tiddlywiki">
 <pre>Overscan is where a TV scales up the image to remove the edges of the picture. Apparently this used to be considered a good thing. When using a TV as a monitor it's a very BAD thing! Usually you can correct this on the TV by forcing it to display every pixel (usually an aspect ratio setting), however there is no 'dot for dot', 'PC', 'Exact fit', etc setting for the Asus TV monitor I have so it automatically trims the edges off the screen when using the HDMI port. A moderately random fix for this is to use the following (and put it into your .xprofile file if it works)
+
 ```
 ~$ cat .xprofile
 xrandr --output HDMI-2 --set audio force-dvi --mode 1920x1080
 ```
 
 Some other useful xrandr tricks:
-`xrandr | grep connected` show all the devices known to xrandr and whether or not they are connected
-`xrandr --prop | less` check out the properties available for each device</pre>
+
+*`xrandr | grep connected` show all the devices known to xrandr and whether or not they are connected
+*`xrandr --prop | less` check out the properties available for each device
+
+In the end I produced a script:
+
+```
+$ cat $(which display-enable)                                ✔ 
+#!/bin/bash
+# Set up external monitor to right of laptop display
+# Also use force-dvi to stop Asus TV monitor doing overscan
+
+# Find these names using xrandr --listactivemonitors
+LAPTOP="eDP-1"
+MONITOR="HDMI-1"
+
+if xrandr --display :0 |
+grep "$MONITOR connected"; then
+  xrandr --display :0 --output "$MONITOR" --primary --set audio force-dvi --mode 1920x1080 --right-of "$LAPTOP"
+elif xrandr --display :0 |
+grep "$LAPTOP connected"; then
+  xrandr --display :0 --output "$LAPTOP" --primary --auto --pos 0x0
+fi
+
+```
+
+And put a call to that in `.xprofile`</pre>
 </div>
 <div changecount="18" created="20170325115700000" creator="Peter" modified="20180328213700000" modifier="Peter" title="Creating subtitles in video" type="text/x-tiddlywiki">
 <pre>!!aegisub
@@ -13069,6 +13141,20 @@ How to show a keyboard layout graphically (the example shows the intl sub-layout
 <div changecount="2" created="20161203014900000" creator="Peter" modified="20161203022000000" modifier="Peter" title="LibreOffice Base doesn't allow hyphens in names" type="text/x-tiddlywiki">
 <pre>If you use hyphens (minus signs) in names of tables or databases in """LibreOffice""" it stops mail merge working properly and you get the same label over and over again, as though you didn't have a &lt;Next record&gt; field.</pre>
 </div>
+<div created="20221130231145888" modified="20221130232714904" tags="" title="Linking Thinderbird to existing mbox files">
+<pre>To make things neat, create a new folder and put in there symbolic links to your mbox files. Make sure the mbox files are read-only.
+
+Open Thunderbird
+
+*You need a fake email account or Thunderbird won't let you see any email options:
+**a, b, c@d, no authorisation, advanced config
+**This will tell you it's using the email details as-is without checking
+*Go to settings for Local Folders and press `Browse` to find your directory with links to your mbox files
+*Thunderbird will restart
+*You can then delete your dummy account
+*View your mbox contents under `Local Folders`
+*First time round, Thunderbird will index the mbox files which can take quite a while</pre>
+</div>
 <div changecount="1" created="20121119094200000" creator="Peter" modified="20210315225527343" modifier="Peter" title="Links markup" type="text/vnd.tiddlywiki">
 <pre>| Format | Result | Markup |h
 |~WikiWord|WikiWord|`WikiWord`|
@@ -13303,35 +13389,43 @@ Name=org.freedesktop.FileManager1
 Exec=/bin/false
 `</pre>
 </div>
-<div changecount="16" created="20180511131300000" creator="Peter" modified="20220114233253249" modifier="peterthevicar" title="OpenWRT LEDE WiFi repeater" type="text/vnd.tiddlywiki">
+<div changecount="16" created="20180511131300000" creator="Peter" modified="20220914103915092" modifier="peterthevicar" title="OpenWRT LEDE WiFi repeater" type="text/vnd.tiddlywiki">
 <pre>This effectively makes the router into a switch, relaying data in both directions between the ~WiFi receiver and transmitter, keeping everything on the same subnet. The slight issue is that the control interface has to be on a different subnet (technical restriction) so you need to set up a network connection with a manual IP address to access ~LuCI once it's done.
 
 see https://openwrt.org/docs/guide-user/network/wifi/relay_configuration
 
 also see [[openwrt WISP, repeater, routed client, hotel repeater, Client+AP]] which joins clients on a different subnet from the repeated network and doesn't need relayd.
 
-Basically:
+Here are the steps from a vanilla ~OpenWRT:
 
-#change the IP of the LAN interface to a different subnet, e.g. 192.168.2.1
-#reboot and reconnect using a manual IP
+#Log in with no password and set a password
+#For LAN interface:
+##Change the IP to a different subnet, e.g. 192.168.2.1 (not needed if main router is on a subnet other than 192.168.1.0)
+##Switch off DHCP as it can stop relayd working (didn't for me)
+##(reboot and reconnect using a manual IP)
 #change the hostname to something sensible
-#Network/Wireless and join the network to allow download of software
-##client will be on wwan interface
-##wwan needs to be in LAN firewall group
-#System/Software update package list
-#Install relayd and luci-proto-relay (~LuCi control for relayd)
-#Set up wireless interface Master (AP) on the LAN interface, use whatever SSID and security you like. This will be transmitting the repeated data
-#set up relayd:
-##Go to network interfaces and add a new interface with a suggestive name, e.g. relayd
-##give it an IP address on the shared subnet
-##set relayd to be a relay and to relay between LAN and wwan networks
-##put relayd in LAN firewall zone
-#reconnect using DHCP, should get an IP on the shared subnet, check access to router
-#(MAY need to reboot)
-#(MAY need to disable DHCP for the LAN interface if it stops relayd working)
-#You will need to connect as 192.168.2.1 to get to the ~LuCi interface.
+#Delete WAN and WAN6 interfaces (leaves only LAN)
+#Delete WAN firewall rules in Network/Firewall
+#Connect to main router ~WiFi to allow download of software:
+##Go to Network/Wireless and Join the main router network (use LAN firewall group)
+##client will be on WWAN interface (wlan1 device)
+##Put WWAN in LAN firewall group (not the default)
+##(Give WWAN a static IP on the main network so you can find it later - better to do this at the main router using a reserved address as otherwise you may have the wrong DNS settings)
+#Install relayd:
+##System/Software update package list
+##Install relayd and luci-proto-relay (~LuCi control for relayd)
+##REBOOT!!
+#(Set up wireless interface Master (AP) on the LAN interface, use whatever SSID and security you like. This will be transmitting the repeated data)
+#Set up relayd:
+##Go to network interfaces and add a new interface with a suggestive name, e.g. ~RelayBridge
+##Give it the same IP address as WWAN
+##set ~RelayBridge protocol to `Relay bridge` (if that's not on offer you need to reboot), and set it to relay between LAN and WWAN networks (no need to assign firewall zone)
+#REBOOT
+#reconnect using DHCP, should get an IP on the shared subnet, check access to router and bbc.co.uk
 
-NOTE: if you lose all the settings on reboot this is because the ~OpenWRT image is too large for the router's memory (DIR-615 has only 4MB). In this case need to download the buildimage archive then build excluding some packages:
+Troubleshooting: the main problems are DNS lookup. My main router doesn't forward DNS requests so you have to set up DNS explicitly (e.g. 8.8.8.8) or use DHCP. This is on the connection at the PC as well as the WWAN interface.
+
+HISTORICAL NOTE: if you lose all the settings on reboot this is because the ~OpenWRT image is too large for the router's memory (DIR-615 has only 4MB). In this case need to download the buildimage archive then build excluding some packages:
 
 ```
 CONFIG_IPV6=n make image PROFILE=dir-615-d PACKAGES="uhttpd uhttpd-mod-ubus libiwinfo-lua luci-base luci-app-firewall luci-mod-admin-full luci-theme-bootstrap -ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only"
@@ -13368,14 +13462,15 @@ $1 == "Installed-Time:" &amp;&amp; USR &amp;&amp; $2 &gt; (FT+10) {
 ' /usr/lib/opkg/status | sort
 ```</pre>
 </div>
-<div changecount="12" created="20160814233200000" creator="Peter" modified="20200319221200000" modifier="Peter" title="openwrt WISP, repeater, routed client, hotel repeater, Client+AP" type="text/x-tiddlywiki">
-<pre>`
+<div changecount="12" created="20160814233200000" creator="Peter" modified="20220913214341521" modifier="peterthevicar" title="openwrt WISP, repeater, routed client, hotel repeater, Client+AP" type="text/vnd.tiddlywiki">
+<pre>```
 Wireless      |--------|
 Internet &gt;&gt;&gt;&gt; | Router |&gt;&gt;&gt;&gt;&gt;&gt; Wireless devices
 Hotspot       |        |------ Wired devices
 192.168.1.x   |--------|       192.168.2.x
 ```
 This is for repeating wireless hotspots so that the hotspot only sees one connection, e.g. hotel networks. The instructions below work for a """D-Link DIR-615 rev d2""" with openwrt 15.05.1, """LuCI""" 15.05-142
+
 #Install openwrt (see [[Install openwrt on D-Link DIR-615]])
 #Connect to router via ethernet and go to 192.168.1.1 in browser - you get the """LuCI""" graphical interface
 #set password
@@ -14423,6 +14518,55 @@ If this doesn't work (try `sane-find-scanner`) you may need to edit /etc/sane.d/
 **Test you can mount, e.g. `sudo mount -o guest //192.168.1.4/media mnt; ls mnt` (needs guest access enabled)
 **Put lines into fstab: `//192.168.1.4/media /Disks/Archive cifs rw,username=peter,password=naspw,nofail 0 2
 **reboot and test</pre>
+</div>
+<div created="20221124150817802" creator="peterthevicar" modified="20221208133103328" modifier="peterthevicar" tags="" title="Set up new Manjaro system">
+<pre>*Install Manjaro (KDE)
+*UI tweaks
+**Workspace behaviour single click to open files
+**Panel to LHS, width 68
+**replace default launcher with "Application Menu" widget (gives "recently used" section)
+**Pin favourite apps to Task Manager
+**Add "System Monitor" in Settings/Keyboard shortcuts and set its shortcut to Ctrl-Esc
+*Copy over the Data partition
+*Make mount directories in `/mnt`
+*Edit fstab to add in Data and network drives
+
+```
+* NFS mounts on NAS
+192.168.0.20:/media/hdd	 /mnt/nasmedia nfs	rw,_netdev,nofail,nolock		0		2
+192.168.0.20:/media/nasdata /mnt/nasdata nfs	rw,_netdev,nofail,nolock		0		2
+```
+*`mount -av`
+*Install extras:  gimp, krename, libreoffice-fresh, hyphen-en, posterazor, qalculate-qt (set larger fonts, special application settings 80% opacity, always on top), recoll, ocrfeeder, ~FreeCAD, prusa-slicer, zenity
+*Enable AUR to install:
+**gimp-plugin-saveforweb, gimp-plugin-resynthesizer-git (takes AGES!), autokey-qt, gpx-git (for 3D print), realvnc-vnc-viewer
+*Enable Flatpak to install:
+**Audacity, ~MEGASync
+*Use HP Device Manager to find the HP network printer
+*Copy across:
+**`/home/peter/.config/autokey` (Autokey should work without further ado)
+**`/home/peter/.config/libreoffice/4/user` to `.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user`. Then need to start ~LibreOffice and edit a macro to get all the macros recognised, then choose their icons.
+**`/Links`
+**`/root/.config/backintime` (then test backintime)
+**`/usr/local/bin`
+**`.local/share/fonts` (symlinks so need to use ext4 or archive to preserve
+*Set up recoll - create a `recoll` directory for Data and nasdata then use `recoll -c &lt;recoll dir&gt;` for each to set up
+*Set up `megasync` to sync `sync-box` (nothing else till backup is sorted)
+*`ln -s ~/MEGAsync/sync-box/3d-printing/FreeCAD-config/FreeCAD ~/.config` and try ~FreeCAD
+*`ln -s ~/MEGAsync/sync-box/3d-printing/PrusaSlicer-config/PrusaSlicer ~/.config` and try Prusaslicer
+*Set up firefox:
+**On old system:
+***export tabs (using Tab Session Manager) and bookmarks (as html)
+**On new system:
+***Add "Tree Style Tabs" and "Tab Session Manager"
+***Open Session Manager settings and tick Tree Style Tabs support
+***Close firefox and reopen to make sure TST comes up by default
+***Import session from previous system using TSM
+***Add "Auto Tab Discard"
+***Add British English dictionary
+***Add password manager addon
+*Set up password manager
+**Set UI option to minimise and exit to tray</pre>
 </div>
 <div changecount="8" created="20180901153300000" creator="Peter" modified="20181017120200000" modifier="Peter" title="Set up RPi from scratch" type="text/x-tiddlywiki">
 <pre>#Download Raspbian sketch lite from https://www.raspberrypi.org/downloads/raspbian/

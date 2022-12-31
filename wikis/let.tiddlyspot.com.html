@@ -319,7 +319,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20141126160000000" creator="Tobias Beer" modified="20141204132142808" modifier="Tobias Beer" summary="setting the last suboperator to `!` when using dates will ask for exact dates up to the millisecond, when using booleans will stricty interpret only ''true'' or ''1'' as [[Truthy]]" tags="Suboperators Test" title="! exact">
+<div created="20141126230000000" creator="Tobias Beer" modified="20141204132142808" modifier="Tobias Beer" summary="setting the last suboperator to `!` when using dates will ask for exact dates up to the millisecond, when using booleans will stricty interpret only ''true'' or ''1'' as [[Truthy]]" tags="Suboperators Test" title="! exact">
 <pre>!!Default
 
 ; `&lt;undeclared&gt;`
@@ -6466,25 +6466,25 @@ font-size:1.2em;
 <div created="20141125230000000" creator="Tobias Beer" modified="20141204151807667" modifier="Tobias Beer" title="$:/UploadName">
 <pre>let</pre>
 </div>
-<div check="0" created="20141129160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Boolean Falsy" title="0">
+<div check="0" created="20141129230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Boolean Falsy" title="0">
 <pre></pre>
 </div>
-<div check="1" count="1" created="20141129160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="Integer Truthy Boolean" title="1">
+<div check="1" count="1" created="20141129230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="Integer Truthy Boolean" title="1">
 <pre></pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" number="2.2" tags="Number" title="2.2">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" number="2.2" tags="Number" title="2.2">
 <pre></pre>
 </div>
-<div count="3" created="20141129160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Integer" title="3">
+<div count="3" created="20141129230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Integer" title="3">
 <pre></pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" number="5.5" tags="Number" title="5.5">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" number="5.5" tags="Number" title="5.5">
 <pre></pre>
 </div>
-<div count="6" created="20141129160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Integer" title="6">
+<div count="6" created="20141129230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Integer" title="6">
 <pre></pre>
 </div>
-<div created="20141129160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="" title="All Operations">
+<div created="20141129230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="" title="All Operations">
 <pre>&lt;$list filter=&quot;[list[OPERATION]]&quot; variable=category&gt;
 
 &lt;h1 style=&quot;width:100%;text-align:center;&quot;&gt;&lt;$link to=&lt;&lt;category&gt;&gt;&gt;&lt;$view field=title tiddler=&lt;&lt;category&gt;&gt;/&gt;&lt;/$link&gt;&lt;/h1&gt;
@@ -6504,7 +6504,7 @@ font-size:1.2em;
 
 {{! exact}}</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141204131941181" modifier="Tobias Beer" summary="determines whether a field is true for all matching tiddlers" tags="Test [[Boolean Operations]]" title="AND">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141204131941181" modifier="Tobias Beer" summary="determines whether a field is true for all matching tiddlers" tags="Test [[Boolean Operations]]" title="AND">
 <pre>!!Examples
 ;`&lt;$list filter=&quot;[let:AND check[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 :verifies if all tiddlers with field ''check'' have it set to [[Truthy]]
@@ -6541,7 +6541,7 @@ font-size:1.2em;
 ;result
 :&lt;$list filter=&quot;[[1]][[blank = 0 or false]]+[let:AND check[]]&quot;&gt;{{!!title}}&lt;/$list&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" list="SUM AVG MAX MIN" modified="20141129230000000" modifier="Tobias Beer" summary="functions that allow to calculate number values of specified fields of matching tiddlers; returning the ''numeric result''" tags="OPERATION" title="Arithmetic Operations">
+<div created="20141128230000000" creator="Tobias Beer" list="SUM AVG MAX MIN" modified="20141129230000000" modifier="Tobias Beer" summary="functions that allow to calculate number values of specified fields of matching tiddlers; returning the ''numeric result''" tags="OPERATION" title="Arithmetic Operations">
 <pre>&lt;table&gt;
 &lt;tr&gt;
 &lt;th&gt;Function&lt;/th&gt;
@@ -6561,7 +6561,7 @@ font-size:1.2em;
 
 If not specified, the default input type any of these operations is [[NUM|TYPE]].</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131831000" modifier="Tobias Beer" output="[[NUM|TYPE]]" summary="calculates the average of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="AVG">
+<div created="20141128230000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131831000" modifier="Tobias Beer" output="[[NUM|TYPE]]" summary="calculates the average of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="AVG">
 <pre>!!Number Example
 ;`&lt;$list filter=&quot;[let:AVG number[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 :calculate the average of all tiddlers with a field ''number''
@@ -6594,10 +6594,10 @@ If not specified, the default input type any of these operations is [[NUM|TYPE]]
 ;tiddlers (&lt;$count filter=&quot;[tag[Integer]]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[tag[Integer]sort[title]]&quot;/&gt;</pre>
 </div>
-<div check="" count="" created="20141129160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" number="" tags="Boolean Integer Number Falsy" title="blank = 0 or false">
+<div check="" count="" created="20141129230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" number="" tags="Boolean Integer Number Falsy" title="blank = 0 or false">
 <pre></pre>
 </div>
-<div created="20141130160000000" creator="Tobias Beer" modified="20141204132433997" modifier="Tobias Beer" summary="when specified, also interprets field values that are &amp;lt;blank&amp;gt; as either ''0'' or ''false''" tags="Suboperators Test" title="BLANKS">
+<div created="20141130230000000" creator="Tobias Beer" modified="20141204132433997" modifier="Tobias Beer" summary="when specified, also interprets field values that are &amp;lt;blank&amp;gt; as either ''0'' or ''false''" tags="Suboperators Test" title="BLANKS">
 <pre>Declared in @@color:#dd1144; UPPERCASE@@ letters, ''BLANKS'' interprets fields that are defined yet don't have a value as...
 
 |![[TYPE]] |!Interpreted As |
@@ -6659,7 +6659,7 @@ If not specified, the default input type any of these operations is [[NUM|TYPE]]
 :&lt;$list filter=&quot;[[2.2]][[blank = 0 or false]]
 +[let:AVG NUM number[]]&quot;&gt;{{!!title}}&lt;/$list&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" summary="a field containing boolean values as either ''false'' / ''true'' or ''0'' / ''1''; empty is interpreted ''false''" tags="TYPE" title="BOOL">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" summary="a field containing boolean values as either ''false'' / ''true'' or ''0'' / ''1''; empty is interpreted ''false''" tags="TYPE" title="BOOL">
 <pre>Boolean fields are interpreted in a case-insensitive manner as ''true'' or ''false'' when...
 
 |!|&gt;|![[! exact]]|
@@ -6668,10 +6668,10 @@ If not specified, the default input type any of these operations is [[NUM|TYPE]]
 |![[Falsy]] w/ [[BLANKS]] |all `&quot;0&quot;`, `&quot;false&quot;` or `&quot;&quot;`|all `&quot;0&quot;`, `&quot;false&quot;` or  `&quot;&quot;`|
 |![[Truthy]] |all not `&quot;0&quot;` or `&quot;false&quot;`|all `&quot;1&quot;` or `&quot;true&quot;` |</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Boolean">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Boolean">
 <pre>{{||tagging}}</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" list="AND OR NOR" modified="20141130230000000" modifier="Tobias Beer" summary="operations calculating truth values for boolean fields of matching tiddlers; returning the ''boolean result''" tags="OPERATION" title="Boolean Operations">
+<div created="20141128230000000" creator="Tobias Beer" list="AND OR NOR" modified="20141130230000000" modifier="Tobias Beer" summary="operations calculating truth values for boolean fields of matching tiddlers; returning the ''boolean result''" tags="OPERATION" title="Boolean Operations">
 <pre>&lt;table&gt;
 &lt;tr&gt;
 &lt;th&gt;Function&lt;/th&gt;
@@ -6685,7 +6685,7 @@ If not specified, the default input type any of these operations is [[NUM|TYPE]]
 &lt;/$list&gt;
 &lt;/table&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" list="EQ NEQ LT LE GT GE" modified="20141203230000000" modifier="Tobias Beer" summary="operations that allow to compare the value of a field of any available type against the value of the operand; returning a ''list of matching tiddlers''" tags="OPERATION" title="Comparators">
+<div created="20141128230000000" creator="Tobias Beer" list="EQ NEQ LT LE GT GE" modified="20141203230000000" modifier="Tobias Beer" summary="operations that allow to compare the value of a field of any available type against the value of the operand; returning a ''list of matching tiddlers''" tags="OPERATION" title="Comparators">
 <pre>&lt;table&gt;
 &lt;tr&gt;
 &lt;th&gt;Operator&lt;/th&gt;
@@ -6712,7 +6712,7 @@ If not specified, the default input type any of these operations is [[NUM|TYPE]]
 ;`[let:DATE LT[20141224120000]]`
 :all modified before 24. December 2014</pre>
 </div>
-<div caption="Compatibility" created="20141125160000000" creator="Tobias Beer" icon="$:/core/images/info-button" menu-icon="{{$:/core/images/info-button}}" modified="20141126230000000" modifier="Tobias Beer" tags="" title="Compatibility">
+<div caption="Compatibility" created="20141125230000000" creator="Tobias Beer" icon="$:/core/images/info-button" menu-icon="{{$:/core/images/info-button}}" modified="20141126230000000" modifier="Tobias Beer" tags="" title="Compatibility">
 <pre>This filter is is compatible with TiddlyWiki version 5.1.5.
 
 The following filter plugins provide a subset of similar functions...
@@ -6721,7 +6721,7 @@ The following filter plugins provide a subset of similar functions...
 :» from [[welford|https://gist.github.com/welford/63cd1b6ab7d4db1ed54b]]
 :» https://gist.github.com/welford/63cd1b6ab7d4db1ed54b</pre>
 </div>
-<div created="20141126160000000" creator="Tobias Beer" modified="20141204132100905" modifier="Tobias Beer" summary="defines a simple math operation performed for [[dates|DATE]] before comparison, e.g. + -" tags="Suboperators" title="compute">
+<div created="20141126230000000" creator="Tobias Beer" modified="20141204132100905" modifier="Tobias Beer" summary="defines a simple math operation performed for [[dates|DATE]] before comparison, e.g. + -" tags="Suboperators" title="compute">
 <pre>!! Dates
 Then a target date to be compared against is given via the filter operand:
 
@@ -6762,7 +6762,7 @@ Then a target date to be compared against is given via the filter operand:
 ;`[let: DATE GE +1Y{Version1!!created}]`
 :all modified 1 year and later after ''Version1'' was created</pre>
 </div>
-<div created="20141211160000000" creator="Tobias Beer" modified="20141212092408063" modifier="Tobias Beer" tags="" title="Considerations">
+<div created="20141211230000000" creator="Tobias Beer" modified="20141212092408063" modifier="Tobias Beer" tags="" title="Considerations">
 <pre>```
 &lt;$action-compute
 $filter=&quot;[tag[ProjectX]tag[Task]]&quot;
@@ -6868,7 +6868,7 @@ Go!
 &lt;/$button&gt;
 ```</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="for fields containing valid date values" tags="TYPE" title="DATE">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="for fields containing valid date values" tags="TYPE" title="DATE">
 <pre>!!Examples
 
 ;`[let:DATE[]]`
@@ -6878,7 +6878,7 @@ Go!
 :all from 24 Dec. 2014
 :same as `[sameday[20141224120000]]`, or `[let: DATE EQ [20141224120000]]`</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field ''equals'' that of the operand" tags="Comparators" title="EQ" types="[[any|TYPE]]">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field ''equals'' that of the operand" tags="Comparators" title="EQ" types="[[any|TYPE]]">
 <pre>!!Number Example
 ;`&lt;$list filter=&quot;[let:NUM number[5.5]]&quot;/&gt;`
 :get [[all tiddlers|Number]] where the field ''number'' of [[TYPE]] [[NUM|TYPE]] is ''equal to'' 5.5
@@ -6927,19 +6927,19 @@ Go!
 ;result
 :.tb-links &lt;$list filter=&quot;[let:BOOL check BLANKS[false]]&quot;/&gt;</pre>
 </div>
-<div caption="Examples" created="20141126160000000" creator="Tobias Beer" icon="$:/core/images/save-button" menu-icon="{{$:/core/images/save-button}}" modified="20141129230000000" modifier="Tobias Beer" tags="" title="Examples">
+<div caption="Examples" created="20141126230000000" creator="Tobias Beer" icon="$:/core/images/save-button" menu-icon="{{$:/core/images/save-button}}" modified="20141129230000000" modifier="Tobias Beer" tags="" title="Examples">
 <pre>{{All Operations}}</pre>
 </div>
-<div check="false" created="20141128160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Boolean Falsy" title="false">
+<div check="false" created="20141128230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Boolean Falsy" title="false">
 <pre></pre>
 </div>
-<div created="20141129160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Falsy">
+<div created="20141129230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Falsy">
 <pre>;with or without [[! exact]]
 :all values that are `0` or any variant of `false`, `FALSE`, `faLSE` are falsy
 ;with [[BLANKS]]
 :with this suboperator blanks `&quot;&quot;` are also considered falsy</pre>
 </div>
-<div created="20141126160000000" creator="Tobias Beer" modified="20141204132125348" modifier="Tobias Beer" summary="specifies the field the values of which we want to compare or compute" tags="Suboperators" title="field">
+<div created="20141126230000000" creator="Tobias Beer" modified="20141204132125348" modifier="Tobias Beer" summary="specifies the field the values of which we want to compare or compute" tags="Suboperators" title="field">
 <pre>In @@color:#dd1144; lowercase@@ letters, name the field you wish to either compare or calculate with.
 
 For [[TYPE]] = [[DATE]], specify a date field that follows the core date format.
@@ -6954,7 +6954,7 @@ For [[TYPE]] = [[DATE]], specify a date field that follows the core date format.
 ;`[let:DATE LE created[20140101]]`
 :all created before and including 01. Jan 2014</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''greater than or equal to'' that of the operand" tags="Comparators" title="GE" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''greater than or equal to'' that of the operand" tags="Comparators" title="GE" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]">
 <pre>!! Number Examples
 ;`&lt;$list filter=&quot;[let:NUM number GE[2.2]]&quot;/&gt;`
 :get [[all tiddlers|Number]] where the field ''number'' of [[TYPE]] [[NUM|TYPE]] is less than or equal to 2.2
@@ -6977,10 +6977,10 @@ For [[TYPE]] = [[DATE]], specify a date field that follows the core date format.
 ;result (&lt;$count filter=&quot;[!is[system]let:DATE GE{GettingStarted!!modified}]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[!is[system]let:DATE GE{GettingStarted!!modified}sort[title]]&quot;/&gt;</pre>
 </div>
-<div created="20141126160000000" creator="Tobias Beer" modified="20141126230000000" modifier="Tobias Beer" tags="" title="Get All Plugins">
+<div created="20141126230000000" creator="Tobias Beer" modified="20141126230000000" modifier="Tobias Beer" tags="" title="Get All Plugins">
 <pre>&lt;&lt;list-links filter:&quot;[field:module-type[filteroperator]]&quot;&gt;&gt;</pre>
 </div>
-<div caption="Start" created="20141125160000000" creator="Tobias Beer" icon="$:/core/images/home-button" menu-icon="{{$:/core/images/home-button}}" modified="20141203230000000" modifier="Tobias Beer" title="GettingStarted">
+<div caption="Start" created="20141125230000000" creator="Tobias Beer" icon="$:/core/images/home-button" menu-icon="{{$:/core/images/home-button}}" modified="20141203230000000" modifier="Tobias Beer" title="GettingStarted">
 <pre>@@color:#dd1144;
 &lt;&lt;&lt;
 ''Important!'' I have decided to __[[change the BASIC SYNTAX again (!)|Syntax Changes]]__, for one, to drop the colons. Anyhow, this is still in beta, so please test. It will at some point be packaged as a plugin. So that will / might change soon.
@@ -7018,7 +7018,7 @@ Don't trust the result? Verify against the [[Timeline]].
 
 ''Note:'' There does seem to be some core date conversion going on that I haven't quite understood yet being on CET and seeing all created dates are always only stored with day accuracy or by the hour, not sure.</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''greater than'' that of the operand" tags="Comparators" title="GT" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''greater than'' that of the operand" tags="Comparators" title="GT" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]">
 <pre>!! Number Example
 ;`&lt;$list filter=&quot;[let:NUM number GT[3]]&quot;/&gt;`
 :get [[all tiddlers|Number]] where the field ''number'' of [[TYPE]] [[NUM|TYPE]] is ''greater than'' 3
@@ -7043,16 +7043,16 @@ Don't trust the result? Verify against the [[Timeline]].
 ;result (&lt;$count filter=&quot;[!is[system]let:DATE GT{GettingStarted!!modified}]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[!is[system]let:DATE GT{GettingStarted!!modified}sort[title]]&quot;/&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" summary="a field containing integer values; non-integer values are ignored" tags="TYPE" title="INT">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" summary="a field containing integer values; non-integer values are ignored" tags="TYPE" title="INT">
 <pre></pre>
 </div>
-<div created="20141129160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Integer">
+<div created="20141129230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Integer">
 <pre></pre>
 </div>
-<div created="20141125160000000" creator="Tobias Beer" modified="20141125230000000" modifier="Tobias Beer" title="LastUpdate">
+<div created="20141125230000000" creator="Tobias Beer" modified="20141125230000000" modifier="Tobias Beer" title="LastUpdate">
 <pre></pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''less than or equal to'' that of the operand" tags="Comparators" title="LE" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]" unsupported="[[BOOL|TYPE]]">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''less than or equal to'' that of the operand" tags="Comparators" title="LE" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]" unsupported="[[BOOL|TYPE]]">
 <pre>!! Number Example
 ;`&lt;$list filter=&quot;[let:NUM number LE[5.5]]&quot;/&gt;`
 :get all tiddlers where the field ''number'' of [[TYPE]] [[NUM|TYPE]] is less than or equal to 5.5
@@ -7072,10 +7072,10 @@ Don't trust the result? Verify against the [[Timeline]].
 ;result
 :.tb-links &lt;$list filter=&quot;[tag[TYPE]let:DATE LE ![20141129000000]]&quot;/&gt;</pre>
 </div>
-<div check="foo" created="20141130160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="Boolean" title="losely true">
+<div check="foo" created="20141130230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="Boolean" title="losely true">
 <pre></pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''less than'' that of the operand" tags="Comparators" title="LT" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field is ''less than'' that of the operand" tags="Comparators" title="LT" types="[[INT|TYPE]], [[NUM|TYPE]], [[DATE|TYPE]]">
 <pre>!! Number Example
 ;`&lt;$list filter=&quot;[let:NUM number LT[5]]&quot;/&gt;`
 :get all tiddlers where the field ''number'' of [[TYPE]] [[NUM|TYPE]] is ''less than'' 5
@@ -7100,10 +7100,10 @@ Don't trust the result? Verify against the [[Timeline]].
 ;result
 :.tb-links &lt;$list filter=&quot;[let:INT count BLANKS LT[5]]&quot;/&gt;</pre>
 </div>
-<div created="20141208160000000" creator="Tobias Beer" modified="20141209181622612" modifier="Tobias Beer" tags="" title="Math.js Test">
+<div created="20141208230000000" creator="Tobias Beer" modified="20141209181622612" modifier="Tobias Beer" tags="" title="Math.js Test">
 <pre>&lt;&lt;math&gt;&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131849422" modifier="Tobias Beer" output="[[NUM|TYPE]], [[INT|TYPE]]" summary="calculates the maximum value of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="MAX">
+<div created="20141128230000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131849422" modifier="Tobias Beer" output="[[NUM|TYPE]], [[INT|TYPE]]" summary="calculates the maximum value of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="MAX">
 <pre>!! Number Example
 ;`&lt;$list filter=&quot;[let:MAX number[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 :calculate the maximum of all tiddlers with a field ''number''
@@ -7119,7 +7119,7 @@ Don't trust the result? Verify against the [[Timeline]].
 ;tiddlers (&lt;$count filter=&quot;[has[count]]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[has[count]sort[title]]&quot;/&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131906967" modifier="Tobias Beer" output="[[NUM|TYPE]], [[INT|TYPE]]" summary="calculates the minimum value of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="MIN">
+<div created="20141128230000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131906967" modifier="Tobias Beer" output="[[NUM|TYPE]], [[INT|TYPE]]" summary="calculates the minimum value of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="MIN">
 <pre>! Number Example
 ;`&lt;$list filter=&quot;[let:MIN number[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 :calculate the minimum of all tiddlers with a field ''number''
@@ -7135,7 +7135,7 @@ Don't trust the result? Verify against the [[Timeline]].
 ;tiddlers (&lt;$count filter=&quot;[has[count]]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[has[count]sort[title]]&quot;/&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field does ''not equal'' that of the operand" tags="Comparators" title="NEQ" types="[[any|TYPE]]">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141203230000000" modifier="Tobias Beer" summary="matches all where the value of a field does ''not equal'' that of the operand" tags="Comparators" title="NEQ" types="[[any|TYPE]]">
 <pre>!! Date Example
 
 ;`&lt;$list filter=&quot;[tag[TYPE]let:DATE NEQ[20141128230000]]&quot;/&gt;`
@@ -7185,7 +7185,7 @@ Don't trust the result? Verify against the [[Timeline]].
 ;result
 :.tb-links &lt;$list filter=&quot;[let:BOOL check NEQ ![false]]&quot;/&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" input="[[BOOL]]" modified="20141204132035306" modifier="Tobias Beer" output="[[BOOL]]" summary="determines whether a field is true for none of the matching tiddlers" tags="Test [[Boolean Operations]]" title="NOR">
+<div created="20141128230000000" creator="Tobias Beer" input="[[BOOL]]" modified="20141204132035306" modifier="Tobias Beer" output="[[BOOL]]" summary="determines whether a field is true for none of the matching tiddlers" tags="Test [[Boolean Operations]]" title="NOR">
 <pre>!!Examples
 ;`&lt;$list filter=&quot;[let:NOR check[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 :checks [[all tiddlers|Boolean]] if field ''check'' is not set to ''true'' or ''1''
@@ -7218,7 +7218,7 @@ Don't trust the result? Verify against the [[Timeline]].
 ;tiddlers (&lt;$count filter=&quot;[tag[Truthy]]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[tag[Truthy]sort[title]]&quot;/&gt;</pre>
 </div>
-<div caption="Notes" created="20141129160000000" creator="Tobias Beer" icon="$:/core/images/done-button" menu-icon="{{$:/core/images/done-button}}" modified="20141130230000000" modifier="Tobias Beer" tags="" title="Notes">
+<div caption="Notes" created="20141129230000000" creator="Tobias Beer" icon="$:/core/images/done-button" menu-icon="{{$:/core/images/done-button}}" modified="20141130230000000" modifier="Tobias Beer" tags="" title="Notes">
 <pre>Seet [[To Do]] for what's posibly in the pipe...
 
 !!Release Notes
@@ -7236,13 +7236,13 @@ Don't trust the result? Verify against the [[Timeline]].
 &lt;tr&gt;&lt;th&gt;[[RANDOM]]&lt;/th&gt;&lt;td&gt;allows to make a random draw of x tiddlers from the filter results&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" summary="a field containing floating point number values; non-numbers are ignored" tags="TYPE" title="NUM">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" summary="a field containing floating point number values; non-numbers are ignored" tags="TYPE" title="NUM">
 <pre></pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Number">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Number">
 <pre></pre>
 </div>
-<div created="20141126160000000" creator="Tobias Beer" list="Comparators [[Arithmetic Operations]] [[Boolean Operations]]" modified="20141128230000000" modifier="Tobias Beer" summary="specifies either a comparator to compare a field value against the operand value or an arithmetic / boolean operation to calculate field values of matching tiddlers" tags="Suboperators" title="OPERATION">
+<div created="20141126230000000" creator="Tobias Beer" list="Comparators [[Arithmetic Operations]] [[Boolean Operations]]" modified="20141128230000000" modifier="Tobias Beer" summary="specifies either a comparator to compare a field value against the operand value or an arithmetic / boolean operation to calculate field values of matching tiddlers" tags="Suboperators" title="OPERATION">
 <pre>@@color:#dd1144; ''Note:'' You can only use a single [[comparative|Comparators]], [[arithmetic|Arithmetic Operations]] or [[boolean operation|Boolean Operations]] at a time.@@
 
 Required to be specified in @@color:#dd1144; UPPERCASE@@, supported operations are...
@@ -7255,7 +7255,7 @@ Required to be specified in @@color:#dd1144; UPPERCASE@@, supported operations a
 &lt;/dl&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" input="[[BOOL]]" modified="20141204132008119" modifier="Tobias Beer" output="[[BOOL]]" summary="determines whether a field is true for any matching tiddlers" tags="Test [[Boolean Operations]]" title="OR">
+<div created="20141128230000000" creator="Tobias Beer" input="[[BOOL]]" modified="20141204132008119" modifier="Tobias Beer" output="[[BOOL]]" summary="determines whether a field is true for any matching tiddlers" tags="Test [[Boolean Operations]]" title="OR">
 <pre>!!Examples
 ;`&lt;$list filter=&quot;[let:OR check[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 :checks [[all tiddlers|Boolean]] with field ''check'' if any set to [[Truthy]]
@@ -7280,7 +7280,7 @@ Required to be specified in @@color:#dd1144; UPPERCASE@@, supported operations a
 ;tiddlers(&lt;$count filter=&quot;[tag[Falsy]]&quot;/&gt;)
 :.tb-links &lt;$list filter=&quot;[tag[Falsy]]&quot;/&gt;</pre>
 </div>
-<div created="20141130160000000" creator="Tobias Beer" modified="20141204132507259" modifier="Tobias Beer" summary="allows to chose a random number of tiddlers from the current filter list" tags="Suboperators" title="RANDOM">
+<div created="20141130230000000" creator="Tobias Beer" modified="20141204132507259" modifier="Tobias Beer" summary="allows to chose a random number of tiddlers from the current filter list" tags="Suboperators" title="RANDOM">
 <pre>Declared in @@color:#dd1144; UPPERCASE@@ letters, RANDOM arbitrarily choses a number of tiddlers from the filter results as specified via the operand. Specifying a [[field]], only tiddlers having that field will be considered.
 
 @@color:#dd1144; ''Note:'' This filter is going to be updated on most every user action, so make sure that this kind  of random set generation is actually useful to you.@@
@@ -7301,7 +7301,7 @@ Required to be specified in @@color:#dd1144; UPPERCASE@@, supported operations a
 ;result
 :&lt;&lt;list-links filter:&quot;[!is[system]let:RANDOM[3]sort[title]]&quot;&gt;&gt;</pre>
 </div>
-<div caption="Suboperators" color="#98b0f8" created="20141126160000000" creator="Tobias Beer" icon="$:/core/images/permaview-button" list="TYPE OPERATION compute field [[! exact]] BLANKS RANDOM" menu-icon="{{$:/core/images/permaview-button}}" modified="20141130230000000" modifier="Tobias Beer" title="Suboperators">
+<div caption="Suboperators" color="#98b0f8" created="20141126230000000" creator="Tobias Beer" icon="$:/core/images/permaview-button" list="TYPE OPERATION compute field [[! exact]] BLANKS RANDOM" menu-icon="{{$:/core/images/permaview-button}}" modified="20141130230000000" modifier="Tobias Beer" title="Suboperators">
 <pre>&lt;dl&gt;
 &lt;$list filter=&quot;[list&lt;currentTiddler&gt;]&quot;&gt;
 
@@ -7310,7 +7310,7 @@ Required to be specified in @@color:#dd1144; UPPERCASE@@, supported operations a
 &lt;/$list&gt;
 &lt;/dl&gt;</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131759770" modifier="Tobias Beer" output="[[NUM|TYPE]], [[INT|TYPE]]" summary="calculates the sum of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="SUM">
+<div created="20141128230000000" creator="Tobias Beer" input="[[NUM|TYPE]], [[INT|TYPE]]" modified="20141204131759770" modifier="Tobias Beer" output="[[NUM|TYPE]], [[INT|TYPE]]" summary="calculates the sum of a field for matching tiddlers" tags="Test [[Arithmetic Operations]]" title="SUM">
 <pre>!! Number Example
 ;`&lt;$list filter=&quot;[let:SUM number[]]&quot;&gt;{{!!title}}&lt;/$list&gt;`
 : calculate the sum of all tiddlers with a field ''number''
@@ -7326,7 +7326,7 @@ Required to be specified in @@color:#dd1144; UPPERCASE@@, supported operations a
 ;tiddlers (&lt;$count filter=&quot;[has[count]]&quot;/&gt;):
 :.tb-links &lt;$list filter=&quot;[has[count]sort[title]]&quot;/&gt;</pre>
 </div>
-<div caption="Syntax" created="20141125160000000" creator="Tobias Beer" icon="$:/core/images/permalink-button" menu-icon="{{$:/core/images/permalink-button}}" modified="20141203230000000" modifier="Tobias Beer" title="Syntax">
+<div caption="Syntax" created="20141125230000000" creator="Tobias Beer" icon="$:/core/images/permalink-button" menu-icon="{{$:/core/images/permalink-button}}" modified="20141203230000000" modifier="Tobias Beer" title="Syntax">
 <pre>The `[let[]]` filter implements multiple suboperators in the operator suffix.
 
 A filter in TiddlyWiki usually looks like this:
@@ -7359,7 +7359,7 @@ For example...
 
 For specifics on all the things you can do using the ''let'' filter, see [[suboperators|Suboperators]].</pre>
 </div>
-<div created="20141203160000000" creator="Tobias Beer" modified="20141212095057980" modifier="Tobias Beer" title="Syntax Changes">
+<div created="20141203230000000" creator="Tobias Beer" modified="20141212095057980" modifier="Tobias Beer" title="Syntax Changes">
 <pre>@@.todo
 *.ok first of all, remove colons
 *use [[math.js|http://mathjs.org]]
@@ -7388,10 +7388,10 @@ For specifics on all the things you can do using the ''let'' filter, see [[subop
 ** `[let: $(formulaAsVariable or Macro)$ [20]]`
 @@</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" title="Test Data">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" title="Test Data">
 <pre>Available Test Data...</pre>
 </div>
-<div created="20141127160000000" creator="Tobias Beer" foo="1.5" modified="20141128230000000" modifier="Tobias Beer" tags="" title="The Very First Test">
+<div created="20141127230000000" creator="Tobias Beer" foo="1.5" modified="20141128230000000" modifier="Tobias Beer" tags="" title="The Very First Test">
 <pre>[[$:/plugins/tobibeer/letfilter/let.js]]
 &lt;$set name=&quot;f&quot; value=&quot;[let:NUM:GT:foo:![1.4]!sort[created]]&quot;&gt;
 
@@ -7404,10 +7404,10 @@ For specifics on all the things you can do using the ''let'' filter, see [[subop
 &lt;/$list&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20141125160000000" creator="Tobias Beer" modified="20141126230000000" modifier="Tobias Beer" title="TiddlyWiki">
+<div created="20141125230000000" creator="Tobias Beer" modified="20141126230000000" modifier="Tobias Beer" title="TiddlyWiki">
 <pre>http://tiddlywiki.com</pre>
 </div>
-<div created="20141128160000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" title="Timeline">
+<div created="20141128230000000" creator="Tobias Beer" modified="20141128230000000" modifier="Tobias Beer" title="Timeline">
 <pre>&lt;style&gt;
 .no-border{font-size:0.8em;}
 .no-border, .no-border &gt; tr, .no-border &gt; tr &gt; td {border:0;}
@@ -7439,7 +7439,7 @@ For specifics on all the things you can do using the ''let'' filter, see [[subop
 &lt;/tr&gt;
 &lt;/table&gt;</pre>
 </div>
-<div created="20141130160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" title="To Do">
+<div created="20141130230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" title="To Do">
 <pre>* fix [[BLANKS]] vs. [[! exact]] before release
 * package as plugin
 * any widgets?
@@ -7453,19 +7453,19 @@ For specifics on all the things you can do using the ''let'' filter, see [[subop
 *** `&lt;20`
 *** this would not work well with `[let&lt;Variable&gt;]` or `[let{textReference}]`</pre>
 </div>
-<div created="20141125160000000" creator="Tobias Beer" modified="20141125230000000" modifier="Tobias Beer" title="Tobias Beer">
+<div created="20141125230000000" creator="Tobias Beer" modified="20141125230000000" modifier="Tobias Beer" title="Tobias Beer">
 <pre>http://tb5.tiddlyspot.com</pre>
 </div>
-<div check="true" created="20141128160000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Boolean Truthy" title="true">
+<div check="true" created="20141128230000000" creator="Tobias Beer" modified="20141129230000000" modifier="Tobias Beer" tags="Boolean Truthy" title="true">
 <pre></pre>
 </div>
-<div created="20141129160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Truthy">
+<div created="20141129230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" tags="[[Test Data]]" title="Truthy">
 <pre>;without [[! exact]] (default)
 :all values that are not `0` and not any variant of `false`, `FALSE`, `faLSE` are considered truthy, i.e. also `foO` would be true or `100.6`
 ;with [[! exact]]
 :only `1` or any variant of `true`, `TRUE`, `trUE`  are considered truthy</pre>
 </div>
-<div created="20141126160000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" summary="specifies the field type for the comparision or calculation" tags="Suboperators" title="TYPE">
+<div created="20141126230000000" creator="Tobias Beer" modified="20141130230000000" modifier="Tobias Beer" summary="specifies the field type for the comparision or calculation" tags="Suboperators" title="TYPE">
 <pre>!!Example
 
 ;`[let:DATE[20140101]]`

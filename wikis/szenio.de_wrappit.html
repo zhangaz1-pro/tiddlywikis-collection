@@ -286,6 +286,8 @@ Error message and password prompt
 
 <li>$:/state/Create Identity twCard</li>
 
+<li>$:/state/edit/references-1959637585</li>
+
 <li>$:/state/Export Bundle</li>
 
 <li>$:/state/Fetch Tiddler Bundle</li>
@@ -600,6 +602,8 @@ Error message and password prompt
 
 <li>$:/termine/Neuer Tiddler</li>
 
+<li>$:/theme</li>
+
 <li>$:/themes/tiddlywiki/centralised</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
@@ -644,7 +648,9 @@ Error message and password prompt
 
 <li>$:/wrappit/QR-Code</li>
 
-<li>$:/wrappit/VimeoVid</li>
+<li>$:/wrappit/vimeovid</li>
+
+<li>$:/wrappit/Warning</li>
 
 <li>$:/wrappit/ytVideo</li>
 
@@ -671,6 +677,8 @@ Error message and password prompt
 <li>StrexSnippet</li>
 
 <li>TermsOfUse</li>
+
+<li>The wrappit Image Macro</li>
 
 <li>Untitled</li>
 
@@ -9724,7 +9732,7 @@ Where is my comment?
 |&lt;&lt;lingo OverriddenShadowTiddlers/Prompt&gt;&gt; |&lt;&lt;show-filter-count &quot;[is[tiddler]is[shadow]sort[title]]&quot;&gt;&gt; |
 </pre>
 </div>
-<div created="20200422003225586" creator="JJ" modified="20201009173235110" modifier="JJ" title="$:/core/ui/EditorToolbar/stamp-dropdown">
+<div created="20200422003225586" creator="JJ" modified="20210119192442168" modifier="JJ" title="$:/core/ui/EditorToolbar/stamp-dropdown">
 <pre>\define linkstart() &lt;a href=&quot;https://tiddlywiki.com/static/
 \define linkend() .html&quot; target=&quot;blank&quot;&gt;i&lt;/a&gt;
 \define link() &lt;&lt;linkstart&gt;&gt;&lt;&lt;reflink&gt;&gt;&lt;&lt;linkend&gt;&gt;
@@ -9779,12 +9787,11 @@ Where is my comment?
 &lt;$list filter=&quot;[all[shadows]prefix[$:/wrappit/]]&quot;&gt;
 &lt;&lt;wrapped&gt;&gt;
 &lt;/$list&gt;
+
 ----
 
 &lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/Snippet]!has[draft.of]sort[caption]]&quot; variable=&quot;snippetTitle&quot;&gt;
-
-&lt;&lt;toolbar-button-stamp-inner&gt;&gt;
-
+&lt;&lt;toolbar-button-stamp-inner&gt;&gt;&lt;br&gt;
 &lt;/$list&gt;
 
 ----
@@ -10026,8 +10033,8 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20180413184041403" creator="JR" modified="20201018190155507" modifier="JR" title="$:/DefaultTiddlers">
-<pre>[[Wrappit Toolbar Button]] $:/core/ui/EditorToolbar/wrappit-dropdown WrappitImportBundle</pre>
+<div created="20180413184041403" creator="JR" modified="20211125093020794" modifier="JR" title="$:/DefaultTiddlers">
+<pre>[[The wrappit Image Macro]] [[Wrappit Toolbar Button]] $:/core/ui/EditorToolbar/wrappit-dropdown WrappitImportBundle</pre>
 </div>
 <div created="20160609120738579" creator="twMat" modified="20190225093122905" modifier="JR" tags="$:/tags/ViewTemplate" title="$:/extensions/core/AliasViewTemplate" type="text/vnd.tiddlywiki">
 <pre>\define showalias(tid, alias)
@@ -14813,36 +14820,39 @@ $:/state/Tiddler Bundles/Selected Tiddlers/$(currentTiddler)$
     }
 }</pre>
 </div>
-<div created="20201010093951903" creator="JJ" modified="20201016221301751" modifier="JJ" title="$:/plugins/JJ/ImageViewer">
+<div created="20201010093951903" creator="JJ" modified="20211119093952664" modifier="JJ" title="$:/plugins/JJ/ImageViewer">
 <pre>\define closeit() 
 &lt;$action-sendmessage $message=&quot;tm-close-tiddler&quot;/&gt;
 &lt;$action-deletetiddler $tiddler=&quot;$:/temp/ImageMagnifier&quot;/&gt;
 \end
-&lt;$range tiddler=&quot;$:/temp/ImageMagnifier&quot; min=&quot;-400&quot; max=&quot;2000&quot; default=&quot;-60&quot; class=&quot;magnirange&quot;/&gt;
-&lt;center&gt;&lt;img  src=&lt;&lt;source&gt;&gt; alt=&lt;&lt;source&gt;&gt;&gt;
-&lt;div style=&quot;color:white&quot;&gt;&lt;&lt;caption&gt;&gt;&lt;/div&gt;&lt;/center&gt;
+&lt;$range tiddler=&quot;$:/temp/ImageMagnifier&quot; min=&quot;-400&quot; max=&quot;2000&quot; default=&quot;-58&quot; class=&quot;magnirange&quot;/&gt;
+&lt;center&gt;
+&lt;img  src=&lt;&lt;source&gt;&gt; alt=&lt;&lt;source&gt;&gt;/&gt;
+&lt;div style=&quot;color:white;&quot;&gt;&lt;&lt;caption&gt;&gt;&lt;/div&gt;
+&lt;/center&gt;
+&lt;div style=&quot;position:fixed;top:0px;right:20px;width: 3em&quot;&gt;
 &lt;$keyboard key=&quot;return&quot; actions=&lt;&lt;closeit&gt;&gt;&gt;
 &lt;$button class=&quot;tc-btn-big-green&quot; style=&quot;background-color:black;position:fixed;top:0px;right:20px;border-radius:1.7em&quot;&gt;
 {{$:/core/images/cancel-button}}
 &lt;&lt;closeit&gt;&gt;
+&lt;$action-navigate $to=&lt;&lt;back&gt;&gt;/&gt;
 &lt;/$button&gt;
 &lt;/$keyboard&gt;
+&lt;/div&gt;
 &lt;style&gt;
-.tc-modal-header, .largeonly, .tc-sidebar-scrollable {display:none}
-&lt;!--.tc-modal-footer {display:none}--&gt;
+.tc-modal-header, .largeonly, .tc-sidebar-scrollable,.tc-modal-footer {display:none}
 .tc-modal-body, .tc-modal {
 width:100vw;
 height:100vh;top:0px;
 left:0px;max-height:100vh;
 background-color:black;
 }
-.magnirange {position:fixed}
+.magnirange {transform: rotate(-90deg) translate(-90px,45px);position:fixed;right:0px; }
 .tc-modal img {height:calc(100vh + {{$:/temp/ImageMagnifier}}px )}
  &lt;$list filter=&quot;[[$:/StoryList]!search:list[$:/plugins/JJ/ImageViewer]]&quot;&gt;
 .tc-story-river {display:none}
 &lt;/$list&gt;
-&lt;/style&gt;
-</pre>
+&lt;/style&gt;</pre>
 </div>
 <div author="JJ" created="20200427075211873" description="Wrappits" modified="20200427075212336" plugin-type="plugin" title="$:/plugins/jj/wrappits" type="application/json" version="0.0.6">
 <pre>{
@@ -16881,6 +16891,9 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180508090100554" creator="JR" first_name="Jan" identity_name="Jan" last_name="Johannpeter" modified="20180508090117294" modifier="JR" title="$:/state/Create Identity twCard">
 <pre></pre>
 </div>
+<div created="20210119192223764" modified="20210119192223764" title="$:/state/edit/references-1959637585">
+<pre>show</pre>
+</div>
 <div bundle_name="Bündel" created="20190303222420955" modified="20190303222427625" title="$:/state/Export Bundle">
 <pre></pre>
 </div>
@@ -16917,7 +16930,7 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180412201237263" modified="20180412201237263" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20190102151009557" creator="JR" modified="20210110090414239" modifier="JR" title="$:/state/sidebar">
+<div created="20190102151009557" creator="JR" modified="20220503092914802" modifier="JR" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20190224232536000" modified="20190224232551574" title="$:/state/tab--1032361530">
@@ -16980,7 +16993,7 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20200426200045837" modified="20200426200045837" title="$:/state/tab-1734016244">
 <pre>$:/core/ui/TiddlerInfo/Tools</pre>
 </div>
-<div created="20180412201250589" creator="JR" modified="20201018190123972" modifier="JR" title="$:/state/tab-1749438307">
+<div created="20180412201250589" creator="JR" modified="20211125092902673" modifier="JR" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20190223153021684" modified="20190223153021684" title="$:/state/tab-1891403889">
@@ -17007,8 +17020,8 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180418065838465" creator="JR" modified="20180719011803856" modifier="JR" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20190102151101661" creator="JR" modified="20201018190134728" modifier="JR" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20190102151101661" creator="JR" modified="20210119190606629" modifier="JR" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20190225094851487" modified="20200429181443869" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -17016,10 +17029,10 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180508112601582" creator="JR" modified="20180508112601582" modifier="JR" tags="TestKommentar" title="$:/state/Tiddler Bundles/Selected Tiddlers/Test">
 <pre></pre>
 </div>
-<div created="20180420221128939" creator="J" modified="20210110090414238" modifier="JR" title="$:/status/UserName">
+<div created="20180420221128939" creator="J" modified="20220503092914802" modifier="JR" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="[[Wrappit Toolbar Button]] $:/core/ui/EditorToolbar/wrappit-dropdown WrappitImportBundle" title="$:/StoryList">
+<div created="20220503204158761" list="[[The wrappit Image Macro]] [[Wrappit Toolbar Button]] $:/wrappit/Warning $:/core/ui/EditorToolbar/wrappit-dropdown WrappitImportBundle" modified="20220503204158762" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180327140250228" creator="JP" modified="20180327205440105" modifier="JP" tags="$:/tags/Stylesheet" title="$:/Stylesheet/MobileStyles">
@@ -17036,10 +17049,10 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20190224232433033" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar" modified="20190224232433033" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
-<div created="20180413184037819" creator="JR" modified="20201018194616369" modifier="JR" title="$:/temp/advancedsearch">
-<pre>impo</pre>
+<div created="20180413184037819" creator="JR" modified="20210119190638544" modifier="JR" title="$:/temp/advancedsearch">
+<pre>toolba snip</pre>
 </div>
-<div created="20190106120531593" creator="JR" modified="20210110090414239" modifier="JR" title="$:/temp/check">
+<div created="20190106120531593" creator="JR" modified="20220503092914802" modifier="JR" title="$:/temp/check">
 <pre>PASSWORT</pre>
 </div>
 <div created="20190107210014876" creator="JR" modified="20190107210014876" modifier="JR" title="$:/Temp/Gallery">
@@ -17058,15 +17071,15 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://szenio.de/wrappit/&quot;
+            &quot;text&quot;: &quot;https://szen.io/wrappit/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;szenio.de&quot;
+            &quot;text&quot;: &quot;szen.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;szenio.de&quot;
+            &quot;text&quot;: &quot;szen.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
@@ -17086,15 +17099,15 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://szenio.de&quot;
+            &quot;text&quot;: &quot;https://szen.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;2560&quot;
+            &quot;text&quot;: &quot;2816&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1440&quot;
+            &quot;text&quot;: &quot;1584&quot;
         }
     }
 }</pre>
@@ -17786,7 +17799,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20190224165500669" dependents="" description="Basic theme" modified="20190224165500669" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20180412213920297" creator="JR" modified="20210110090414238" modifier="JR" title="$:/temp/search">
+<div created="20180412213920297" creator="JR" modified="20220503092914802" modifier="JR" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20190102174418139" modified="20190102174418139" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/http://szenio.de/Kommentare/Kommentare.html" url="http://szenio.de/Kommentare/Kommentare.html">
@@ -17933,6 +17946,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     &quot;40&quot;: &quot;&quot;
 }</pre>
 </div>
+<div created="20211125093042426" modified="20211125093042426" title="$:/theme">
+<pre>$:/themes/tiddlywiki/centralised</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Centralises the story river" name="Centralised" plugin-type="theme" title="$:/themes/tiddlywiki/centralised" type="application/json" version="5.1.19">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -18053,7 +18069,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     }
 }</pre>
 </div>
-<div created="20190102151009557" creator="JR" modified="20210110090414239" modifier="JR" title="$:/themes/tiddlywiki/vanilla/metrics/storyleft">
+<div created="20190102151009557" creator="JR" modified="20220503092914802" modifier="JR" title="$:/themes/tiddlywiki/vanilla/metrics/storyleft">
 <pre></pre>
 </div>
 <div created="20190224224454852" creator="JR" modified="20190225003123623" modifier="JR" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
@@ -18062,7 +18078,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20190224224454853" creator="JR" modified="20190225003123623" modifier="JR" title="$:/themes/tiddlywiki/vanilla/metrics/storywidth">
 <pre>760px</pre>
 </div>
-<div created="20190102151009558" creator="JR" modified="20210110090414239" modifier="JR" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
+<div created="20190102151009558" creator="JR" modified="20220503092914802" modifier="JR" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
 <pre>700px</pre>
 </div>
 <div created="20170130120917443" creator="JR" modified="20170130121026882" modifier="JR" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
@@ -18170,19 +18186,26 @@ $source$
 \end
 </pre>
 </div>
-<div created="20200421092051272" creator="JJ" icon="{{$:/core/images/picture}}" modified="20201016205330401" modifier="JJ" prefix="&lt;&lt;pic &quot;" suffix="&quot; &quot;&quot; &gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/Picture" tooltip="surrounds the Imagelink">
-<pre>\define pic(source, caption)
-&lt;$button class=&quot;tc-btn-invisible&quot; style=&quot;text-align:center; width:100%&quot;&gt;
-&lt;center&gt;&lt;img style='height: 100%; width: 100%; max-height:90vh; object-fit: contain' src=&quot;$source$&quot;/&gt;&lt;/center&gt;
+<div created="20200421092051272" creator="JJ" icon="{{$:/core/images/picture}}" modified="20211118212738834" modifier="JJ" prefix="&lt;&lt;pic &quot;" suffix="&quot; &quot;&quot; &gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/Picture" tooltip="surrounds the Imagelink">
+<pre>\define NoImage()
+&lt;span&gt;Bild nicht verfügbar&lt;/span&gt;
+\end
+\define pic(source, caption)
+&lt;$button class=&quot;tc-btn-invisible&quot; style=&quot;text-align:center; vertical-align:top; width:100%&quot;&gt;
+&lt;center&gt;&lt;img style='height: 100%; width: 100%; max-height:90vh; object-fit: contain' src=&quot;$source$&quot; alt=&quot;*&quot; /&gt;&lt;/center&gt;
 &lt;$list filter=&quot;[[$:/state/stage]!text[slideshow]]&quot;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/temp/ImageMagnifier&quot; text=&quot;-60&quot;/&gt;
-&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;$:/plugins/JJ/ImageViewer&quot; source=&quot;$source$&quot; caption=&quot;$caption$&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;$:/plugins/JJ/ImageViewer&quot; source=&quot;$source$&quot; caption=&quot;$caption$&quot; back=&lt;&lt;storyTiddler&gt;&gt;/&gt;
 &lt;/$list&gt;
 &lt;$action-sendmessage $message=&quot;tm-full-screen&quot; $param=&quot;enter&quot; /&gt;
 &lt;/$button&gt;
-&lt;div style=&quot;margin-top:0px; text-align:center&quot;&gt; $caption$ &lt;/div&gt;
+&lt;div style=&quot;margin-top:0px; text-align:center;min-height:30px&quot;&gt; $caption$ &lt;/div&gt;
 \end
-$:/plugins/JJ/ImageViewer</pre>
+$:/plugins/JJ/ImageViewer
+&lt;!--Idee: 
+&lt;img class=&quot;avatar&quot; src=&quot;img/one.jpg&quot; alt=&quot;Not Found&quot; onerror=this.src=&quot;img/undefined.jpg&quot;&gt; 
+source mit wikify und Split kürzenundneubauen
+--&gt;</pre>
 </div>
 <div created="20200812222439305" creator="JJ" icon="{{$:/plugins/tiddlywiki/qrcode/icon}}" modified="20200930174003800" modifier="JJ" prefix="&lt;&lt;qr &quot;" suffix="&quot;&gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/QR-Code" tooltip="Creates a QR-Code from the surrounded text">
 <pre>\define qr(text,caption)
@@ -18194,9 +18217,15 @@ $text$
 &lt;/center&gt;
 \end</pre>
 </div>
-<div created="20200908083238669" creator="JJ" height="400" icon="{{$:/core/images/video}}" modified="20201018193253331" modifier="JJ" prefix="&lt;&lt;vimeo &quot;" suffix="&quot; &quot;&quot; &gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/VimeoVid" tooltip="wrap only the last part of the videourl after the slash in this macro" width="600">
+<div created="20200908083238669" creator="JJ" height="400" icon="{{$:/core/images/video}}" modified="20210119192228914" modifier="JJ" prefix="&lt;&lt;vimeo &quot;" suffix="&quot; &quot;&quot; &gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/vimeovid" tooltip="wrap only the last part of the videourl after the slash in this macro" width="600">
 <pre>\define vimeo(source, time)
 &lt;iframe src=&quot;https://player.vimeo.com/video/$source$&quot; width={{$:/wrappit/ytVideo!!width}} height={{$:/wrappit/ytVideo!!height}} frameborder=&quot;0&quot; allow=&quot;fullscreen&quot; allowfullscreen&gt;&lt;/iframe&gt;
+\end</pre>
+</div>
+<div caption="" created="20210105133955387" creator="JJ" icon="&amp;#9888;" modified="20220503204213042" modifier="JJ" prefix="&lt;&lt;warning &quot;" suffix=" &quot; &quot;&quot;&gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/Warning" tooltip="surrounds a warning">
+<pre>\define warning(content)
+&lt;div style=&quot;display:inline-block;width:10%;font-size:2em;vertical-align:super&quot;&gt;&amp;#9888;&lt;/div&gt;&lt;div  style=&quot;display:inline-block;width:87%&quot;&gt;
+$content$
 \end</pre>
 </div>
 <div created="20200421092051272" creator="JJ" height="400" icon="{{$:/core/images/video}}" modified="20201018193157374" modifier="JJ" prefix="&lt;&lt;ytvideo &quot;" suffix="&quot; &quot;&quot; &gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/ytVideo" tooltip="wrap only the last part of the videourl after the slash in this macro" width="600">
@@ -18275,6 +18304,14 @@ Start Posting
 # The owner of this site does ''not'' take any responsibility to you email being available through a third party such as GitHub.
 # It is up to the source code hosting company to manage any potential email sniffing and/or crawlers as such their privacy policies are in effect for those cases.
 # The content you send as a comment will be considered //public domain// and if accepted falls under this sites [[License]] policy.</pre>
+</div>
+<div created="20211125092125835" modified="20211125094315459" tags="" title="The wrappit Image Macro">
+<pre>Wrappit helps you insert textsnippets surrounding text you just typed or copied in the editor.
+You can use it to insert custom macros like this image macro.
+
+!!! $:/wrappit/Picture uses this as a viewer $:/plugins/JJ/ImageViewer
+
+&lt;&lt;pic &quot;https://s3.fission.codes/2021/02/motovun_jack.jpg&quot; &quot;Jack&quot; &gt;&gt;</pre>
 </div>
 <div title="Untitled">
 <pre>&lt;a class=&quot;tc-tiddlylink tc-tiddlylink-resolves&quot; href=&quot;http://anmelden.szenio.de/sites/Kommentare/#%24%3A%2Fstatus%2FUserName&quot; style=&quot;box-sizing: border-box; background: rgb(255, 255, 255); text-decoration: none; font-weight: 400; color: rgb(87, 120, 216); user-select: inherit; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: nowrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;&quot;&gt;me&lt;/a&gt;</pre>
@@ -18472,7 +18509,7 @@ Weitere Einstellungen können Sie im [[ControlPanel|$:/ControlPanel]] vornehmen 
 !!!Einführung
 Eine Einführung finden Sie auf http://szenio.de/Mint</pre>
 </div>
-<div created="20200421232959917" modified="20200926152903690" status="complete" title="Wrappit Toolbar Button">
+<div created="20200421232959917" modified="20211125094555027" status="complete" title="Wrappit Toolbar Button">
 <pre>!!!This button can wrap content wit expressions...very practical for coding.
 In the toolbar it shows like this {{$:/core/images/spiral}} (trying to symbolize it wraps content).
 The little i behind the button links the reference in the static tw to look up the arguments.

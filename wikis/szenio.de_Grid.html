@@ -724,6 +724,8 @@ Error message and password prompt
 
 <li>ImageSnippet</li>
 
+<li>Improvisieren</li>
+
 <li>left-1</li>
 
 <li>left2</li>
@@ -899,13 +901,13 @@ Where is my comment?
 <div created="20200413230000989" modified="20200414133248923" title="$:/config/PageStage/start">
 <pre>Grid</pre>
 </div>
-<div bgcolor="#ffffff" bordercolor="#111" borderwidth="1" box-shadow="0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12)" cardcolor="#ffffff" created="20200410114348387" creator="JJ" griddisplay="Stunden" gridgap="1" gridtag="" limit="24" list="Szeniologo [[A Magazine-Layout for TiddlyWiki]] Synopsis [[The filter]] Stunden [[$:/gridfilter/My Filter Tag]] Bühnen [[Article with images]] left2 right-1 5 12 Articlestyles [[configuring the behaviour when clicking a tile]] [[&quot;high&quot; and &quot;wide&quot;]] Theater right2 high left-1 wide [[choose a preview]] noheader [[Best Wishes!]] notext 19 20" modified="20210113101343141" modifier="JJ" tags="" title="$:/config/Plugins/Gridlist">
+<div bgcolor="#ffffff" bordercolor="#111" borderwidth="1" box-shadow="0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12)" cardcolor="#ffffff" created="20200410114348387" creator="JJ" griddisplay="12" gridgap="1" gridtag="12" limit="24" list="Szeniologo [[A Magazine-Layout for TiddlyWiki]] Synopsis [[The filter]] Stunden [[$:/gridfilter/My Filter Tag]] Bühnen [[Article with images]] left2 right-1 5 12 Articlestyles [[configuring the behaviour when clicking a tile]] [[&quot;high&quot; and &quot;wide&quot;]] Theater right2 high left-1 wide [[choose a preview]] noheader [[Best Wishes!]] notext 19 20" modified="20220530062851811" modifier="JJ" tags="" title="$:/config/Plugins/Gridlist">
 <pre>[list[$:/config/Plugins/Gridlist]tag{$:/config/Plugins/Gridlist!!gridtag}] [tag{$:/config/Plugins/Gridlist!!gridtag}!sort[modified]] [[$:/Fill-1]] [[$:/Fill-2]] [[$:/Fill-3]] [[$:/Fill-4]] [[$:/Fill-Full]] [list[$:/config/Plugins/Gridlist]!tag{$:/config/Plugins/Gridlist!!gridtag}] - [{$:/config/Plugins/Gridlist!!gridtag}] +[limit{$:/config/Plugins/Gridlist!!limit}]</pre>
 </div>
 <div created="20190304233458212" modified="20190313095820031" title="$:/config/RelinkOnRename">
 <pre>yes</pre>
 </div>
-<div created="20190225092845871" modified="20210113101637579" title="$:/config/Tiddlers/TitleLinks">
+<div created="20190225092845871" modified="20220530063035512" title="$:/config/Tiddlers/TitleLinks">
 <pre>yes</pre>
 </div>
 <div created="20190312233602421" creator="JR" modified="20200409191549195" modifier="JR" title="$:/config/View/More">
@@ -10523,7 +10525,7 @@ inventory.php?title={{$:/HistoryList!!current-tiddler}}
 <div status="complete" title="$:/Import">
 <pre>Folgende Tiddler wurden importiert:
 
-# [[WrappitImportBundle]]</pre>
+# [[$:/plugins/JJ/ImageViewer]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -15308,36 +15310,42 @@ display: none;
 }
 &lt;/$list&gt;</pre>
 </div>
-<div created="20201010093951903" creator="JJ" modified="20201016221301751" modifier="JJ" title="$:/plugins/JJ/ImageViewer">
+<div created="20201010093951903" creator="JJ" modified="20220527142751644" modifier="JJ" title="$:/plugins/JJ/ImageViewer">
 <pre>\define closeit() 
 &lt;$action-sendmessage $message=&quot;tm-close-tiddler&quot;/&gt;
 &lt;$action-deletetiddler $tiddler=&quot;$:/temp/ImageMagnifier&quot;/&gt;
 \end
-&lt;$range tiddler=&quot;$:/temp/ImageMagnifier&quot; min=&quot;-400&quot; max=&quot;2000&quot; default=&quot;-60&quot; class=&quot;magnirange&quot;/&gt;
-&lt;center&gt;&lt;img  src=&lt;&lt;source&gt;&gt; alt=&lt;&lt;source&gt;&gt;&gt;
-&lt;div style=&quot;color:white&quot;&gt;&lt;&lt;caption&gt;&gt;&lt;/div&gt;&lt;/center&gt;
+&lt;$range tiddler=&quot;$:/temp/ImageMagnifier&quot; min=&quot;-400&quot; max=&quot;2000&quot; default=&quot;-58&quot; class=&quot;magnirange&quot;/&gt;
+&lt;center&gt;
+&lt;img  src=&lt;&lt;source&gt;&gt; alt=&lt;&lt;source&gt;&gt;/&gt;
+&lt;div style=&quot;color:white;&quot;&gt;&lt;&lt;caption&gt;&gt;&lt;/div&gt;
+&lt;/center&gt;
+&lt;div style=&quot;position:fixed;top:0px;right:20px;width: 3em&quot;&gt;
 &lt;$keyboard key=&quot;return&quot; actions=&lt;&lt;closeit&gt;&gt;&gt;
 &lt;$button class=&quot;tc-btn-big-green&quot; style=&quot;background-color:black;position:fixed;top:0px;right:20px;border-radius:1.7em&quot;&gt;
 {{$:/core/images/cancel-button}}
 &lt;&lt;closeit&gt;&gt;
+&lt;$action-navigate $to=&lt;&lt;back&gt;&gt;/&gt;
 &lt;/$button&gt;
 &lt;/$keyboard&gt;
+&lt;/div&gt;
 &lt;style&gt;
-.tc-modal-header, .largeonly, .tc-sidebar-scrollable {display:none}
-&lt;!--.tc-modal-footer {display:none}--&gt;
+.tc-modal-header, .largeonly, .tc-sidebar-scrollable,.tc-modal-footer {display:none}
 .tc-modal-body, .tc-modal {
 width:100vw;
 height:100vh;top:0px;
 left:0px;max-height:100vh;
 background-color:black;
 }
-.magnirange {position:fixed}
+.magnirange {position:fixed;}
 .tc-modal img {height:calc(100vh + {{$:/temp/ImageMagnifier}}px )}
- &lt;$list filter=&quot;[[$:/StoryList]!search:list[$:/plugins/JJ/ImageViewer]]&quot;&gt;
+@media (min-width: 500px) {
+.magnirange {transform: rotate(-90deg) translate(-90px,50px);right:0px; }
+}
+&lt;$list filter=&quot;[[$:/StoryList]!search:list[$:/plugins/JJ/ImageViewer]]&quot;&gt;
 .tc-story-river {display:none}
 &lt;/$list&gt;
-&lt;/style&gt;
-</pre>
+&lt;/style&gt;</pre>
 </div>
 <div author="JJ" description="sidecontrols" plugin-type="plugin" title="$:/plugins/JJ/sidecontrols" type="application/json" version="0.0.2">
 <pre>{
@@ -17399,7 +17407,7 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20190103095240640" creator="JR" modified="20190103095243951" modifier="JR" title="$:/state/folded/Gallerie">
 <pre>show</pre>
 </div>
-<div created="20190224224454852" creator="JR" modified="20210113101639797" modifier="JJ" title="$:/state/MultiMenu">
+<div created="20190224224454852" creator="JR" modified="20220530062827407" modifier="JJ" title="$:/state/MultiMenu">
 <pre></pre>
 </div>
 <div created="20190224163051663" modified="20190224165359180" title="$:/state/plugin-info--896887961-$:/core">
@@ -17426,8 +17434,8 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180412201237263" modified="20180412201237263" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20190102151009557" creator="JR" modified="20210113101639796" modifier="JJ" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20190102151009557" creator="JR" modified="20220530062827408" modifier="JJ" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20190224232536000" modified="20190224232551574" title="$:/state/tab--1032361530">
 <pre>$:/Plugin/TiddlerUpload/ui/TiddlerInfo</pre>
@@ -17552,10 +17560,10 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180508112601582" creator="JR" modified="20180508112601582" modifier="JR" tags="TestKommentar" title="$:/state/Tiddler Bundles/Selected Tiddlers/Test">
 <pre></pre>
 </div>
-<div created="20180420221128939" creator="J" modified="20210113101343146" modifier="JJ" title="$:/status/UserName">
+<div created="20180420221128939" creator="J" modified="20220530062827408" modifier="JJ" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="$:/Plugins/JJ/Grid/ControlPanel $:/Plugins/JJ/Grid/Gridlist $:/Plugins/JJ/Grid/Stylesheet $:/Plugins/JJ/Grid/PageTemplate $:/Plugins/JJ/Grid/PagestageButton" title="$:/StoryList">
+<div created="20220530062854857" list="$:/Import [[The filter]] $:/config/Plugins/Gridlist $:/Plugins/JJ/Grid/ControlPanel" modified="20220530062919445" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180327140250228" creator="JP" modified="20180327205440105" modifier="JP" tags="$:/tags/Stylesheet" title="$:/Stylesheet/MobileStyles">
@@ -17578,7 +17586,7 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
 <div created="20180413184037819" creator="JR" modified="20201021161637859" modifier="JJ" title="$:/temp/advancedsearch">
 <pre>pic</pre>
 </div>
-<div created="20190106120531593" creator="JR" modified="20210113101343146" modifier="JJ" title="$:/temp/check">
+<div created="20190106120531593" creator="JR" modified="20220530062827409" modifier="JJ" title="$:/temp/check">
 <pre>PASSWORT</pre>
 </div>
 <div created="20190107210014876" creator="JR" modified="20190107210014876" modifier="JR" title="$:/Temp/Gallery">
@@ -17597,15 +17605,15 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://szenio.de/Grid/&quot;
+            &quot;text&quot;: &quot;https://szen.io/Grid/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;szenio.de&quot;
+            &quot;text&quot;: &quot;szen.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;szenio.de&quot;
+            &quot;text&quot;: &quot;szen.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
@@ -17625,15 +17633,15 @@ $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth&quot; text=&quo
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://szenio.de&quot;
+            &quot;text&quot;: &quot;https://szen.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;2560&quot;
+            &quot;text&quot;: &quot;1152&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1440&quot;
+            &quot;text&quot;: &quot;648&quot;
         }
     }
 }</pre>
@@ -18325,7 +18333,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20190224165500669" dependents="" description="Basic theme" modified="20190224165500669" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20180412213920297" creator="JR" modified="20210113101343146" modifier="JJ" title="$:/temp/search">
+<div created="20180412213920297" creator="JR" modified="20220530062827408" modifier="JJ" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20190102174418139" modified="20190102174418139" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/http://szenio.de/Kommentare/Kommentare.html" url="http://szenio.de/Kommentare/Kommentare.html">
@@ -18586,16 +18594,16 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     }
 }</pre>
 </div>
-<div created="20190102151009557" creator="JR" modified="20210113101639797" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/storyleft">
+<div created="20190102151009557" creator="JR" modified="20220530062827409" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/storyleft">
 <pre></pre>
 </div>
-<div created="20190224224454852" creator="JR" modified="20210113101639797" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
+<div created="20190224224454852" creator="JR" modified="20220530062827407" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
 <pre>760px</pre>
 </div>
-<div created="20190224224454853" creator="JR" modified="20210113101639797" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/storywidth">
+<div created="20190224224454853" creator="JR" modified="20220530062827407" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/storywidth">
 <pre>760px</pre>
 </div>
-<div created="20190102151009558" creator="JR" modified="20210113101639797" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
+<div created="20190102151009558" creator="JR" modified="20220530062827409" modifier="JJ" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
 <pre>700px</pre>
 </div>
 <div created="20170130120917443" creator="JR" modified="20170130121026882" modifier="JR" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
@@ -18659,7 +18667,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20180412214917534" modified="20190222203324143" title="$:/UploadURL">
 <pre>./store.php</pre>
 </div>
-<div created="20200409194000143" modified="20210113101637579" title="$:/view">
+<div created="20200409194000143" modified="20220530063035512" title="$:/view">
 <pre>classic</pre>
 </div>
 <div caption="" created="20200421102351545" creator="JJ" icon="&amp;#128264; " modified="20201002054451770" modifier="JJ" prefix="&lt;&lt;audio &quot;" suffix=" &quot; &quot;&quot;&gt;&gt;" tags="$:/tags/Macro" title="$:/wrappit/Audio" tooltip="surrounds the audiolink">
@@ -18839,6 +18847,12 @@ funktioniert, wenn die Datei userupload.php und die Erweiterung $:/Plugins/Uploa
 </div>
 <div caption="Image" created="20180516211837756" modified="20180516213849058" tags="$:/tags/TextEditor/Snippet" title="ImageSnippet">
 <pre>&lt;$image source=&quot;&quot;/&gt;</pre>
+</div>
+<div articleformat="caption" created="20200422015456526" creator="JJ" modified="20220508093407685" modifier="JJ" storyfield="tag" tags="" title="Improvisieren">
+<pre>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Finger+Paint&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;svg viewBox=&quot;0 0 116 27&quot; &gt;
+&lt;text y=20 style=&quot;font-family: 'Finger Paint';&quot;&gt; Improvisieren&lt;/text&gt;
+&lt;/svg&gt;</pre>
 </div>
 <div articleformat="left-1 red lev3" created="20200410073837896" modified="20200412165809401" tags="" title="left-1">
 <pre>This Tiddler has a field articleformat with the value &quot;left-1&quot; which results in filling all colums but the last, if there is enough space.
@@ -19097,11 +19111,11 @@ The words within the  ``&lt;ja&gt;&lt;/ja&gt;-tags `` for ''just_in_article'' ar
 <div created="20200413175637745" modified="20200415135830381" storyfield="filtertag" tags="Bühnen" title="Thalia">
 <pre>&lt;ja&gt;Test&lt;&lt;pic &quot;https://c1.staticflickr.com/5/4116/4823389304_48e8aac575.jpg&quot; &gt;&gt; &lt;/ja&gt;</pre>
 </div>
-<div articleformat="pink" created="20200410115715818" modified="20200415122016979" story="[[The filter]] $:/config/Plugins/Gridlist $:/Plugins/JJ/Grid/ControlPanel" tags="" title="The filter">
+<div articleformat="pink" created="20200410115715818" modified="20220530062929359" story="[[The filter]] $:/config/Plugins/Gridlist $:/Plugins/JJ/Grid/ControlPanel" tags="" title="The filter">
 <pre>The filter for the grid is set in the tiddler $:/config/Plugins/Gridlistfilter
 &lt;br&gt;By default it is following the list in
 $:/config/Plugins/Gridlistfilter
-THis and the order can be controlled here:
+This and the order can be controlled here:
 $:/Plugins/JJ/Grid/ControlPanel 
 
 </pre>

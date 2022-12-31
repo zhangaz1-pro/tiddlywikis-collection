@@ -161,6 +161,8 @@ Error message and password prompt
 
 <li>.cloud</li>
 
+<li>.da</li>
+
 <li>⦑</li>
 
 <li>⦒</li>
@@ -204,6 +206,8 @@ Error message and password prompt
 <li>🐳</li>
 
 <li>👁↑</li>
+
+<li>🔍</li>
 
 <li>🔝</li>
 
@@ -577,6 +581,8 @@ Error message and password prompt
 
 <li>$:/state/input/edit-date/ThN/.open</li>
 
+<li>$:/state/input/edit-date/tiddler=NowYmd/field=.do</li>
+
 <li>$:/state/input/edit-date/TiddlyHost/.open</li>
 
 <li>$:/state/input/edit-date/TiddlyTools/FilterGenerators/PowerSearch/.open</li>
@@ -899,6 +905,8 @@ Error message and password prompt
 
 <li>NotReadyForLz</li>
 
+<li>NowAtTh</li>
+
 <li>NowH</li>
 
 <li>NowYmd</li>
@@ -1105,6 +1113,8 @@ Error message and password prompt
 
 <li>日</li>
 
+<li>日_358</li>
+
 <li>本</li>
 
 <li>本 1</li>
@@ -1301,6 +1311,12 @@ font-size:calc(1em + (0.1em * $(count)$) / 5);
 &lt;/$details&gt;
 
 &lt;/$details&gt;
+</pre>
+</div>
+<div _="⮣ThH -03 " created="20221203095317563" creator="寅㋋/♀" modified="20221203100252898" modifier="寅㋋/♀" title=".da">
+<pre>* ⮣ThH : ExportImport to TiddlyHost some H(wo) tids.
+* extend this to approximate more DotCommands
+** Wp:Dot_commands
 </pre>
 </div>
 <div .bttn="." .do='( [[🈁]] [[⍾]] [[2020-10-2]] ) &lt;$transclude tiddler="⦑" /&gt; ' .open="[[⧗]] AlterTags [[⍾]] " .say="⑴⑶日TnT TwH 𝗔 " _="[. [[🔝]] 週🔲 ] 週.㋀ 🔣" created="20200510143346530" creator="TtH89" list="㏾. _195 ⌂. 日+" modified="20210704122139461" modifier="🏡丑㋆" t.foot="n40 o41 p42 𝗾43  𝗿44 𝘀45 𝘇52" t.head='𝘄_.. ㍩㋉  ( [[⓿]] [[⇵]] [[⧗]] ) [[式]] &lt;$transclude tiddler="⦑" /&gt; &lt;$transclude tiddler="⦒" /&gt; ' tags="本 𝖃_1 ☉" timeline.start="[[⦒]] TtT" title="⦑">
@@ -1564,6 +1580,36 @@ the `&lt;$linkcatcher&gt;` widget; it lets you trap navigations (ie clicks on li
 <pre>&lt;table&gt;
 &lt;tr&gt;&lt;td&gt; {{!!title}}{{||$:/core/ui/Buttons/edit}} &lt;/td&gt;&lt;td&gt;{{!!t.head}}&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
+</pre>
+</div>
+<div .="ThH -03 [[㍘]] 日 [[ᢳ]] -03 [[🔍/Filters]] ♃ {{||e.open}}" .bttn="[[🆔]]" .do="[[🔍]]" .due="[[丌cols]]" .open="[[_336]] | 🔍⎇" .tree='&lt;$details summary="🔍" open="no" &gt; &lt;&lt;tree 🔍&gt;&gt; &lt;/$details&gt;' _="[[★]] [[⧗]] [[㊽]] [[∅]] PsH [[🔍]] ⮣ThH ㋋ -336 ⇔ [[_-]] [[#.+]] [[🔝]] [[🔣兹]] /. .a. [[🐟/⮃⇄]] " created="20220820100029047" creator="㏱" dictionary="{{!!.tree}}" list="㏶" modified="20221203100444557" modifier="寅㋋/♀" notes="[[2022081?]] [[⚒]]" tags="" tids="" title="🔍">
+<pre>&lt;&lt;edit-list tiddler:"$:/temp/hwInput" filter:" 🔍 # ⌂ LzH 日 🔝 🎛.🎛 FolkT TwH TtT  #.+ ㊿ 🤍 HwX ᢳ " find:and focusPopup:yes goto:yes stretch:yes&gt;&gt; &lt;br&gt; {{$:/temp/hwInput}} &lt;hr&gt;
+
+[[🔍_]] . [[🔍N]] . [[༠\༠]]( [[★]] ㊿ ⛏ [[_]] [[滤]] ... 🔍. @12:01 ★:58 :59 ) &lt;br&gt; {{TiddlyTools/Buttons/SaveChanges}} 
+
+[[🔍]]: &lt;$select tiddler="$:/temp/searchfilter" default="_" &gt;
+&lt;option value="[has[_]search:_{$:/temp/search}]"&gt;       _ &lt;/option&gt;
+&lt;option value="[has[-]search:-{$:/temp/search}]"&gt;       - &lt;/option&gt;
+&lt;option value="[has[.]search:.{$:/temp/search}]"&gt;       . &lt;/option&gt;
+&lt;option value="[has[.do]search:.do{$:/temp/search}]"&gt;    .do  &lt;/option&gt;
+&lt;option value="[has[.due]search:.due{$:/temp/search}]"&gt;  .due &lt;/option&gt;
+&lt;option value="[has[.n]search:.n{$:/temp/search}]"&gt;      .n   &lt;/option&gt;
+&lt;option value="[has[.open]search:.open{$:/temp/search}]"&gt; .open &lt;/option&gt;
+&lt;option value="[has[.rank]search:.rank{$:/temp/search}]"&gt; .rank &lt;/option&gt;
+&lt;option value="[has[.re]search:.re{$:/temp/search}]"&gt;     .re  &lt;/option&gt;
+&lt;option value="[has[.say]search:.say{$:/temp/search}]"&gt;   .say &lt;/option&gt;
+&lt;option value="[has[caption]search:caption{$:/temp/search}]"&gt; caption &lt;/option&gt;
+&lt;option value="[has[list]search:list{$:/temp/search}]"&gt;      list   &lt;/option&gt;
+&lt;option value="[has[notes]search:notes{$:/temp/search}]"&gt;    notes &lt;/option&gt;
+&lt;option value="[has[t.head]search:t.head{$:/temp/search}]"&gt; t.head &lt;/option&gt;
+&lt;option value="[has[t.foot]search:t.foot{$:/temp/search}]"&gt; t.foot &lt;/option&gt;
+&lt;option value="[has[tags]search:tags{$:/temp/search}]"&gt;     tags   &lt;/option&gt;
+&lt;option value="[search:title{$:/temp/search}]"&gt;             title  &lt;/option&gt;
+&lt;option value="[has[timeline.start]search:timeline.start{$:/temp/search}]"&gt; timeline.start &lt;/option&gt;
+&lt;/$select&gt;  
+&lt;$edit-text tiddler="$:/temp/search" tag="input" /&gt; &lt;br&gt; 
+
+&lt;$macrocall $name="list-links" filter={{$:/temp/searchfilter}} /&gt;
 </pre>
 </div>
 <div .open="..." created="20210415135355189" modified="20210415135405269" title="🔝">
@@ -14115,12 +14161,12 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210317105004979" creator="ℋ丑㋄" modified="20211111220819160" modifier="HansAtTiddlyhost" title="$:/DefaultTiddlers">
 <pre>NowYmD</pre>
 </div>
-<div status="complete" title="$:/Import">
+<div created="20221203101730452" creator="HansAtTiddlyhost" modified="20221203101730452" modifier="HansAtTiddlyhost" status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[e.]]
-# [[e.open]]
-# [[e.say]]</pre>
+# [[.da]]
+# [[🔍]]
+# [[日_337]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -15303,7 +15349,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210327175016092" creator="ℋ丑㋃" modified="20210512000825537" modifier="ℋ丑㋄" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div title="$:/state/ChangeLog" when="22.08.16.145208">
+<div title="$:/state/ChangeLog" when="22.12.25.151447">
 <pre></pre>
 </div>
 <div created="20210428203909730" creator="ℋ丑㋃" modified="20210501174937875" modifier="ℋ丑㋃" title="$:/state/folded/🎛">
@@ -15669,6 +15715,9 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210507160401904" creator="ℋ丑㋄" modified="20210507160922726" modifier="ℋ丑㋄" title="$:/state/input/edit-date/ThN/.open">
 <pre>[[TH.ℋ丑㋄]] ThH</pre>
 </div>
+<div created="20221225192246258" creator="HansAtTiddlyhost" modified="20221225192246258" modifier="HansAtTiddlyhost" title="$:/state/input/edit-date/tiddler=NowYmd/field=.do">
+<pre>2022/12/26</pre>
+</div>
 <div created="20210418004503740" creator="ℋ丑㋃" modified="20210921121746156" modifier="ℋ丑㋈" title="$:/state/input/edit-date/TiddlyHost/.open">
 <pre>[[TH]]: HwN [[⇄👁格]] TwHelp WipH StubbornLikeMe</pre>
 </div>
@@ -15783,10 +15832,10 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210320114958338" creator="ℋ丑㋃" modified="20210506012004482" modifier="ℋ丑㋄" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
-<div created="20210306181154085" creator="ℋ丑㋃" modified="20220731122507282" modifier="HansAtTiddlyhost" title="$:/state/tab/sidebar--595412856">
+<div created="20210306181154085" creator="ℋ丑㋃" modified="20220902015309260" modifier="HansAtTiddlyhost" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20210320115041418" creator="ℋ丑㋄" modified="20210904110359213" modifier="ℋ丑㋈" title="$:/state/tab/sidebar--advancedtab-503922937">
+<div created="20210320115041418" creator="ℋ丑㋄" modified="20220902015257908" modifier="ℋ丑㋈" title="$:/state/tab/sidebar--advancedtab-503922937">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
 <div created="20210428000153898" creator="ℋ丑㋃" modified="20210522134701248" modifier="ℋ丑㋄" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -15811,8 +15860,10 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div title="$:/status/UserName"><pre></pre></div>
-<div created="20220820195206142" creator="HansAtTiddlyhost" list="NowYmD" modified="20220820195206142" modifier="HansAtTiddlyhost" title="$:/StoryList">
+<div title="$:/status/UserName">
+<pre>HansAtTiddlyhost</pre>
+</div>
+<div created="20221225192113122" creator="HansAtTiddlyhost" list="" modified="20221225192258122" modifier="HansAtTiddlyhost" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210425181241989" creator="ℋ丑㋃" list="h.mn $:/core/ui/AdvancedSearch/Standard $:/core/ui/AdvancedSearch/System $:/core/ui/AdvancedSearch/Shadows $:/core/ui/AdvancedSearch/Filter TiddlyTools/FilterGenerators/PowerSearch" modified="20210425181241989" modifier="ℋ丑㋃" title="$:/tags/AdvancedSearch">
@@ -16761,10 +16812,11 @@ also, a link to: https://lisa01.tiddlyhost.com/
 <pre>|{{h.mn!!.open}} | [[h.mn]] |
 * Build this into a reference like AidH ?</pre>
 </div>
-<div created="20211112021950843" creator="HansAtTiddlyhost" modified="20220814200815030" modifier="HansAtTiddlyhost" title="HansAtTiddlyhost">
+<div created="20211112021950843" creator="HansAtTiddlyhost" modified="20221225192148577" modifier="HansAtTiddlyhost" title="HansAtTiddlyhost">
 <pre>* this file may now be out of sync with the SysH version.
 ** use PsH to sort this out
 *** on-going deterioration is inevitable
+**** sooner is better
 
 * NotesH
 * move a Controls toggle into a more prominent location in WorkflowH WorkFlowH
@@ -17079,6 +17131,9 @@ The &lt;&lt;tag ֎&gt;&gt; is intended as an aid for dragging Content into anoth
 * Tiddloid: https://groups.google.com/g/tiddlywiki/c/d_UwW8-SMVo/m/B4iIVqxrBQAJ
 </pre>
 </div>
+<div created="20221225192246258" creator="HansAtTiddlyhost" field='.do="2022/12/26"' modified="20221225192359122" modifier="HansAtTiddlyhost" title="NowAtTh">
+<pre>tiddler=NowYmd</pre>
+</div>
 <div .open="NowYmd DateJH WipH" created="20210321111424358" creator="ℋ丑㋃" modified="20210428202022284" modifier="ℋ丑㋃" tags="⌘ 丑 _-" title="NowH">
 <pre>This TiddlyWiki file is just a work-in-progress that is being used to test some Information Management design changes.
 
@@ -17151,25 +17206,37 @@ H.
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div created="20220710135229298" creator="HansAtTiddlyhost" modified="20220820195520889" modifier="HansAtTiddlyhost" tags="" title="NowYmD">
-<pre>!! Welcome:
+<div created="20220710135229298" creator="HansAtTiddlyhost" modified="20221225192228650" modifier="HansAtTiddlyhost" tags="" title="NowYmD">
+<pre>!! NowYmD
+* preWelcome.
+** note the use of &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;(s)
+*** the trailing viewTemplate 
+
+----
+!! Welcome:
 This is my most active site but not one that is very interesting or attractive.
 
-Some initial attractive work can be seen at:
+Some initial, current, attractive work that  is being considered can be seen at:
 
+* consider how the PubX site's use in the GeoSpatial / Flickr concept might deflect this
 * https://spotlight-h.tiddlyhost.com/
 
 ----
 !! Work In Progress notes:
 
+* externalStyle wikis are now available
+* ...
+* https://kookma.github.io/TW5-GitHub-Saver/
+* update this file by starting to port into a new .../Preview file.
+** this could also be used to evaluate/test other editions
 * consider:
 ** upload PowerSearch for ExportImport control
 *** start to link to LinkedIn and TwitterH for shared links
 **** introduce DiigoH later if anyone wants it
 ** testing the next release of Zettlekasten here at TiddlyHost
-* review 
-** &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;(s)
-** the trailing viewTemplate 
+* import
+** https://talk.tiddlywiki.org/t/utility-plugin-update-2-2-0/3987
+*** https://kookma.github.io/TW-Utility/
 </pre>
 </div>
 <div _="https://hww2021.tiddlyhost.com" created="20210319140230123" modified="20210508160403913" modifier="ℋ丑㋄" tags="֎⛏" title="OurTools">
@@ -20376,6 +20443,14 @@ Note that inside the body of the $list widget, the value of currentTiddler is se
 * New magic of $list widget in Tiddlywiki 5.1.24: The index attribute
 ** https://groups.google.com/g/tiddlywiki/c/LMtfQQcON4k
 * https://tiddlywiki.com/prerelease/#ListWidget</pre>
+</div>
+<div .="[[.da]] DoT TtT ToDo" _="⮣ThH 日_337 | -04 [[2022-11-30]]" created="20221120114450204" creator="寅㋊㏳" modified="20221225192128762" modifier="HansAtTiddlyhost" title="日_358">
+<pre>This is a temporary holding area that is generally renamed daily.
+
+* s.日_337 ( s.日_... OR [[🔍]]... )
+** ⮣
+* https://thesherwood.github.io/Mentat/
+</pre>
 </div>
 <div .bttn='&lt;$button&gt; &lt;$action-setfield $tiddler="$:/StoryList" $field="list" $value={{!!.open}} /&gt;.open&lt;/$button&gt; ' .cols="_" .do='&lt;&lt;fields2table "[search:_[_108]sort[_]]" &gt;&gt; ' .open="[[本]] NowH FtH [[_126]] [[𝗤]] [[⧗]] [[⌂]] " .rows='{{!!.do}} &lt;&lt;tabs "[search:_[_105]sort[_]]"&gt;&gt;' .say="[ BudgetD [ [[🎛]] ] _079" _="日_116 [ [[_116]] [[_]] [[⧗]] [[䷴]] ] {{本||$:/core/ui/TagTemplate}} &lt;&lt;tag 日&gt;&gt; 𝗤 [[丑]]" created="20210307105713499" creator="ℋ丑㋂" field:.do="" list="" mode="" modified="20210708102705191" modifier="ℋ丑㋅" size:77="" t.foot='日+ DfTwe &lt;$transclude tiddler="⦒" /&gt; ' t.head='[[_]] [[⚕]] &lt;&lt;tag 𝗝&gt;&gt; [[🅑]] LzH DevH DevTw. pqrsT &lt;&lt;tag _&gt;&gt; &lt;$transclude tiddler="⦑" /&gt; ' tags="① now ㏳ _- _249 𝗤" title="本" type:text="">
 <pre>&lt;$details summary="👁本🎛" open="no" &gt; [[🎛]]

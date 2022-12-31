@@ -533,7 +533,11 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/themetweaks</li>
 
+<li>Add and remove 'done' tag from tiddlers tagged 'task'</li>
+
 <li>Add hidden text to tiddlers with 'p hidden'</li>
+
+<li>Adjusting the Firefox scrollbar width / moving the sidebar scrollbar to the left</li>
 
 <li>Auto-complete for links</li>
 
@@ -570,6 +574,8 @@ Error message and password prompt
 <li>Control what is visible in edit mode</li>
 
 <li>Count widgets</li>
+
+<li>Create tiddlers based on templates from missing links</li>
 
 <li>Cross-indexing by two topics (X-list adaptation)</li>
 
@@ -621,6 +627,8 @@ Error message and password prompt
 
 <li>Filters</li>
 
+<li>Firefox</li>
+
 <li>Floating columns in a tiddler</li>
 
 <li>Fonts</li>
@@ -642,6 +650,8 @@ Error message and password prompt
 <li>Insert the current time as text (fixed)</li>
 
 <li>Jump to top of static html</li>
+
+<li>Large editable fields in tabs</li>
 
 <li>Limit viewtemplate tiddlers so they only show under tiddlers that are tags</li>
 
@@ -676,6 +686,8 @@ Error message and password prompt
 <li>My long static HTML setup</li>
 
 <li>Navigation</li>
+
+<li>New button with tags to current plus extra tag</li>
 
 <li>New here button with backlink</li>
 
@@ -733,11 +745,17 @@ Error message and password prompt
 
 <li>Subsume macro (easy way to view and open hidden content)</li>
 
+<li>Table of contents based on backlinks rather than tabs</li>
+
 <li>Tables</li>
 
 <li>Tabs</li>
 
+<li>Tag color and border color</li>
+
 <li>Tag editor dropdown</li>
+
+<li>tagborder</li>
 
 <li>Tags</li>
 
@@ -760,6 +778,8 @@ Error message and password prompt
 <li>Two columns of tiddlers</li>
 
 <li>Umlaut editortoolbar button</li>
+
+<li>Unfinished</li>
 
 <li>View Template</li>
 
@@ -13239,7 +13259,7 @@ There are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220814025756524" list="HQ" modified="20220814030326530" title="$:/StoryList">
+<div list="HQ" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20200127144249151" list="$:/.giffmex/buttons/NewTabHere $:/core/ui/Buttons/fold $:/.giffmex/ViewToolbar/new-note-here $:/.giffmex/ViewToolbar/new-note-here-datetime $:/.giffmex/viewtemplate/viewrefs $:/jd/fullscreen-editor/EditButton $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others" modified="20201126171213614" revision="0" tags="$:/giffmex/stroll" title="$:/tags/ViewToolbar" type="text/vnd.tiddlywiki">
@@ -13309,14 +13329,14 @@ There are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]
     }
 }</pre>
 </div>
-<div created="20201116042635834" modified="20220110001511553" title="$:/temp/list-search-example">
+<div created="20201116042635834" modified="20221112221737797" title="$:/temp/list-search-example">
 <pre></pre>
 </div>
-<div created="20201116033405931" modified="20220110000038636" title="$:/temp/NewTagName">
+<div created="20201116033405931" modified="20221002110250898" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
-<div created="20201116051233995" modified="20220103181804405" title="$:/temp/search">
-<pre></pre>
+<div created="20201116051233995" modified="20221112222045765" title="$:/temp/search">
+<pre>new tidd</pre>
 </div>
 <div created="20210514132407539" modified="20210514132407539" title="$:/temp/ViewColumn2">
 <pre></pre>
@@ -13520,6 +13540,24 @@ There are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]
 |&lt;$link to=&quot;$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth&quot;&gt;&lt;&lt;lingo Metrics/SidebarWidth&gt;&gt;&lt;/$link&gt;&lt;br&gt;//&lt;&lt;lingo Metrics/SidebarWidth/Hint&gt;&gt;// |^&lt;$edit-text tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth&quot; default=&quot;&quot; tag=&quot;input&quot;/&gt; |
 </pre>
 </div>
+<div created="20220927193201074" modified="20220927193512273" tags="Buttons Tags" title="Add and remove 'done' tag from tiddlers tagged 'task'">
+<pre>```
+&lt;$button&gt; add tag &quot;done&quot; to tiddlers tagged with &quot;task&quot;
+   &lt;$list filter=&quot;[tag[task]!tag[done]]&quot;&gt;&lt;$action-listops $tags=&quot;done&quot;/&gt;&lt;/$list&gt;
+&lt;/$button&gt;
+
+&lt;$button&gt; remove tag &quot;done&quot; to tiddlers tagged with &quot;task&quot;
+   &lt;$list filter=&quot;[tag[task]tag[done]]&quot;&gt;&lt;$action-listops $tags=&quot;-done&quot;/&gt;&lt;/$list&gt;
+&lt;/$button&gt;
+```
+&lt;$button&gt; add tag &quot;done&quot; to tiddlers tagged with &quot;task&quot;
+   &lt;$list filter=&quot;[tag[task]!tag[done]]&quot;&gt;&lt;$action-listops $tags=&quot;done&quot;/&gt;&lt;/$list&gt;
+&lt;/$button&gt;
+
+&lt;$button&gt; remove tag &quot;done&quot; to tiddlers tagged with &quot;task&quot;
+   &lt;$list filter=&quot;[tag[task]tag[done]]&quot;&gt;&lt;$action-listops $tags=&quot;-done&quot;/&gt;&lt;/$list&gt;
+&lt;/$button&gt;</pre>
+</div>
 <div created="20210913123522239" modified="20210913124055756" tags="[[Hidden content]] Links" title="Add hidden text to tiddlers with 'p hidden'">
 <pre>This is a simple one. If you would like certain text in your tiddler to be hidden in view mode, you can use HTML hidden text. Just paste the snippet below, and add your hidden content between the two `&lt;p&gt;` tags.
 
@@ -13528,6 +13566,28 @@ There are 2 fields, which are used by [[$:/plugins/wikilabs/link-to-tabs/styles]
 This is especially helpful if you use a backlink-based system such as Stroll. You can add the backlinks in a way that doesn't clutter up the tiddlers when viewing them in view mode.
 
 `&lt;p hidden&gt;[[Tiddler A]] / [[Tiddler B]] / [[etc]] &lt;/p&gt;`</pre>
+</div>
+<div created="20221002110207337" modified="20221002111053172" tags="Firefox Sidebar CSS" title="Adjusting the Firefox scrollbar width / moving the sidebar scrollbar to the left" type="css">
+<pre>I found that Firefox's scrollbars turned way too thin for my tastes. So I made the following changes:
+
+* I opened the browser to `about:config`, accepted the security risk and searched for `scrollbar`. 
+* I set `layout.css.scrollbar-width-thin.disabled` to true
+* I set `widget.non-native-theme.scrollbar.size.override` to 30
+* I set `widget.non-native-theme.scrollbar.style` to 4
+
+However, I also found that the sidebar scrollbar and the story river scrollbar were conflicting. I could never access the sidebar scrollbar. So with the help fo Jennfer S from the TiddlyWiki Discourse group, I created a tiddler tagged `$:/tags/Stylesheet`, type set to `text/css`, and added the following:
+
+(note that the Sidebar resizer plugin conflicts with this solution so you will have to disable it)
+
+```
+.tc-sidebar-scrollable {
+direction: rtl;
+}
+
+.tc-sidebar-scrollable div {
+direction: ltr;
+}
+```</pre>
 </div>
 <div created="20201119005144256" modified="20201119010037571" tags="Links" title="Auto-complete for links">
 <pre>What a glorious day it was for TiddlyWiki when snowgoon88 unleased his comptext plugin on the world. Now when you type `[[` , you are given auto-complete suggestions. Select a suggestion by using the up and down arrow keys on your keyboard, and hitting enter. Or keep typing and hit enter when you have the text you want.
@@ -13810,6 +13870,27 @@ Drag $:/.giffmex/Buttons/more-tiddler-edit-actions and $:/.giffmex/EditTemplate/
 </div>
 <div created="20210318232739770" modified="20210318232824382" tags="Widgets Lists" title="Count widgets">
 <pre>The basic snippet is `&lt;$count filter=&quot;[tag[Examples]]&quot;/&gt;`</pre>
+</div>
+<div created="20221112221815591" modified="20221112224022271" tags="Links [[Tiddler creation]]" title="Create tiddlers based on templates from missing links">
+<pre>Okay, so you used [[Custom new tiddler buttons]] to master the art of creating new tiddlers with custom characteristics already added (tags, fields, text, etc). Great job! But the most natural way to create a new tiddler is often clicking a link to a missing tiddler. But you can't create custom new tiddlers when doing so, right?
+
+Wrong! There is, in fact, a way to do this. Open [[$:/language/MissingTiddler/Hint]] and replace its contents with the following: 
+
+```
+Your custom new tiddler button: &lt;$button class=&quot;tc-btn-invisible&quot;&gt;&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&lt;&lt;currentTiddler&gt;&gt; $param=&quot;&quot;/&gt;{{$:/core/images/edit-button}}&lt;/$button&gt;
+
+Regular tiddler {{||$:/core/ui/Buttons/edit}}
+```
+
+Add whatever pieces you want to automatically appear in your custom new tiddler:
+
+* Change `Your custom new tiddler button` to whatever your button creates, e.g., `New contact tiddler:` or `New recipe tiddler`
+* Do you want all new tiddlers created by this button to have a specific tag? Add `tags=&quot;&quot;` and put the tag between the double quotes
+* Do you want them to have specific text in the text field? Add `text=&quot;&quot;` and put the content between the double quotes
+* Do you want them populated with certain custom fields? (for example, email field and address field for contact tiddlers): add `email=&quot;&quot;` and `address=&quot;&quot;`
+* If you use a tiddler as a template for new tiddlers made by this button, add its title between the double quotes for the $param. Otherwise just delete `$param=&quot;&quot;` if you don't plan to use it.
+
+You can add as many custom new tiddlers to this as you like, not just one. Just copy, paste and tweak the first section above. I recommend leaving a way to create regular tiddlers.</pre>
 </div>
 <div created="20210114001445753" modified="20210114003820244" tags="Tags Lists" title="Cross-indexing by two topics (X-list adaptation)">
 <pre>Sorry, everyone, this one is just a reminder for me. I created a modification of the [[X-list plugin|http://tobibeer.github.io/tw5-xlist/#Welcome]]. To cross index tiddlers by topics (tags) and by a specific field. And transclude the tiddler contents rather than view links to the tiddlers. And then export as a static HTML with page breaks between the topics.
@@ -14174,6 +14255,9 @@ Using the example above: `&lt;&lt;list-links filter:&quot;[regexp:bird[Sparrow]s
 <div created="20201116162122150" modified="20201116162122150" title="Filters">
 <pre></pre>
 </div>
+<div created="20221002110922270" modified="20221002110922270" title="Firefox">
+<pre></pre>
+</div>
 <div created="20201116155531171" def="Add a floating column. A trick I used briefly, then quickly forgot about and don't use anymore." modified="20210913134022359" tags="Columns" title="Floating columns in a tiddler">
 <pre>&lt;span class=&quot;rightcolumn&quot;&gt;
 
@@ -14286,6 +14370,11 @@ Insert the actual time (hour and minute) to your note to track your progress on 
 ## `&lt;a href='#tiptop' class='tc-btn-invisible tc-tiddlylink' title='go back to top'&gt;{{$:/.giffmex/images/bluearrowup}}&lt;/a&gt;`
 
 What these steps do is create an anchor named tiptop in the title of the tiddler. The a href's link to that anchor and take you to the top of the static HTML. It won't work in your TiddlyWiki file, but will work in a static HTML you export from the tiddler.</pre>
+</div>
+<div created="20220802181513161" modified="20220802181815462" tags="Fields Tabs Unfinished" title="Large editable fields in tabs">
+<pre>See https://giffmex.org/experiments/July26.2022.experiment.html , click the slider arrow to the left of Animals, then click the slider arrow to the left of 'fields - Animals' to see an example of this.
+
+This is actually a number of innovations at once. I need time to write this up, and am using this tiddler as a placeholder to remind me to do so.</pre>
 </div>
 <div created="20210621150900161" modified="20210621151150268" tags="Tags [[View Template]]" title="Limit viewtemplate tiddlers so they only show under tiddlers that are tags">
 <pre>I needed to know how to make it so that a certain viewtemplate tiddler would only show under tiddlers that were also tags. (I had a viewtemplate tiddler that was a list-search. I didn't want it showing under every tiddler).
@@ -14503,6 +14592,13 @@ There are four steps:
 </div>
 <div created="20201116051711402" modified="20201116051711402" title="Navigation">
 <pre></pre>
+</div>
+<div created="20220802174909546" modified="20220802180105883" tags="Tags Buttons" title="New button with tags to current plus extra tag">
+<pre>```
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; tags={{{ [{!!title}format:titlelist[]] [[note]] :and[join[ ]] }}} /&gt; ^^{{$:/core/images/new-button}}^^&lt;/$button&gt;
+```
+
+To be used in a list. Not sure if the tags separate multiword titles...</pre>
 </div>
 <div created="20201126192202176" modified="20201126193317707" title="New here button with backlink">
 <pre>TiddlyWiki has always had 'new tiddler here' and 'new journal tiddler here' buttons that create new tiddlers tagged with the title of the originating tiddler. But for Stroll I wanted to avoid tags and focus on links. So I created 'new here with backlink' and 'new journal here with backlink', that link back to the originating tiddler. Used in combination with [[Bi-directional links]], once you click these buttons, you create a mutual interlinking between the originating tiddler and new tiddler.
@@ -14961,11 +15057,59 @@ For an example, see $:/.giffmex/.Stylesheet/Tags
 <div created="20210707114416295" modified="20210913143556608" tags="Buttons Macros [[Hidden content]] Links Writing [[Tiddler creation]]" title="Subsume macro (easy way to view and open hidden content)">
 <pre>I previously gave instructions for a 'hideme' macro. It has been replaced by my Subsume macro, so check that out [ext[here|https://giffmex.org/gifts/subsume.html]].</pre>
 </div>
+<div created="20220802180708207" modified="20220802181321952" tags="Macros Lists Navigation Links" title="Table of contents based on backlinks rather than tabs">
+<pre>`&lt;&lt;btoc tag:&quot;HelloThere&quot; curses:&quot;5&quot;&gt;&gt;` is the macro you will use. It says 'tag- but really HelloThere is the root tiddler for the TOC, and you can change that to whatever tiddler you wish. The table of contents will start will all tiddlers backlinking to the root tiddler. The number of curses is a safeguard. Too many recursive links back and forth between tiddlers, and TiddlyWiki will display an infinite recursion error and the file will lock up and have to be refreshed.
+
+The following needs to be put in a tiddler tagged `$:/tags/Macro`, and you can title it whatever you like, preferably starting with `$:/`.
+
+```
+\define btoc-body(tag,sort:&quot;&quot;,itemClassFilter,exclude,path,curses,swear:&quot;0&quot;,)
+&lt;ol class=&quot;tc-toc&quot;&gt;
+&lt;$vars swear={{{[&lt;__swear__&gt;add[1]]}}}&gt;
+&lt;$list filter=&quot;[&lt;swear&gt;compare:number:lt&lt;__curses__&gt;]&quot; emptyMessage=&quot;&quot;&quot;...&quot;&quot;&quot;&gt;
+&lt;$list filter=&quot;&quot;&quot;[title&lt;__tag__&gt;backlinks[]!has[draft.of]$sort$] -[&lt;__tag__&gt;] -[enlist&lt;__exclude__&gt;]&quot;&quot;&quot;&gt;
+    &lt;$vars item=&lt;&lt;currentTiddler&gt;&gt; path={{{ [&lt;__path__&gt;addsuffix[/]addsuffix&lt;__tag__&gt;] }}}&gt;
+      &lt;$set name=&quot;excluded&quot; filter=&quot;&quot;&quot;[enlist&lt;__exclude__&gt;] [&lt;__tag__&gt;]&quot;&quot;&quot;&gt;
+        &lt;$set name=&quot;toc-item-class&quot; filter=&lt;&lt;__itemClassFilter__&gt;&gt; emptyValue=&quot;toc-item-selected&quot; value=&quot;toc-item&quot;&gt;
+          &lt;li class=&lt;&lt;toc-item-class&gt;&gt;&gt;
+            &lt;$list filter=&quot;[all[current]toc-link[no]]&quot; emptyMessage=&quot;&lt;$link to={{{ [&lt;currentTiddler&gt;get[target]else&lt;currentTiddler&gt;] }}}&gt;&lt;$view field='caption'&gt;&lt;$view field='title'/&gt;&lt;/$view&gt;&lt;/$link&gt;&quot;&gt;
+              &lt;&lt;toc-caption&gt;&gt;
+            &lt;/$list&gt;
+            &lt;$macrocall $name=&quot;btoc-body&quot; tag=&lt;&lt;item&gt;&gt; sort=&lt;&lt;__sort__&gt;&gt; itemClassFilter=&lt;&lt;__itemClassFilter__&gt;&gt; exclude=&lt;&lt;excluded&gt;&gt; 
+                 path=&lt;&lt;path&gt;&gt; swear=&lt;&lt;swear&gt;&gt; curses=&lt;&lt;__curses__&gt;&gt;/&gt;
+          &lt;/li&gt;
+        &lt;/$set&gt;
+      &lt;/$set&gt;
+    &lt;/$vars&gt;
+  &lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$vars&gt;
+&lt;/ol&gt;
+\end
+
+\define btoc(tag,sort:&quot;&quot;,itemClassFilter:&quot;&quot;,curses:&quot;5&quot;)
+&lt;$macrocall $name=&quot;btoc-body&quot;  tag=&lt;&lt;__tag__&gt;&gt; sort=&lt;&lt;__sort__&gt;&gt; itemClassFilter=&lt;&lt;__itemClassFilter__&gt;&gt; curses=&lt;&lt;__curses__&gt;&gt; /&gt;
+\end
+```</pre>
+</div>
 <div created="20201116050653800" modified="20201116050653801" title="Tables">
 <pre></pre>
 </div>
 <div created="20201116033855461" modified="20201116050153261" title="Tabs">
 <pre></pre>
+</div>
+<div created="20220129140228100" modified="20220129142229287" tags="Tags Fields tagborder Colors" title="Tag color and border color">
+<pre>If you would like a certain tag to have a border, like the colorful &quot;tagborder&quot; tag above, you can specify this in the color field of the tiddler for that tag.
+
+In the tiddler [[tagborder]] I added this to the color field: `DeepPink;border:2px solid #b49` and view the color field. You will see the color of the tag (HTML color name) followed by the three properties of the border (width, decoration and color code or color name). You don't need to specify the tag color first.
+
+Note that once you add the information, the color field will turn black and you won't have access to your style information. So save it somewhere if you think you will need to copy and paste it in another tiddler.
+
+For a list of color names, see https://www.w3schools.com/colors/colors_names.asp
+
+To pick a color code, see http://www.ficml.org/jemimap/style/color/wheel.html
+
+</pre>
 </div>
 <div created="20201116035132428" modified="20201116045546632" tags="Tags [[Edit template]]" title="Tag editor dropdown">
 <pre>One thing I don't like about plain TiddlyWikis is that when you open the tag editor, you immediately have to scroll down to find all but the very first tabs listed. Also, I hate that brownish gold color for tabs. So I created a stylesheet that displays the tags in rows and gives them a readable gray background. Try it by editing this tiddler and adding a tag.
@@ -14975,6 +15119,9 @@ And if you want a different color than my gray, you can modify it, too.
 Drag $:/.giffmex/.Stylesheet/Tags to your file.
 
 </pre>
+</div>
+<div color="DeepPink;border:2px solid #b49" created="20220129140550843" modified="20220129141940825" title="tagborder">
+<pre></pre>
 </div>
 <div created="20201116035755446" modified="20201116050627169" title="Tags">
 <pre></pre>
@@ -15084,6 +15231,9 @@ Drag these into your file:
 
 * [[$:/.giffmex/Buttons/EditorToolbar/umlaut]]
 * [[$:/.giffmex/images/umlaut]]</pre>
+</div>
+<div color="#ff0000" created="20220802181835228" modified="20220802181837666" title="Unfinished">
+<pre></pre>
 </div>
 <div color="#ffff80" created="20201116051144383" modified="20201119020752216" title="View Template">
 <pre></pre>

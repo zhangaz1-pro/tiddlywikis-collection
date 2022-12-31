@@ -319,7 +319,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div bag="default" created="20141202200448128" creator="Tobias Beer" modified="20151124164339680" modifier="Tobias Beer" revision="0" summary="the [[list-search]] macro allows to filter list outputs" tags="$:/tags/Macro" title="$:/.tb/macros/list-search" type="text/vnd.tiddlywiki">
+<div created="20141202200448128" creator="Tobias Beer" modified="20151124164339680" modifier="Tobias Beer" summary="the [[list-search]] macro allows to filter list outputs" tags="$:/tags/Macro" title="$:/.tb/macros/list-search" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define list-search(
 filter:&quot;[tags[]]&quot;,
 search:&quot;search:title&quot;,
@@ -346,7 +346,7 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div bag="default" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/lnk">
+<div tags="$:/tags/Macro" title="$:/.tb/macros/lnk" revision="0" bag="default">
 <pre>\define lnk(title)
 &lt;$reveal type=&quot;match&quot; default=&quot;&quot; text=&quot;&quot;&quot;$title$&quot;&quot;&quot;&gt;
 &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
@@ -356,7 +356,7 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div bag="default" created="20151123080831360" creator="Tobias Beer" modified="20151123102046740" modifier="Tobias Beer" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/plugin-docs" type="text/vnd.tiddlywiki">
+<div created="20151123080831360" creator="Tobias Beer" modified="20151123102046740" modifier="Tobias Beer" tags="$:/tags/Macro" title="$:/.tb/macros/plugin-docs" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define plugin-author() tobibeer
 \define plugin-docs(plugin)
 &lt;$vars plugin=&quot;$plugin$&quot;&gt;
@@ -384,10 +384,10 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/$vars&gt;
 \end</pre>
 </div>
-<div bag="default" revision="0" title="$:/.tb/macros/plugin-docs/tab-template">
+<div title="$:/.tb/macros/plugin-docs/tab-template" revision="0" bag="default">
 <pre>&lt;&lt;plugin-docs-tab&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150930072145911" creator="Tobias Beer" modified="20151125143850534" modifier="Tobias Beer" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/pop" type="text/vnd.tiddlywiki">
+<div created="20150930072145911" creator="Tobias Beer" modified="20151125143850534" modifier="Tobias Beer" tags="$:/tags/Macro" title="$:/.tb/macros/pop" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define pop(label, content, pop-class, animate, position, tooltip, btn-class, btn-tag:&quot;button&quot;, btn-selectedClass, state-id)
 &lt;$set name=&quot;state&quot; value=&lt;&lt;qualify &quot;&quot;&quot;$:/state/pop-$content$-$state-id$&quot;&quot;&quot;&gt;&gt;&gt;
 &lt;$button popup=&lt;&lt;state&gt;&gt; class=&quot;pop-btn $btn-class$&quot; tooltip=&quot;$tooltip$&quot; tag=&quot;$btn-tag$&quot; selectedClass=&quot;pop-btn-selected $btn-selectedClass$&quot;&gt;$label$&lt;/$button&gt;&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;state&gt;&gt; animate=&quot;$animate$&quot; position=&quot;$position$&quot; class=&quot;tc-popup pop-popup $pop-class$&quot; style=&quot;$pop-style$&quot;&gt;
@@ -397,7 +397,7 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div bag="default" created="20151125143316476" creator="Tobias Beer" modified="20151125143316476" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/macros/pop/styles" type="text/css">
+<div created="20151125143316476" creator="Tobias Beer" modified="20151125143316476" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/.tb/macros/pop/styles" type="text/css" revision="0" bag="default">
 <pre>.pop-tiddler {
   padding:0 10px;
   background:white;
@@ -413,14 +413,14 @@ placeholder=&quot;$placeholder$&quot;/&gt;
   box-shadow: 2px 2px 15px 1px rgba(119, 119, 119, 0.5);
 }</pre>
 </div>
-<div bag="default" revision="0" summary="displays a link to a tiddler and its source in a codeblock" tags="$:/tags/Macro" title="$:/.tb/macros/source">
+<div summary="displays a link to a tiddler and its source in a codeblock" tags="$:/tags/Macro" title="$:/.tb/macros/source" revision="0" bag="default">
 <pre>\define source(source)
 [[$source$]]:
 
 &lt;pre&gt;&lt;$view tiddler=&quot;$source$&quot; format=&quot;text&quot;/&gt;&lt;/pre&gt;
 \end</pre>
 </div>
-<div bag="default" created="20150109114505490" modified="20150114111445596" revision="0" summary="outputs a definition list of summaries for tiddlers matching a filter, by default tagging to the current tiddler" tags="$:/tags/Macro" title="$:/.tb/macros/summaries">
+<div created="20150109114505490" modified="20150114111445596" summary="outputs a definition list of summaries for tiddlers matching a filter, by default tagging to the current tiddler" tags="$:/tags/Macro" title="$:/.tb/macros/summaries" revision="0" bag="default">
 <pre>\define summaries(filter:&quot;[tag{!!title}sort[]]&quot;)
 &lt;dl&gt;
 &lt;$list filter=&quot;$filter$&quot;&gt;
@@ -430,12 +430,12 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/dl&gt;
 \end</pre>
 </div>
-<div bag="default" created="20141209095314198" creator="Tobias Beer" modified="20150117145006725" modifier="Tobias Beer" revision="0" summary="returns a link to a tiddler on tw.com" tags="$:/tags/Macro" title="$:/.tb/macros/tw.com" type="text/vnd.tiddlywiki">
+<div created="20141209095314198" creator="Tobias Beer" modified="20150117145006725" modifier="Tobias Beer" summary="returns a link to a tiddler on tw.com" tags="$:/tags/Macro" title="$:/.tb/macros/tw.com" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define tw(tiddler,pretty)
 &lt;$reveal type=&quot;match&quot; text=&quot;&quot; default=&quot;$pretty$&quot;&gt;[ext[$tiddler$|http://tiddlywiki.com/#$tiddler$]]&lt;/$reveal&gt;&lt;$reveal type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;$pretty$&quot;&gt;[ext[$pretty$|http://tiddlywiki.com/#$tiddler$]]&lt;/$reveal&gt;
 \end</pre>
 </div>
-<div bag="default" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/xlist-published">
+<div tags="$:/tags/Macro" title="$:/.tb/macros/xlist-published" revision="0" bag="default">
 <pre>\define xlist-published(tag)
 &lt;&lt;xlist
 groups: &quot;[tag[$tag$]sort[title]]&quot;
@@ -443,7 +443,7 @@ template: [[$:/.tb/templates/xlist-published]]
 sort:&quot;[!sort[published]]&quot;&gt;&gt;
 \end</pre>
 </div>
-<div bag="default" created="20141119102634212" creator="Tobias Beer" list-after="$:/themes/tiddlywiki/vanilla/base" modified="20151122172347817" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/styles" type="text/css">
+<div created="20141119102634212" creator="Tobias Beer" list-after="$:/themes/tiddlywiki/vanilla/base" modified="20151122172347817" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/.tb/styles" type="text/css" revision="0" bag="default">
 <pre>a.tc-tiddlylink-shadow {
 color:#567;
 font-weight:normal;
@@ -667,7 +667,7 @@ color:#ddd;
 color:#999;
 }</pre>
 </div>
-<div bag="default" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/styles/xlist" type="text/css">
+<div tags="$:/tags/Stylesheet" title="$:/.tb/styles/xlist" type="text/css" revision="0" bag="default">
 <pre>.start,
 .start tr,
 .start td,
@@ -735,7 +735,7 @@ content:&quot;&quot;;
 font-size:1.3em;
 }</pre>
 </div>
-<div bag="default" revision="0" title="$:/.tb/templates/flat-list">
+<div title="$:/.tb/templates/flat-list" revision="0" bag="default">
 <pre>&lt;$tiddler tiddler=&lt;&lt;item&gt;&gt;&gt;
 &lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt;
 &lt;/$tiddler&gt;
@@ -743,12 +743,12 @@ font-size:1.3em;
 &lt;$list filter=&quot;[&lt;item&gt;tags[]] +[tag&lt;currentTiddler&gt;]&quot; template=&quot;$:/core/ui/TagTemplate&quot;/&gt;
 &lt;/span&gt;&lt;br&gt;</pre>
 </div>
-<div bag="default" revision="0" title="$:/.tb/templates/plugin-list">
+<div title="$:/.tb/templates/plugin-list" revision="0" bag="default">
 <pre>\define plugin() $:/plugins/tobibeer/$(currentTiddler)$
 &lt;dt&gt;&lt;$link&gt;tobibeer/{{!!title}}&lt;/$link&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;$transclude tiddler=&lt;&lt;plugin&gt;&gt; field=&quot;description&quot;/&gt;&lt;/dd&gt;</pre>
 </div>
-<div bag="default" revision="0" title="$:/.tb/templates/plugin-topics">
+<div title="$:/.tb/templates/plugin-topics" revision="0" bag="default">
 <pre>\define prefix() $(plugin)$-
 
 &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
@@ -758,39 +758,39 @@ font-size:1.3em;
 &lt;$link&gt;&lt;$list filter=&quot;[all[current]removeprefix&lt;prefix&gt;]&quot;&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$list&gt;&lt;/$link&gt;&lt;/$list&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div bag="default" revision="0" title="$:/.tb/templates/tab/xlist/publication">
+<div title="$:/.tb/templates/tab/xlist/publication" revision="0" bag="default">
 <pre>All [[published|Publications]] &lt;$link to=&lt;&lt;currentTab&gt;&gt;&gt;&lt;&lt;currentTab&gt;&gt;&lt;/$link&gt; by [[Topics]]...
 
 &lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;
 &lt;&lt;xlist-published Topics&gt;&gt;
 &lt;/$tiddler&gt;</pre>
 </div>
-<div bag="default" revision="0" title="$:/.tb/templates/tab/xlist/topic">
+<div title="$:/.tb/templates/tab/xlist/topic" revision="0" bag="default">
 <pre>All [[Publications]] on &lt;$link to=&lt;&lt;currentTab&gt;&gt;&gt;&lt;&lt;currentTab&gt;&gt;&lt;/$link&gt;...
 
 &lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;
 &lt;&lt;xlist-published Publications&gt;&gt;
 &lt;/$tiddler&gt;</pre>
 </div>
-<div bag="default" created="20151124164739968" creator="Tobias Beer" modified="20151124164753303" modifier="Tobias Beer" revision="0" title="$:/.tb/templates/xlist-published" type="text/vnd.tiddlywiki">
+<div created="20151124164739968" creator="Tobias Beer" modified="20151124164753303" modifier="Tobias Beer" title="$:/.tb/templates/xlist-published" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;dd&gt;
 @@color:grey;&lt;$view field=&quot;published&quot; format=&quot;date&quot; template=&quot;YYYY-0MM-0DD&quot;/&gt;@@
 &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
 &lt;/dd&gt;</pre>
 </div>
-<div bag="default" list-after="$:/core/ui/ViewTemplate/body" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/back-top">
+<div list-after="$:/core/ui/ViewTemplate/body" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/back-top" revision="0" bag="default">
 <pre>&lt;div class=&quot;back-top&quot;&gt;
 &lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field=title/&gt; ^&lt;/$link&gt;
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" list-after="$:/.tb/ui/ViewTemplate/summary" list-before="$:/core/ui/ViewTemplate/body" revision="0" summary="shows default values for parameters" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/default">
+<div list-after="$:/.tb/ui/ViewTemplate/summary" list-before="$:/core/ui/ViewTemplate/body" summary="shows default values for parameters" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/default" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[all[current]has[default]]&quot;&gt;
 
 ; default
 : {{!!default}}
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20151124163323041" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" list-before="$:/.tb/ui/ViewTemplate/back-top" modified="20151124164331239" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/examples" type="text/vnd.tiddlywiki">
+<div created="20151124163323041" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" list-before="$:/.tb/ui/ViewTemplate/back-top" modified="20151124164331239" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define state() $:/state/list-search/examples/$(currentTiddler)$
 \define filter() [tag[Examples]]-[!tag&lt;currentTiddler&gt;] [list[$(currentTiddler)$!!examples]]
 \define show-when() $(filter)$ +[limit[1]]
@@ -811,14 +811,14 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;&lt;examples-list&gt;&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20150116225310488" creator="Tobias Beer" modified="20151124163840714" modifier="Tobias Beer" revision="0" tags="" title="$:/.tb/ui/ViewTemplate/examples/item" type="text/vnd.tiddlywiki">
+<div created="20150116225310488" creator="Tobias Beer" modified="20151124163840714" modifier="Tobias Beer" tags="" title="$:/.tb/ui/ViewTemplate/examples/item" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;dt&gt;&lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;/dt&gt;
 &lt;dd&gt;@@color:grey;//{{!!summary}}//@@&lt;/dd&gt;
 &lt;$list filter=&quot;[[Parameters]tagging[]]+[all[current]tags[]]+[tag[Parameters]]+[limit[1]]&quot; variable=none&gt;
 &lt;dd&gt;@@color:#666;parameters:@@ &lt;span class=&quot;example-parameters&quot;&gt;&lt;$list filter=&quot;[[Parameters]tagging[]]+[all[current]tags[]]+[tag[Parameters]]&quot;/&gt;&lt;/span&gt;&lt;/dd&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" list-before="$:/core/ui/ViewTemplate/title" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/menu">
+<div list-before="$:/core/ui/ViewTemplate/title" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/menu" revision="0" bag="default">
 <pre>&lt;div class=&quot;menu tc-tiddler-controls&quot;&gt;
 &lt;$link to=&quot;Welcome&quot;&gt;{{$:/core/images/home-button}}&lt;/$link&gt; ·
 [[Variants]] ·
@@ -827,7 +827,7 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 [[Installation]]
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" created="20141122165208913" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" modified="20150115090527118" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/source">
+<div created="20141122165208913" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" modified="20150115090527118" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/source" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[all[current]tag[$:/tags/ShowSource]]
 [all[current]prefix[$:/.tb/]]
 [all[current]prefix[$:/template/]]
@@ -837,7 +837,7 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;pre&gt;&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; format=&quot;text&quot;/&gt;&lt;/pre&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" list-after="$:/core/ui/ViewTemplate/tags" revision="0" summary="shows a summary or link" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/summary-link">
+<div list-after="$:/core/ui/ViewTemplate/tags" summary="shows a summary or link" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/summary-link" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[all[current]has[summary]]&quot;&gt;
 @@color:grey; //&lt;$transclude field=&quot;summary&quot; mode=&quot;block&quot;/&gt; //@@
 &lt;/$list&gt;
@@ -845,7 +845,7 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;$transclude field=&quot;url&quot; mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20151125135422305" creator="Tobias Beer" modified="20151125144547565" modifier="Tobias Beer" revision="0" tags="" title="$:/.tb/ui/ViewTemplate/title" type="text/vnd.tiddlywiki">
+<div created="20151125135422305" creator="Tobias Beer" modified="20151125144547565" modifier="Tobias Beer" tags="" title="$:/.tb/ui/ViewTemplate/title" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define title-popup() &lt;&lt;pop » &quot;$:/.tb/templates/plugin-topics&quot; &quot;pretty pop-tiddler title-popup&quot; btn-class:&quot;tc-btn-invisible btn-title-popup&quot;&gt;&gt;
 \define prefix-plugin() $(currentTiddler)$-
 \define prefix() $(plugin)$-
@@ -871,26 +871,26 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20150114110444966" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" modified="20151124165538361" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/xlists" type="text/vnd.tiddlywiki">
+<div created="20150114110444966" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" modified="20151124165538361" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/xlists" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[all[current]tag[Publications]]&quot;&gt;
 
 All &lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt; by [[topic|Topics]]...
 &lt;&lt;xlist-published Topics&gt;&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" revision="0" title="$:/config/AutoSave">
+<div title="$:/config/AutoSave" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div bag="default" revision="0" title="$:/config/Navigation/UpdateAddressBar">
+<div title="$:/config/Navigation/UpdateAddressBar" revision="0" bag="default">
 <pre>permalink</pre>
 </div>
-<div bag="default" revision="0" title="$:/config/Navigation/UpdateHistory">
+<div title="$:/config/Navigation/UpdateHistory" revision="0" bag="default">
 <pre>yes</pre>
 </div>
-<div bag="default" revision="0" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<div title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" revision="0" bag="default">
 <pre>show</pre>
 </div>
-<div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" revision="0" title="$:/core" type="application/json" version="5.1.10-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.10-prerelease" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/Acknowledgements&quot;: {
@@ -6923,7 +6923,7 @@ All &lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt; by [[topic|Topics]]...
     }
 }</pre>
 </div>
-<div bag="default" module-type="widget" revision="0" summary="modified by tobibeer to allow for iterators, see [[#1330|https://github.com/Jermolene/TiddlyWiki5/pull/1330]]" title="$:/core/modules/widgets/list.js" type="application/javascript">
+<div module-type="widget" summary="modified by tobibeer to allow for iterators, see [[#1330|https://github.com/Jermolene/TiddlyWiki5/pull/1330]]" title="$:/core/modules/widgets/list.js" type="application/javascript" revision="0" bag="default">
 <pre>/*\
 title: $:/core/modules/widgets/list.js
 type: application/javascript
@@ -7249,7 +7249,7 @@ exports.listitem = ListItemWidget;
 
 })();</pre>
 </div>
-<div bag="default" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/shadow">
+<div tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/shadow" revision="0" bag="default">
 <pre>\define lingo-base() $:/language/EditTemplate/Shadow/
 \define pluginLinkBody()
 &lt;$link to=&quot;&quot;&quot;$(pluginTitle)$&quot;&quot;&quot;&gt;
@@ -7286,7 +7286,7 @@ exports.listitem = ListItemWidget;
 
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20151125135349732" creator="Tobias Beer" modified="20151125144521169" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/title" type="text/vnd.tiddlywiki">
+<div created="20151125135349732" creator="Tobias Beer" modified="20151125144521169" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/title" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define title-styles()
 fill:$(foregroundColor)$;
 \end
@@ -7322,13 +7322,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" revision="0" title="$:/DefaultTiddlers">
+<div title="$:/DefaultTiddlers" revision="0" bag="default">
 <pre>Welcome</pre>
 </div>
-<div bag="default" revision="0" title="$:/isEncrypted">
+<div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div author="Felix Küppers" bag="default" core-version="&gt;=5.1.5" created="20150930112239862" creator="Tobias Beer" dependents="" description="TopStoryView - Navigation scrolls tiddlers to the top" list="Configuration License Readme" plugin-type="plugin" released="" revision="0" source="https://github.com/felixhayashi/TW5-TopStoryView" title="$:/plugins/felixhayashi/topstoryview" type="application/json" version="0.1.0">
+<div author="Felix Küppers" core-version="&gt;=5.1.5" created="20150930112239862" creator="Tobias Beer" dependents="" description="TopStoryView - Navigation scrolls tiddlers to the top" list="Configuration License Readme" plugin-type="plugin" released="" source="https://github.com/felixhayashi/TW5-TopStoryView" title="$:/plugins/felixhayashi/topstoryview" type="application/json" version="0.1.0" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/felixhayashi/topstoryview/config.js&quot;: {
@@ -7366,7 +7366,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 }</pre>
 </div>
-<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Crosslists and group tiddlers with relations to two categories" documentation="https://tobibeer.github.io/tw5-plugins#xlist" list="readme" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-xlist" title="$:/plugins/tobibeer/xlist" type="application/json" version="0.5.0">
+<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Crosslists and group tiddlers with relations to two categories" documentation="https://tobibeer.github.io/tw5-plugins#xlist" list="readme" plugin-type="plugin" source="https://github.com/tobibeer/tw5-xlist" title="$:/plugins/tobibeer/xlist" type="application/json" version="0.5.0" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/xlist/readme&quot;: {
@@ -7387,33 +7387,33 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 }</pre>
 </div>
-<div bag="default" created="20150113092858673" modified="20150117162036414" revision="0" title="$:/SiteSubtitle">
+<div created="20150113092858673" modified="20150117162036414" title="$:/SiteSubtitle" revision="0" bag="default">
 <pre>crosslist by category</pre>
 </div>
-<div bag="default" created="20150113092853613" creator="Tobias Beer" modified="20151124101140812" modifier="Tobias Beer" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
+<div created="20150113092853613" creator="Tobias Beer" modified="20151124101140812" modifier="Tobias Beer" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>xlist</pre>
 </div>
-<div bag="default" revision="0" title="$:/status/UserName">
+<div title="$:/status/UserName" revision="0" bag="default">
 <pre>Tobias Beer</pre>
 </div>
-<div list="Welcome" title="$:/StoryList">
+<div list="Welcome" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
-<div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
+<div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/info/browser&quot;: {
             &quot;title&quot;: &quot;$:/info/browser&quot;,
-            &quot;text&quot;: &quot;yes&quot;
+            &quot;text&quot;: &quot;no&quot;
         },
         &quot;$:/info/node&quot;: {
             &quot;title&quot;: &quot;$:/info/node&quot;,
-            &quot;text&quot;: &quot;no&quot;
+            &quot;text&quot;: &quot;yes&quot;
         }
     }
 }</pre>
 </div>
-<div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.10-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.10-prerelease" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/snowwhite/base&quot;: {
@@ -7424,7 +7424,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 }</pre>
 </div>
-<div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.10-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.10-prerelease" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/vanilla/base&quot;: {
@@ -7518,7 +7518,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 }</pre>
 </div>
-<div bag="default" created="20150114234416137" creator="Tobias Beer" modified="20151124162018336" modifier="Tobias Beer" revision="0" tags="" title="2DO" type="text/vnd.tiddlywiki">
+<div created="20150114234416137" creator="Tobias Beer" modified="20151124162018336" modifier="Tobias Beer" tags="" title="2DO" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Done
 
 ; Dave Gifford's request
@@ -7534,16 +7534,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 #* this seems to be what ''Giffmex'' is after
 &lt;&lt;&lt;</pre>
 </div>
-<div bag="default" created="20150114200151544" modified="20150115142946329" publication="Articles" published="20101201" revision="0" tags="Business Articles" title="A Business Article" topic="Business">
+<div created="20150114200151544" modified="20150115142946329" publication="Articles" published="20101201" tags="Business Articles" title="A Business Article" topic="Business" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113093732673" modified="20150116005641280" publication="Journals" published="20131224000000" revision="0" tags="Journals Business" title="A Business Journal" topic="Business">
+<div created="20150113093732673" modified="20150116005641280" publication="Journals" published="20131224000000" tags="Journals Business" title="A Business Journal" topic="Business" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113093743466" modified="20150115143015806" publication="Whitepapers" published="20140625000000" revision="0" tags="Whitepapers Business" title="A Business Whitepaper" topic="Business">
+<div created="20150113093743466" modified="20150115143015806" publication="Whitepapers" published="20140625000000" tags="Whitepapers Business" title="A Business Whitepaper" topic="Business" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150116224920538" modified="20150117084747443" revision="0" summary="a simple grouped list for all tiddlers matching the group categories" tags="filter groups Examples each" title="All By Groups">
+<div created="20150116224920538" modified="20150117084747443" summary="a simple grouped list for all tiddlers matching the group categories" tags="filter groups Examples each" title="All By Groups" revision="0" bag="default">
 <pre>The following example lists all [[Publications]] by publication categories...
 
 `&lt;&lt;xlist filter:&quot;[all[]]&quot; groups:&quot;[tag[Publications]sort[]]&quot;&gt;&gt;`
@@ -7556,19 +7556,19 @@ Same goes for grouping by the discrete values of a field, e.g. ''topic'':
 
 &gt; &lt;&lt;xlist filter:&quot;[all[]]&quot; each:topic&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150113093715152" modified="20150115142931609" publication="Articles" revision="0" tags="Articles Economics" title="An Economics Article" topic="Economics">
+<div created="20150113093715152" modified="20150115142931609" publication="Articles" tags="Articles Economics" title="An Economics Article" topic="Economics" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113093653121" modified="20150116004238292" publication="Journals" published="20120817" revision="0" tags="Journals Economics" title="An Economics Journal" topic="Economics">
+<div created="20150113093653121" modified="20150116004238292" publication="Journals" published="20120817" tags="Journals Economics" title="An Economics Journal" topic="Economics" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113102945041" modified="20150115143027291" publication="Journals" published="20141231" revision="0" tags="Journals Business" title="Another Business Journal" topic="Business">
+<div created="20150113102945041" modified="20150115143027291" publication="Journals" published="20141231" tags="Journals Business" title="Another Business Journal" topic="Business" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113093611471" modified="20150114212018870" revision="0" tags="Publications" title="Articles" xlist="Economics Business">
+<div created="20150113093611471" modified="20150114212018870" tags="Publications" title="Articles" xlist="Economics Business" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150114111139018" creator="Tobias Beer" modified="20151124165515145" modifier="Tobias Beer" revision="0" summary="automatically show ''xlist'' in a custom ~ViewTemplate for index tiddlers matching a filter" tags="Examples" title="Automatic Indexes" type="text/vnd.tiddlywiki">
+<div created="20150114111139018" creator="Tobias Beer" modified="20151124165515145" modifier="Tobias Beer" summary="automatically show ''xlist'' in a custom ~ViewTemplate for index tiddlers matching a filter" tags="Examples" title="Automatic Indexes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Have a look at tiddler [[Journals]]. Really, open it and look at its text. Neither does it have a `list` field defined, nor does it come with any markup. So, what's going on?
 
 It implements a [[Conditional ViewTemplate Section|http://tb5.tiddlyspot.com/#Conditional%20ViewTemplate%20Section]] as [[explained in this post|https://groups.google.com/d/msg/tiddlywiki/EzypDKdUOFE/JPn7pP8FwqAJ]]...
@@ -7581,10 +7581,10 @@ It implements a [[Conditional ViewTemplate Section|http://tb5.tiddlyspot.com/#Co
 
 Below, a [[Shortcut Macro]] is used in the template &lt;&lt;source [[$:/.tb/ui/ViewTemplate/xlists]]&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150113093250031" list="Whitepapers Journals" modified="20150115093023597" revision="0" tags="Topics" title="Business">
+<div created="20150113093250031" list="Whitepapers Journals" modified="20150115093023597" tags="Topics" title="Business" revision="0" bag="default">
 <pre>&lt;&lt;xlist-published Publications&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150114221826470" modified="20150115001031111" revision="0" summary="for a tabbed view see [[Publications]]" tags="" title="By Publications">
+<div created="20150114221826470" modified="20150115001031111" summary="for a tabbed view see [[Publications]]" tags="" title="By Publications" revision="0" bag="default">
 <pre>&lt;dl class=&quot;xlist&quot;&gt;
 &lt;$list filter=&quot;[tag[Publications]sort[]]&quot;&gt;
 &lt;dt&gt;&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;/dt&gt;
@@ -7596,7 +7596,7 @@ Below, a [[Shortcut Macro]] is used in the template &lt;&lt;source [[$:/.tb/ui/V
 &lt;/$list&gt;
 &lt;/dl&gt;</pre>
 </div>
-<div bag="default" created="20150114221349718" modified="20150115001040134" revision="0" summary="for a tabbed view see [[Topics]]" tags="" title="By Topics">
+<div created="20150114221349718" modified="20150115001040134" summary="for a tabbed view see [[Topics]]" tags="" title="By Topics" revision="0" bag="default">
 <pre>&lt;dl class=&quot;xlist&quot;&gt;
 &lt;$list filter=&quot;[tag[Topics]sort[]]&quot;&gt;
 &lt;dt&gt;&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;/dt&gt;
@@ -7608,7 +7608,7 @@ Below, a [[Shortcut Macro]] is used in the template &lt;&lt;source [[$:/.tb/ui/V
 &lt;/$list&gt;
 &lt;/dl&gt;</pre>
 </div>
-<div bag="default" created="20150114210135777" modified="20150116120032762" revision="0" summary="use the [[groups]] parameter to read the categories from a custom list field" tags="filter groups Examples" title="Custom Category List">
+<div created="20150114210135777" modified="20150116120032762" summary="use the [[groups]] parameter to read the categories from a custom list field" tags="filter groups Examples" title="Custom Category List" revision="0" bag="default">
 <pre>The below example gets the categories from a list field called ''xlist'' at the tiddler [[Articles]].
 
 ```
@@ -7621,7 +7621,7 @@ Below, a [[Shortcut Macro]] is used in the template &lt;&lt;source [[$:/.tb/ui/V
 &lt;&lt;xlist filter:&quot;[tag[Articles]]&quot; groups:&quot;[list[Articles!!xlist]]&quot;&gt;&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div bag="default" created="20150116104754279" modified="20150116121832534" revision="0" summary="constrain tiddlers to be listed to those matching a custom filter [[filter]]" tags="Examples filter groups" title="Custom Filter">
+<div created="20150116104754279" modified="20150116121832534" summary="constrain tiddlers to be listed to those matching a custom filter [[filter]]" tags="Examples filter groups" title="Custom Filter" revision="0" bag="default">
 <pre>Instead of matching the current tiddler as a tag, you can define a [[filter]].
 
 Below, all [[Examples]] are listed, grouped by [[Parameters]] — as in the standard ''list'' field of [[Parameters]] — yet only those tagged [[sort]], i.e. showing how to use the [[sort]] parameter.
@@ -7647,7 +7647,7 @@ groups:&quot;[list[Parameters]]&quot;&gt;&gt;
 
 &gt; &lt;&lt;xlist filter:&quot;[[Examples]tagging[]]-[!tag[sort]]&quot; groups:&quot;[list[Parameters]]&quot;&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150114110809141" modified="20150116102706505" revision="0" summary="defining a custom [[template]] for each matching item" tags="Examples template" title="Custom Item Template">
+<div created="20150114110809141" modified="20150116102706505" summary="defining a custom [[template]] for each matching item" tags="Examples template" title="Custom Item Template" revision="0" bag="default">
 <pre>Here is an example to list items with ''published'' dates:
 
 ```
@@ -7660,19 +7660,19 @@ groups:&quot;[list[Parameters]]&quot;&gt;&gt;
 
 The template &lt;&lt;source [[$:/.tb/templates/xlist-published]]&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150116020738946" creator="Tobias Beer" default="//undefined//" modified="20151124103039325" modifier="Tobias Beer" revision="0" summary="instead of [[groups]], specifies a field the distinct values of which serve as the group categories" tags="Parameters" title="each" type="text/vnd.tiddlywiki">
+<div created="20150116020738946" creator="Tobias Beer" default="//undefined//" modified="20151124103039325" modifier="Tobias Beer" summary="instead of [[groups]], specifies a field the distinct values of which serve as the group categories" tags="Parameters" title="each" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113093304461" list="Journals Articles" modified="20150115093015776" revision="0" tags="Topics" title="Economics">
+<div created="20150113093304461" list="Journals Articles" modified="20150115093015776" tags="Topics" title="Economics" revision="0" bag="default">
 <pre>&lt;&lt;xlist&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150114111406197" creator="Tobias Beer" list="[[No Parameters]] [[For Another Tiddler]] [[Custom Filter]] [[All By Groups]] [[Groups Without Links]] [[Tagging Instead Of List Field]] [[Custom Category List]] [[Custom Item Template]] [[Item Sort Order]] [[Shortcut Macro]] [[Automatic Indexes]] [[Tabs Of Index Tiddlers]] [[Match Field — Group Tags]] [[Match Tag — Each Field Value]] [[Match Field — Each Field Value]] [[Match Tag — Group Tags]]" modified="20151124131852812" modifier="Tobias Beer" revision="0" title="Examples" type="text/vnd.tiddlywiki">
+<div created="20150114111406197" creator="Tobias Beer" list="[[No Parameters]] [[For Another Tiddler]] [[Custom Filter]] [[All By Groups]] [[Groups Without Links]] [[Tagging Instead Of List Field]] [[Custom Category List]] [[Custom Item Template]] [[Item Sort Order]] [[Shortcut Macro]] [[Automatic Indexes]] [[Tabs Of Index Tiddlers]] [[Match Field — Group Tags]] [[Match Tag — Each Field Value]] [[Match Field — Each Field Value]] [[Match Tag — Group Tags]]" modified="20151124131852812" modifier="Tobias Beer" title="Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150116021330134" creator="Tobias Beer" default="`[all[current]tagging[]]` — tiddlers with the current tiddler as a tag" modified="20151124102536365" modifier="Tobias Beer" revision="0" summary="a filter defining what tiddlers to match" tags="Parameters" title="filter" type="text/vnd.tiddlywiki">
+<div created="20150116021330134" creator="Tobias Beer" default="`[all[current]tagging[]]` — tiddlers with the current tiddler as a tag" modified="20151124102536365" modifier="Tobias Beer" summary="a filter defining what tiddlers to match" tags="Parameters" title="filter" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" revision="0" summary="filter plugins by [[Tobias Beer]]" title="Filters">
+<div summary="filter plugins by [[Tobias Beer]]" title="Filters" revision="0" bag="default">
 <pre>&lt;dl&gt;
 &lt;&lt;list-search
 filter:&quot;[tag[Filters]]&quot;
@@ -7681,7 +7681,7 @@ state: &quot;$:/temp/list-search/examples&quot;
 template:&quot;$:/.tb/templates/plugin-list&quot;&gt;&gt;
 &lt;/dl&gt;</pre>
 </div>
-<div bag="default" created="20150120114358797" modified="20150204105535215" revision="0" summary="doesn't use ''xlist'', but a a useful complement" tags="Examples" title="Flat Publications List With Topics">
+<div created="20150120114358797" modified="20150204105535215" summary="doesn't use ''xlist'', but a a useful complement" tags="Examples" title="Flat Publications List With Topics" revision="0" bag="default">
 <pre>Based on [[list category items with categories @ filters|http://filters.tiddlyspot.com/#list%20category%20items%20with%20categories]], here is how you can iterate all [[Publications]] and have them list their [[Topics]] using a list item template [[$:/.tb/templates/flat-list]].
 
 ```
@@ -7696,7 +7696,7 @@ template:&quot;$:/.tb/templates/plugin-list&quot;&gt;&gt;
 &lt;/$tiddler&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div bag="default" created="20150114110656867" modified="20150116114232521" revision="0" summary="showing ''xlist'' for a ''tiddler'' other than the currently viewed one" tags="Examples filter groups" title="For Another Tiddler">
+<div created="20150114110656867" modified="20150116114232521" summary="showing ''xlist'' for a ''tiddler'' other than the currently viewed one" tags="Examples filter groups" title="For Another Tiddler" revision="0" bag="default">
 <pre>To apply it to another tiddler, wrap the ''xlist'' macro with the [[TiddlerWidget|http://tiddlywiki.com/#TiddlerWidget]], e.g.:
 
 ```
@@ -7721,10 +7721,10 @@ Here's the equivalent using both the [[filter]] and the [[groups]] parameter...
 
 &gt; &lt;&lt;xlist filter:&quot;[tag[Business]]&quot; groups:&quot;[list[Business]]&quot;&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150116101535845" creator="Tobias Beer" default="`[list[]]` — take categories from the standard ''list'' field of the ''current tiddler''" modified="20151124102617121" modifier="Tobias Beer" revision="0" summary="a filter defining category titles to group by" tags="Parameters" title="groups" type="text/vnd.tiddlywiki">
+<div created="20150116101535845" creator="Tobias Beer" default="`[list[]]` — take categories from the standard ''list'' field of the ''current tiddler''" modified="20151124102617121" modifier="Tobias Beer" summary="a filter defining category titles to group by" tags="Parameters" title="groups" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150204104009314" modified="20150204105309646" revision="0" summary="a simple grouped list for all tiddlers matching the group categories" tags="filter groups Examples each link" title="Groups Without Links">
+<div created="20150204104009314" modified="20150204105309646" summary="a simple grouped list for all tiddlers matching the group categories" tags="filter groups Examples each link" title="Groups Without Links" revision="0" bag="default">
 <pre>The following example lists all [[Publications]] by publication categories...
 
 `&lt;&lt;xlist filter:&quot;[all[]]&quot; groups:&quot;[tag[Publications]sort[]]&quot; link:&quot;no&quot;&gt;&gt;`
@@ -7737,10 +7737,10 @@ Same goes for grouping by the discrete values of a field, e.g. ''topic'':
 
 &gt; &lt;&lt;xlist filter:&quot;[all[]]&quot; each:topic link:&quot;no&quot;&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150114133803452" creator="Tobias Beer" modified="20151124131404039" modifier="Tobias Beer" revision="0" title="Installation" type="text/vnd.tiddlywiki">
+<div created="20150114133803452" creator="Tobias Beer" modified="20151124131404039" modifier="Tobias Beer" title="Installation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Drag into your wiki, save, reload: [[$:/plugins/tobibeer/xlist]]</pre>
 </div>
-<div bag="default" created="20150114110859878" creator="Tobias Beer" modified="20151124164857882" modifier="Tobias Beer" revision="0" summary="using the [[sort]] parameter to sort listed items" tags="Examples sort template" title="Item Sort Order" type="text/vnd.tiddlywiki">
+<div created="20150114110859878" creator="Tobias Beer" modified="20151124164857882" modifier="Tobias Beer" summary="using the [[sort]] parameter to sort listed items" tags="Examples sort template" title="Item Sort Order" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Define the [[sort]] parameter in the form of a [[filter|http://tiddlywiki.com/#FilterOperator%3A%20limit]]. The example below lists all tiddlers grouped by [[Publications]] for the topic [[Business]], sorted by the ''published'' field in descending order, thus newest first, using a custom [[template|Custom Item Template]].
 
 ```
@@ -7755,16 +7755,16 @@ sort:&quot;[!sort[published]]&quot;&gt;&gt;
 
 Here's the template &lt;&lt;source &quot;$:/.tb/templates/xlist-published&quot;&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150113093543320" modified="20150114114024345" revision="0" tags="Publications" title="Journals">
+<div created="20150113093543320" modified="20150114114024345" tags="Publications" title="Journals" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150204103819709" creator="Tobias Beer" default="`yes`" modified="20151124103047584" modifier="Tobias Beer" revision="0" summary="whether to show the groups as links or not" tags="Parameters" title="link" type="text/vnd.tiddlywiki">
+<div created="20150204103819709" creator="Tobias Beer" default="`yes`" modified="20151124103047584" modifier="Tobias Beer" summary="whether to show the groups as links or not" tags="Parameters" title="link" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20151124164516690" creator="Tobias Beer" modified="20151124164543746" modifier="Tobias Beer" revision="0" title="list" type="text/vnd.tiddlywiki">
+<div created="20151124164516690" creator="Tobias Beer" modified="20151124164543746" modifier="Tobias Beer" title="list" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>If no group filter is defined, the ''xlist'' macro groups titles by categories specified in the tiddler's list field.</pre>
 </div>
-<div bag="default" revision="0" summary="macro plugins by [[Tobias Beer]]" title="Macros">
+<div summary="macro plugins by [[Tobias Beer]]" title="Macros" revision="0" bag="default">
 <pre>&lt;dl&gt;
 &lt;&lt;list-search
 filter:&quot;[tag[Macros]]&quot;
@@ -7773,7 +7773,7 @@ state: &quot;$:/temp/list-search/examples&quot;
 template:&quot;$:/.tb/templates/plugin-list&quot;&gt;&gt;
 &lt;/dl&gt;</pre>
 </div>
-<div bag="default" created="20150115131521288" creator="Tobias Beer" modified="20151124162958478" modifier="Tobias Beer" revision="0" summary="group tiddlers: matching a field value via [[filter]] — by categories derived from [[each]] distinct value of a category field" tags="Variants Examples each filter" title="Match Field — Each Field Value" type="text/vnd.tiddlywiki">
+<div created="20150115131521288" creator="Tobias Beer" modified="20151124162958478" modifier="Tobias Beer" summary="group tiddlers: matching a field value via [[filter]] — by categories derived from [[each]] distinct value of a category field" tags="Variants Examples each filter" title="Match Field — Each Field Value" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>You can use the ''xlist'' macro to...
 
 * [[filter]] tiddlers where a given field is of a defined value
@@ -7799,7 +7799,7 @@ The next example gets all tiddlers where the field ''publication'' is set to [[J
 &lt;&lt;xlist filter:&quot;[publication[Journals]]&quot; each:topic&gt;&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div bag="default" created="20150115093036275" creator="Tobias Beer" list="Journals Whitepapers" modified="20151124163029801" modifier="Tobias Beer" revision="0" summary="group tiddlers: matching a field value via [[filter]] — by category tags from a list [[field]] or [[groups]] filter" tags="Examples groups Variants filter" title="Match Field — Group Tags" type="text/vnd.tiddlywiki">
+<div created="20150115093036275" creator="Tobias Beer" list="Journals Whitepapers" modified="20151124163029801" modifier="Tobias Beer" summary="group tiddlers: matching a field value via [[filter]] — by category tags from a list [[field]] or [[groups]] filter" tags="Examples groups Variants filter" title="Match Field — Group Tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>You can use the ''xlist'' macro to...
 
 * [[filter]] tiddlers where a field is of a defined value
@@ -7827,7 +7827,7 @@ This example is equivalent to the above, only just the categories are derived us
 &lt;&lt;xlist groups:&quot;[list[Business]]&quot; filter:&quot;[topic[Business]]&quot;&gt;&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div bag="default" created="20150115133806202" creator="Tobias Beer" modified="20151124163143335" modifier="Tobias Beer" revision="0" summary="group tiddlers: tagged with the current tiddler or matching a [[filter]] expression — by categories derived from [[each]] distinct value of a category field" tags="Variants Examples each" title="Match Tag — Each Field Value" type="text/vnd.tiddlywiki">
+<div created="20150115133806202" creator="Tobias Beer" modified="20151124163143335" modifier="Tobias Beer" summary="group tiddlers: tagged with the current tiddler or matching a [[filter]] expression — by categories derived from [[each]] distinct value of a category field" tags="Variants Examples each" title="Match Tag — Each Field Value" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>You can use the ''xlist'' macro to...
 
 * [[filter]] tiddlers tagged with the ''current tiddler''
@@ -7861,7 +7861,7 @@ This example gets all tiddlers tagged [[Economics]] where the field ''publicatio
 &lt;/$tiddler&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div bag="default" created="20150115133639272" creator="Tobias Beer" examples="[[No Parameters]] [[For Another Tiddler]] [[Tagging Instead Of List Field]] [[Custom Item Template]] [[Item Sort Order]] [[Custom Category List]]" modified="20151124164513666" modifier="Tobias Beer" revision="0" summary="group tiddlers: tagged with the current tiddler or matching a [[filter]] expression — by category tags from a list [[field]] or [[groups]] filter" tags="Variants Examples" title="Match Tag — Group Tags" type="text/vnd.tiddlywiki">
+<div created="20150115133639272" creator="Tobias Beer" examples="[[No Parameters]] [[For Another Tiddler]] [[Tagging Instead Of List Field]] [[Custom Item Template]] [[Item Sort Order]] [[Custom Category List]]" modified="20151124164513666" modifier="Tobias Beer" summary="group tiddlers: tagged with the current tiddler or matching a [[filter]] expression — by category tags from a list [[field]] or [[groups]] filter" tags="Variants Examples" title="Match Tag — Group Tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>You can use the ''xlist'' macro to..
 
 * find tiddlers tagged with the current tiddler
@@ -7869,7 +7869,7 @@ This example gets all tiddlers tagged [[Economics]] where the field ''publicatio
 
 This is the default behavior.</pre>
 </div>
-<div bag="default" created="20150114110615893" creator="Tobias Beer" modified="20151124100422030" modifier="Tobias Beer" revision="0" summary="the ''xlist'' macro used without any [[Parameters]], see [[Economics]]" tags="Examples" title="No Parameters" type="text/vnd.tiddlywiki">
+<div created="20150114110615893" creator="Tobias Beer" modified="20151124100422030" modifier="Tobias Beer" summary="the ''xlist'' macro used without any [[Parameters]], see [[Economics]]" tags="Examples" title="No Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>```
 &lt;$tiddler tiddler=&quot;Economics&quot;&gt;
 &lt;&lt;xlist&gt;&gt;
@@ -7886,7 +7886,7 @@ Reads the categories from the tiddler's list field, here from the tiddler [[Econ
 
 &gt; ''categories'': {{Economics!!list}}</pre>
 </div>
-<div bag="default" created="20150114133737084" list="filter groups template sort each link" modified="20150204103907044" revision="0" title="Parameters">
+<div created="20150114133737084" list="filter groups template sort each link" modified="20150204103907044" title="Parameters" revision="0" bag="default">
 <pre>The following optional parameters can be specified for the ''xlist'' macro:
 
 &lt;table class=&quot;td-top&quot;&gt;
@@ -7906,7 +7906,7 @@ Reads the categories from the tiddler's list field, here from the tiddler [[Econ
 &lt;/$list&gt;
 &lt;/table&gt;</pre>
 </div>
-<div bag="default" revision="0" summary="plugins by [[Tobias Beer]]" title="Plugins">
+<div summary="plugins by [[Tobias Beer]]" title="Plugins" revision="0" bag="default">
 <pre>&lt;dl&gt;
 &lt;&lt;list-search
 filter:&quot;[tag[Plugins]]&quot;
@@ -7915,14 +7915,14 @@ state: &quot;$:/temp/list-search/examples&quot;
 template:&quot;$:/.tb/templates/plugin-list&quot;&gt;&gt;
 &lt;/dl&gt;</pre>
 </div>
-<div bag="default" created="20150114112601560" list="Articles Journals Whitepapers" modified="20150116103624003" revision="0" title="Publications" xlist="Articles Journals Whitepapers">
+<div created="20150114112601560" list="Articles Journals Whitepapers" modified="20150116103624003" title="Publications" xlist="Articles Journals Whitepapers" revision="0" bag="default">
 <pre>&lt;&lt;tabs
 &quot;[all[current]tagging[]]&quot;
 default: &quot;Articles&quot;
 state: &quot;$:/state/tabs/xlist/publication&quot;
 template:[[$:/.tb/templates/tab/xlist/publication]]&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150114215506791" creator="Tobias Beer" modified="20151124165100680" modifier="Tobias Beer" revision="0" summary="define a shortcut macro to the specific parameters you wish to use" tags="Examples template sort groups" title="Shortcut Macro" type="text/vnd.tiddlywiki">
+<div created="20150114215506791" creator="Tobias Beer" modified="20151124165100680" modifier="Tobias Beer" summary="define a shortcut macro to the specific parameters you wish to use" tags="Examples template sort groups" title="Shortcut Macro" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Have a look at the text of the tiddler &lt;&lt;source &quot;Business&quot;&gt;&gt;
 
 The below macro that it calls uses a [[groups]] filter via tagging, an item [[template]] and a custom [[sort]] parameter, see &lt;&lt;source [[$:/.tb/macros/xlist-published]]&gt;&gt;
@@ -7935,10 +7935,10 @@ The below macro that it calls uses a [[groups]] filter via tagging, an item [[te
 
 &gt; {{Business}}</pre>
 </div>
-<div bag="default" created="20150116021056272" creator="Tobias Beer" default="`[sort[]]` — alphabetically, ascending" modified="20151124103107649" modifier="Tobias Beer" revision="0" summary="a subfilter defining how matching items are sorted" tags="Parameters" title="sort" type="text/vnd.tiddlywiki">
+<div created="20150116021056272" creator="Tobias Beer" default="`[sort[]]` — alphabetically, ascending" modified="20151124103107649" modifier="Tobias Beer" summary="a subfilter defining how matching items are sorted" tags="Parameters" title="sort" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150114114517108" creator="Tobias Beer" modified="20151124165157973" modifier="Tobias Beer" revision="0" summary="tabs of index tiddlers with grouped category lists" tags="Examples" title="Tabs Of Index Tiddlers" type="text/vnd.tiddlywiki">
+<div created="20150114114517108" creator="Tobias Beer" modified="20151124165157973" modifier="Tobias Beer" summary="tabs of index tiddlers with grouped category lists" tags="Examples" title="Tabs Of Index Tiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>The following examples use the [[template]] parameter to define custom tab contents for the [[tabs macro|http://tiddlywiki.com/#TabsMacro]], each iterating category tiddlers tagging to them while showing a grouped category listing of the other.
 
 ; [[Topics]]
@@ -7958,7 +7958,7 @@ The below macro that it calls uses a [[groups]] filter via tagging, an item [[te
 
 How it is done for &lt;&lt;source Topics&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150114195810237" modified="20150116122003532" revision="0" summary="get category tags to group by from a [[groups]] filter expression" tags="Examples groups filter" title="Tagging Instead Of List Field">
+<div created="20150114195810237" modified="20150116122003532" summary="get category tags to group by from a [[groups]] filter expression" tags="Examples groups filter" title="Tagging Instead Of List Field" revision="0" bag="default">
 <pre>If you don't want to use the standard ''list'' field or a [[custom list field|Custom Category List]], you can specify the [[groups]] parameter to use something like ''tagging'' instead.
 
 !! Example
@@ -7983,7 +7983,7 @@ The equivalent using the tiddler widget...
 
 </pre>
 </div>
-<div bag="default" created="20150116021156113" creator="Tobias Beer" default="`&lt;dd&gt;&lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;/dd&gt;`" modified="20151124102636524" modifier="Tobias Beer" revision="0" summary="a template applied to each matching item" tags="Parameters" title="template" type="text/vnd.tiddlywiki">
+<div created="20150116021156113" creator="Tobias Beer" default="`&lt;dd&gt;&lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;/dd&gt;`" modified="20151124102636524" modifier="Tobias Beer" summary="a template applied to each matching item" tags="Parameters" title="template" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Template Variables
 
 The following variables are exposed to the item template:
@@ -8000,20 +8000,20 @@ The following variables are exposed to the item template:
 `&lt;$list filter=&lt;&lt;xlist-each-title&gt;&gt; variable=currentGroup&gt;&lt;&lt;currentGroup&gt;&gt;&lt;/$list&gt;`
 &lt;/div&gt;</pre>
 </div>
-<div bag="default" created="20150113093033149" modified="20150113093033149" revision="0" title="TiddlyWiki" url="http://tiddlywiki.com">
+<div created="20150113093033149" modified="20150113093033149" title="TiddlyWiki" url="http://tiddlywiki.com" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" revision="0" summary="author of tb5" title="Tobias Beer" url="http://tobibeer.github.io/tb5">
+<div summary="author of tb5" title="Tobias Beer" url="http://tobibeer.github.io/tb5" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bag="default" created="20150113093953039" list="Economics Business" modified="20150116103559802" revision="0" title="Topics">
+<div created="20150113093953039" list="Economics Business" modified="20150116103559802" title="Topics" revision="0" bag="default">
 <pre>&lt;&lt;tabs
 &quot;[all[current]tagging[]]&quot;
 default:Economics
 state: &quot;$:/state/tabs/xlist/topic&quot;
 template:[[$:/.tb/templates/tab/xlist/topic]]&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150116013146968" creator="Tobias Beer" modified="20151124101658731" modifier="Tobias Beer" revision="0" tags="" title="Variants" type="text/vnd.tiddlywiki">
+<div created="20150116013146968" creator="Tobias Beer" modified="20151124101658731" modifier="Tobias Beer" tags="" title="Variants" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define variant(tiddler)
 &lt;$tiddler tiddler=&quot;$tiddler$&quot;&gt;
 &lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;br&gt;
@@ -8045,7 +8045,7 @@ As you can relate tiddlers both via tags as well as via fields, ''xlist'' allows
 &lt;/tr&gt;
 &lt;/table&gt;</pre>
 </div>
-<div bag="default" created="20150113092945651" creator="Tobias Beer" modified="20151124124657101" modifier="Tobias Beer" revision="0" title="Welcome" type="text/vnd.tiddlywiki" xlist="">
+<div created="20150113092945651" creator="Tobias Beer" modified="20151124124657101" modifier="Tobias Beer" title="Welcome" type="text/vnd.tiddlywiki" xlist="" revision="0" bag="default">
 <pre>The ''xlist'' macro crosslists tiddlers with relations to two categories. Imagine the following [[topic|Topics]] tags, [[publication|Publications]]-type tags, and then publications tagging to both:
 
 &lt;table class=&quot;start&quot;&gt;
@@ -8071,7 +8071,7 @@ A first [[example|Examples]]...
 
 &gt; &lt;&lt;xlist filter:&quot;[tag[Business]]&quot; groups:&quot;[tag[Publications]sort[]]&quot;&gt;&gt;</pre>
 </div>
-<div bag="default" created="20150113093618504" modified="20150114112533961" revision="0" tags="Publications" title="Whitepapers">
+<div created="20150113093618504" modified="20150114112533961" tags="Publications" title="Whitepapers" revision="0" bag="default">
 <pre></pre>
 </div>
 

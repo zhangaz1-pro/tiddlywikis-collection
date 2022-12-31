@@ -11414,11 +11414,11 @@ $text$
 <div created="20180407104246587" modified="20180407104318113" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>//HammerWidgets// for [[TiddlyWiki|https://tiddlywiki.com]]</pre>
 </div>
-<div created="20180512094415451" modified="20210113050210529" title="$:/state/DynaView/ViewportDimensions/Height">
-<pre>1288</pre>
+<div created="20180512094415451" modified="20180512094415469" title="$:/state/DynaView/ViewportDimensions/Height">
+<pre>1050</pre>
 </div>
-<div created="20180512094415451" modified="20210113050141874" title="$:/state/DynaView/ViewportDimensions/Width">
-<pre>2560</pre>
+<div created="20180512094415451" modified="20180512094415469" title="$:/state/DynaView/ViewportDimensions/Width">
+<pre>1920</pre>
 </div>
 <div list="" title="$:/state/MultiUser/EditingTiddlers">
 <pre></pre>
@@ -11538,15 +11538,15 @@ z-index: 50;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;http://hammerwidgets.tiddlyspot.com/&quot;
+            &quot;text&quot;: &quot;http://127.0.0.1:8085/HammerWidgets&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;hammerwidgets.tiddlyspot.com&quot;
+            &quot;text&quot;: &quot;127.0.0.1:8085&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;hammerwidgets.tiddlyspot.com&quot;
+            &quot;text&quot;: &quot;127.0.0.1&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
@@ -11554,11 +11554,11 @@ z-index: 50;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;8085&quot;
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/&quot;
+            &quot;text&quot;: &quot;/HammerWidgets&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -11566,15 +11566,15 @@ z-index: 50;
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;http://hammerwidgets.tiddlyspot.com&quot;
+            &quot;text&quot;: &quot;http://127.0.0.1:8085&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;2560&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1440&quot;
+            &quot;text&quot;: &quot;1080&quot;
         }
     }
 }</pre>
@@ -12386,7 +12386,8 @@ http://smarties.tiddlyspot.com uses the pan widget for a resizeable sidebar
 * tiddler: if the movable element should be identified by its tiddler title, pass the tiddler-title here - if not, omit that value</pre>
 </div>
 <div created="20180409114038863" modified="20180409121539530" tags="$:/tags/Stylesheet" title="pinchdemo styles" type="text/vnd.tiddlywiki">
-<pre>&lt;$list filter=&quot;[[$:/state/pinch]!is[missing]]&quot;&gt;
+<pre>
+&lt;$list filter=&quot;[[$:/state/pinch]!is[missing]]&quot;&gt;
 
 .target-css-class-pinchme {
 	transform: scale({{$:/state/pinch!!scale}}) rotate({{$:/state/pinch!!rotation}}deg);

@@ -714,10 +714,10 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20160105163057495" creator="Tobias Beer" modified="20160105164033652" modifier="Tobias Beer" tags="" title="$:/.tb/demo/rate/template-plain" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105163057495" creator="Tobias Beer" modified="20160105164033652" modifier="Tobias Beer" revision="0" tags="" title="$:/.tb/demo/rate/template-plain" type="text/vnd.tiddlywiki">
 <pre>&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;br/&gt;</pre>
 </div>
-<div title="$:/.tb/demo/sparkl/defaults" type="application/x-tiddler-dictionary" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/.tb/demo/sparkl/defaults" type="application/x-tiddler-dictionary">
 <pre>bg: the background color for a bar
 fg: the foregournd color for a bar
 fg-hover: the foregournd color for a bar on hover
@@ -732,7 +732,7 @@ link: links bars to titles&lt;br&gt;» only when using a values filter
 as: the default graph type, e.g. `bar` or `dots`
 dot-size: for `as=dots`, the size of dots in ''px''</pre>
 </div>
-<div tags="$:/tags/Stylesheet" title="$:/.tb/demo/sparkl/styles" type="text/css" revision="0" bag="default">
+<div bag="default" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/demo/sparkl/styles" type="text/css">
 <pre>.pinkish .tc-sparkl-bar b {
 border-bottom-color:deeppink;
 }
@@ -740,7 +740,7 @@ border-bottom-color:deeppink;
 border-bottom-color:#c06;
 }</pre>
 </div>
-<div created="20150131114556078" creator="Tobias Beer" modified="20150131124430420" modifier="Tobias Beer" summary="shows wikitext source and how it renders" tags="$:/tags/Macro" title="$:/.tb/macros/`" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20150131114556078" creator="Tobias Beer" modified="20150131124430420" modifier="Tobias Beer" revision="0" summary="shows wikitext source and how it renders" tags="$:/tags/Macro" title="$:/.tb/macros/`" type="text/vnd.tiddlywiki">
 <pre>\define `(text)
 ```
 $text$
@@ -763,12 +763,12 @@ $text$
 
 \end</pre>
 </div>
-<div created="20160112160043010" creator="Tobias Beer" modified="20160112160141725" modifier="Tobias Beer" summary="evaluates any given text as the macro body passing additional parameters" tags="$:/tags/Macro" title="$:/.tb/macros/=" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160112160043010" creator="Tobias Beer" modified="20160112160141725" modifier="Tobias Beer" revision="0" summary="evaluates any given text as the macro body passing additional parameters" tags="$:/tags/Macro" title="$:/.tb/macros/=" type="text/vnd.tiddlywiki">
 <pre>\define =(text,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20)
 $text$
 \end</pre>
 </div>
-<div modified="20161009143434433" modifier="Tobias Beer" summary="extracts an introduction from a tiddler" tags="$:/tags/Macro" title="$:/.tb/macros/intro" revision="0" bag="default">
+<div bag="default" modified="20161009143434433" modifier="Tobias Beer" revision="0" summary="extracts an introduction from a tiddler" tags="$:/tags/Macro" title="$:/.tb/macros/intro">
 <pre>\define intro(tiddler)
 &lt;$set name=&quot;tiddler&quot; filter=&quot;[field:title[$tiddler$]]&quot; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;
 &lt;$list filter='
@@ -790,7 +790,7 @@ $text$
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div summary="wrapping up the [[list-search]] macro for a category" tags="$:/tags/Macro" title="$:/.tb/macros/list-plugins" revision="0" bag="default">
+<div bag="default" revision="0" summary="wrapping up the [[list-search]] macro for a category" tags="$:/tags/Macro" title="$:/.tb/macros/list-plugins">
 <pre>\define list-search-plugins()
 &lt;dl&gt;
 &lt;&lt;list-search
@@ -807,7 +807,7 @@ template:&quot;$:/.tb/templates/plugin-list&quot;&gt;&gt;
 &lt;/$vars&gt;
 \end</pre>
 </div>
-<div created="20141202200448128" creator="Tobias Beer" modified="20151124164339680" modifier="Tobias Beer" summary="the [[list-search]] macro allows to filter list outputs" tags="$:/tags/Macro" title="$:/.tb/macros/list-search" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20141202200448128" creator="Tobias Beer" modified="20151124164339680" modifier="Tobias Beer" revision="0" summary="the [[list-search]] macro allows to filter list outputs" tags="$:/tags/Macro" title="$:/.tb/macros/list-search" type="text/vnd.tiddlywiki">
 <pre>\define list-search(
 filter:&quot;[tags[]]&quot;,
 search:&quot;search:title&quot;,
@@ -834,7 +834,7 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div tags="$:/tags/Macro" title="$:/.tb/macros/lnk" revision="0" bag="default">
+<div bag="default" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/lnk">
 <pre>\define lnk(title)
 &lt;$reveal type=&quot;match&quot; default=&quot;&quot; text=&quot;&quot;&quot;$title$&quot;&quot;&quot;&gt;
 &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
@@ -844,7 +844,7 @@ placeholder=&quot;$placeholder$&quot;/&gt;
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div created="20151123080831360" creator="Tobias Beer" modified="20151206232815881" modifier="Tobias Beer" tags="$:/tags/Macro" title="$:/.tb/macros/plugin-docs" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151123080831360" creator="Tobias Beer" modified="20151206232815881" modifier="Tobias Beer" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/plugin-docs" type="text/vnd.tiddlywiki">
 <pre>\define plugin-install(plugin)
 get it from my [[Library]] or drag to your wiki, save, reload: $:/plugins/tobibeer/$plugin$
 
@@ -878,10 +878,10 @@ get it from my [[Library]] or drag to your wiki, save, reload: $:/plugins/tobibe
 &lt;/$vars&gt;
 \end</pre>
 </div>
-<div title="$:/.tb/macros/plugin-docs/tab-template" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/.tb/macros/plugin-docs/tab-template">
 <pre>&lt;&lt;plugin-docs-tab&gt;&gt;</pre>
 </div>
-<div created="20150930072145911" creator="Tobias Beer" modified="20151125143850534" modifier="Tobias Beer" tags="$:/tags/Macro" title="$:/.tb/macros/pop" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20150930072145911" creator="Tobias Beer" modified="20151125143850534" modifier="Tobias Beer" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/pop" type="text/vnd.tiddlywiki">
 <pre>\define pop(label, content, pop-class, animate, position, tooltip, btn-class, btn-tag:&quot;button&quot;, btn-selectedClass, state-id)
 &lt;$set name=&quot;state&quot; value=&lt;&lt;qualify &quot;&quot;&quot;$:/state/pop-$content$-$state-id$&quot;&quot;&quot;&gt;&gt;&gt;
 &lt;$button popup=&lt;&lt;state&gt;&gt; class=&quot;pop-btn $btn-class$&quot; tooltip=&quot;$tooltip$&quot; tag=&quot;$btn-tag$&quot; selectedClass=&quot;pop-btn-selected $btn-selectedClass$&quot;&gt;$label$&lt;/$button&gt;&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;state&gt;&gt; animate=&quot;$animate$&quot; position=&quot;$position$&quot; class=&quot;tc-popup pop-popup $pop-class$&quot; style=&quot;$pop-style$&quot;&gt;
@@ -890,7 +890,7 @@ get it from my [[Library]] or drag to your wiki, save, reload: $:/plugins/tobibe
 &lt;/$reveal&gt;&lt;/$set&gt;
 \end</pre>
 </div>
-<div created="20151125143316476" creator="Tobias Beer" modified="20151125143316476" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/.tb/macros/pop/styles" type="text/css" revision="0" bag="default">
+<div bag="default" created="20151125143316476" creator="Tobias Beer" modified="20151125143316476" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/macros/pop/styles" type="text/css">
 <pre>.pop-tiddler {
   padding:0 10px;
   background:white;
@@ -910,7 +910,7 @@ get it from my [[Library]] or drag to your wiki, save, reload: $:/plugins/tobibe
 border-bottom:1px dotted #66f;
 }</pre>
 </div>
-<div created="20151216093701626" creator="Tobias Beer" modified="20151216103119013" modifier="Tobias Beer" tags="$:/tags/Macro" title="$:/.tb/macros/sliders" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151216093701626" creator="Tobias Beer" modified="20151216103119013" modifier="Tobias Beer" revision="0" tags="$:/tags/Macro" title="$:/.tb/macros/sliders" type="text/vnd.tiddlywiki">
 <pre>\define slider-label(prefix,suffix)
 @@.grey-svg $prefix$&lt;$text text=&quot;$(currentTiddler)$&quot;/&gt;$suffix$@@
 \end
@@ -919,7 +919,7 @@ border-bottom:1px dotted #66f;
 show/hide tiddler '$(currentTiddler)$'
 \end</pre>
 </div>
-<div created="20141117160505514" creator="Tobias Beer" modified="20151008090241912" modifier="Tobias Beer" summary="displays a link to a tiddler and its source in a codeblock" tags="$:/tags/Macro" title="$:/.tb/macros/source" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20141117160505514" creator="Tobias Beer" modified="20151008090241912" modifier="Tobias Beer" revision="0" summary="displays a link to a tiddler and its source in a codeblock" tags="$:/tags/Macro" title="$:/.tb/macros/source" type="text/vnd.tiddlywiki">
 <pre>\define source(source,version,language)
 [[$source$]]&lt;$reveal type=&quot;match&quot; text=&quot;$version$&quot; default=&quot;yes&quot;&gt; (version: &lt;&lt;date-version &quot;$source$&quot;&gt;&gt;)&lt;/$reveal&gt;:
 
@@ -930,7 +930,7 @@ show/hide tiddler '$(currentTiddler)$'
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div created="20150109114505490" modified="20150114111445596" summary="outputs a definition list of summaries for tiddlers matching a filter, by default tagging to the current tiddler" tags="$:/tags/Macro" title="$:/.tb/macros/summaries" revision="0" bag="default">
+<div bag="default" created="20150109114505490" modified="20150114111445596" revision="0" summary="outputs a definition list of summaries for tiddlers matching a filter, by default tagging to the current tiddler" tags="$:/tags/Macro" title="$:/.tb/macros/summaries">
 <pre>\define summaries(filter:&quot;[tag{!!title}sort[]]&quot;)
 &lt;dl&gt;
 &lt;$list filter=&quot;$filter$&quot;&gt;
@@ -940,7 +940,7 @@ show/hide tiddler '$(currentTiddler)$'
 &lt;/dl&gt;
 \end</pre>
 </div>
-<div summary="points to my plugin" tags="$:/tags/Macro" title="$:/.tb/macros/tb" revision="0" bag="default">
+<div bag="default" revision="0" summary="points to my plugin" tags="$:/tags/Macro" title="$:/.tb/macros/tb">
 <pre>\define tb(plugin)
 &lt;$list filter=&quot;[[$plugin$]is[tiddler]]&quot;
 &gt;[[tobibeer/$plugin$|$plugin$]]&lt;/$list&gt;&lt;$list
@@ -950,12 +950,12 @@ filter=&quot;[[$plugin$]!is[tiddler]]&quot;
 /&gt;&lt;/$vars&gt;&lt;/$list&gt;
 \end</pre>
 </div>
-<div summary="returns a link to a tiddler on tw.com" tags="$:/tags/Macro" title="$:/.tb/macros/tw.com" revision="0" bag="default">
+<div bag="default" revision="0" summary="returns a link to a tiddler on tw.com" tags="$:/tags/Macro" title="$:/.tb/macros/tw.com">
 <pre>\define tw(tiddler,pretty)
 &lt;$vars x-url=&quot;http://tiddlywiki.com&quot;&gt;&lt;$macrocall $name=&quot;x&quot; title=&quot;&quot;&quot;$tiddler$&quot;&quot;&quot; pretty=&quot;&quot;&quot;$pretty$&quot;&quot;&quot;/&gt;&lt;/$vars&gt;
 \end</pre>
 </div>
-<div module-type="macro" title="$:/.tb/modules/macros/x.js" type="application/javascript" revision="0" bag="default">
+<div bag="default" module-type="macro" revision="0" title="$:/.tb/modules/macros/x.js" type="application/javascript">
 <pre>/*\
 title: $:/.tb/modules/macros/x.js
 type: application/javascript
@@ -996,7 +996,7 @@ exports.run = function(title,pretty) {
 
 })();</pre>
 </div>
-<div created="20151216093531635" creator="Tobias Beer" list-after="$:/themes/tiddlywiki/vanilla/base" modified="20160110075513752" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/.tb/styles" type="text/css" revision="0" bag="default">
+<div bag="default" created="20151216093531635" creator="Tobias Beer" list-after="$:/themes/tiddlywiki/vanilla/base" modified="20160110075513752" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/styles" type="text/css">
 <pre>.tc-tiddler-body {
 clear: both;
 }
@@ -1289,7 +1289,7 @@ height:12px !important;
 fill:grey;
 }</pre>
 </div>
-<div created="20160105144516610" creator="Tobias Beer" modified="20160105162815770" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/.tb/styles/rating" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105144516610" creator="Tobias Beer" modified="20160105162815770" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/styles/rating" type="text/vnd.tiddlywiki">
 <pre>.tc-rating.alert .tc-rate:hover,
 .tc-rating.alert .tc-rate:hover ~ .tc-rate {
 	color:red;
@@ -1301,7 +1301,7 @@ fill:grey;
 	color:red;
 }</pre>
 </div>
-<div created="20141201201027548" creator="Tobias Beer" modified="20141201202132078" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/.tb/styles/really-numbered" type="text/css" revision="0" bag="default">
+<div bag="default" created="20141201201027548" creator="Tobias Beer" modified="20141201202132078" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/styles/really-numbered" type="text/css">
 <pre>.ol,
 .ol ol {
     counter-reset: item;
@@ -1320,7 +1320,7 @@ fill:grey;
     right: 10px; /* space between number and text */
 }</pre>
 </div>
-<div tags="$:/tags/Stylesheet" title="$:/.tb/styles/todo" revision="0" bag="default">
+<div bag="default" revision="0" tags="$:/tags/Stylesheet" title="$:/.tb/styles/todo">
 <pre>.todo ul,
 .todo li{
 margin:0;
@@ -1344,7 +1344,7 @@ color: #393;
 color:#060;
 }</pre>
 </div>
-<div created="20150106210703633" creator="Tobias Beer" modified="20160107104728481" modifier="Tobias Beer" title="$:/.tb/templates/list-tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20150106210703633" creator="Tobias Beer" modified="20160107104728481" modifier="Tobias Beer" revision="0" title="$:/.tb/templates/list-tags" type="text/vnd.tiddlywiki">
 <pre>&lt;span class=&quot;tc-tags-wrapper&quot; style=&quot;float:right;&quot;&gt;
 &lt;$list
 filter=&quot;[all[current]tags[]sort[title]] -Examples&quot;
@@ -1352,7 +1352,7 @@ template=&quot;$:/core/ui/TagTemplate&quot;
 storyview=&quot;pop&quot;/&gt;
 &lt;/span&gt;</pre>
 </div>
-<div created="20151126200201056" creator="Tobias Beer" modified="20160110075424612" modifier="Tobias Beer" title="$:/.tb/templates/plugin-list" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151126200201056" creator="Tobias Beer" modified="20160110075424612" modifier="Tobias Beer" revision="0" title="$:/.tb/templates/plugin-list" type="text/vnd.tiddlywiki">
 <pre>&lt;$vars titlePrefix=&quot;tobibeer/&quot;&gt;
 &lt;$list filter=&quot;[all[current]removeprefix[$:/plugins/tobibeer/]]&quot; variable=&quot;plugin&quot;&gt;
 &lt;dt&gt;&lt;$tiddler tiddler=&lt;&lt;plugin&gt;&gt;&gt;{{||$:/.tb/ui/ViewTemplate/title}}&lt;/$tiddler&gt;@@.tb-links.list-tags tags: {{{ [title&lt;plugin&gt;tags[]!title&lt;currentTag&gt;sort[title]] }}}@@&lt;/dt&gt;
@@ -1360,12 +1360,12 @@ storyview=&quot;pop&quot;/&gt;
 &lt;/$list&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div title="$:/.tb/templates/plugin-topics" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/.tb/templates/plugin-topics">
 <pre>\define tabs() $(plugin)$!!tabs
 
 &lt;$list filter=&quot;[list&lt;tabs&gt;]&quot;&gt;&lt;$list filter=&quot;[all[current]addprefix&lt;prefix&gt;]&quot; variable=&quot;topic&quot;&gt;&lt;$link to=&lt;&lt;topic&gt;&gt;&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/$list&gt;&lt;/$list&gt;</pre>
 </div>
-<div created="20151218031237852" creator="Tobias Beer" modified="20160107111805135" modifier="Tobias Beer" tags="" title="$:/.tb/templates/TagTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151218031237852" creator="Tobias Beer" modified="20160107111805135" modifier="Tobias Beer" revision="0" tags="" title="$:/.tb/templates/TagTemplate" type="text/vnd.tiddlywiki">
 <pre>\define tag-styles()
 background-color:$(backgroundColor)$;
 fill:$(foregroundColor)$;
@@ -1402,19 +1402,19 @@ foregroundColor=&lt;&lt;contrastcolour target:&quot;&quot;&quot;$colour$&quot;&q
 &lt;$macrocall $name=&quot;tag-body&quot; colour={{!!color}} palette={{$:/palette}}/&gt;
 </pre>
 </div>
-<div created="20151213164950678" creator="Tobias Beer" list-before="" modified="20160118214157571" modifier="Tobias Beer" tags="$:/tags/PageTemplate" title="$:/.tb/ui/PageTemplate/popups" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151213164950678" creator="Tobias Beer" list-before="" modified="20160118214157571" modifier="Tobias Beer" revision="0" tags="$:/tags/PageTemplate" title="$:/.tb/ui/PageTemplate/popups" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-popups&quot; style=&quot;position:relative&quot;&gt;
 
 &lt;$appear handle=&quot;popups&quot;/&gt;
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20151208012218818" creator="Tobias Beer" modified="20151208012221331" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/back-top" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151208012218818" creator="Tobias Beer" modified="20151208012221331" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/back-top" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;back-top&quot;&gt;
 &lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field=title/&gt; ^&lt;/$link&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20151124163323041" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" list-before="$:/.tb/ui/ViewTemplate/back-top" modified="20160107113117911" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151124163323041" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" list-before="$:/.tb/ui/ViewTemplate/back-top" modified="20160107113117911" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/examples" type="text/vnd.tiddlywiki">
 <pre>\define state() $:/state/list-search/examples/$(currentTiddler)$
 
 \define filter()
@@ -1444,21 +1444,21 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;&lt;examples-list&gt;&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20150116225310488" creator="Tobias Beer" modified="20160107104657116" modifier="Tobias Beer" tags="" title="$:/.tb/ui/ViewTemplate/examples/item" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20150116225310488" creator="Tobias Beer" modified="20160107104657116" modifier="Tobias Beer" revision="0" tags="" title="$:/.tb/ui/ViewTemplate/examples/item" type="text/vnd.tiddlywiki">
 <pre>&lt;dt&gt;&lt;$link&gt;&lt;$view field=title/&gt;&lt;/$link&gt;&lt;$transclude tiddler=&quot;$:/.tb/templates/list-tags&quot; mode=inline/&gt;&lt;/dt&gt;
 &lt;dd&gt;@@color:grey;//{{!!summary}}//@@&lt;/dd&gt;
 &lt;$list filter=&quot;[[Parameters]tagging[]]+[all[current]tags[]]+[tag[Parameters]]+[limit[1]]&quot; variable=none&gt;
 &lt;dd&gt;@@color:#666;parameters:@@ &lt;span class=&quot;example-parameters&quot;&gt;&lt;$list filter=&quot;[[Parameters]tagging[]]+[all[current]tags[]]+[tag[Parameters]]&quot;/&gt;&lt;/span&gt;&lt;/dd&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div tags="$:/tags/TopLeftBar" title="$:/.tb/ui/ViewTemplate/menu" revision="0" bag="default">
+<div bag="default" revision="0" tags="$:/tags/TopLeftBar" title="$:/.tb/ui/ViewTemplate/menu">
 <pre>&lt;div class=&quot;main-menu&quot;&gt;
 &lt;$list filter=&quot;[list[Welcome!!menu]]&quot; variable=&quot;item&quot;&gt;
 &lt;$tiddler tiddler=&lt;&lt;item&gt;&gt;&gt;&lt;$link&gt;&lt;$view field=&quot;caption&quot;&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$view&gt;&lt;/$link&gt;&lt;span class=&quot;divider&quot;/&gt;&lt;/$tiddler&gt;
 &lt;/$list&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20141122165208913" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" modified="20150115090527118" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/source" revision="0" bag="default">
+<div bag="default" created="20141122165208913" creator="Tobias Beer" list-after="$:/core/ui/ViewTemplate/body" modified="20150115090527118" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/source">
 <pre>&lt;$list filter=&quot;[all[current]tag[$:/tags/ShowSource]]
 [all[current]prefix[$:/.tb/]]
 [all[current]prefix[$:/template/]]
@@ -1468,7 +1468,7 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;pre&gt;&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; format=&quot;text&quot;/&gt;&lt;/pre&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div list-after="$:/core/ui/ViewTemplate/tags" summary="shows a summary or link" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/summary-link" revision="0" bag="default">
+<div bag="default" list-after="$:/core/ui/ViewTemplate/tags" revision="0" summary="shows a summary or link" tags="$:/tags/ViewTemplate" title="$:/.tb/ui/ViewTemplate/summary-link">
 <pre>&lt;$list filter=&quot;[all[current]has[summary]]&quot;&gt;
 @@color:grey; //&lt;$transclude field=&quot;summary&quot; mode=&quot;block&quot;/&gt; //@@
 &lt;/$list&gt;
@@ -1476,7 +1476,7 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;$transclude field=&quot;url&quot; mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20151125135422305" creator="Tobias Beer" modified="20151207002537754" modifier="Tobias Beer" title="$:/.tb/ui/ViewTemplate/title" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125135422305" creator="Tobias Beer" modified="20151207002537754" modifier="Tobias Beer" revision="0" title="$:/.tb/ui/ViewTemplate/title" type="text/vnd.tiddlywiki">
 <pre>\define title-popup() &lt;&lt;pop » &quot;$:/.tb/templates/plugin-topics&quot; &quot;pretty pop-tiddler title-popup&quot; btn-class:&quot;tc-btn-invisible btn-title-popup&quot;&gt;&gt;
 \define prefix() $(plugin)$-
 \define basic-title()
@@ -1510,7 +1510,7 @@ template:&quot;$:/.tb/ui/ViewTemplate/examples/item&quot;&gt;&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20151220100654081" creator="Tobias Beer" modified="20160103152213191" modifier="Tobias Beer" tags="$:/tags/Macro" title="$://macro/route" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151220100654081" creator="Tobias Beer" modified="20160103152213191" modifier="Tobias Beer" revision="0" tags="$:/tags/Macro" title="$://macro/route" type="text/vnd.tiddlywiki">
 <pre>\define route(title,pretty)
 &lt;$setvars
 _exists=&quot;&quot;&quot;[[$title$]is[tiddler]]&quot;&quot;&quot;
@@ -1524,25 +1524,25 @@ link=&quot;&quot;&quot;(
 &gt;&lt;&lt;link&gt;&gt;&lt;/$setvars&gt;
 \end</pre>
 </div>
-<div title="$:/config/AutoSave" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
-<div title="$:/config/ExternalWiki/tobibeer" top="150px" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/config/ExternalWiki/tobibeer" top="150px">
 <pre>http://tobibeer.github.io/tw5-plugins</pre>
 </div>
-<div title="$:/config/Navigation/UpdateAddressBar" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/config/Navigation/UpdateAddressBar">
 <pre>permalink</pre>
 </div>
-<div title="$:/config/Navigation/UpdateHistory" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/config/Navigation/UpdateHistory">
 <pre>yes</pre>
 </div>
-<div title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
 </div>
-<div title="$:/config/templates/tabs" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/config/templates/tabs">
 <pre>$:/plugins/tobibeer/inc/templates/tabs</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.15" revision="0" bag="default">
+<div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" revision="0" title="$:/core" type="application/json" version="5.1.15">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/Acknowledgements&quot;: {
@@ -9806,7 +9806,7 @@ link=&quot;&quot;&quot;(
     }
 }</pre>
 </div>
-<div tags="$:/tags/Macro" title="$:/core/macros/tabs" revision="0" bag="default">
+<div bag="default" revision="0" tags="$:/tags/Macro" title="$:/core/macros/tabs">
 <pre>\define tabs(tabsList,default,state:&quot;$:/state/tab&quot;,class,template)
 &lt;div class=&quot;tc-tab-set $class$&quot;&gt;
 &lt;div class=&quot;tc-tab-buttons $class$&quot;&gt;
@@ -9834,7 +9834,7 @@ link=&quot;&quot;&quot;(
 \end
 </pre>
 </div>
-<div module-type="global" title="$:/core/modules/utils/fakedom.js" type="application/javascript" revision="0" bag="default">
+<div bag="default" module-type="global" revision="0" title="$:/core/modules/utils/fakedom.js" type="application/javascript">
 <pre>/*\
 title: $:/core/modules/utils/fakedom.js
 type: application/javascript
@@ -10135,7 +10135,7 @@ exports.fakeDocument = document;
 })();
 </pre>
 </div>
-<div issue="2245" subtitle="{{$:/core/images/download-button}} {{$:/language/ControlPanel/Plugins/Add/Caption}}" title="$:/core/ui/ControlPanel/Modals/AddPlugins" revision="0" bag="default">
+<div bag="default" issue="2245" revision="0" subtitle="{{$:/core/images/download-button}} {{$:/language/ControlPanel/Plugins/Add/Caption}}" title="$:/core/ui/ControlPanel/Modals/AddPlugins">
 <pre>\define install-plugin-button()
 &lt;$button&gt;
 &lt;$action-sendmessage $message=&quot;tm-load-plugin-from-library&quot; url={{$(connectionTiddler)$!!url}} title={{$(assetInfo)$!!original-title}}/&gt;
@@ -10251,7 +10251,7 @@ $:/state/add-plugin-info/$(connectionTiddler)$/$(assetInfo)$
 &lt;/$importvariables&gt;
 </pre>
 </div>
-<div tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/shadow" revision="0" bag="default">
+<div bag="default" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/shadow">
 <pre>\define lingo-base() $:/language/EditTemplate/Shadow/
 \define pluginLinkBody()
 &lt;$link to=&quot;&quot;&quot;$(pluginTitle)$&quot;&quot;&quot;&gt;
@@ -10288,7 +10288,7 @@ $:/state/add-plugin-info/$(connectionTiddler)$/$(assetInfo)$
 
 &lt;/$list&gt;</pre>
 </div>
-<div created="20151125135349732" creator="Tobias Beer" modified="20151125144521169" modifier="Tobias Beer" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/title" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125135349732" creator="Tobias Beer" modified="20151125144521169" modifier="Tobias Beer" revision="0" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/title" type="text/vnd.tiddlywiki">
 <pre>\define title-styles()
 fill:$(foregroundColor)$;
 \end
@@ -10324,16 +10324,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 &lt;/div&gt;</pre>
 </div>
-<div title="$:/DefaultTiddlers" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/DefaultTiddlers">
 <pre>Welcome</pre>
 </div>
-<div title="$:/isEncrypted" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20151127194605676" creator="Tobias Beer" modified="20151127194604511" title="$:/palette" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151127194605676" creator="Tobias Beer" modified="20151127194604511" revision="0" title="$:/palette" type="text/vnd.tiddlywiki">
 <pre>$:/palettes/Vanilla-tb5</pre>
 </div>
-<div created="20141120105931650" creator="Tobias Beer" description="Pale and unobtrusive — modified for tb5" modified="20141120111448989" modifier="Tobias Beer" name="Vanilla-tb5" tags="$:/tags/Palette" title="$:/palettes/Vanilla-tb5" type="application/x-tiddler-dictionary" revision="0" bag="default">
+<div bag="default" created="20141120105931650" creator="Tobias Beer" description="Pale and unobtrusive — modified for tb5" modified="20141120111448989" modifier="Tobias Beer" name="Vanilla-tb5" revision="0" tags="$:/tags/Palette" title="$:/palettes/Vanilla-tb5" type="application/x-tiddler-dictionary">
 <pre>alert-background: #ffe476
 alert-border: #b99e2f
 alert-highlight: #881122
@@ -10434,10 +10434,10 @@ toolbar-done-button:
 untagged-background: #999999
 very-muted-foreground: #888888</pre>
 </div>
-<div caption="Official Plugin Library by Tobias Beer" modified="20160120132137178" modifier="Tobias Beer" tags="$:/tags/PluginLibrary" title="$:/pluginlibrary/tobibeer/official" url="http://tobibeer.github.io/tw5-plugins/library/index.html" revision="0" bag="default">
+<div bag="default" caption="Official Plugin Library by Tobias Beer" modified="20160120132137178" modifier="Tobias Beer" revision="0" tags="$:/tags/PluginLibrary" title="$:/pluginlibrary/tobibeer/official" url="http://tobibeer.github.io/tw5-plugins/library/index.html">
 <pre>The plugin library for the latest and greatest plugins from [ext[tobibeer/plugins|http://tobibeer.github.io/tw5-plugins]]; officially released versions of plugins by [ext[tobibeer|https://github.com/tobibeer]].</pre>
 </div>
-<div author="Felix Küppers" core-version="&gt;=5.1.5" dependents="" description="TopStoryView - Navigation scrolls tiddlers to the top" list="Configuration License Readme" plugin-type="plugin" released="" source="https://github.com/felixhayashi/TW5-TopStoryView" title="$:/plugins/felixhayashi/topstoryview" type="application/json" version="0.1.0" revision="0" bag="default">
+<div author="Felix Küppers" bag="default" core-version="&gt;=5.1.5" dependents="" description="TopStoryView - Navigation scrolls tiddlers to the top" list="Configuration License Readme" plugin-type="plugin" released="" revision="0" source="https://github.com/felixhayashi/TW5-TopStoryView" title="$:/plugins/felixhayashi/topstoryview" type="application/json" version="0.1.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/felixhayashi/topstoryview/config.js&quot;: {
@@ -10475,7 +10475,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="JoaoBolila" core-version="&gt;=5.0.0" dependents="" description="Highlight.js: syntax highlighting" list="readme usage license" plugin-type="plugin" title="$:/plugins/tiddlywiki/highlight" type="application/json" version="5.1.15" revision="0" bag="default">
+<div author="JoaoBolila" bag="default" core-version="&gt;=5.0.0" dependents="" description="Highlight.js: syntax highlighting" list="readme usage license" plugin-type="plugin" revision="0" title="$:/plugins/tiddlywiki/highlight" type="application/json" version="5.1.15">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tiddlywiki/highlight/highlight.js&quot;: {
@@ -10541,7 +10541,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Create popups, sliders or accordion menus with the appear widget." documentation="https://tobibeer.github.io/tw5-appear" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-appear" title="$:/plugins/tobibeer/appear" type="application/json" version="0.6.2" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Create popups, sliders or accordion menus with the appear widget." documentation="https://tobibeer.github.io/tw5-appear" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-appear" title="$:/plugins/tobibeer/appear" type="application/json" version="0.6.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/appear/widget.js&quot;: {
@@ -10588,7 +10588,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="base64 encoding and decoding for ~TiddlyWiki" documentation="https://tobibeer.github.io/tw5-base64" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-base64" title="$:/plugins/tobibeer/base64" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="base64 encoding and decoding for ~TiddlyWiki" documentation="https://tobibeer.github.io/tw5-base64" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-base64" title="$:/plugins/tobibeer/base64" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/base64/filter.js&quot;: {
@@ -10604,7 +10604,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Filter titles/listfields containing a value or any / all / exactly those values from a list" documentation="https://tobibeer.github.io/tw5-contains" list="readme" plugin-type="plugin" source="https://github.com/tobibeer/tw5-contains" title="$:/plugins/tobibeer/contains" type="application/json" version="0.6.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Filter titles/listfields containing a value or any / all / exactly those values from a list" documentation="https://tobibeer.github.io/tw5-contains" list="readme" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-contains" title="$:/plugins/tobibeer/contains" type="application/json" version="0.6.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/contains/filters.js&quot;: {
@@ -10620,7 +10620,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A filter to count titles or compare against a specified count" documentation="https://tobibeer.github.io/tw5-count" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-count" title="$:/plugins/tobibeer/count" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A filter to count titles or compare against a specified count" documentation="https://tobibeer.github.io/tw5-count" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-count" title="$:/plugins/tobibeer/count" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/count/filter.js&quot;: {
@@ -10636,7 +10636,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Display acronyms and definitions from dictionaries" documentation="https://tobibeer.github.io/tw5-dict" list="readme dictionary config" plugin-type="plugin" source="https://github.com/tobibeer/tw5-dict" title="$:/plugins/tobibeer/dict" type="application/json" version="0.6.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Display acronyms and definitions from dictionaries" documentation="https://tobibeer.github.io/tw5-dict" list="readme dictionary config" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-dict" title="$:/plugins/tobibeer/dict" type="application/json" version="0.6.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/dict/config&quot;: {
@@ -10674,7 +10674,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Retrieve text or attributes from dom nodes" documentation="https://tobibeer.github.io/tw5-dom" list="readme" plugin-type="plugin" source="https://github.com/tobibeer/tw5-dom" title="$:/plugins/tobibeer/dom" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Retrieve text or attributes from dom nodes" documentation="https://tobibeer.github.io/tw5-dom" list="readme" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-dom" title="$:/plugins/tobibeer/dom" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/dom/domtext.js&quot;: {
@@ -10690,7 +10690,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="a filter to escape characters in a title to make it safe for use in regular expressions" documentation="https://tobibeer.github.io/tw5-escape" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-escape" title="$:/plugins/tobibeer/escape" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="a filter to escape characters in a title to make it safe for use in regular expressions" documentation="https://tobibeer.github.io/tw5-escape" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-escape" title="$:/plugins/tobibeer/escape" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/escape/filter.js&quot;: {
@@ -10706,7 +10706,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Evaluate expressions, compute and compare tiddler properties and data" documentation="https://tobibeer.github.io/tw5-plugins#eval" list="readme filter widget" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-eval" title="$:/plugins/tobibeer/eval" type="application/json" version="0.6.9 BETA" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Evaluate expressions, compute and compare tiddler properties and data" documentation="https://tobibeer.github.io/tw5-plugins#eval" list="readme filter widget" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-eval" title="$:/plugins/tobibeer/eval" type="application/json" version="0.6.9 BETA">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/eval/filter&quot;: {
@@ -10753,14 +10753,14 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div title="$:/plugins/tobibeer/eval/libraries" type="application/json" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/plugins/tobibeer/eval/libraries" type="application/json">
 <pre>[
 	{&quot;type&quot;:&quot;math.js&quot;, &quot;require&quot;: &quot;$:/lib/math.js&quot;},
 	{&quot;type&quot;:&quot;math.js&quot;, &quot;id&quot;:&quot;mklauber/math.js&quot;, &quot;require&quot;:&quot;$:/plugins/mklauber/math.js/math.js&quot;},
 	{&quot;type&quot;:&quot;js&quot;}
 ]</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A macro and template to embed tiddlers from external wikis" documentation="https://tobibeer.github.io/tw5-external" list="readme depends config use" plugin-type="plugin" requires="[[tobibeer/setvars|http://tobibeer.github.io/tw5-plugins/#setvars]], [[tobibeer/split|http://tobibeer.github.io/tw5-plugins/#split]] " source="https://github.com/tobibeer/tw5-external" title="$:/plugins/tobibeer/external" type="application/json" version="0.5.3" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A macro and template to embed tiddlers from external wikis" documentation="https://tobibeer.github.io/tw5-external" list="readme depends config use" plugin-type="plugin" requires="[[tobibeer/setvars|http://tobibeer.github.io/tw5-plugins/#setvars]], [[tobibeer/split|http://tobibeer.github.io/tw5-plugins/#split]] " revision="0" source="https://github.com/tobibeer/tw5-external" title="$:/plugins/tobibeer/external" type="application/json" version="0.5.3">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/external/config&quot;: {
@@ -10814,10 +10814,10 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20160113143018429" creator="Tobias Beer" modified="20160113143021629" modifier="Tobias Beer" title="$:/plugins/tobibeer/external/defaults/wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113143018429" creator="Tobias Beer" modified="20160113143021629" modifier="Tobias Beer" revision="0" title="$:/plugins/tobibeer/external/defaults/wiki" type="text/vnd.tiddlywiki">
 <pre>tobibeer</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Evaluate variable subfilters in filter expressions" documentation="https://tobibeer.github.io/tw5-filter" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-filter" title="$:/plugins/tobibeer/filter" type="application/json" version="0.5.7" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Evaluate variable subfilters in filter expressions" documentation="https://tobibeer.github.io/tw5-filter" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-filter" title="$:/plugins/tobibeer/filter" type="application/json" version="0.5.7">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/filter/filters.js&quot;: {
@@ -10833,7 +10833,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="URI-encode permalink or permaview hashes for titles or decode uri hashes" documentation="https://tobibeer.github.io/tw5-hash" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-hash" title="$:/plugins/tobibeer/hash" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="URI-encode permalink or permaview hashes for titles or decode uri hashes" documentation="https://tobibeer.github.io/tw5-hash" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-hash" title="$:/plugins/tobibeer/hash" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/hash/filter.js&quot;: {
@@ -10849,7 +10849,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Enhance transclusion by including tiddlers with an on-hover toolbar" documentation="https://tobibeer.github.io/tw5-inc" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-inc" title="$:/plugins/tobibeer/inc" type="application/json" version="0.5.2" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Enhance transclusion by including tiddlers with an on-hover toolbar" documentation="https://tobibeer.github.io/tw5-inc" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-inc" title="$:/plugins/tobibeer/inc" type="application/json" version="0.5.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/inc/buttons/open&quot;: {
@@ -10882,7 +10882,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A filter to join titles via template, separator, prefix, suffix, trimmed" documentation="https://tobibeer.github.io/tw5-join" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-join" title="$:/plugins/tobibeer/join" type="application/json" version="0.5.1" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A filter to join titles via template, separator, prefix, suffix, trimmed" documentation="https://tobibeer.github.io/tw5-join" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-join" title="$:/plugins/tobibeer/join" type="application/json" version="0.5.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/join/filter.js&quot;: {
@@ -10898,7 +10898,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Use the make filter to generate unique or random tiddler titles" documentation="https://tobibeer.github.io/tw5-make" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-make" title="$:/plugins/tobibeer/make" type="application/json" version="0.6.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Use the make filter to generate unique or random tiddler titles" documentation="https://tobibeer.github.io/tw5-make" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-make" title="$:/plugins/tobibeer/make" type="application/json" version="0.6.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/make/filters.js&quot;: {
@@ -10920,7 +10920,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="The math.js library for use with plugins like ''tobibeer/eval''" documentation="https://tobibeer.github.io/tw5-plugins#math.js" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-math.js" title="$:/plugins/tobibeer/math.js" type="application/json" version="2.4.2" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="The math.js library for use with plugins like ''tobibeer/eval''" documentation="https://tobibeer.github.io/tw5-plugins#math.js" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-math.js" title="$:/plugins/tobibeer/math.js" type="application/json" version="2.4.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/lib/math.js&quot;: {
@@ -10936,7 +10936,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Render plantuml diagrams online as image or text" documentation="https://tobibeer.github.io/tw5-plantuml" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-plantuml" title="$:/plugins/tobibeer/plantuml" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Render plantuml diagrams online as image or text" documentation="https://tobibeer.github.io/tw5-plantuml" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-plantuml" title="$:/plugins/tobibeer/plantuml" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/plantuml/defaults/edit&quot;: {
@@ -10981,7 +10981,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Shows a tiddler preview when hovering internal links" documentation="https://tobibeer.github.io/tw5-preview" list="readme config" plugin-type="plugin" requires="[[tobibeer/appear|http://tobibeer.github.io/tw5-plugins/#appear]]" source="https://github.com/tobibeer/tw5-preview" title="$:/plugins/tobibeer/preview" type="application/json" version="0.5.6" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Shows a tiddler preview when hovering internal links" documentation="https://tobibeer.github.io/tw5-preview" list="readme config" plugin-type="plugin" requires="[[tobibeer/appear|http://tobibeer.github.io/tw5-plugins/#appear]]" revision="0" source="https://github.com/tobibeer/tw5-preview" title="$:/plugins/tobibeer/preview" type="application/json" version="0.5.6">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/preview/config&quot;: {
@@ -11073,10 +11073,10 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div title="$:/plugins/tobibeer/preview/defaults/not" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/plugins/tobibeer/preview/defaults/not">
 <pre>tc-drop-down tc-sidebar-scrollable tc-topbar tc-tiddler-title back-top</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A filter to return one or more random titles" documentation="https://tobibeer.github.io/tw5-random" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-random" title="$:/plugins/tobibeer/random" type="application/json" version="0.1.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A filter to return one or more random titles" documentation="https://tobibeer.github.io/tw5-random" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-random" title="$:/plugins/tobibeer/random" type="application/json" version="0.1.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/random/filter.js&quot;: {
@@ -11092,7 +11092,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A macro to rate tiddlers" documentation="https://tobibeer.github.io/tw5-rate" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-rate" title="$:/plugins/tobibeer/rate" type="application/json" version="0.6.1" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A macro to rate tiddlers" documentation="https://tobibeer.github.io/tw5-rate" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-rate" title="$:/plugins/tobibeer/rate" type="application/json" version="0.6.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/rate/config/filter&quot;: {
@@ -11122,10 +11122,10 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div title="$:/plugins/tobibeer/rate/config/filter" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/plugins/tobibeer/rate/config/filter">
 <pre>[all[current]prefix[rate]]</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Set multiple, complex variables based on attributes, filters, or conditionals" documentation="https://tobibeer.github.io/tw5-setvars" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-setvars" title="$:/plugins/tobibeer/setvars" type="application/json" version="0.6.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Set multiple, complex variables based on attributes, filters, or conditionals" documentation="https://tobibeer.github.io/tw5-setvars" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-setvars" title="$:/plugins/tobibeer/setvars" type="application/json" version="0.6.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/setvars/readme&quot;: {
@@ -11141,7 +11141,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A widget and macro for inline sparkline diagrams" documentation="https://tobibeer.github.io/tw5-sparkl" list="readme defaults styles" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-sparkl" title="$:/plugins/tobibeer/sparkl" type="application/json" version="0.5.2" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A widget and macro for inline sparkline diagrams" documentation="https://tobibeer.github.io/tw5-sparkl" list="readme defaults styles" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-sparkl" title="$:/plugins/tobibeer/sparkl" type="application/json" version="0.5.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/sparkl/css&quot;: {
@@ -11227,7 +11227,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A filter to split input titles and slice-up the results" documentation="https://tobibeer.github.io/tw5-split" list="readme" plugin-type="plugin" source="https://github.com/tobibeer/tw5-split" title="$:/plugins/tobibeer/split" type="application/json" version="0.8.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A filter to split input titles and slice-up the results" documentation="https://tobibeer.github.io/tw5-split" list="readme" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-split" title="$:/plugins/tobibeer/split" type="application/json" version="0.8.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/split/filter.js&quot;: {
@@ -11249,7 +11249,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Retrieve system &amp; browser information, e.g. window.location.href" documentation="https://tobibeer.github.io/tw5-plugins#sysinfo" list="readme" plugin-type="plugin" source="https://github.com/tobibeer/tw5-sysinfo" title="$:/plugins/tobibeer/sysinfo" type="application/json" version="0.6.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Retrieve system &amp; browser information, e.g. window.location.href" documentation="https://tobibeer.github.io/tw5-plugins#sysinfo" list="readme" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-sysinfo" title="$:/plugins/tobibeer/sysinfo" type="application/json" version="0.6.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/sysinfo/readme&quot;: {
@@ -11265,7 +11265,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A filter to fetch titles in a Table of Contents" documentation="https://tobibeer.github.io/tw5-toc" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-toc" title="$:/plugins/tobibeer/toc" type="application/json" version="0.5.1" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A filter to fetch titles in a Table of Contents" documentation="https://tobibeer.github.io/tw5-toc" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-toc" title="$:/plugins/tobibeer/toc" type="application/json" version="0.5.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/toc/filter.js&quot;: {
@@ -11281,7 +11281,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="A filter to test input titles for a given value" documentation="https://tobibeer.github.io/tw5-value" list="readme" plugin-type="plugin" requires="" source="https://github.com/tobibeer/tw5-value" title="$:/plugins/tobibeer/value" type="application/json" version="0.5.1" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="A filter to test input titles for a given value" documentation="https://tobibeer.github.io/tw5-value" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-value" title="$:/plugins/tobibeer/value" type="application/json" version="0.5.1">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/value/filter.js&quot;: {
@@ -11297,7 +11297,7 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div author="Tobias Beer" core-version="&gt;=5.1.9" dependents="" description="Group filtered tiddlers with relations to two categories in a crosslist" documentation="https://tobibeer.github.io/tw5-plugins#xlist" list="readme" plugin-type="plugin" source="https://github.com/tobibeer/tw5-xlist" title="$:/plugins/tobibeer/xlist" type="application/json" version="0.5.0" revision="0" bag="default">
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Group filtered tiddlers with relations to two categories in a crosslist" documentation="https://tobibeer.github.io/tw5-plugins#xlist" list="readme" plugin-type="plugin" revision="0" source="https://github.com/tobibeer/tw5-xlist" title="$:/plugins/tobibeer/xlist" type="application/json" version="0.5.0">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tobibeer/xlist/readme&quot;: {
@@ -11318,19 +11318,19 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div title="$:/SiteSubtitle" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/SiteSubtitle">
 <pre>docs for plugins by [[tobibeer|https://github.com/tobibeer]]</pre>
 </div>
-<div title="$:/SiteTitle" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/SiteTitle">
 <pre>[[plugins|Plugins]]</pre>
 </div>
-<div title="$:/status/UserName" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/status/UserName">
 <pre>Tobias Beer</pre>
 </div>
-<div list="Welcome" title="$:/StoryList" revision="1" bag="default">
+<div list="Welcome" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20141117084727358" creator="Tobias Beer" modified="20151001064523013" modifier="Tobias Beer" tags="$:/tags/Stylesheet" title="$:/styles/pretty" type="text/plain" revision="0" bag="default">
+<div bag="default" created="20141117084727358" creator="Tobias Beer" modified="20151001064523013" modifier="Tobias Beer" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/pretty" type="text/plain">
 <pre>.pretty-pop,
 .pretty img,
 .pretty svg,
@@ -11356,27 +11356,59 @@ width:120px;
 height:120px;
 }</pre>
 </div>
-<div created="20171206213712857" creator="Tobias Beer" modified="20171206213743166" modifier="Tobias Beer" title="$:/temp/appear-handler/popups" revision="95" bag="default">
-<pre>$:/temp/appear/Widgets-879909734/popup/block/</pre>
+<div bag="default" created="20171206213712857" creator="Tobias Beer" modified="20221227124705430" modifier="Tobias Beer" revision="95" title="$:/temp/appear-handler/popups">
+<pre>$:/temp/appear/Widgets1533469882/popup/block/</pre>
 </div>
-<div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
+<div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/info/browser&quot;: {
             &quot;title&quot;: &quot;$:/info/browser&quot;,
-            &quot;text&quot;: &quot;no&quot;
+            &quot;text&quot;: &quot;yes&quot;
         },
         &quot;$:/info/node&quot;: {
             &quot;title&quot;: &quot;$:/info/node&quot;,
-            &quot;text&quot;: &quot;yes&quot;
+            &quot;text&quot;: &quot;no&quot;
+        },
+        &quot;$:/info/url/full&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/full&quot;,
+            &quot;text&quot;: &quot;https://tobibeer.github.io/tw5-plugins/&quot;
+        },
+        &quot;$:/info/url/host&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/host&quot;,
+            &quot;text&quot;: &quot;tobibeer.github.io&quot;
+        },
+        &quot;$:/info/url/hostname&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
+            &quot;text&quot;: &quot;tobibeer.github.io&quot;
+        },
+        &quot;$:/info/url/protocol&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
+            &quot;text&quot;: &quot;https:&quot;
+        },
+        &quot;$:/info/url/port&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/port&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/info/url/pathname&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
+            &quot;text&quot;: &quot;/tw5-plugins/&quot;
+        },
+        &quot;$:/info/url/search&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/search&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/info/url/origin&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/origin&quot;,
+            &quot;text&quot;: &quot;https://tobibeer.github.io&quot;
         }
     }
 }</pre>
 </div>
-<div title="$:/templates/text" revision="0" bag="default">
+<div bag="default" revision="0" title="$:/templates/text">
 <pre>&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.15" revision="0" bag="default">
+<div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.15">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/snowwhite/base&quot;: {
@@ -11387,7 +11419,7 @@ height:120px;
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.15" revision="0" bag="default">
+<div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.15">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/vanilla/base&quot;: {
@@ -11485,10 +11517,10 @@ height:120px;
     }
 }</pre>
 </div>
-<div created="20160107112345251" creator="Tobias Beer" modified="20160107112346500" modifier="Tobias Beer" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107112345251" creator="Tobias Beer" modified="20160107112346500" modifier="Tobias Beer" revision="0" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>top</pre>
 </div>
-<div created="20160107115650368" creator="Tobias Beer" modified="20160107120432473" modifier="Tobias Beer" summary="use the the [[appear]] widget to create an accordion style menu" tags="appear Examples" title="Accordion Menu Via Appear Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107115650368" creator="Tobias Beer" modified="20160107120432473" modifier="Tobias Beer" revision="0" summary="use the the [[appear]] widget to create an accordion style menu" tags="appear Examples" title="Accordion Menu Via Appear Widget" type="text/vnd.tiddlywiki">
 <pre>\define slider-label(prefix,suffix)
 @@.grey-svg $prefix$&lt;$text text=&quot;$(currentTiddler)$&quot;/&gt;$suffix$@@
 \end
@@ -11515,10 +11547,10 @@ state=&quot;$:/state/menu/accordion&quot;&gt;
 &lt;/$list&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151209180857097" creator="Tobias Beer" modified="20151229092638950" modifier="Tobias Beer" tabs="Info Attributes Examples Defaults Modes States Styles Install" tags="Plugins Widgets" title="appear" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209180857097" creator="Tobias Beer" modified="20151229092638950" modifier="Tobias Beer" revision="0" tabs="Info Attributes Examples Defaults Modes States Styles Install" tags="Plugins Widgets" title="appear" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs appear&gt;&gt;</pre>
 </div>
-<div created="20151209181001150" creator="Tobias Beer" modified="20160120055111736" modifier="Tobias Beer" title="appear-Attributes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209181001150" creator="Tobias Beer" modified="20160120055111736" modifier="Tobias Beer" revision="0" title="appear-Attributes" type="text/vnd.tiddlywiki">
 <pre>Some attributes of the ''appear'' widget directly specify its behavior while others map to the corresponding &lt;&lt;x ButtonWidget&gt;&gt; or &lt;&lt;x RevealWidget&gt;&gt; it creates:
 
 | !Name | !Description | !Default |
@@ -11543,7 +11575,7 @@ state=&quot;$:/state/menu/accordion&quot;&gt;
 |&gt;|&gt;| ![[Reveal Attributes|http://tiddlywiki.com/#RevealWidget]] |
 |''class'',&lt;br&gt;''position'',&lt;br&gt;''retain'',&lt;br&gt;''state'',&lt;br&gt;''style'',&lt;br&gt;''tag''|see &lt;&lt;x RevealWidget&gt;&gt;&lt;br&gt;&amp;raquo; note that the type attribute of the reveal is explicitly handled by the appear widget|see [[Defaults|appear-Defaults]]|</pre>
 </div>
-<div created="20151216082358246" creator="Tobias Beer" modified="20160120074120716" modifier="Tobias Beer" title="appear-Defaults" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151216082358246" creator="Tobias Beer" modified="20160120074120716" modifier="Tobias Beer" revision="0" title="appear-Defaults" type="text/vnd.tiddlywiki">
 <pre>The eventual widget configuration taking effect follows this order of precedence:
 
 # a specifically declared widget attribute value
@@ -11582,7 +11614,7 @@ The following attributes have failsafe fallbacks that you cannot actually set to
 ; default-state
 : default: `$:/temp/appear/`</pre>
 </div>
-<div created="20150201173223292" creator="Tobias Beer" modified="20160122202311704" modifier="Tobias Beer" summary="examples for the [[appear]] widget" tags="appear Examples" title="appear-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20150201173223292" creator="Tobias Beer" modified="20160122202311704" modifier="Tobias Beer" revision="0" summary="examples for the [[appear]] widget" tags="appear Examples" title="appear-Examples" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;grey-svg&quot;&gt;
 
 !! Simple Slider
@@ -11731,7 +11763,7 @@ text=&quot;&quot;&quot;before &lt;$appear type=&quot;popup&quot; $state=&quot;li
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;| &lt;$appear show=&quot;click to show&quot; type=&quot;popup&quot; $state=&quot;popups-handler&quot; handler=&quot;popups&quot;&gt;I [[appear]] when you tell me to.&lt;/$appear&gt; |eenie meenie miney mo |eenie meenie miney mo &lt;br/&gt;&lt;br/&gt; |&quot;&quot;&quot;/&gt;</pre>
 </div>
-<div created="20151209180941139" creator="Tobias Beer" modified="20151229094127992" modifier="Tobias Beer" title="appear-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209180941139" creator="Tobias Beer" modified="20151229094127992" modifier="Tobias Beer" revision="0" title="appear-Info" type="text/vnd.tiddlywiki">
 <pre>The ''appear'' widget displays a button which when clicked reveals hidden content to produce the following results:
 
 * ''popups'', taken out of the document flow if you want them to
@@ -11743,7 +11775,7 @@ Under the hood, there is at least one &lt;&lt;x ButtonWidget&gt;&gt; and one &lt
 
 &lt;&lt;plugin-docs-cp appear&gt;&gt;</pre>
 </div>
-<div created="20151209181007989" creator="Tobias Beer" modified="20160909050225651" modifier="Tobias Beer" title="appear-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209181007989" creator="Tobias Beer" modified="20160909050225651" modifier="Tobias Beer" revision="0" title="appear-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install appear&gt;&gt;
 
 !! Version History
@@ -11761,7 +11793,7 @@ Under the hood, there is at least one &lt;&lt;x ButtonWidget&gt;&gt; and one &lt
 ; 0.5.5 / 2015-12-29
 : initial release</pre>
 </div>
-<div created="20151216073014999" creator="Tobias Beer" modified="20160106224029815" modifier="Tobias Beer" tags="" title="appear-Modes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151216073014999" creator="Tobias Beer" modified="20160106224029815" modifier="Tobias Beer" revision="0" tags="" title="appear-Modes" type="text/vnd.tiddlywiki">
 <pre>Depending on your use of line-breaks, TiddlyWiki detects whether or not to render content in block or inline mode. As this may be contrary to how you want the output to behave, you can specifically instruct the appear widget to render in modes:
 
 ; mode
@@ -11791,7 +11823,7 @@ Here's what setting different modes will do to the same text:
 
 &lt;&lt;` &quot;&quot;&quot;before &lt;$appear $state=&quot;none&quot;&gt;text&lt;/$appear&gt; after&quot;&quot;&quot;&gt;&gt;</pre>
 </div>
-<div created="20151216095443224" creator="Tobias Beer" modified="20160122205035302" modifier="Tobias Beer" tags="" title="appear-States" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151216095443224" creator="Tobias Beer" modified="20160122205035302" modifier="Tobias Beer" revision="0" tags="" title="appear-States" type="text/vnd.tiddlywiki">
 <pre>The appear widget simplifies &lt;&lt;x StateMechanism &quot;state handling&quot;&gt;&gt; for you, by default not even requiring you to specify a state at all. In that case, a state is automatically qualified for you using the &lt;&lt;x &quot;qualify Macro&quot;&gt;&gt; algorithm and a few extra bits extracted from the attributes.
 
 What's more, you do not need to know anything about how to correctly match the different state attributes of the underlying &lt;&lt;x ButtonWidget&gt;&gt; or &lt;&lt;x RevealWidget&gt;&gt;, i.e. no &quot;popup&quot; attribute for you to specify. All you need to declare is the state you wish to use and the type with which you wish it displayed.
@@ -11827,7 +11859,7 @@ You will find all current appear-widget state tiddlers in this wiki listed below
 
 {{{ [prefix[$:/temp/appear/]] }}}</pre>
 </div>
-<div created="20151216094336360" creator="Tobias Beer" modified="20151229093643685" modifier="Tobias Beer" tags="" title="appear-Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151216094336360" creator="Tobias Beer" modified="20151229093643685" modifier="Tobias Beer" revision="0" tags="" title="appear-Styles" type="text/vnd.tiddlywiki">
 <pre>The default styles for the appear-widget are defined in &lt;&lt;source &quot;$:/plugins/tobibeer/appear/styles&quot;&gt;&gt;
 
  !! CSS Classes
@@ -11849,13 +11881,13 @@ The following css classes are automatically set by the appear widget:
 ; appear-once
 : set at both button and reveal when an appear widget is specified to only show the button once</pre>
 </div>
-<div parents="Gronk" summary="see [[toc-Examples]]" tags="Foo" title="Bar" revision="0" bag="default">
+<div bag="default" parents="Gronk" revision="0" summary="see [[toc-Examples]]" tags="Foo" title="Bar">
 <pre></pre>
 </div>
-<div tabs="Info Syntax Examples Install" tags="Plugins Filters" title="base64" revision="0" bag="default">
+<div bag="default" revision="0" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="base64">
 <pre>&lt;&lt;plugin-docs base64&gt;&gt;</pre>
 </div>
-<div created="20171206202625540" creator="Tobias Beer" modified="20171206202741328" modifier="Tobias Beer" title="base64-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20171206202625540" creator="Tobias Beer" modified="20171206202741328" modifier="Tobias Beer" revision="0" title="base64-Examples" type="text/vnd.tiddlywiki">
 <pre>The below examples all make use of &lt;&lt;source $:/templates/text&gt;&gt;
 
 !! Encode Operand
@@ -11880,7 +11912,7 @@ The following css classes are automatically set by the appear widget:
 
 &lt;&lt;` &quot;&quot;&quot;{{{ [[Zm9v]] [[YmFy]] +[base64:decode[]] || $:/templates/text }}}&quot;&quot;&quot;&gt;&gt;</pre>
 </div>
-<div created="20171206202759546" creator="Tobias Beer" modified="20171206202801220" modifier="Tobias Beer" title="base64-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20171206202759546" creator="Tobias Beer" modified="20171206202801220" modifier="Tobias Beer" revision="0" title="base64-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/base64 provides:
 
 ; base64[]
@@ -11891,7 +11923,7 @@ The following css classes are automatically set by the appear widget:
 
 &lt;&lt;plugin-docs-cp base64&gt;&gt;</pre>
 </div>
-<div created="20171206202753528" creator="Tobias Beer" modified="20171206202755165" modifier="Tobias Beer" title="base64-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20171206202753528" creator="Tobias Beer" modified="20171206202755165" modifier="Tobias Beer" revision="0" title="base64-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install base64&gt;&gt;
 
 !! Version History
@@ -11899,7 +11931,7 @@ The following css classes are automatically set by the appear widget:
 ; 0.5.0 / 2017-12-06
 : initial version</pre>
 </div>
-<div created="20171206200130135" creator="Tobias Beer" modified="20171206204519713" modifier="Tobias Beer" title="base64-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20171206200130135" creator="Tobias Beer" modified="20171206204519713" modifier="Tobias Beer" revision="0" title="base64-Syntax" type="text/vnd.tiddlywiki">
 <pre>Simply use the following to...
 
 ; Encode
@@ -11934,13 +11966,13 @@ The following css classes are automatically set by the appear widget:
 ```
 &lt;/div&gt;</pre>
 </div>
-<div list="Mumble Frotz Gronk" parents="Gronk" summary="see [[toc-Examples]]" tags="Bar" title="Baz" revision="0" bag="default">
+<div bag="default" list="Mumble Frotz Gronk" parents="Gronk" revision="0" summary="see [[toc-Examples]]" tags="Bar" title="Baz">
 <pre></pre>
 </div>
-<div created="20151125113554731" creator="Tobias Beer" listfield="&lt;span class=&quot;intro&quot;&gt;returns those input titles where the ''&amp;lt;listfield&gt;''&lt;/span&gt;" modified="20161219184811037" modifier="Tobias Beer" negation="&lt;h2&gt;Negation&lt;/h2&gt;//The below examples demonstrate negated output...//" tabs="Info Examples Install" tags="Plugins Filters" title="contains" titles="&lt;span class=&quot;intro&quot;&gt;returns ''all input titles'', unmodified, if the input titles&lt;/span&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125113554731" creator="Tobias Beer" listfield="&lt;span class=&quot;intro&quot;&gt;returns those input titles where the ''&amp;lt;listfield&gt;''&lt;/span&gt;" modified="20161219184811037" modifier="Tobias Beer" negation="&lt;h2&gt;Negation&lt;/h2&gt;//The below examples demonstrate negated output...//" revision="0" tabs="Info Examples Install" tags="Plugins Filters" title="contains" titles="&lt;span class=&quot;intro&quot;&gt;returns ''all input titles'', unmodified, if the input titles&lt;/span&gt;" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs contains&gt;&gt;</pre>
 </div>
-<div created="20160107111007274" creator="Tobias Beer" modified="20161219123538704" modifier="Tobias Beer" summary="examples for the [[contains]] filter" tags="Examples contains" title="contains-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107111007274" creator="Tobias Beer" modified="20161219123538704" modifier="Tobias Beer" revision="0" summary="examples for the [[contains]] filter" tags="Examples contains" title="contains-Examples" type="text/vnd.tiddlywiki">
 <pre>\define intro(which) &lt;br&gt;@@.summary {{contains!!$which$}}...@@
 \define case(title)
 &lt;$tiddler tiddler=&quot;&quot;&quot;$title$&quot;&quot;&quot;&gt;
@@ -11966,7 +11998,7 @@ The following css classes are automatically set by the appear widget:
 
 &lt;/div&gt;&lt;style&gt;.contains-variants li li .intro {display:none}&lt;/style&gt;</pre>
 </div>
-<div created="20151125111607401" creator="Tobias Beer" modified="20160107111123293" modifier="Tobias Beer" tags="" title="contains-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125111607401" creator="Tobias Beer" modified="20160107111123293" modifier="Tobias Beer" revision="0" tags="" title="contains-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin [[$:/plugins/tobibeer/contains]] provides the filter:
 
 ; contains[]
@@ -11977,7 +12009,7 @@ The following css classes are automatically set by the appear widget:
 : all [[Variants|contains-Examples]] support negation via `!contains`
 : ''Note:'' When passing an empty value or list — except for ''$exactly'' — the contains filter will always return the input titles. In other words an empty value or empty list is always contained in a list being tested.</pre>
 </div>
-<div created="20161218195432881" creator="Tobias Beer" modified="20161219184803853" modifier="Tobias Beer" title="contains-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161218195432881" creator="Tobias Beer" modified="20161219184803853" modifier="Tobias Beer" revision="0" title="contains-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install contains&gt;&gt;
 
 !! Version History
@@ -11997,7 +12029,7 @@ The following issue proposes the `contains[]` filter to the core:
 ''#1216 filter operator for &quot;list contains an item or any / all items of another list&quot;''
 https://github.com/Jermolene/TiddlyWiki5/issues/1216</pre>
 </div>
-<div created="20151125104122835" creator="Tobias Beer" listfield="foo bar baz" modified="20161219123511796" modifier="Tobias Beer" summary="{{contains!!listfield}} contains ''all'' titles in ''list''" tags="contains Examples" title="contains:&lt;listfield&gt; $all[&lt;list&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125104122835" creator="Tobias Beer" listfield="foo bar baz" modified="20161219123511796" modifier="Tobias Beer" revision="0" summary="{{contains!!listfield}} contains ''all'' titles in ''list''" tags="contains Examples" title="contains:&lt;listfield&gt; $all[&lt;list&gt;]" type="text/vnd.tiddlywiki">
 <pre>Using a variable:
 
 &lt;&lt;` &quot;&quot;&quot;&lt;$vars list=&quot;foo bar&quot;&gt;
@@ -12050,7 +12082,7 @@ Does not find matches, because no tiddler is listing &quot;bar baz&quot; in the 
 &lt;/$vars&gt;&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20151125104159292" creator="Tobias Beer" listfield="foo" modified="20161219123508256" modifier="Tobias Beer" summary="{{contains!!listfield}} contains ''any'' titles in ''list''" tags="contains Examples" title="contains:&lt;listfield&gt; $any[&lt;list&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125104159292" creator="Tobias Beer" listfield="foo" modified="20161219123508256" modifier="Tobias Beer" revision="0" summary="{{contains!!listfield}} contains ''any'' titles in ''list''" tags="contains Examples" title="contains:&lt;listfield&gt; $any[&lt;list&gt;]" type="text/vnd.tiddlywiki">
 <pre>Can use single word titles directly:
 
 &lt;&lt;` &quot;&quot;&quot;&lt;dl&gt;
@@ -12083,7 +12115,7 @@ In the following example, negation means: &quot;where the field ''listfield'' of
 &lt;/dl&gt;&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20161218185220541" creator="Tobias Beer" listfield="bar baz" modified="20161219123504571" modifier="Tobias Beer" summary="{{contains!!listfield}} contains ''exactly'' those titles in ''list''" tags="contains Examples" title="contains:&lt;listfield&gt; $exactly[&lt;list&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161218185220541" creator="Tobias Beer" listfield="bar baz" modified="20161219123504571" modifier="Tobias Beer" revision="0" summary="{{contains!!listfield}} contains ''exactly'' those titles in ''list''" tags="contains Examples" title="contains:&lt;listfield&gt; $exactly[&lt;list&gt;]" type="text/vnd.tiddlywiki">
 <pre>Can use single word titles directly:
 
 &lt;&lt;` &quot;&quot;&quot;&lt;dl&gt;
@@ -12114,7 +12146,7 @@ Or using a variable:
 &lt;/dl&gt;&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20151125104022060" creator="Tobias Beer" listfield="foo bar" modified="20161219123519903" modifier="Tobias Beer" summary="{{contains!!listfield}} contains ''&amp;lt;value&gt;''" tags="contains Examples" title="contains:&lt;listfield&gt;[&lt;value&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125104022060" creator="Tobias Beer" listfield="foo bar" modified="20161219123519903" modifier="Tobias Beer" revision="0" summary="{{contains!!listfield}} contains ''&amp;lt;value&gt;''" tags="contains Examples" title="contains:&lt;listfield&gt;[&lt;value&gt;]" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;` &quot;&quot;&quot;&lt;dl&gt;
 &lt;$list filter=&quot;[contains:listfield[foo]]&quot;&gt;
 &lt;dt&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/dt&gt;
@@ -12131,7 +12163,7 @@ Or using a variable:
 &lt;/$list&gt;
 &lt;/dl&gt;&quot;&quot;&quot;&gt;&gt;</pre>
 </div>
-<div created="20151125070738462" creator="Tobias Beer" modified="20161219123530392" modifier="Tobias Beer" summary="{{contains!!titles}} contain ''all'' titles in ''&amp;lt;list&gt;''" tags="contains Examples" title="contains:$all[&lt;list&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125070738462" creator="Tobias Beer" modified="20161219123530392" modifier="Tobias Beer" revision="0" summary="{{contains!!titles}} contain ''all'' titles in ''&amp;lt;list&gt;''" tags="contains Examples" title="contains:$all[&lt;list&gt;]" type="text/vnd.tiddlywiki">
 <pre>You can use single word titles directly:
 
 &lt;&lt;` &quot;{{{ foo bar baz +[contains:$all[foo bar]] }}}&quot;&gt;&gt;
@@ -12169,7 +12201,7 @@ whereas:
 &lt;/$vars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151125103412095" creator="Tobias Beer" modified="20161219123526539" modifier="Tobias Beer" summary="{{contains!!titles}} contain ''any'' titles in ''&amp;lt;list&gt;''" tags="contains Examples" title="contains:$any[&lt;list&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125103412095" creator="Tobias Beer" modified="20161219123526539" modifier="Tobias Beer" revision="0" summary="{{contains!!titles}} contain ''any'' titles in ''&amp;lt;list&gt;''" tags="contains Examples" title="contains:$any[&lt;list&gt;]" type="text/vnd.tiddlywiki">
 <pre>You can use titles that are single words directly.
 
 &lt;&lt;` &quot;{{{ foo bar baz +[contains:$any[foo bar]] }}}&quot;&gt;&gt;
@@ -12212,7 +12244,7 @@ whereas...
 &lt;/$vars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20161218185834749" creator="Tobias Beer" modified="20161219123523282" modifier="Tobias Beer" summary="{{contains!!titles}} contain ''exactly'' those titles in ''&amp;lt;list&gt;''" tags="contains Examples" title="contains:$exactly[&lt;list&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161218185834749" creator="Tobias Beer" modified="20161219123523282" modifier="Tobias Beer" revision="0" summary="{{contains!!titles}} contain ''exactly'' those titles in ''&amp;lt;list&gt;''" tags="contains Examples" title="contains:$exactly[&lt;list&gt;]" type="text/vnd.tiddlywiki">
 <pre>You can use single word titles directly:
 
 &lt;&lt;` &quot;&quot;&quot;{{{ foo bar +[contains:$exactly[foo bar]] }}}&quot;&quot;&quot;&gt;&gt;
@@ -12247,7 +12279,7 @@ whereas...
 &lt;/$vars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151125073246519" creator="Tobias Beer" modified="20161219123533750" modifier="Tobias Beer" summary="{{contains!!titles}} contain ''&amp;lt;value&gt;''" tags="contains Examples" title="contains[&lt;value&gt;]" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125073246519" creator="Tobias Beer" modified="20161219123533750" modifier="Tobias Beer" revision="0" summary="{{contains!!titles}} contain ''&amp;lt;value&gt;''" tags="contains Examples" title="contains[&lt;value&gt;]" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;` &quot;{{{ [tag[contains]contains&lt;currentTiddler&gt;] }}}&quot;&gt;&gt;
 
 &lt;&lt;` &quot;{{{ foo bar baz +[contains[foo]] }}}&quot;&gt;&gt;
@@ -12262,10 +12294,10 @@ whereas...
 
 &lt;&lt;` &quot;&quot;&quot;&lt;$list filter=&quot;[tag[contains]!contains&lt;currentTiddler&gt;]&quot; emptyMessage=&quot;well, but ''&lt;$text text={{!!title}}/&gt;'' is contained&quot;/&gt;&quot;&quot;&quot;&gt;&gt;</pre>
 </div>
-<div created="20151229125902267" creator="Tobias Beer" modified="20151229125903377" modifier="Tobias Beer" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="count" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151229125902267" creator="Tobias Beer" modified="20151229125903377" modifier="Tobias Beer" revision="0" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="count" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs count&gt;&gt;</pre>
 </div>
-<div created="20151229124840016" creator="Tobias Beer" modified="20160107110900582" modifier="Tobias Beer" summary="examples for the [[count]] filter" tags="Examples count" title="count-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151229124840016" creator="Tobias Beer" modified="20160107110900582" modifier="Tobias Beer" revision="0" summary="examples for the [[count]] filter" tags="Examples count" title="count-Examples" type="text/vnd.tiddlywiki">
 <pre>!! Simple Count
 
 &lt;&lt;` &quot;&quot;&quot;{{{ [[a]count[]] }}} &quot;&quot;&quot;&gt;&gt;
@@ -12326,7 +12358,7 @@ emptyMessage=&quot;no matching items indeed&quot;/&gt;&quot;&quot;&quot;&gt;&gt;
 &lt;&lt;` &quot;&quot;&quot;{{{ a b c +[count:equals[3]] }}} &quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20151229123641163" creator="Tobias Beer" modified="20151229130854633" modifier="Tobias Beer" title="count-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151229123641163" creator="Tobias Beer" modified="20151229130854633" modifier="Tobias Beer" revision="0" title="count-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/count provides:
 
 ; count[]
@@ -12334,7 +12366,7 @@ emptyMessage=&quot;no matching items indeed&quot;/&gt;&quot;&quot;&quot;&gt;&gt;
 
 &lt;&lt;plugin-docs-cp count&gt;&gt;</pre>
 </div>
-<div created="20151229125839517" creator="Tobias Beer" modified="20151229125845859" modifier="Tobias Beer" title="count-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151229125839517" creator="Tobias Beer" modified="20151229125845859" modifier="Tobias Beer" revision="0" title="count-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install count&gt;&gt;
 
 !! Version History
@@ -12342,7 +12374,7 @@ emptyMessage=&quot;no matching items indeed&quot;/&gt;&quot;&quot;&quot;&gt;&gt;
 ; 0.5.0 / 2015-12-29
 : initial version</pre>
 </div>
-<div created="20151229123655503" creator="Tobias Beer" modified="20151229173634140" modifier="Tobias Beer" title="count-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151229123655503" creator="Tobias Beer" modified="20151229173634140" modifier="Tobias Beer" revision="0" title="count-Syntax" type="text/vnd.tiddlywiki">
 <pre>Without any parameters, the `count[]` filter simply counts input titles and returns the count. In addition, you can use the following operand and suffixes:
 
 !! Operand
@@ -12418,7 +12450,7 @@ emptyMessage=&quot;shown if the count is less than 3&quot;/&gt;&quot;&quot;&quot
 emptyMessage=&quot;the count is not 3 or more&quot;/&gt;&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20170201071817313" creator="Tobias Beer" modified="20170201073100274" modifier="Tobias Beer" summary="this example demonstrates how to generate counts for list iterations using the filters &lt;&lt;tb make&gt;&gt; and &lt;&lt;tb split&gt;&gt;" tags="make Examples split" title="Counting List Item Iterations" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170201071817313" creator="Tobias Beer" modified="20170201073100274" modifier="Tobias Beer" revision="0" summary="this example demonstrates how to generate counts for list iterations using the filters &lt;&lt;tb make&gt;&gt; and &lt;&lt;tb split&gt;&gt;" tags="make Examples split" title="Counting List Item Iterations" type="text/vnd.tiddlywiki">
 <pre>In the below example, we iterate through the simple filter of the titles `A B C` and use:
 
 ; &lt;&lt;tb make&gt;&gt;
@@ -12438,7 +12470,7 @@ __&lt;$text text=&lt;&lt;count&gt;&gt;/&gt;__: ''&lt;$text text=&lt;&lt;title&gt
 &lt;/$list&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20160107121615794" creator="Tobias Beer" modified="20160107121747951" modifier="Tobias Beer" summary="use the [[setvars]] widget to define variables from a complex calculation and logical evaluation using [[eval]]" tags="setvars eval Examples" title="Define Variable Using Complex Logic And Algebra" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107121615794" creator="Tobias Beer" modified="20160107121747951" modifier="Tobias Beer" revision="0" summary="use the [[setvars]] widget to define variables from a complex calculation and logical evaluation using [[eval]]" tags="setvars eval Examples" title="Define Variable Using Complex Logic And Algebra" type="text/vnd.tiddlywiki">
 <pre>```
 &lt;$setvars
 	_eval = &quot;&quot;&quot;[[]eval[and(
@@ -12487,10 +12519,10 @@ result=&quot;([eval] == \true\ ? [multiply]) || [divide]&quot;&gt;
 &lt;/$setvars&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20151123083417168" creator="Tobias Beer" modified="20151123101528213" modifier="Tobias Beer" tabs="Info Examples Parameters Configuration Dictionaries Templates Install" tags="Plugins Macros" title="dict" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151123083417168" creator="Tobias Beer" modified="20151123101528213" modifier="Tobias Beer" revision="0" tabs="Info Examples Parameters Configuration Dictionaries Templates Install" tags="Plugins Macros" title="dict" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs dict&gt;&gt;</pre>
 </div>
-<div created="20151113120806292" creator="Tobias Beer" modified="20151123101031797" modifier="Tobias Beer" title="dict-Configuration" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151113120806292" creator="Tobias Beer" modified="20151123101031797" modifier="Tobias Beer" revision="0" title="dict-Configuration" type="text/vnd.tiddlywiki">
 <pre>You can specify a [[default template macro|dict-Templates]] at:
 
 ; [[$:/plugins/tobibeer/dict/config/template]]
@@ -12498,7 +12530,7 @@ result=&quot;([eval] == \true\ ? [multiply]) || [divide]&quot;&gt;
 
 [[Available macro templates and working with them...|dict-Templates]]</pre>
 </div>
-<div created="20151113121218374" creator="Tobias Beer" modified="20151126215712683" modifier="Tobias Beer" title="dict-Dictionaries" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151113121218374" creator="Tobias Beer" modified="20151126215712683" modifier="Tobias Beer" revision="0" title="dict-Dictionaries" type="text/vnd.tiddlywiki">
 <pre>You can fetch definitions for terms and acronyms from &lt;&lt;tw DictionaryTiddlers&gt;&gt;. These are tiddlers of ''type'' `application/x-tiddler-dictionary`.
 
 The dict plugin ships with a default dictionary at [[$:/plugins/tobibeer/dict/terms]]:
@@ -12523,7 +12555,7 @@ The above retrieves the definition for `term` from a dictionary tiddler where th
 
 &amp;raquo;  [[more examples|dict-Examples]]</pre>
 </div>
-<div created="20151113102649550" creator="Tobias Beer" modified="20160107111906316" modifier="Tobias Beer" some-field="from field named 'some-field'" summary="examples for the [[dict]] macro" tags="dict Examples" title="dict-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151113102649550" creator="Tobias Beer" modified="20160107111906316" modifier="Tobias Beer" revision="0" some-field="from field named 'some-field'" summary="examples for the [[dict]] macro" tags="dict Examples" title="dict-Examples" type="text/vnd.tiddlywiki">
 <pre>''from default dictionary''
 
 `&lt;&lt;? term&gt;&gt;`
@@ -12567,7 +12599,7 @@ The above retrieves the definition for `term` from a dictionary tiddler where th
 
 &gt; &lt;&lt;? term via:?dl&gt;&gt;</pre>
 </div>
-<div created="20151123083410507" creator="Tobias Beer" modified="20151123101957916" modifier="Tobias Beer" title="dict-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151123083410507" creator="Tobias Beer" modified="20151123101957916" modifier="Tobias Beer" revision="0" title="dict-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/dict provides:
 
 ; &amp;lt;&amp;lt;?&gt;&gt;
@@ -12575,7 +12607,7 @@ The above retrieves the definition for `term` from a dictionary tiddler where th
 
 &lt;&lt;plugin-docs-cp dict&gt;&gt;</pre>
 </div>
-<div title="dict-Install" revision="0" bag="default">
+<div bag="default" revision="0" title="dict-Install">
 <pre>&lt;&lt;plugin-install dict&gt;&gt;
 
 !! Version History
@@ -12587,7 +12619,7 @@ The above retrieves the definition for `term` from a dictionary tiddler where th
 ; 0.5.0 / 2015-11-13
 : initial release with all of these params: ''title'', ''text'', ''at'', ''dict'', ''as'', ''via''</pre>
 </div>
-<div created="20151114181758912" creator="Tobias Beer" modified="20151126215851876" modifier="Tobias Beer" title="dict-Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151114181758912" creator="Tobias Beer" modified="20151126215851876" modifier="Tobias Beer" revision="0" title="dict-Parameters" type="text/vnd.tiddlywiki">
 <pre>The ''&amp;lt;&amp;lt;?&amp;gt;&amp;gt;'' macro provides the following parameters:
 
 |!# |!Parameter |!Description |
@@ -12598,7 +12630,7 @@ The above retrieves the definition for `term` from a dictionary tiddler where th
 | 5 |''as''|an alternative text to be displayed for a given ''term'', e.g. a &quot;pretty title&quot;|
 | 6 |''via''|a macro to be used as a template for the output, see [[Templates|dict-Templates]]|</pre>
 </div>
-<div created="20151113121003077" creator="Tobias Beer" modified="20151123100624448" modifier="Tobias Beer" title="dict-Templates" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151113121003077" creator="Tobias Beer" modified="20151123100624448" modifier="Tobias Beer" revision="0" title="dict-Templates" type="text/vnd.tiddlywiki">
 <pre>Templates define how a definition for a term is displayed, by default using the html ''&amp;lt;abbr&amp;gt;'' element, e.g.:
 
 `&lt;abbr title=&quot;some info&quot;&gt;hover me&lt;/abbr&gt;`
@@ -12622,10 +12654,10 @@ This is what their output looks like:
 
 &gt; &lt;&lt;? term via:?dl&gt;&gt;</pre>
 </div>
-<div created="20151123075516188" creator="Tobias Beer" fibonacci="1" last="1" modified="20151208183508757" modifier="Tobias Beer" tabs="Info Examples Install" tags="Plugins Macros" title="dom" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151123075516188" creator="Tobias Beer" fibonacci="1" last="1" modified="20151208183508757" modifier="Tobias Beer" revision="0" tabs="Info Examples Install" tags="Plugins Macros" title="dom" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs dom&gt;&gt;</pre>
 </div>
-<div created="20151122174025109" creator="Tobias Beer" fibonacci="1" last="1" modified="20160107112000601" modifier="Tobias Beer" summary="examples for the domtext macro" tags="dom Examples" title="dom-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151122174025109" creator="Tobias Beer" fibonacci="1" last="1" modified="20160107112000601" modifier="Tobias Beer" revision="0" summary="examples for the domtext macro" tags="dom Examples" title="dom-Examples" type="text/vnd.tiddlywiki">
 <pre>Let's create an element with a unique ''id'':
 
 ; element
@@ -12661,7 +12693,7 @@ text=&quot;&quot;&quot;''current:'' {{!!fibonacci}}
 &lt;/$button&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151123074344122" creator="Tobias Beer" modified="20160107112255916" modifier="Tobias Beer" tabs="" tags="" title="dom-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151123074344122" creator="Tobias Beer" modified="20160107112255916" modifier="Tobias Beer" revision="0" tabs="" tags="" title="dom-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin [[$:/plugins/tobibeer/dom]] provides:
 
 ; &amp;lt;&amp;lt;domtext&gt;&gt;
@@ -12676,7 +12708,7 @@ text=&quot;&quot;&quot;''current:'' {{!!fibonacci}}
 
 &lt;&lt;plugin-docs-cp dom&gt;&gt;</pre>
 </div>
-<div title="dom-Install" revision="0" bag="default">
+<div bag="default" revision="0" title="dom-Install">
 <pre>&lt;&lt;plugin-install dom&gt;&gt;
 
 !! Version History
@@ -12684,7 +12716,7 @@ text=&quot;&quot;&quot;''current:'' {{!!fibonacci}}
 ; 0.5.0 / 2015-11-22
 : initial release</pre>
 </div>
-<div created="20160107110353091" creator="Tobias Beer" modified="20160107110610112" modifier="Tobias Beer" summary="routes a link to tiddlywiki.com if no local tiddler exists while encoding the title using the [[hash]] filter, allowing a pretty title" tags="Macros setvars hash Examples" title="Dynamic Link Macro" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107110353091" creator="Tobias Beer" modified="20160107110610112" modifier="Tobias Beer" revision="0" summary="routes a link to tiddlywiki.com if no local tiddler exists while encoding the title using the [[hash]] filter, allowing a pretty title" tags="Macros setvars hash Examples" title="Dynamic Link Macro" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;source &quot;$://macro/route&quot;&gt;&gt;
 
 @@.note
@@ -12694,13 +12726,13 @@ text=&quot;&quot;&quot;''current:'' {{!!fibonacci}}
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;Want to &lt;&lt;route &quot;Customise TiddlyWiki&quot; &quot;customize&quot;&gt;&gt; TiddlyWiki? Go check out my &lt;&lt;route Plugins plugins&gt;&gt;!&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div summary="plugins enhancing or hacking core features by [[Tobias Beer]]" title="Enhance" revision="0" bag="default">
+<div bag="default" revision="0" summary="plugins enhancing or hacking core features by [[Tobias Beer]]" title="Enhance">
 <pre>&lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div created="20161002110846880" creator="Tobias Beer" modified="20161002110848492" modifier="Tobias Beer" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="escape" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161002110846880" creator="Tobias Beer" modified="20161002110848492" modifier="Tobias Beer" revision="0" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="escape" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs escape&gt;&gt;</pre>
 </div>
-<div created="20161002110852265" creator="Tobias Beer" modified="20161002112430843" modifier="Tobias Beer" title="escape-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161002110852265" creator="Tobias Beer" modified="20161002112430843" modifier="Tobias Beer" revision="0" title="escape-Examples" type="text/vnd.tiddlywiki">
 <pre>\define regex() (\n|\r)title:( |\t)*$(escaped)$( |\t)*(\n|\r)
 
 The below example shows how to search for an escaped string pattern via regexp, e.g. `$:/core/modules/filters/regexp.js`, used for a poor man's matching for the title field of any system or shadow tiddler.
@@ -12739,7 +12771,7 @@ The regexp `(\n|\r)title:( |\t)*$(escaped)$( |\t)*(\n|\r)` [[translates to|https
 # 0 or more blanks or tabs
 # a newline or carriage return </pre>
 </div>
-<div created="20161002110858283" creator="Tobias Beer" modified="20161002110859753" modifier="Tobias Beer" title="escape-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161002110858283" creator="Tobias Beer" modified="20161002110859753" modifier="Tobias Beer" revision="0" title="escape-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/escape provides:
 
 ; escape[]
@@ -12747,7 +12779,7 @@ The regexp `(\n|\r)title:( |\t)*$(escaped)$( |\t)*(\n|\r)` [[translates to|https
 
 &lt;&lt;plugin-docs-cp escape&gt;&gt;</pre>
 </div>
-<div created="20161002110903498" creator="Tobias Beer" modified="20161002110905185" modifier="Tobias Beer" title="escape-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161002110903498" creator="Tobias Beer" modified="20161002110905185" modifier="Tobias Beer" revision="0" title="escape-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install escape&gt;&gt;
 
 !! Version History
@@ -12755,7 +12787,7 @@ The regexp `(\n|\r)title:( |\t)*$(escaped)$( |\t)*(\n|\r)` [[translates to|https
 ; 0.5.0 / 2016-10-02
 : initial version</pre>
 </div>
-<div created="20161002110908264" creator="Tobias Beer" modified="20161002114108204" modifier="Tobias Beer" title="escape-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161002110908264" creator="Tobias Beer" modified="20161002114108204" modifier="Tobias Beer" revision="0" title="escape-Syntax" type="text/vnd.tiddlywiki">
 <pre>Escaping input titles is straight forward:
 
 `[[any string]escape[]]`
@@ -12764,10 +12796,10 @@ or
 
 `[tag[foo]] +[escape[]]`</pre>
 </div>
-<div created="20151206140544579" creator="Tobias Beer" modified="20151206143126828" modifier="Tobias Beer" tabs="Info Filter Widget Examples Configure Install" tags="Plugins Widgets Filters" title="eval" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206140544579" creator="Tobias Beer" modified="20151206143126828" modifier="Tobias Beer" revision="0" tabs="Info Filter Widget Examples Configure Install" tags="Plugins Widgets Filters" title="eval" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs eval&gt;&gt;</pre>
 </div>
-<div created="20151206142814183" creator="Tobias Beer" modified="20151206164625600" modifier="Tobias Beer" tags="" title="eval-Configure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206142814183" creator="Tobias Beer" modified="20151206164625600" modifier="Tobias Beer" revision="0" tags="" title="eval-Configure" type="text/vnd.tiddlywiki">
 <pre>This plugin is designed for evaluating expressions using [[math.js]] by default. As different sources may provide it, you can configure libraries to be loaded via the &lt;&lt;x JSONTiddlers &quot;JSON tiddler&quot;&gt;&gt; $:/plugins/tobibeer/eval/libraries: &lt;$transclude tiddler=&quot;$:/plugins/tobibeer/eval&quot; subtiddler=&quot;$:/plugins/tobibeer/eval/libraries&quot;/&gt;
 
 @@.note
@@ -12788,7 +12820,7 @@ While it is highly recommended that you install and use [[math.js]] to evaluate 
 
 In order to suppress the console notification indicating that you are using native js eval, specify some otherwise not important ''id'' other than `js/eval`.</pre>
 </div>
-<div created="20151206142750801" creator="Tobias Beer" cubed="3^3" modified="20160107112432764" modifier="Tobias Beer" summary="examples for the [[eval]] filter and widget" tags="eval Examples" title="eval-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206142750801" creator="Tobias Beer" cubed="3^3" modified="20160107112432764" modifier="Tobias Beer" revision="0" summary="examples for the [[eval]] filter and widget" tags="eval Examples" title="eval-Examples" type="text/vnd.tiddlywiki">
 <pre>''just evaluate an operand:''
 
 &lt;&lt;` &quot;&quot;&quot;{{{ [[]eval[1+2]] }}}&quot;&quot;&quot;&gt;&gt;
@@ -12921,7 +12953,7 @@ n;
 &lt;/$vars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151206141608290" creator="Tobias Beer" modified="20151208193743367" modifier="Tobias Beer" title="eval-Filter" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206141608290" creator="Tobias Beer" modified="20151208193743367" modifier="Tobias Beer" revision="0" title="eval-Filter" type="text/vnd.tiddlywiki">
 <pre>The ''eval'' filter allows to evaluate an expression as:
 
 ```
@@ -13012,7 +13044,7 @@ In the operator suffix, you can specify one of the following //output modes// fo
 : output equations as ''expr = value'' per input title — supports ''current''
 :: this includes the ''final'' expression, if defined</pre>
 </div>
-<div created="20151206153434872" creator="Tobias Beer" modified="20151220073253311" modifier="Tobias Beer" title="eval-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206153434872" creator="Tobias Beer" modified="20151220073253311" modifier="Tobias Beer" revision="0" title="eval-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin [[$:/plugins/tobibeer/eval]] provides:
 
 ; eval[&amp;lt;expression&gt;]
@@ -13030,7 +13062,7 @@ It is designed to work with:
 
 &lt;&lt;plugin-docs-cp eval&gt;&gt;</pre>
 </div>
-<div created="20151206161854839" creator="Tobias Beer" modified="20151206175059036" modifier="Tobias Beer" tags="" title="eval-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206161854839" creator="Tobias Beer" modified="20151206175059036" modifier="Tobias Beer" revision="0" tags="" title="eval-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install eval&gt;&gt;
 
 @@.note
@@ -13046,13 +13078,13 @@ It is designed to work with:
 ; 0.6.7 BETA / 2015-12-07
 : initial release</pre>
 </div>
-<div created="20151206151848820" creator="Tobias Beer" modified="20151206152411404" modifier="Tobias Beer" tags="" title="eval-JS" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151206151848820" creator="Tobias Beer" modified="20151206152411404" modifier="Tobias Beer" revision="0" tags="" title="eval-JS" type="text/vnd.tiddlywiki">
 <pre>If you don't know native ~JavaScript eval, perhaps don't get started. If you do, consider the fact that your wiki will be slightly more vulnerable thanks to:
 
 * you making serious mistakes that may lead to data loss
 * visitors / users executing arbitrary ~JavaScript, directly in wikitext</pre>
 </div>
-<div count="1" created="20151206172111014" creator="Tobias Beer" modified="20160107112501837" modifier="Tobias Beer" title="eval-Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" count="1" created="20151206172111014" creator="Tobias Beer" modified="20160107112501837" modifier="Tobias Beer" revision="0" title="eval-Widget" type="text/vnd.tiddlywiki">
 <pre>The plugin ''tobibeer/eval'' provides the ''&amp;lt;$eval&gt;'' widget. Equivalent to the ''calc'' widget of [[mklauber/math.js|http://mklauber.github.io/tiddly-mathjs/]], it evaluates its inner content as an expression, e.g.:
 
 &lt;&lt;` &quot;''count:'' {{eval-Widget!!count}} =&gt;
@@ -13065,7 +13097,7 @@ However, the ''eval'' widget evaluates the expression using the [[default librar
 |''quiet''|whether the widget shows detailed evaluation errors|`false`|
 |''undefined''|a fallback value returned,&lt;br&gt; should the expression yield undefined|`undefined`|</pre>
 </div>
-<div created="20160107112757364" creator="Tobias Beer" modified="20160107121351788" modifier="Tobias Beer" summary="evaluate a filter attribute via [[eval]] to set a variable using [[setvars]]" tags="Examples eval" title="Evaluate JavaScript In A Filter" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107112757364" creator="Tobias Beer" modified="20160107121351788" modifier="Tobias Beer" revision="0" summary="evaluate a filter attribute via [[eval]] to set a variable using [[setvars]]" tags="Examples eval" title="Evaluate JavaScript In A Filter" type="text/vnd.tiddlywiki">
 <pre>&lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;$set name=&quot;evaled&quot; filter=&quot;[[1]eval[1 + title]]&quot;&gt;
 &lt;&lt;evaled&gt;&gt;
 &lt;/$set&gt;&quot;&quot;&quot;/&gt;
@@ -13074,7 +13106,7 @@ However, the ''eval'' widget evaluates the expression using the [[default librar
 ''Note:'' For js eval to be available, it needs to be [[configured|eval-Configure]]. Now, take a look at the browser console.
 @@</pre>
 </div>
-<div created="20160107112503205" creator="Tobias Beer" modified="20160107112650513" modifier="Tobias Beer" summary="use the [[eval]] filter or widget to evaluate ~JavaScript or math.js expressions" tags="Examples eval" title="Evaluate Widget Text As JavaScript" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107112503205" creator="Tobias Beer" modified="20160107112650513" modifier="Tobias Beer" revision="0" summary="use the [[eval]] filter or widget to evaluate ~JavaScript or math.js expressions" tags="Examples eval" title="Evaluate Widget Text As JavaScript" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;` &quot;&quot;&quot;&lt;$eval lib=&quot;js&quot;&gt;
 var e = {{eval-Widget!!count}} + 1;
 console.log(&quot;COUNT:&quot;,e);
@@ -13085,13 +13117,13 @@ e;
 ''Note:'' For js eval to be available, it needs to be [[configured|eval-Configure]]. Now, take a look at the browser console.
 @@</pre>
 </div>
-<div created="20160107103708502" creator="Tobias Beer" modified="20160107111304958" modifier="Tobias Beer" tags="" title="Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107103708502" creator="Tobias Beer" modified="20160107111304958" modifier="Tobias Beer" revision="0" tags="" title="Examples" type="text/vnd.tiddlywiki">
 <pre>Demonstations of my [[plugins|Plugins]]:</pre>
 </div>
-<div created="20160113131310042" creator="Tobias Beer" modified="20160113170806191" modifier="Tobias Beer" tabs="Info Macro Template Examples Configure Styles Install" tags="Plugins Macros Templates" title="external" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113131310042" creator="Tobias Beer" modified="20160113170806191" modifier="Tobias Beer" revision="0" tabs="Info Macro Template Examples Configure Styles Install" tags="Plugins Macros Templates" title="external" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs external&gt;&gt;</pre>
 </div>
-<div created="20160113131248808" creator="Tobias Beer" modified="20160113173443961" modifier="Tobias Beer" tags="" title="external-Configure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113131248808" creator="Tobias Beer" modified="20160113173443961" modifier="Tobias Beer" revision="0" tags="" title="external-Configure" type="text/vnd.tiddlywiki">
 <pre>Before you can embed tiddlers from external wikis, create a configuration for __each__ wiki under `$:/config/ExternalWiki/&lt;External Wiki Name&gt;` and specify the ''url'' of the external wiki in the tiddler body. Then:
 
 # use this title pattern to create tiddlers embedding a remote tiddler via the [[template|external-Template]]:
@@ -13131,12 +13163,12 @@ Here's the top offset for the ''tobibeer'' wiki:
 
 And here's the result: [[tobibeer: external-Install]].</pre>
 </div>
-<div created="20160113125959122" creator="Tobias Beer" modified="20160113151917312" modifier="Tobias Beer" tags="" title="external-Dependencies" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113125959122" creator="Tobias Beer" modified="20160113151917312" modifier="Tobias Beer" revision="0" tags="" title="external-Dependencies" type="text/vnd.tiddlywiki">
 <pre>@@.note
 ''Important:'' &lt;&lt;tb external&gt;&gt; depends on &lt;&lt;tb setvars&gt;&gt; and &lt;&lt;tb split&gt;&gt;. Before use, make sure all dependencies are installed.
 @@</pre>
 </div>
-<div created="20160113161220436" creator="Tobias Beer" modified="20160113171228519" modifier="Tobias Beer" summary="examples for the [[macro|external-Macro]] and [[view template|external-Template]] of &lt;&lt;tb external&gt;&gt;" tags="external Examples" title="external-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113161220436" creator="Tobias Beer" modified="20160113171228519" modifier="Tobias Beer" revision="0" summary="examples for the [[macro|external-Macro]] and [[view template|external-Template]] of &lt;&lt;tb external&gt;&gt;" tags="external Examples" title="external-Examples" type="text/vnd.tiddlywiki">
 <pre>!! Basic Example
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;&lt;external-tiddler title:&quot;external-Install&quot; height:&quot;100px&quot;&gt;&gt;&quot;&quot;&quot;/&gt;
@@ -13153,7 +13185,7 @@ You can also use the &lt;&lt;x TiddlerWidget&gt;&gt;  to create a proper context
 
 Open [[tobibeer: external-Install]] to find the tiddler ''external-Install'' automatically embedded via this template from the external wiki called ''tobibeer'' defined at &lt;&lt;source &quot;$:/config/ExternalWiki/tobibeer&quot;&gt;&gt;</pre>
 </div>
-<div created="20160113125329767" creator="Tobias Beer" modified="20160113150801340" modifier="Tobias Beer" title="external-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113125329767" creator="Tobias Beer" modified="20160113150801340" modifier="Tobias Beer" revision="0" title="external-Info" type="text/vnd.tiddlywiki">
 <pre>{{external-Dependencies}}
 
 The plugin $:/plugins/tobibeer/external provides:
@@ -13167,7 +13199,7 @@ The plugin $:/plugins/tobibeer/external provides:
 
 &lt;&lt;plugin-docs-cp external&gt;&gt;</pre>
 </div>
-<div created="20160113125334275" creator="Tobias Beer" modified="20160113161637531" modifier="Tobias Beer" title="external-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113125334275" creator="Tobias Beer" modified="20160113161637531" modifier="Tobias Beer" revision="0" title="external-Install" type="text/vnd.tiddlywiki">
 <pre>{{external-Dependencies}}
 
  &lt;&lt;plugin-install external&gt;&gt;
@@ -13185,7 +13217,7 @@ The plugin $:/plugins/tobibeer/external provides:
 ; 0.5.0 / 2016-01-13
 : initial version</pre>
 </div>
-<div created="20160113130104151" creator="Tobias Beer" modified="20160113161219618" modifier="Tobias Beer" title="external-Macro" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113130104151" creator="Tobias Beer" modified="20160113161219618" modifier="Tobias Beer" revision="0" title="external-Macro" type="text/vnd.tiddlywiki">
 <pre>\define default(option) &lt;code&gt;{{$:/plugins/tobibeer/external/defaults/$option$}}&lt;/code&gt;
 
 The [[external-tiddler|$:/plugins/tobibeer/external/macro]] macro embeds a tiddler from an external wiki using an iframe. It is automatically invoked via the [[view template|external-Template]] for tiddlers following this title pattern:
@@ -13211,14 +13243,14 @@ Here is the source code for the ''external-tiddler'' macro providing a good exam
 
 &lt;pre&gt;&lt;$view tiddler=&quot;$:/plugins/tobibeer/external/macro&quot;/&gt;&lt;/pre&gt;</pre>
 </div>
-<div created="20160113170522788" creator="Tobias Beer" modified="20160113170849240" modifier="Tobias Beer" tags="" title="external-Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113170522788" creator="Tobias Beer" modified="20160113170849240" modifier="Tobias Beer" revision="0" tags="" title="external-Styles" type="text/vnd.tiddlywiki">
 <pre>The [[external-tiddler|external-Macro]] macro wraps the iframe it creates in a //div// of the class: 
 
 `tc-external-tiddler`
 
 While the height and top offset are dynamically computed by the macro, some styles are applied to the wrapper and iframe as defined in &lt;&lt;source &quot;$:/plugins/tobibeer/external/styles&quot;&gt;&gt;</pre>
 </div>
-<div created="20160113130108510" creator="Tobias Beer" modified="20160113161318358" modifier="Tobias Beer" title="external-Template" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113130108510" creator="Tobias Beer" modified="20160113161318358" modifier="Tobias Beer" revision="0" title="external-Template" type="text/vnd.tiddlywiki">
 <pre>The template $:/plugins/tobibeer/external/template provides a view-template that automatically renders the [[external-tiddler|external-Macro]] macro when:
 
 # the current tiddler title matches this pattern
@@ -13232,7 +13264,7 @@ To disable the template, remove the tag $:/tags/ViewTemplate from it.
 
 This is the template wikitext for &lt;&lt;source &quot;$:/plugins/tobibeer/external/template&quot;&gt;&gt;</pre>
 </div>
-<div created="20161005054316972" creator="Tobias Beer" modified="20161009150745559" modifier="Tobias Beer" summary="extracting introductory content from tiddlers using the [[split]] filter" tags="Examples filter split" title="Extracting Introductions From Tiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20161005054316972" creator="Tobias Beer" modified="20161009150745559" modifier="Tobias Beer" revision="0" summary="extracting introductory content from tiddlers using the [[split]] filter" tags="Examples filter split" title="Extracting Introductions From Tiddlers" type="text/vnd.tiddlywiki">
 <pre>Here's how you can use the &lt;&lt;tw &quot;splitbefore Operator&quot;&gt;&gt; to extract introductory lines at the beginning of a tiddler~~~~, separated from the rest of the content using a separator like `~~~~`.
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;$list filter=&quot;[all[current]get[text]splitbefore[~~~~]addsuffix[...]]&quot;&gt;
@@ -13347,10 +13379,10 @@ You could also extract the first paragraph as the introduction, i.e. up to the f
 //''Note:'' Again, this method suffers from no support for leading macro definitions.//
 </pre>
 </div>
-<div created="20151221060823167" creator="Tobias Beer" modified="20160110082225709" modifier="Tobias Beer" tabs="Info Syntax Evaluation Examples Errors Install" tags="Plugins Filters" title="filter" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221060823167" creator="Tobias Beer" modified="20160110082225709" modifier="Tobias Beer" revision="0" tabs="Info Syntax Evaluation Examples Errors Install" tags="Plugins Filters" title="filter" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs filter&gt;&gt;</pre>
 </div>
-<div created="20160110082235278" creator="Tobias Beer" modified="20160110090614615" modifier="Tobias Beer" title="filter-Errors" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160110082235278" creator="Tobias Beer" modified="20160110090614615" modifier="Tobias Beer" revision="0" title="filter-Errors" type="text/vnd.tiddlywiki">
 <pre>With ''filter'''s powerful syntax allowing you to [[specify flexible subfilters|filter-Syntax]] it is rather easy to construct an invalid subfilter expression, i.e. one that produces a filter error.
 
 Therefore, as of ''version 0.5.7'' onwards, ''filter'' returns any filter errors it encounters as its result and nothing else.
@@ -13371,7 +13403,7 @@ find=&quot;[all[tiddlers]!is[system]search:%inputTitle%&lt;term&gt;]&quot;&gt;
 ''Tip'': Take a look at you browser's console. You will find that the part `/library/` was interpreted as being the deprecated regexp filter operand. So, anything that follows it was assumed to be a new &lt;&lt;x &quot;Filter Step&quot; &quot;filter step&quot;&gt;&gt;.
 @@</pre>
 </div>
-<div created="20151228210501100" creator="Tobias Beer" modified="20151229085648850" modifier="Tobias Beer" tags="" title="filter-Evaluation" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151228210501100" creator="Tobias Beer" modified="20151229085648850" modifier="Tobias Beer" revision="0" tags="" title="filter-Evaluation" type="text/vnd.tiddlywiki">
 <pre>The subfilter is always evaluated for each input title in turn with a given variable set to the currently processed title, e.g. ''inputTitle''. There are three ways to define the ''source'' of tiddlers against which the subfilter is evaluated: 
 
 ; 1. each input title
@@ -13389,7 +13421,7 @@ find=&quot;[all[tiddlers]!is[system]search:%inputTitle%&lt;term&gt;]&quot;&gt;
 :: //also evaluates ''foo'' three times; however, using `[all[tiddlers]]` within ''foo'' the subfilter is evaluated at each turn against any titles imaginable//
 :: the difference to ''1.'' is merely in how the subfilter is defined</pre>
 </div>
-<div created="20151221060854343" creator="Tobias Beer" modified="20160108184023769" modifier="Tobias Beer" summary="examples for the filter operator [[filter]] for evaluating subfilters" tags="filter Examples" test="[&lt;inputTitle&gt;tags[]]" title="filter-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221060854343" creator="Tobias Beer" modified="20160108184023769" modifier="Tobias Beer" revision="0" summary="examples for the filter operator [[filter]] for evaluating subfilters" tags="filter Examples" test="[&lt;inputTitle&gt;tags[]]" title="filter-Examples" type="text/vnd.tiddlywiki">
 <pre>// This first example returns all tags of tiddlers prefixed `filter` using a subfilter retrieved from a text-reference, replacing the __default__ variable ''inputTitle'' with each input title in turn: //
 
 &lt;&lt;` &quot;&quot;&quot;; subfilter
@@ -13507,7 +13539,7 @@ filter-tag=&quot;[tag&lt;inputTitle&gt;]&quot; &gt;
 
 &lt;/$vars&gt;</pre>
 </div>
-<div created="20151221060748553" creator="Tobias Beer" modified="20151229085746248" modifier="Tobias Beer" tags="" title="filter-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221060748553" creator="Tobias Beer" modified="20151229085746248" modifier="Tobias Beer" revision="0" tags="" title="filter-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/filter provides:
 
 ; filter[]
@@ -13524,7 +13556,7 @@ filter-tag=&quot;[tag&lt;inputTitle&gt;]&quot; &gt;
 
 &lt;&lt;plugin-docs-cp filter&gt;&gt;</pre>
 </div>
-<div created="20151221060906187" creator="Tobias Beer" modified="20160108182003593" modifier="Tobias Beer" tags="" title="filter-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221060906187" creator="Tobias Beer" modified="20160108182003593" modifier="Tobias Beer" revision="0" tags="" title="filter-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install filter&gt;&gt;
 
 !! Version History
@@ -13540,7 +13572,7 @@ filter-tag=&quot;[tag&lt;inputTitle&gt;]&quot; &gt;
 ; 0.5.0 / 2015-12-21
 : initial version — retracted</pre>
 </div>
-<div created="20151229083010471" creator="Tobias Beer" modified="20160108182713440" modifier="Tobias Beer" tags="" title="filter-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151229083010471" creator="Tobias Beer" modified="20160108182713440" modifier="Tobias Beer" revision="0" tags="" title="filter-Syntax" type="text/vnd.tiddlywiki">
 <pre>The filter operator called ''filter'' is specified as follows:
 
 ; operand
@@ -13558,16 +13590,16 @@ filter-tag=&quot;[tag&lt;inputTitle&gt;]&quot; &gt;
 :: so, you could do this: `[%prefix%%filter%:%suffix%%operand%]`
 :: not just via the core &lt;&lt;x &quot;Filter Parameter&quot; &quot;indirect operand&quot;&gt;&gt; syntax: `[tag&lt;tagName&gt;]`</pre>
 </div>
-<div summary="filter plugins by [[Tobias Beer]]" title="Filters" revision="0" bag="default">
+<div bag="default" revision="0" summary="filter plugins by [[Tobias Beer]]" title="Filters">
 <pre>&lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div parents="Gronk" summary="see [[toc-Examples]]" tags="ToC TableOfContents" title="Foo" revision="0" bag="default">
+<div bag="default" parents="Gronk" revision="0" summary="see [[toc-Examples]]" tags="ToC TableOfContents" title="Foo">
 <pre></pre>
 </div>
-<div parents="Mumble" summary="see [[toc-Examples]]" tags="Baz" title="Frotz" revision="0" bag="default">
+<div bag="default" parents="Mumble" revision="0" summary="see [[toc-Examples]]" tags="Baz" title="Frotz">
 <pre></pre>
 </div>
-<div created="20160107151116142" creator="Tobias Beer" customer="Company Foo" division="Doo" fiscal-year="2016" modified="20160107152843001" modifier="Tobias Beer" summary="using the [[setvars]] widget to generate the variables needed for an action button using the [[make]] filter to generate unique, zero-padded titles" tags="Examples make setvars" title="Generating A Unique Invoice Number" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107151116142" creator="Tobias Beer" customer="Company Foo" division="Doo" fiscal-year="2016" modified="20160107152843001" modifier="Tobias Beer" revision="0" summary="using the [[setvars]] widget to generate the variables needed for an action button using the [[make]] filter to generate unique, zero-padded titles" tags="Examples make setvars" title="Generating A Unique Invoice Number" type="text/vnd.tiddlywiki">
 <pre>Below, the action details of a button are specified with a [[setvars]] widget that refreshes at every click and uses the [[make]] filter to join text-bits into the two variables that it sets, a description and a unique, zero-padded invoice number used as the title.
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;$setvars $refresh
@@ -13587,13 +13619,13 @@ New Invoice
 
 {{{ [tag[Invoice]] }}}</pre>
 </div>
-<div parents="Frotz" summary="see [[toc-Examples]]" tags="Baz" title="Gronk" revision="0" bag="default">
+<div bag="default" parents="Frotz" revision="0" summary="see [[toc-Examples]]" tags="Baz" title="Gronk">
 <pre></pre>
 </div>
-<div created="20151231085910632" creator="Tobias Beer" modified="20151231092048987" modifier="Tobias Beer" tabs="Info Syntax Install" tags="Plugins Filters" title="hash" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151231085910632" creator="Tobias Beer" modified="20151231092048987" modifier="Tobias Beer" revision="0" tabs="Info Syntax Install" tags="Plugins Filters" title="hash" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs hash&gt;&gt;</pre>
 </div>
-<div created="20151231085916251" creator="Tobias Beer" modified="20151231102113163" modifier="Tobias Beer" title="hash-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151231085916251" creator="Tobias Beer" modified="20151231102113163" modifier="Tobias Beer" revision="0" title="hash-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/hash provides:
 
 ; hash[]
@@ -13605,7 +13637,7 @@ New Invoice
 
 &lt;&lt;plugin-docs-cp hash&gt;&gt;</pre>
 </div>
-<div created="20151231093657497" creator="Tobias Beer" modified="20151231093659198" modifier="Tobias Beer" title="hash-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151231093657497" creator="Tobias Beer" modified="20151231093659198" modifier="Tobias Beer" revision="0" title="hash-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install hash&gt;&gt;
 
 !! Version History
@@ -13613,7 +13645,7 @@ New Invoice
 ; 0.5.0 / 2015-12-31
 : initial version</pre>
 </div>
-<div created="20151231090417442" creator="Tobias Beer" modified="20160107113312782" modifier="Tobias Beer" summary="syntax and examples for the [[hash]] filter" tags="hash Examples" title="hash-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151231090417442" creator="Tobias Beer" modified="20160107113312782" modifier="Tobias Beer" revision="0" summary="syntax and examples for the [[hash]] filter" tags="hash Examples" title="hash-Syntax" type="text/vnd.tiddlywiki">
 <pre>!! Encoding Titles
 
 The ''hash'' filter &lt;&lt;x PermaLinks &quot;uri encodes&quot;&gt;&gt; a title specified in the filter operand or a __single__ input title to a &lt;&lt;x &quot;WidgetMessage: tm-permalink&quot; &quot;permalink hash&quot;&gt;&gt;, the bit after the hash `#` in a TiddlyWiki url:
@@ -13651,10 +13683,10 @@ In the route macro below, the [[setvars]] widget creates a link to tiddlywiki.co
 &lt;&lt;source &quot;$://macro/route&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20151208144615451" creator="Tobias Beer" modified="20160107113348820" modifier="Tobias Beer" tabs="Info Examples Configure Install" tags="Plugins Macros" title="inc" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151208144615451" creator="Tobias Beer" modified="20160107113348820" modifier="Tobias Beer" revision="0" tabs="Info Examples Configure Install" tags="Plugins Macros" title="inc" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs inc&gt;&gt;</pre>
 </div>
-<div created="20151208150813043" creator="Tobias Beer" modified="20160118143301002" modifier="Tobias Beer" tags="" title="inc-Configure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151208150813043" creator="Tobias Beer" modified="20160118143301002" modifier="Tobias Beer" revision="0" tags="" title="inc-Configure" type="text/vnd.tiddlywiki">
 <pre>Specify the buttons displayed in the on-hover toolbar at $:/plugins/tobibeer/inc/toolbar:
 &lt;$edit-text tiddler=&quot;$:/plugins/tobibeer/inc/toolbar&quot; class=&quot;tc-edit-texteditor&quot;/&gt;
 
@@ -13670,7 +13702,7 @@ For using &lt;&lt;tb inc&gt;&gt; to edit tab contents, please refer to [[Quick E
 
 The default styles for ''tobibeer/inc'' are defined at &lt;&lt;source $:/plugins/tobibeer/inc/styles&gt;&gt;</pre>
 </div>
-<div created="20151208145132497" creator="Tobias Beer" modified="20160107113417717" modifier="Tobias Beer" summary="examples for the [[inc]] macro" tags="inc Examples" title="inc-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151208145132497" creator="Tobias Beer" modified="20160107113417717" modifier="Tobias Beer" revision="0" summary="examples for the [[inc]] macro" tags="inc Examples" title="inc-Examples" type="text/vnd.tiddlywiki">
 <pre>Hover over the transcluded tiddler below and find a tiddler toolbar appear to the top-right of it, the transclusion also being mildly highlighted...
 
 `&lt;&lt;{ inc-Install&gt;&gt;`
@@ -13687,7 +13719,7 @@ Using the macro in a list widget:
 &lt;/dl&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151208144645794" creator="Tobias Beer" modified="20151221052933957" modifier="Tobias Beer" tags="" title="inc-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151208144645794" creator="Tobias Beer" modified="20151221052933957" modifier="Tobias Beer" revision="0" tags="" title="inc-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/inc provides:
 
 ; `&lt;&lt;{&gt;&gt;`
@@ -13700,7 +13732,7 @@ Using the macro in a list widget:
 : an alias for `&lt;&lt;{&gt;&gt;`
 :: however, requiring you to specify a tiddler title</pre>
 </div>
-<div created="20151208145609644" creator="Tobias Beer" modified="20160118145943987" modifier="Tobias Beer" tags="" title="inc-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151208145609644" creator="Tobias Beer" modified="20160118145943987" modifier="Tobias Beer" revision="0" tags="" title="inc-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install inc&gt;&gt;
 
 !! Version History
@@ -13712,10 +13744,10 @@ Using the macro in a list widget:
 ; 0.5.0 / 2015.12.08
 : initial release</pre>
 </div>
-<div created="20151221134250150" creator="Tobias Beer" modified="20151221151910837" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="join" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221134250150" creator="Tobias Beer" modified="20151221151910837" revision="0" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="join" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs join&gt;&gt;</pre>
 </div>
-<div created="20151221134253410" creator="Tobias Beer" modified="20160107113458202" modifier="Tobias Beer" summary="examples for the [[join]] filter" tags="join Examples" title="join-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221134253410" creator="Tobias Beer" modified="20160107113458202" modifier="Tobias Beer" revision="0" summary="examples for the [[join]] filter" tags="join Examples" title="join-Examples" type="text/vnd.tiddlywiki">
 <pre>All the below examples use:
 
 ; $set
@@ -13786,7 +13818,7 @@ Using the macro in a list widget:
 &lt;/$set&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151221134321758" creator="Tobias Beer" modified="20151221154015411" title="join-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221134321758" creator="Tobias Beer" modified="20151221154015411" revision="0" title="join-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/join provides:
 
 ; join[]
@@ -13795,7 +13827,7 @@ Using the macro in a list widget:
 
 &lt;&lt;plugin-docs-cp join&gt;&gt;</pre>
 </div>
-<div created="20151221134256631" creator="Tobias Beer" modified="20151221150823573" title="join-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221134256631" creator="Tobias Beer" modified="20151221150823573" revision="0" title="join-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install join&gt;&gt;
 
 !! Version History
@@ -13805,7 +13837,7 @@ Using the macro in a list widget:
 ; 0.5.0 / 2015-12-21
 : initial version</pre>
 </div>
-<div created="20151221145208124" creator="Tobias Beer" modified="20151221153819443" tags="" title="join-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221145208124" creator="Tobias Beer" modified="20151221153819443" revision="0" tags="" title="join-Syntax" type="text/vnd.tiddlywiki">
 <pre>Through its operand, you can specify an item template for the ''join[]'' filter, as well as further options separated via `\` should you need more than one.
 
 !! Item Template
@@ -13834,10 +13866,10 @@ Specify any of these options as `key:value` pairs:
 : `result` — trims the output string
 :: `[[ A ]] [[ B ]] +[join[trim:result]]` =&gt; `A B`</pre>
 </div>
-<div summary="library plugins by [[Tobias Beer]]" title="Libraries" revision="0" bag="default">
+<div bag="default" revision="0" summary="library plugins by [[Tobias Beer]]" title="Libraries">
 <pre>&lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div created="20160120130410512" creator="Tobias Beer" modified="20170119184251169" modifier="Tobias Beer" summary="keeping up to date and fetching the latest and greatest from [[tobibeer/plugins|Plugins]]" tags="" title="Library" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160120130410512" creator="Tobias Beer" modified="20170119184251169" modifier="Tobias Beer" revision="0" summary="keeping up to date and fetching the latest and greatest from [[tobibeer/plugins|Plugins]]" tags="" title="Library" type="text/vnd.tiddlywiki">
 <pre>@@color:purple;''Important'': Adding my library does not pre-install any of my plugins in your wiki but just adds a reference to it, i.e. you need internet access to actually install plugins from it.@@
 
 Drag this tiddler to your wiki to access my plugin library from your [[control panel|$:/ControlPanel]]: $:/pluginlibrary/tobibeer/official
@@ -13856,13 +13888,13 @@ Drag this tiddler to your wiki to access my plugin library from your [[control p
 Open: {{$:/core/ui/Buttons/control-panel}} ''~ControlPanel'' &gt; ''Plugins'' &gt; ''Get more plugins'' &gt; ''Open plugin library''
 @@</pre>
 </div>
-<div summary="macro plugins by [[Tobias Beer]]" title="Macros" revision="0" bag="default">
+<div bag="default" revision="0" summary="macro plugins by [[Tobias Beer]]" title="Macros">
 <pre>&lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div created="20151217131932309" creator="Tobias Beer" modified="20151217132008974" tabs="Info Operand Examples Install" tags="Plugins Filters" title="make" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151217131932309" creator="Tobias Beer" modified="20151217132008974" revision="0" tabs="Info Operand Examples Install" tags="Plugins Filters" title="make" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs make&gt;&gt;</pre>
 </div>
-<div bar="baz" created="20151216232832188" creator="Tobias Beer" modified="20160107113604282" modifier="Tobias Beer" summary="examples for the [[make]] filter" tags="make Examples" title="make-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" bar="baz" created="20151216232832188" creator="Tobias Beer" modified="20160107113604282" modifier="Tobias Beer" revision="0" summary="examples for the [[make]] filter" tags="make Examples" title="make-Examples" type="text/vnd.tiddlywiki">
 <pre>!! Simple
 
 // Creates a new unique title based on the current tiddler: //
@@ -13988,7 +14020,7 @@ tiddler:$:/palettes/Vanilla
 date-format:YYYY0MM0DD
 ]] }}}&quot;&quot;&quot;/&gt;</pre>
 </div>
-<div created="20151217132048828" creator="Tobias Beer" modified="20151219190933338" modifier="Tobias Beer" tags="" title="make-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151217132048828" creator="Tobias Beer" modified="20151219190933338" modifier="Tobias Beer" revision="0" tags="" title="make-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/make provides:
 
 ; ''make[]''
@@ -14013,7 +14045,7 @@ While this can be very useful for creating unique titles, i.e. when using the &l
 
 &lt;&lt;plugin-docs-cp make&gt;&gt;</pre>
 </div>
-<div created="20151217132014442" creator="Tobias Beer" modified="20160107150408180" modifier="Tobias Beer" title="make-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151217132014442" creator="Tobias Beer" modified="20160107150408180" modifier="Tobias Beer" revision="0" title="make-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install make&gt;&gt;
 
 !! Version History
@@ -14031,7 +14063,7 @@ While this can be very useful for creating unique titles, i.e. when using the &l
 ; 0.5.0 / 2015-12-17
 : initial release</pre>
 </div>
-<div created="20151217132224423" creator="Tobias Beer" modified="20160107144628854" modifier="Tobias Beer" title="make-Operand" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151217132224423" creator="Tobias Beer" modified="20160107144628854" modifier="Tobias Beer" revision="0" title="make-Operand" type="text/vnd.tiddlywiki">
 <pre>The operand of the ''make'' filter allows you to specify how and how many titles you want created.
 
 You can specify a title pattern based on whichever strings you desire and various placeholders. You can specify further options, separated via backslash `\` and always declared as `option:value`, e.g.:
@@ -14089,10 +14121,10 @@ You can specify a title pattern based on whichever strings you desire and variou
 :: `pad:5` =&gt; `00001`
 :: if you do not use the `%count%` placeholder, the appended unique increment will be zero-padded instead</pre>
 </div>
-<div created="20151126184431334" creator="Tobias Beer" modified="20151126194205634" tabs="Info Install" tags="Plugins Libraries" title="math.js" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151126184431334" creator="Tobias Beer" modified="20151126194205634" revision="0" tabs="Info Install" tags="Plugins Libraries" title="math.js" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs math.js&gt;&gt;</pre>
 </div>
-<div title="math.js-Info" revision="0" bag="default">
+<div bag="default" revision="0" title="math.js-Info">
 <pre>The plugin [[$:/plugins/tobibeer/math.js]] provides:
 
 ; [[math.js|http://mathjs.org]]
@@ -14101,7 +14133,7 @@ You can specify a title pattern based on whichever strings you desire and variou
 
 &lt;$list filter=&quot;[field:title[eval]]&quot;&gt;&lt;div class=&quot;note&quot;&gt;''Note:'' For [[tobibeer/eval|eval]] it is not needed should you use [[mklauber/math.js]].&lt;/div&gt;&lt;/$list&gt;</pre>
 </div>
-<div title="math.js-Install" revision="0" bag="default">
+<div bag="default" revision="0" title="math.js-Install">
 <pre>&lt;&lt;plugin-install math.js&gt;&gt;
 
 !! Version History
@@ -14111,22 +14143,22 @@ You can specify a title pattern based on whichever strings you desire and variou
 ; 2.4.2 (2015-12-06)
 : official release: 2015-11-14</pre>
 </div>
-<div created="20151122175632743" creator="Tobias Beer" modified="20151122175811343" modifier="Tobias Beer" summary="a tiddlywiki plugin for calculating mathematcal expressions" title="mklauber/math.js" url="http://mklauber.github.io/tiddly-mathjs/" revision="0" bag="default">
+<div bag="default" created="20151122175632743" creator="Tobias Beer" modified="20151122175811343" modifier="Tobias Beer" revision="0" summary="a tiddlywiki plugin for calculating mathematcal expressions" title="mklauber/math.js" url="http://mklauber.github.io/tiddly-mathjs/">
 <pre>; repo
 : https://github.com/mklauber/tiddly-mathjs</pre>
 </div>
-<div parents="ToC TableOfContents" summary="see [[toc-Examples]]" tags="Baz" title="Mumble" revision="0" bag="default">
+<div bag="default" parents="ToC TableOfContents" revision="0" summary="see [[toc-Examples]]" tags="Baz" title="Mumble">
 <pre></pre>
 </div>
-<div created="20160114110937381" creator="Tobias Beer" modified="20160115135204059" modifier="Tobias Beer" tabs="Info WikiText Widget Examples Configure Styles Install" tags="Plugins Filters Macros Widgets" title="plantuml" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114110937381" creator="Tobias Beer" modified="20160115135204059" modifier="Tobias Beer" revision="0" tabs="Info WikiText Widget Examples Configure Styles Install" tags="Plugins Filters Macros Widgets" title="plantuml" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs plantuml&gt;&gt;</pre>
 </div>
-<div created="20160114185707920" creator="Tobias Beer" modified="20160114185825464" modifier="Tobias Beer" tags="" title="plantuml-Beta" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114185707920" creator="Tobias Beer" modified="20160114185825464" modifier="Tobias Beer" revision="0" tags="" title="plantuml-Beta" type="text/vnd.tiddlywiki">
 <pre>@@.note
 This is a beta for the [[plantuml]] plugin version 0.5.0.
 @@</pre>
 </div>
-<div created="20160115133641747" creator="Tobias Beer" modified="20160115134247755" modifier="Tobias Beer" tags="" title="plantuml-Configure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160115133641747" creator="Tobias Beer" modified="20160115134247755" modifier="Tobias Beer" revision="0" tags="" title="plantuml-Configure" type="text/vnd.tiddlywiki">
 <pre>\define default()
 &lt;dt&gt;$(defaults)$$(option)$&lt;/dt&gt;
 &lt;dd&gt;
@@ -14148,7 +14180,7 @@ You can set these global defaults / fallbacks:
 &lt;/dl&gt;
 &lt;style&gt;.plantuml-defaults input {width:90%;}&lt;/style&gt;</pre>
 </div>
-<div created="20160114093243713" creator="Tobias Beer" modified="20160115142922237" modifier="Tobias Beer" title="plantuml-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114093243713" creator="Tobias Beer" modified="20160115142922237" modifier="Tobias Beer" revision="0" title="plantuml-Examples" type="text/vnd.tiddlywiki">
 <pre>!! Sources
 
 # the top-menu on [[PlantUML.com|http://plantuml.com]] provides plenty diagrams variants and examples
@@ -14237,7 +14269,7 @@ Widget -&gt; Widgets : To database
 @enduml
 ]]]&quot;&quot;&quot;&gt;&gt;</pre>
 </div>
-<div created="20160114110923453" creator="Tobias Beer" modified="20160115144855283" modifier="Tobias Beer" title="plantuml-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114110923453" creator="Tobias Beer" modified="20160115144855283" modifier="Tobias Beer" revision="0" title="plantuml-Info" type="text/vnd.tiddlywiki">
 <pre>{{plantuml-BETA}}
 
 The plugin $:/plugins/tobibeer/plantuml provides:
@@ -14282,7 +14314,7 @@ end note
 
 &lt;&lt;plugin-docs-cp plantuml&gt;&gt;</pre>
 </div>
-<div created="20160114110928512" creator="Tobias Beer" modified="20160115150932617" modifier="Tobias Beer" title="plantuml-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114110928512" creator="Tobias Beer" modified="20160115150932617" modifier="Tobias Beer" revision="0" title="plantuml-Install" type="text/vnd.tiddlywiki">
 <pre>{{plantuml-BETA}}
 
 &lt;&lt;plugin-install plantuml&gt;&gt;
@@ -14292,7 +14324,7 @@ end note
 ; 0.5.0 / 2016-01-15
 : initial version</pre>
 </div>
-<div created="20160115134302911" creator="Tobias Beer" modified="20160115135153733" modifier="Tobias Beer" tags="" title="plantuml-Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160115134302911" creator="Tobias Beer" modified="20160115135153733" modifier="Tobias Beer" revision="0" tags="" title="plantuml-Styles" type="text/vnd.tiddlywiki">
 <pre>These css classes are created by the [[widget|plantuml-Widget]]:
 
 ; tc-plantuml-txt
@@ -14304,7 +14336,7 @@ end note
 
 The default css that comes with &lt;&lt;tb plantuml&gt;&gt; is defined in &lt;&lt;source &quot;$:/plugins/tobibeer/plantuml/styles&quot;&gt;&gt;</pre>
 </div>
-<div created="20160114172323590" creator="Tobias Beer" modified="20160115133248118" modifier="Tobias Beer" tags="" title="plantuml-Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114172323590" creator="Tobias Beer" modified="20160115133248118" modifier="Tobias Beer" revision="0" tags="" title="plantuml-Widget" type="text/vnd.tiddlywiki">
 <pre>Leveraging the core &lt;&lt;x ImageWidget&gt;&gt;, the ''$plantuml'' widget displays images and text representations by:
 
 # encoding a block of plantuml to a url
@@ -14352,7 +14384,7 @@ repeatwhile (Go To Sleep)
 &quot;/&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20160114110932683" creator="Tobias Beer" modified="20160114180728662" modifier="Tobias Beer" title="plantuml-WikiText" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114110932683" creator="Tobias Beer" modified="20160114180728662" modifier="Tobias Beer" revision="0" title="plantuml-WikiText" type="text/vnd.tiddlywiki">
 <pre>The wikirule parser for ''plantuml'' allows to use the very same attribute syntax as is allowed for core images all the way from:
 
 ```
@@ -14387,7 +14419,7 @@ repeatwhile (Go To Sleep)
 ]]]&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div summary="plugins by [[Tobias Beer]]" title="Plugins" revision="0" bag="default">
+<div bag="default" revision="0" summary="plugins by [[Tobias Beer]]" title="Plugins">
 <pre>&lt;$list filter=&quot;Enhance Examples Filters Macros Libraries Templates Widgets&quot;&gt;
 &lt;div class=&quot;tb-taglist-item&quot;&gt;
 &lt;small class=&quot;tc-menu-list-count&quot;&gt;&lt;$count filter=&quot;[all[current]tagging[]]&quot;/&gt;&lt;/small&gt;
@@ -14397,20 +14429,20 @@ repeatwhile (Go To Sleep)
 
 &lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div created="20160113211414255" creator="Tobias Beer" modified="20160114010047545" modifier="Tobias Beer" tabs="Info Configure Styles Install" tags="Plugins Widgets Enhance" title="preview" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113211414255" creator="Tobias Beer" modified="20160114010047545" modifier="Tobias Beer" revision="0" tabs="Info Configure Styles Install" tags="Plugins Widgets Enhance" title="preview" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs preview&gt;&gt;</pre>
 </div>
-<div created="20160113211423872" creator="Tobias Beer" modified="20160114013957588" modifier="Tobias Beer" title="preview-Configure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113211423872" creator="Tobias Beer" modified="20160114013957588" modifier="Tobias Beer" revision="0" title="preview-Configure" type="text/vnd.tiddlywiki">
 <pre>The plugin provides the following global configuration tiddlers which you also find in the plugin listing for &lt;&lt;tb preview&gt;&gt; in the [[ControlPanel|$:/ControlPanel]] of your wiki:
 
 {{$:/plugins/tobibeer/preview/config}}</pre>
 </div>
-<div title="preview-Dependencies" revision="0" bag="default">
+<div bag="default" revision="0" title="preview-Dependencies">
 <pre>@@.note
 ''Important:'' &lt;&lt;tb preview&gt;&gt; depends on &lt;&lt;tb appear&gt;&gt; 0.6.1 for positioning popups absolutely, and reusing popup styles. Hence, be sure to install it (first).
 @@</pre>
 </div>
-<div created="20160113211354480" creator="Tobias Beer" modified="20160114020017370" modifier="Tobias Beer" title="preview-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113211354480" creator="Tobias Beer" modified="20160114020017370" modifier="Tobias Beer" revision="0" title="preview-Info" type="text/vnd.tiddlywiki">
 <pre>{{preview-Dependencies}}
 
 The plugin $:/plugins/tobibeer/preview enhances the core &lt;&lt;x LinkWidget&gt;&gt; to display a preview of tiddlers when hovering an internal link.
@@ -14423,7 +14455,7 @@ The plugin $:/plugins/tobibeer/preview enhances the core &lt;&lt;x LinkWidget&gt
 
 &lt;&lt;plugin-docs-cp preview&gt;&gt;</pre>
 </div>
-<div created="20160114002002424" creator="Tobias Beer" modified="20160122211758673" modifier="Tobias Beer" title="preview-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114002002424" creator="Tobias Beer" modified="20160122211758673" modifier="Tobias Beer" revision="0" title="preview-Install" type="text/vnd.tiddlywiki">
 <pre>{{preview-Dependencies}}
 
 &lt;&lt;plugin-install preview&gt;&gt;
@@ -14440,7 +14472,7 @@ The plugin $:/plugins/tobibeer/preview enhances the core &lt;&lt;x LinkWidget&gt
 ; 0.5.2 / 2016-01-14
 : initial version</pre>
 </div>
-<div created="20160114002008644" creator="Tobias Beer" modified="20160114003941598" modifier="Tobias Beer" tags="" title="preview-Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160114002008644" creator="Tobias Beer" modified="20160114003941598" modifier="Tobias Beer" revision="0" tags="" title="preview-Styles" type="text/vnd.tiddlywiki">
 <pre>The following classes are set to by &lt;&lt;tb preview&gt;&gt;:
 
 ; for internal links:
@@ -14455,7 +14487,7 @@ The default styles for &lt;&lt;tb preview&gt;&gt; are defined in &lt;&lt;source 
 
 Some styles by &lt;&lt;tb appear&gt;&gt; also apply as defined in &lt;&lt;source &quot;$:/plugins/tobibeer/appear/styles&quot;&gt;&gt;</pre>
 </div>
-<div created="20160118132340543" creator="Tobias Beer" modified="20160118234907003" modifier="Tobias Beer" summary="using &lt;&lt;tb inc&gt;&gt; to quick edit tab contents" tags="Examples inc" title="Quick Edit Tabs" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160118132340543" creator="Tobias Beer" modified="20160118234907003" modifier="Tobias Beer" revision="0" summary="using &lt;&lt;tb inc&gt;&gt; to quick edit tab contents" tags="Examples inc" title="Quick Edit Tabs" type="text/vnd.tiddlywiki">
 <pre>The below modifications allow to use &lt;&lt;tb inc&gt;&gt; for tab-contents. To make the solution work in your wiki with &lt;&lt;tb inc&gt;&gt; installed, copy these tiddlers to your wiki:
 
 # $:/core/macros/tabs
@@ -14484,10 +14516,10 @@ Notice the toolbar of &lt;&lt;tb inc&gt;&gt; when hovering the tab contents in t
 
 {{$:/core/ui/ControlPanel/Appearance}}</pre>
 </div>
-<div created="20151221124124606" creator="Tobias Beer" modified="20151221124124606" tabs="Info Examples Install" tags="Plugins Filters" title="random" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221124124606" creator="Tobias Beer" modified="20151221124124606" revision="0" tabs="Info Examples Install" tags="Plugins Filters" title="random" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs random&gt;&gt;</pre>
 </div>
-<div created="20151221123443067" creator="Tobias Beer" modified="20160107113646265" modifier="Tobias Beer" summary="examples for the [[random]] filter" tags="Examples random" title="random-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221123443067" creator="Tobias Beer" modified="20160107113646265" modifier="Tobias Beer" revision="0" summary="examples for the [[random]] filter" tags="Examples random" title="random-Examples" type="text/vnd.tiddlywiki">
 <pre>!! A Random Tiddler
 
 &lt;&lt;` &quot;&quot;&quot;{{{ [prefix[random]random[]] }}}&quot;&quot;&quot;&gt;&gt;
@@ -14529,7 +14561,7 @@ Notice the toolbar of &lt;&lt;tb inc&gt;&gt; when hovering the tab contents in t
 &lt;/$setvars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151221124129296" creator="Tobias Beer" modified="20151221125826282" title="random-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221124129296" creator="Tobias Beer" modified="20151221125826282" revision="0" title="random-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/random provides:
 
 ; random[]
@@ -14552,7 +14584,7 @@ Use the ''operand'' to specify the number of titles to retrieve from the input s
 
 To avoid this refresh behavior and only evaluate the filter when a tiddler or its widgets are first rendered, install and use [[setvars]].</pre>
 </div>
-<div created="20151221124132457" creator="Tobias Beer" modified="20151221124132457" title="random-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151221124132457" creator="Tobias Beer" modified="20151221124132457" revision="0" title="random-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install random&gt;&gt;
 
 !! Version History
@@ -14560,10 +14592,10 @@ To avoid this refresh behavior and only evaluate the filter when a tiddler or it
 ; 0.1.0 / 2015-12-21
 : initial version</pre>
 </div>
-<div created="20160105171406528" creator="Tobias Beer" modified="20160105171908858" modifier="Tobias Beer" rating="4" tabs="Info Parameters Template Styles Examples Summary Install" tags="Plugins Macros" title="rate" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105171406528" creator="Tobias Beer" modified="20160105171908858" modifier="Tobias Beer" rating="4" revision="0" tabs="Info Parameters Template Styles Examples Summary Install" tags="Plugins Macros" title="rate" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs rate&gt;&gt;</pre>
 </div>
-<div created="20160105145239207" creator="Tobias Beer" modified="20160107113734363" modifier="Tobias Beer" summary="examples for the [[rate]] macro" tags="rate Examples" title="rate-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105145239207" creator="Tobias Beer" modified="20160107113734363" modifier="Tobias Beer" revision="0" summary="examples for the [[rate]] macro" tags="rate Examples" title="rate-Examples" type="text/vnd.tiddlywiki">
 <pre>&lt;$tiddler tiddler=&quot;rate-Info&quot;&gt;
 
 // To avoid refreshing, all the below examples are applied to the tiddler [[rate-Info]]://
@@ -14624,7 +14656,7 @@ To avoid this refresh behavior and only evaluate the filter when a tiddler or it
 
 &lt;/$tiddler&gt;</pre>
 </div>
-<div created="20160105171811582" creator="Tobias Beer" danger="2" modified="20160106141154748" modifier="Tobias Beer" movie-rating="3" rating="3" title="rate-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105171811582" creator="Tobias Beer" danger="2" modified="20160106141154748" modifier="Tobias Beer" movie-rating="3" rating="3" revision="0" title="rate-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/rate provides:
 
 ; &amp;lt;&amp;lt;rate&gt;&gt;
@@ -14638,7 +14670,7 @@ To avoid this refresh behavior and only evaluate the filter when a tiddler or it
 
 &lt;&lt;plugin-docs-cp rate&gt;&gt;</pre>
 </div>
-<div created="20160105130315045" creator="Tobias Beer" modified="20160105205734735" modifier="Tobias Beer" title="rate-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105130315045" creator="Tobias Beer" modified="20160105205734735" modifier="Tobias Beer" revision="0" title="rate-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install rate&gt;&gt;
 
 !! Version History
@@ -14651,7 +14683,7 @@ To avoid this refresh behavior and only evaluate the filter when a tiddler or it
 ; 0.5.0 / 2016-01-05
 : initial version</pre>
 </div>
-<div created="20160105122520332" creator="Tobias Beer" modified="20160105172331653" modifier="Tobias Beer" title="rate-Parameters" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105122520332" creator="Tobias Beer" modified="20160105172331653" modifier="Tobias Beer" revision="0" title="rate-Parameters" type="text/vnd.tiddlywiki">
 <pre>The ''rate'' macro can be used with the following parameters:
 
 | !# | !Parameter | !Description | !Default |
@@ -14662,7 +14694,7 @@ To avoid this refresh behavior and only evaluate the filter when a tiddler or it
 |5|''field''|the field where the rating is stored|`rating`|
 |6|''readOnly''|makes rating buttons read-only&lt;br&gt;&amp;raquo; set to `yes` for read-only mode|`tc-rate`|</pre>
 </div>
-<div created="20160105134806091" creator="Tobias Beer" modified="20160105204121462" modifier="Tobias Beer" rating="4" tags="" title="rate-Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105134806091" creator="Tobias Beer" modified="20160105204121462" modifier="Tobias Beer" rating="4" revision="0" tags="" title="rate-Styles" type="text/vnd.tiddlywiki">
 <pre>The ''rate'' macro uses the following css classes:
 
 ; tc-rating
@@ -14686,7 +14718,7 @@ The default styles are defined in:
 
 &lt;&lt;source &quot;$:/plugins/tobibeer/rate/styles&quot;&gt;&gt;</pre>
 </div>
-<div created="20160105152454037" creator="Tobias Beer" modified="20160107113801137" modifier="Tobias Beer" rating="5" summary="usage and example for the [[ratings|rate-Summary]] macro" tags="rate Examples" title="rate-Summary" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105152454037" creator="Tobias Beer" modified="20160107113801137" modifier="Tobias Beer" rating="5" revision="0" summary="usage and example for the [[ratings|rate-Summary]] macro" tags="rate Examples" title="rate-Summary" type="text/vnd.tiddlywiki">
 <pre>In addition to the ''rate'' macro, you can use the ''ratings'' macro to show a summary table of all used rating values and tiddlers having them, e.g.:
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;&lt;ratings&gt;&gt;&quot;&quot;&quot;/&gt;
@@ -14719,7 +14751,7 @@ The following parameters can be used with the ''ratings'' macro:
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;&lt;ratings field:&quot;danger&quot; symbol:&quot;⚡&quot; class:&quot;tc-rating light alert&quot;&gt;&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20160105133835892" creator="Tobias Beer" danger="5" modified="20160105190611735" modifier="Tobias Beer" rating="5" tags="" title="rate-Template" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160105133835892" creator="Tobias Beer" danger="5" modified="20160105190611735" modifier="Tobias Beer" rating="5" revision="0" tags="" title="rate-Template" type="text/vnd.tiddlywiki">
 <pre>The following view-template provided with [[tobibeer/rate|rate]] shows ratings for tiddlers underneath the tiddler toolbar:
 
 &lt;&lt;source &quot;$:/plugins/tobibeer/rate/template&quot;&gt;&gt;
@@ -14732,7 +14764,7 @@ Here's how that tiddler is defined in this wiki so that it is only shown for tid
 
 &lt;pre&gt;{{$:/plugins/tobibeer/rate/config/filter}}&lt;/pre&gt;</pre>
 </div>
-<div created="20160108175357857" creator="Tobias Beer" modified="20160109205115625" modifier="Tobias Beer" summary="how to evaluate subfilters using the operator [[filter]] to search multiple fields at once, optionally using the [[split]] filter" tags="Examples filter split" title="Search Multiple Fields With A Subfilter" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160108175357857" creator="Tobias Beer" modified="20160109205115625" modifier="Tobias Beer" revision="0" summary="how to evaluate subfilters using the operator [[filter]] to search multiple fields at once, optionally using the [[split]] filter" tags="Examples filter split" title="Search Multiple Fields With A Subfilter" type="text/vnd.tiddlywiki">
 <pre>Below, the variable ''find'' defines a subfilter to be searched using the filter operator ''filter'' to search for the word `evaluate` in both the ''title'' or ''summary'' fields, replaced in the ''find'' subfilter in turn using the placeholder `%inputTitle%`:
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;$vars term=&quot;evaluate&quot;
@@ -14792,7 +14824,7 @@ find=&quot;[all[tiddlers]!is[system]search:%inputTitle%&lt;term&gt;]&quot;&gt;
 &lt;/$vars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20160107105337026" creator="Tobias Beer" modified="20160107114339555" modifier="Tobias Beer" summary="using the [[setvars]] widget to declare a variable evaluating an attribute using the [[split]] filter returning a desired list item" tags="split setvars Examples" title="Set Variable To List Item Via Split" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107105337026" creator="Tobias Beer" modified="20160107114339555" modifier="Tobias Beer" revision="0" summary="using the [[setvars]] widget to declare a variable evaluating an attribute using the [[split]] filter returning a desired list item" tags="split setvars Examples" title="Set Variable To List Item Via Split" type="text/vnd.tiddlywiki">
 <pre>In the below example, the [[setvars]] widget is used to declare a variable called ''7th'' evaluating the attribute ''items'' with the [[split]] filter returning the seventh item in the list:
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;$setvars 7th=&quot;[items[7]]&quot;  _items=&quot;[[1 0 0 0 0 3 4 8 9 10]split[ ]]&quot;&gt;
@@ -14816,10 +14848,10 @@ And then:
 &lt;/$setvars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151209131441355" creator="Tobias Beer" modified="20151225222303197" modifier="Tobias Beer" tabs="Info Syntax Conditionals Refresh Examples Install" tags="Plugins Widgets" title="setvars" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209131441355" creator="Tobias Beer" modified="20151225222303197" modifier="Tobias Beer" revision="0" tabs="Info Syntax Conditionals Refresh Examples Install" tags="Plugins Widgets" title="setvars" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs setvars&gt;&gt;</pre>
 </div>
-<div created="20160103105459225" creator="Tobias Beer" false="" five="5" modified="20160107121615521" modifier="Tobias Beer" summary="syntax and examples for conditional statements in the [[setvars]] widget" tags="" ten="10" title="setvars-Conditionals" true="1" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160103105459225" creator="Tobias Beer" false="" five="5" modified="20160107121615521" modifier="Tobias Beer" revision="0" summary="syntax and examples for conditional statements in the [[setvars]] widget" tags="" ten="10" title="setvars-Conditionals" true="1" type="text/vnd.tiddlywiki">
 <pre>With ''setvars'' you can use basic conditionals using ''OR'' logic or ''IF'' clauses in [[variable declarations|setvars-Syntax]] as follows:
 
 ; OR
@@ -14938,7 +14970,7 @@ bar=&quot;(a != b ? \true\) || \false\&quot;&gt;
 &lt;/$setvars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151209092945086" creator="Tobias Beer" modified="20160107112753112" modifier="Tobias Beer" summary="examples for the [[setvars]] widget" tags="setvars Examples" title="setvars-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209092945086" creator="Tobias Beer" modified="20160107112753112" modifier="Tobias Beer" revision="0" summary="examples for the [[setvars]] widget" tags="setvars Examples" title="setvars-Examples" type="text/vnd.tiddlywiki">
 <pre>\define nice() Nice to meet you.
 
 @@.note
@@ -15086,7 +15118,7 @@ bar[-1] \ = \
 &lt;/$setvars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20151209131321187" creator="Tobias Beer" modified="20151219000240645" modifier="Tobias Beer" tags="" title="setvars-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209131321187" creator="Tobias Beer" modified="20151219000240645" modifier="Tobias Beer" revision="0" tags="" title="setvars-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/setvars provides:
 
 ; `&lt;$setvars/&gt;`
@@ -15095,7 +15127,7 @@ bar[-1] \ = \
 
 &lt;&lt;plugin-docs-cp setvars&gt;&gt;</pre>
 </div>
-<div created="20151209141659104" creator="Tobias Beer" modified="20160103151633563" modifier="Tobias Beer" title="setvars-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209141659104" creator="Tobias Beer" modified="20160103151633563" modifier="Tobias Beer" revision="0" title="setvars-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install setvars&gt;&gt;
 
 !! Version History
@@ -15121,7 +15153,7 @@ bar[-1] \ = \
 ; 0.5.0 / 2015-12-09
 : initial release</pre>
 </div>
-<div created="20151225222715542" creator="Tobias Beer" modified="20160103135456365" modifier="Tobias Beer" tags="" title="setvars-Refresh" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151225222715542" creator="Tobias Beer" modified="20160103135456365" modifier="Tobias Beer" revision="0" tags="" title="setvars-Refresh" type="text/vnd.tiddlywiki">
 <pre>The setvars widget evaluates any ''filter'' arguments only when first rendered, not with every refresh event. Therefore, so long as any text-reference- or variable-attributes do not change, setvars will only compute variables once.
 
 @@.note
@@ -15144,7 +15176,7 @@ The next example will refresh with every event handled by the wiki:
 ''Note:'' To notice the effect, try changing a tab in the sidebar.
 @@</pre>
 </div>
-<div created="20151209131525981" creator="Tobias Beer" modified="20160103124626927" modifier="Tobias Beer" tags="" title="setvars-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151209131525981" creator="Tobias Beer" modified="20160103124626927" modifier="Tobias Beer" revision="0" tags="" title="setvars-Syntax" type="text/vnd.tiddlywiki">
 <pre>Using the ''setvars'' widget is straight forward. For each desired variable, simply declare:
 
 ; 1. Variable Attributes
@@ -15239,10 +15271,10 @@ color: #909;
 }
 &lt;/style&gt;</pre>
 </div>
-<div created="20170113181805015" creator="Tobias Beer" modified="20170115163211075" modifier="Tobias Beer" number="" tabs="Info Syntax Examples Defaults Styles Macro Install" tags="Plugins Widgets Macros" title="sparkl" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170113181805015" creator="Tobias Beer" modified="20170115163211075" modifier="Tobias Beer" number="" revision="0" tabs="Info Syntax Examples Defaults Styles Macro Install" tags="Plugins Widgets Macros" title="sparkl" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs sparkl&gt;&gt;</pre>
 </div>
-<div created="20170114112754312" creator="Tobias Beer" modified="20170115172015807" modifier="Tobias Beer" number="4" tags="" title="sparkl-Defaults" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170114112754312" creator="Tobias Beer" modified="20170115172015807" modifier="Tobias Beer" number="4" revision="0" tags="" title="sparkl-Defaults" type="text/vnd.tiddlywiki">
 <pre>The sparkl widget allows to define global [[attribute defaults|sparkl-Syntax]] under the namespace `$:/tobibeer/plugins/sparkl/defaults/`:
 
 &lt;table&gt;
@@ -15286,7 +15318,7 @@ Defaults for colors, see [[Styles|sparkl-Styles]]
 &lt;/$list&gt;
 &lt;/table&gt;</pre>
 </div>
-<div created="20170115111008889" creator="Tobias Beer" modified="20170116225115840" modifier="Tobias Beer" number="3" summary="examples for generating simple sparkline diagrams using the [[sparkl]] widget" tags="sparkl Examples" title="sparkl-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170115111008889" creator="Tobias Beer" modified="20170116225115840" modifier="Tobias Beer" number="3" revision="0" summary="examples for generating simple sparkline diagrams using the [[sparkl]] widget" tags="sparkl Examples" title="sparkl-Examples" type="text/vnd.tiddlywiki">
 <pre>\define default(id)
 ''$id$''=&lt;code&gt;&quot;{{$:/plugins/tobibeer/sparkl/defaults/$id$}}&quot;&lt;/code&gt;
 \end
@@ -15376,7 +15408,7 @@ max=&quot;20&quot;
 segments=&quot;10&quot;/&gt; after&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20170113182945869" creator="Tobias Beer" modified="20170115162039236" modifier="Tobias Beer" number="1" title="sparkl-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170113182945869" creator="Tobias Beer" modified="20170115162039236" modifier="Tobias Beer" number="1" revision="0" title="sparkl-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/sparkl provides:
 
 ; &lt;$text text=&quot;&lt;$sparkl/&gt;&quot;/&gt;
@@ -15387,7 +15419,7 @@ segments=&quot;10&quot;/&gt; after&quot;&quot;&quot;&gt;&gt;
 
 &lt;&lt;plugin-docs-cp sparkl&gt;&gt;</pre>
 </div>
-<div created="20170113181742172" creator="Tobias Beer" modified="20170116225824530" modifier="Tobias Beer" number="7" title="sparkl-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170113181742172" creator="Tobias Beer" modified="20170116225824530" modifier="Tobias Beer" number="7" revision="0" title="sparkl-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install sparkl&gt;&gt;
 
 !! Version History
@@ -15403,7 +15435,7 @@ segments=&quot;10&quot;/&gt; after&quot;&quot;&quot;&gt;&gt;
 ; 0.5.0 / 2017-01-15
 : initial version</pre>
 </div>
-<div created="20170115124514151" creator="Tobias Beer" modified="20170116225431866" modifier="Tobias Beer" number="6" title="sparkl-Macro" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170115124514151" creator="Tobias Beer" modified="20170116225431866" modifier="Tobias Beer" number="6" revision="0" title="sparkl-Macro" type="text/vnd.tiddlywiki">
 <pre>The ''sparkle'' macro simply passes all attributes to the widget &lt;&lt;source $:/plugins/tobibeer/sparkl/macro&gt;&gt;
 
 So, you can do:
@@ -15411,7 +15443,7 @@ So, you can do:
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;before &lt;&lt;sparkl &quot;1 2 3 4 5 4 3 2 1&quot; as:dots&gt;&gt; after&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20170114113324642" creator="Tobias Beer" modified="20170116231652547" modifier="Tobias Beer" number="5" tags="" title="sparkl-Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170114113324642" creator="Tobias Beer" modified="20170116231652547" modifier="Tobias Beer" number="5" revision="0" tags="" title="sparkl-Styles" type="text/vnd.tiddlywiki">
 <pre>The sparkl widget creates elements with these classes:
 
 |!Class|!Description|
@@ -15422,7 +15454,7 @@ So, you can do:
 
 In the default styles, colors are defined via [[defaults|sparkl-Defaults]] so you don't need to modify the stylesheet just to change colors. They are shipped via &lt;&lt;source &quot;$:/plugins/tobibeer/sparkl/css&quot;&gt;&gt;</pre>
 </div>
-<div created="20170103192110769" creator="Tobias Beer" modified="20170116225949522" modifier="Tobias Beer" number="2" title="sparkl-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170103192110769" creator="Tobias Beer" modified="20170116225949522" modifier="Tobias Beer" number="2" revision="0" title="sparkl-Syntax" type="text/vnd.tiddlywiki">
 <pre>\define defaults(d)
 [[defaults|sparkl-Defaults]][[/$d$|$:/plugins/tobibeer/sparkl/defaults/$d$]]:&lt;br&gt;&lt;code&gt;{{$:/plugins/tobibeer/sparkl/defaults/$d$}}&lt;/code&gt;
 \end
@@ -15459,10 +15491,10 @@ segments=&quot;10&quot;/&gt; after&quot;&quot;&quot;&gt;&gt;
 
 The styles to that &lt;&lt;source $:/.tb/demo/sparkl/styles&gt;&gt;</pre>
 </div>
-<div authors="[[Tobias Beer]]" created="20151230083108819" creator="Tobias Beer" modified="20151230103829768" modifier="Tobias Beer" tabs="Info Syntax Items Lists Examples Install" tags="Plugins Filters" title="split" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div authors="[[Tobias Beer]]" bag="default" created="20151230083108819" creator="Tobias Beer" modified="20151230103829768" modifier="Tobias Beer" revision="0" tabs="Info Syntax Items Lists Examples Install" tags="Plugins Filters" title="split" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs split&gt;&gt;</pre>
 </div>
-<div authors="[[Tobias Beer]] [[Just Tobi]]" created="20151127145153951" creator="Tobias Beer" list="a [[b c]] d" modified="20170119074453131" modifier="Tobias Beer" summary="examples for the [[split]] filter" tags="split Examples" title="split-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div authors="[[Tobias Beer]] [[Just Tobi]]" bag="default" created="20151127145153951" creator="Tobias Beer" list="a [[b c]] d" modified="20170119074453131" modifier="Tobias Beer" revision="0" summary="examples for the [[split]] filter" tags="split Examples" title="split-Examples" type="text/vnd.tiddlywiki">
 <pre>For details, see [[split syntax|split-Syntax]]...
 
 !! Basics
@@ -15685,7 +15717,7 @@ a [[reply to Danielo Rodriguez|https://groups.google.com/d/msg/tiddlywiki/wC2uxr
 &lt;/$list&gt;&lt;/$vars&gt;&quot;&quot;&quot;&gt;
 </pre>
 </div>
-<div created="20151127145020936" creator="Tobias Beer" modified="20151230081013245" modifier="Tobias Beer" tags="" title="split-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151127145020936" creator="Tobias Beer" modified="20151230081013245" modifier="Tobias Beer" revision="0" tags="" title="split-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin [[$:/plugins/tobibeer/split]] provides:
 
 ; split[]
@@ -15699,7 +15731,7 @@ a [[reply to Danielo Rodriguez|https://groups.google.com/d/msg/tiddlywiki/wC2uxr
 
 &lt;&lt;plugin-docs-cp split&gt;&gt;</pre>
 </div>
-<div created="20151127143704922" creator="Tobias Beer" modified="20170119182846726" modifier="Tobias Beer" tags="" title="split-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151127143704922" creator="Tobias Beer" modified="20170119182846726" modifier="Tobias Beer" revision="0" tags="" title="split-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install split&gt;&gt;
 
 !! Version History
@@ -15742,7 +15774,7 @@ a [[reply to Danielo Rodriguez|https://groups.google.com/d/msg/tiddlywiki/wC2uxr
 ; 0.5.0 / 2015-11-27
 : initial release</pre>
 </div>
-<div created="20151224103305773" creator="Tobias Beer" modified="20151230114223229" modifier="Tobias Beer" tags="" title="split-Items" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151224103305773" creator="Tobias Beer" modified="20151230114223229" modifier="Tobias Beer" revision="0" tags="" title="split-Items" type="text/vnd.tiddlywiki">
 <pre>The ''split[]'' filter may return one __or more__ split titles. To further constrain which items to return use the following ''suffixes'':
 
 ; pos=`&lt;number&gt;` / num=`&lt;number&gt;`
@@ -15836,7 +15868,7 @@ color: #909;
 }
 &lt;/style&gt;</pre>
 </div>
-<div created="20151230103709319" creator="Tobias Beer" modified="20151230114302311" modifier="Tobias Beer" tags="" title="split-Lists" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151230103709319" creator="Tobias Beer" modified="20151230114302311" modifier="Tobias Beer" revision="0" tags="" title="split-Lists" type="text/vnd.tiddlywiki">
 <pre>Parse stringified lists with the ''split'' filter by using the suffix `list` specifying either:
 
 # a list field (optional)
@@ -15861,7 +15893,7 @@ color: #909;
 ;`split:list&lt;bar&gt;`
 : splits the &quot;soft&quot; &lt;&lt;x &quot;Filter Parameter&quot; operand&gt;&gt; in the form of the variable ''bar'' into listed titles&lt;div class=&quot;note&quot;&gt;''Note:'' Since no input titles are considered above, use ''$pos'', ''$num'', ''$first'', etc... to further constrain the final list, see [[Items|split-Items]].&lt;/div&gt;</pre>
 </div>
-<div created="20151127150718797" creator="Tobias Beer" modified="20170119074217721" modifier="Tobias Beer" tags="" title="split-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151127150718797" creator="Tobias Beer" modified="20170119074217721" modifier="Tobias Beer" revision="0" tags="" title="split-Syntax" type="text/vnd.tiddlywiki">
 <pre>!! Operand
 
 Unless used with the suffix `list`, the operand of ''split[]'' defines the characters by which to split input titles.
@@ -15915,17 +15947,17 @@ You can define a number of suffix elements some of which can be meaningfully com
 ; list
 : see [[Lists|split-Lists]]</pre>
 </div>
-<div created="20151126184431334" creator="Tobias Beer" modified="20151126194205634" tabs="Info Usage Limitations Install" tags="Plugins Macros" title="sysinfo" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151126184431334" creator="Tobias Beer" modified="20151126194205634" revision="0" tabs="Info Usage Limitations Install" tags="Plugins Macros" title="sysinfo" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs sysinfo&gt;&gt;</pre>
 </div>
-<div created="20151126184529122" creator="Tobias Beer" modified="20151126184705790" title="sysinfo-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151126184529122" creator="Tobias Beer" modified="20151126184705790" revision="0" title="sysinfo-Info" type="text/vnd.tiddlywiki">
 <pre>&lt;$transclude tiddler=&quot;$:/plugins/tobibeer/sysinfo/readme&quot; mode=&quot;block&quot;/&gt;
 
 !! Inspiration
 
 http://publicsidebar.tiddlyspot.com</pre>
 </div>
-<div title="sysinfo-Install" revision="0" bag="default">
+<div bag="default" revision="0" title="sysinfo-Install">
 <pre>&lt;&lt;plugin-install sysinfo&gt;&gt;
 
 !! Version History
@@ -15936,7 +15968,7 @@ http://publicsidebar.tiddlyspot.com</pre>
 ; 0.5.0 / 2015-11-26
 : initial release</pre>
 </div>
-<div created="20151126185932784" creator="Tobias Beer" modified="20151126201628572" title="sysinfo-Limitations" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151126185932784" creator="Tobias Beer" modified="20151126201628572" revision="0" title="sysinfo-Limitations" type="text/vnd.tiddlywiki">
 <pre>When used as a widget attribute, the macro will update should the underlying system information change.
 
 Used plainly in wikitext this is not the case. Therefore, to make sure the rendered contents are updated accordingly, defer showing the information using a widget, e.g.:
@@ -15951,7 +15983,7 @@ Instead of just...
 
 ''Test'': Try to open a new tiddler in this wiki. You should see the first option update while the second will not.</pre>
 </div>
-<div created="20151126185932784" creator="Tobias Beer" modified="20160107113950907" modifier="Tobias Beer" summary="usage and examples of the [[sysinfo]] macro" title="sysinfo-Usage" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151126185932784" creator="Tobias Beer" modified="20160107113950907" modifier="Tobias Beer" revision="0" summary="usage and examples of the [[sysinfo]] macro" title="sysinfo-Usage" type="text/vnd.tiddlywiki">
 <pre>To test whether you're in a node or browser environment you could use:
 
 &lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;$vars env=&lt;&lt;sysinfo env&gt;&gt;&gt;
@@ -15980,7 +16012,7 @@ filter=&quot;[&lt;host&gt;!prefix[http://127.0.0.1]]&quot;
 &lt;/$vars&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div created="20160107114619983" creator="Tobias Beer" modified="20160907203106972" modifier="Tobias Beer" summary="use column-count, a remote popup handler, and the [[appear]] widget in the custom template [[$:/.tb/templates/TagTemplate]]" tags="appear Examples" title="Tag Button Popups In Columns" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107114619983" creator="Tobias Beer" modified="20160907203106972" modifier="Tobias Beer" revision="0" summary="use column-count, a remote popup handler, and the [[appear]] widget in the custom template [[$:/.tb/templates/TagTemplate]]" tags="appear Examples" title="Tag Button Popups In Columns" type="text/vnd.tiddlywiki">
 <pre>&lt;$macrocall $name=&quot;`&quot; text=&quot;&quot;&quot;&lt;div class=&quot;tb-taglist-columns&quot;&gt;
 &lt;$list filter=&quot;Filters Libraries Macros Plugins Widgets&quot;&gt;
 &lt;div class=&quot;tb-taglist-item&quot;&gt;
@@ -16018,10 +16050,10 @@ Here is what the core, unfortunately, would make of the above. Try clicking a ta
 &quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div summary="plugins providing view-, edit- or page-templates by [[Tobias Beer]]" title="Templates" revision="0" bag="default">
+<div bag="default" revision="0" summary="plugins providing view-, edit- or page-templates by [[Tobias Beer]]" title="Templates">
 <pre>&lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div created="20160107115355209" creator="Tobias Beer" modified="20160107115442497" modifier="Tobias Beer" summary="uses the [[appear]] widget to create popups for tiddlers" tags="appear Examples" title="Tiddler Popups Via Appear" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107115355209" creator="Tobias Beer" modified="20160107115442497" modifier="Tobias Beer" revision="0" summary="uses the [[appear]] widget to create popups for tiddlers" tags="appear Examples" title="Tiddler Popups Via Appear" type="text/vnd.tiddlywiki">
 <pre>Lists all node commands and opens the help tiddlers as sticky popups rendered into the global popup handler so as to not cut the popups off at the right tiddler margin:
 
 ```
@@ -16051,7 +16083,7 @@ show=&quot;&quot;&quot;&lt;$set name=&quot;title&quot; filter=&quot;[all[current
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20160107115519151" creator="Tobias Beer" modified="20160107115649692" modifier="Tobias Beer" summary="creates a slider revealing a tiddler using the [[appear]] widget" tags="Examples appear" title="Tiddler Slider Via Appear Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107115519151" creator="Tobias Beer" modified="20160107115649692" modifier="Tobias Beer" revision="0" summary="creates a slider revealing a tiddler using the [[appear]] widget" tags="Examples appear" title="Tiddler Slider Via Appear Widget" type="text/vnd.tiddlywiki">
 <pre>Implements custom arrows with a helper macro, wrapped using the &lt;&lt;x TiddlerWidget&gt;&gt; to set a different context:
 
 ```
@@ -16070,20 +16102,20 @@ $state=&quot;tiddler-widget-slider&quot;&gt;
 &lt;/$tiddler&gt;&quot;&quot;&quot;/&gt;
 </pre>
 </div>
-<div summary="the framework making all this possible" title="TiddlyWiki" url="http://tiddlywiki.com" revision="0" bag="default">
+<div bag="default" revision="0" summary="the framework making all this possible" title="TiddlyWiki" url="http://tiddlywiki.com">
 <pre></pre>
 </div>
-<div summary="author of tb5" title="Tobias Beer" url="http://tobibeer.github.io/tb5" revision="0" bag="default">
+<div bag="default" revision="0" summary="author of tb5" title="Tobias Beer" url="http://tobibeer.github.io/tb5">
 <pre>; Github
 : https://github.com/tobibeer</pre>
 </div>
-<div created="20160113130645970" creator="Tobias Beer" height="290px" modified="20160113160614484" modifier="Tobias Beer" summary="demonstrates &lt;&lt;tb external&gt;&gt; for [[external-Install]] in an iframe" tags="Examples external" title="tobibeer: external-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160113130645970" creator="Tobias Beer" height="290px" modified="20160113160614484" modifier="Tobias Beer" revision="0" summary="demonstrates &lt;&lt;tb external&gt;&gt; for [[external-Install]] in an iframe" tags="Examples external" title="tobibeer: external-Install" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div tabs="Info Syntax Examples Install" tags="Plugins Filters" title="toc" revision="0" bag="default">
+<div bag="default" revision="0" tabs="Info Syntax Examples Install" tags="Plugins Filters" title="toc">
 <pre>&lt;&lt;plugin-docs toc&gt;&gt;</pre>
 </div>
-<div created="20170111214112755" creator="Tobias Beer" modified="20170111224612924" modifier="Tobias Beer" title="toc-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170111214112755" creator="Tobias Beer" modified="20170111224612924" modifier="Tobias Beer" revision="0" title="toc-Examples" type="text/vnd.tiddlywiki">
 <pre>The Examples are built around the following tagging- / list-hierarchies:
 
 &lt;table class=&quot;noborder&quot;&gt;
@@ -16165,7 +16197,7 @@ $state=&quot;tiddler-widget-slider&quot;&gt;
 
 </pre>
 </div>
-<div created="20170111221625750" creator="Tobias Beer" modified="20170111221627357" modifier="Tobias Beer" title="toc-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170111221625750" creator="Tobias Beer" modified="20170111221627357" modifier="Tobias Beer" revision="0" title="toc-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/toc provides:
 
 ; toc[]
@@ -16178,7 +16210,7 @@ $state=&quot;tiddler-widget-slider&quot;&gt;
 
 &lt;&lt;plugin-docs-cp toc&gt;&gt;</pre>
 </div>
-<div created="20170111221616987" creator="Tobias Beer" modified="20170111221618402" modifier="Tobias Beer" title="toc-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170111221616987" creator="Tobias Beer" modified="20170111221618402" modifier="Tobias Beer" revision="0" title="toc-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install toc&gt;&gt;
 
 !! Version History
@@ -16186,7 +16218,7 @@ $state=&quot;tiddler-widget-slider&quot;&gt;
 ; 0.5.0 / 2017-01-11
 : initial version</pre>
 </div>
-<div created="20170111221636274" creator="Tobias Beer" modified="20170111224511366" modifier="Tobias Beer" title="toc-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20170111221636274" creator="Tobias Beer" modified="20170111224511366" modifier="Tobias Beer" revision="0" title="toc-Syntax" type="text/vnd.tiddlywiki">
 <pre>The ''toc'' filter allows to specify a ''root'' element for your &lt;&lt;tw &quot;Table-of-Contents Macros&quot; &quot;table of contents&quot;&gt;&gt; in the &lt;&lt;tw Filters filter&gt;&gt; ''operand'', as well as a range of options in the ''suffix'':
 
 `toc:&lt;suffix&gt;[&lt;operand&gt;]`
@@ -16204,10 +16236,10 @@ The ''toc'' filter supports the following suffixes that are declared as `name=&l
 
 To see the available options in action, take a look at the [[examples|toc-Examples]].</pre>
 </div>
-<div created="20160918173736097" creator="Tobias Beer" modified="20160918173737787" modifier="Tobias Beer" tabs="Info Syntax Examples Install" tags="Filters Plugins" title="value" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160918173736097" creator="Tobias Beer" modified="20160918173737787" modifier="Tobias Beer" revision="0" tabs="Info Syntax Examples Install" tags="Filters Plugins" title="value" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs value&gt;&gt;</pre>
 </div>
-<div created="20160918171656070" creator="Tobias Beer" modified="20160918173704692" modifier="Tobias Beer" title="value-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160918171656070" creator="Tobias Beer" modified="20160918173704692" modifier="Tobias Beer" revision="0" title="value-Examples" type="text/vnd.tiddlywiki">
 <pre>//testing for an empty list...//
 
 &lt;&lt;` &quot;&quot;&quot;{{{ [has[doesntexist]value[]] }}}&quot;&quot;&quot;&gt;&gt;
@@ -16275,7 +16307,7 @@ Show this, if the filter condition yields an empty list.
 &lt;&lt;` &quot;&quot;&quot;{{{ foo bar +[!value:is[]] }}}&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20160918173743575" creator="Tobias Beer" modified="20160918173745242" modifier="Tobias Beer" title="value-Info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160918173743575" creator="Tobias Beer" modified="20160918173745242" modifier="Tobias Beer" revision="0" title="value-Info" type="text/vnd.tiddlywiki">
 <pre>The plugin $:/plugins/tobibeer/value provides:
 
 ; value[]
@@ -16283,7 +16315,7 @@ Show this, if the filter condition yields an empty list.
 
 &lt;&lt;plugin-docs-cp value&gt;&gt;</pre>
 </div>
-<div created="20160918173729354" creator="Tobias Beer" modified="20160918173730459" modifier="Tobias Beer" title="value-Install" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160918173729354" creator="Tobias Beer" modified="20160918173730459" modifier="Tobias Beer" revision="0" title="value-Install" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-install value&gt;&gt;
 
 !! Version History
@@ -16294,7 +16326,7 @@ Show this, if the filter condition yields an empty list.
 ; 0.5.0 / 2016-09-18
 : initial version</pre>
 </div>
-<div created="20160918170808374" creator="Tobias Beer" modified="20160918175415546" modifier="Tobias Beer" title="value-Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160918170808374" creator="Tobias Beer" modified="20160918175415546" modifier="Tobias Beer" revision="0" title="value-Syntax" type="text/vnd.tiddlywiki">
 <pre>The ''value'' filter tests input titles against a value specified in the ''operand'', e.g.
 
 &lt;&lt;` &quot;&quot;&quot;&lt;$vars this=&quot;that&quot;&gt;
@@ -16310,7 +16342,7 @@ If you wish to return the filter result as more of a boolean expression, you can
 &lt;/$vars&gt;&quot;&quot;&quot;&gt;&gt;
 </pre>
 </div>
-<div title="Welcome" revision="0" bag="default">
+<div bag="default" revision="0" title="Welcome">
 <pre>This wiki provides the documentation for all [[TiddlyWiki]] plugins by [[Tobias Beer]].
 
 @@.note
@@ -16323,21 +16355,21 @@ For more TiddlyWiki solutions, see:
 
 http://tobibeer.github.io/tb5</pre>
 </div>
-<div summary="widget plugins by [[Tobias Beer]]" title="Widgets" revision="0" bag="default">
+<div bag="default" revision="0" summary="widget plugins by [[Tobias Beer]]" title="Widgets">
 <pre>&lt;&lt;list-plugins&gt;&gt;</pre>
 </div>
-<div created="20151125150614109" creator="Tobias Beer" modified="20160107114010931" modifier="Tobias Beer" tabs="Info Examples Install" tags="Plugins Macros" title="xlist" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20151125150614109" creator="Tobias Beer" modified="20160107114010931" modifier="Tobias Beer" revision="0" tabs="Info Examples Install" tags="Plugins Macros" title="xlist" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;plugin-docs xlist&gt;&gt;</pre>
 </div>
-<div created="20160107114054228" creator="Tobias Beer" modified="20160107114055385" modifier="Tobias Beer" summary="examples for the [[xlist]] macro can be found [[here|http://tobibeer.github.io/tw5-xlist/#Examples]]" tags="xlist Examples" title="xlist-Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bag="default" created="20160107114054228" creator="Tobias Beer" modified="20160107114055385" modifier="Tobias Beer" revision="0" summary="examples for the [[xlist]] macro can be found [[here|http://tobibeer.github.io/tw5-xlist/#Examples]]" tags="xlist Examples" title="xlist-Examples" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20151125150704101" creator="Tobias Beer" modified="20151125152236232" modifier="Tobias Beer" title="xlist-Info" revision="0" bag="default">
+<div bag="default" created="20151125150704101" creator="Tobias Beer" modified="20151125152236232" modifier="Tobias Beer" revision="0" title="xlist-Info">
 <pre>The documentation for $:/plugins/tobibeer/xlist is at:
 
 http://tobibeer.github.io/tw5-xlist</pre>
 </div>
-<div title="xlist-Install" revision="0" bag="default">
+<div bag="default" revision="0" title="xlist-Install">
 <pre>&lt;&lt;plugin-install xlist&gt;&gt;
 
 !! Version History
