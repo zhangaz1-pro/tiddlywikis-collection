@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/thediveo.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>ThirdFlow TW5 Plugin by TheDiveO</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1><span class="plugin nb">ThirdFlow</span></h1>
+        <h2>Yet another TW5 Plugin Development Flow</h2>
+        <a href="https://github.com/TheDiveO/ThirdFlow" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+		  <h2>About <span class="plugin nb">ThirdFlow</span></h2>
+
+		  <img class="left" src="third-flow.png" alt="Third Flow plugin">
+
+          <p>The <span class="plugin nb">ThirdFlow</span> plugin brings to you another way to develop customization
+          <a class="ext" href="http://tiddlywiki.com/#Plugins">plugins</a>
+          for <a class="ext" href="http://tiddlywiki.com">TiddlyWiki&nbsp;5</a>.
+          This plugin is not enforcing a specific development flow, it simply tries to help you when you want it
+          to help you. Otherwise, it tries to stay out of your way.</p>
+          
+		  <p class="clear"></p>
+
+          <h3><span class="fa fa-cubes"></span>Development Phase</h3>
+          
+          <figure class="taped-mid framed right rot-1" style="width: 40%;">
+            <img src="third-flow development phase.jpg"/>
+            <figcaption>Development Phase</figcaption>
+          </figure>
+
+    	  <p>You can <strong>develop your plugin directly from within your browser</strong>. A server-based
+    	  TiddlyWiki instance running on Node.js ensures that all your source tiddlers are neatly stored
+    	  in a clean and hierarchically organized folder structure.</p>
+
+    	  <p><strong>Source code management is done as usual</strong> using your favorite source code management tool,
+    	  such as <a class="ext" href="http://git-scm.com/">git</a> and others. As the <span class="plugin nb">ThirdFlow</span> plugin structures your tiddler source files you get a
+    	  well-organized repository structure at no price.</p>
+
+		  <p class="clear"></p>
+
+		  <h3><span class="fa fa-send"></span>Release Phase</h3>
+
+          <figure class="taped-left framed right rot2" style="width: 50%;">
+            <img src="third-flow release phase.jpg" />
+            <figcaption>Release Phase</figcaption>
+          </figure>
+ 
+    	  <p>For <strong>packaging your plugin</strong> you finally simply run a shell script which packs the
+    	  plugin tiddler and saves it to disk. Additionally, a demonstration TiddlyWiki is also created that
+    	  guides your future plugin users through the process of deploying your new plugin.</p>
+    	  
+    	  <p>The neat trick here is that the <span class="plugin nb">ThirdFlow</span> plugin automatically
+    	  removes itself from your demonstration TiddlyWikis,
+    	  because you don't need and want it there.</p>
+
+		  <p class="clear"></p>
+
+		  <h3><span class="fa fa-smile-o"></span>We're Using It Ourselves</h3>
+
+		  <p>Of course, we are developing our <span class="plugin nb">ThirdFlow</span> plugin using it ourselves, so
+		  we use the same process it supports. And it is real Open Source. As the saying goes, eat your own dog food.
+		  This one really tastes delicious. Even if you're not a
+		  dog &ndash; but luckily, nobody will know on the Internet.</p>
+
+		  <p class="clear"></p>
+		  
+		  <h2><span class="fa fa-rocket"></span>Test Drive</h2>
+          
+		  <p class="clear"></p>
+
+          <p>Experience the <a class="wiki" target="_blank" href="output/thirdflow.html">ThirdFlow
+		  plugin</a> live in a demonstration wiki ... and learn more about how to use the
+		  <span class="plugin nb">ThirdFlow</span> plugin in your own TiddlyWikis. Also contained
+		  is background information on the exiting plugin and JavaScript module technologies that
+		  TiddlyWiki 5 comes readily equipped with.</p>
+
+          <h2><span class="fa fa-birthday-cake"></span>Developer Tools</h2>
+          
+          <p>Wait! There's even more in our <span class="plugin nb">ThirdFlow</span> plugin surprise box.
+          Well, vi experts won't exactly be thrilled at what we have to offer. But for all us real browser-addicts we've added a
+          few nice developer tools that should make your developer life more comfortable
+          &ndash; while you are working on your next great TiddlyWiki plugin.</p>
+
+		  <p class="clear"></p>
+          
+          <h3><span class="fa fa-edit"></span>Editing Your Code Made Fun</h3>
+          
+          <figure class="taped-mid framed right rot2" style="width: 40%;">
+            <img src="third-flow codemirror editor.jpg"/>
+            <figcaption>Convenient Coding Bliss</figcaption>
+          </figure>
+
+          <p>Our <span class="plugin nb">ThirdFlow</span> plugin comes packed with some useful additional
+          <a class="ext" href="http://codemirror.net">codemirror</a> editor
+          functionality, ready to use. For instance, bracket matching, indication of the current line, and on top
+          of that syntax coloring for JavaScript and CSS. What a bliss.</p>
+          
+          <p>To make your experience as seamless as possible we're able to store JavaScript tiddlers as plain
+          JavaScript code files. This way you can edit them either from within your TiddlyWiki or in an external
+          editor. The latter as you may have done in the past already when developing JavaScript macros and modules
+          for TiddlyWiki. You know, we don't want to enforce a particular development
+          flow so you can decide at any time to either develop in-browser or using an external code editor and switch
+          back and forth as you like.</p>
+          
+          <p><strong>Note:</strong> in the future we hope to support warm reboots to make your life writing
+          and debugging JavaScript code modules even more fun. At the moment you still need to reload you
+          TiddlyWiki so that your code changes take effect.</p>
+
+		  <p class="clear"></p>
+          
+          <h3><span class="fa fa-search"></span>Find Your Code</h3>
+          
+          <figure class="taped-left framed right rot-1" style="width: 40%;">
+            <img src="third-flow sidebar plugin sources.jpg"/>
+            <figcaption>Clear View on Your Plugin Code</figcaption>
+          </figure>
+
+    	  <p>A new side bar tool gives you a clear overview over the plugin source you that are part of your
+    	  plugin development project. The plugin sources view doesn't need any configuration. It simply shows
+    	  all plugins which are not part of the core, that is, all inside the <code>$:/plugins</code> branch.
+    	  And all this in a neatly way, with your plugins clearly standing out for easy reference.</p>
+    	  
+    	  <p>As another nice developer feature,
+    	  we cut away the irritating long prefixes that otherwise eat up all your valuable screen space.
+    	  Compare this with the stock System view, where you end up with a forest of unwieldly long and
+    	  hard-to-read prefixes.</p>
+
+		  <p class="clear"></p>
+
+          <h3><span class="fa fa-folder-open"></span>Easily Organize Your Tiddlers</h3>
+          
+          <figure class="taped-left framed right rot2" style="width: 50%;">
+            <img src="third-flow file storage setup tags.jpg"/>
+            <figcaption>Organize Your Tiddlers by Tag</figcaption>
+          </figure>
+          
+          <p>The <span class="plugin nb">ThirdFlow</span> plugin organizes all your tiddlers neatly into
+          subfolders ... and you can easily configure it according to what organization you would like to have.
+          And we even give you a nice new «File Storage» tab in the control panel, so you can quickly set up
+          your subfolder organization.</p>
+          
+          <p>The best of all? You <strong>don't need to restart your TiddlyWiki server</strong> after you've made
+          any changes in your file storage configuration: the server automatically picks up the configuration
+          changes you've made.</p>
+          
+          <h3><span class="fa fa-tags"></span>By Tag</h3>
+          
+          <p>Say, you are developing your great new TiddlyWiki plugin and you want to demonstrate and document
+          how to use it, so your plugin users can quickly get up and running your plugin. You may well end up
+          with a lot of tiddlers for demonstration, documentation, and even testing. Instead of lumping them
+          together in a single place in your tiddler source code folder, you can now easily organize them using
+          our new feature «tag-based folders»: tiddlers with a particular tag all get into their own separate subfolder.
+          Sweet, isn't it? You can even choose to use hierarchical subfolders inside these tag folders, in case
+          you need to.</p>
+
+		  <p class="clear"></p>
+          
+          <h3><span class="fa fa-sitemap"></span>Subfolders or Flat? You Decide!</h3>
+          
+          <figure class="taped-mid framed right rot-1" style="width: 50%;">
+            <img src="third-flow file storage setup basic.jpg"/>
+            <figcaption>Drafts & System Stuff Well Organized &ndash; and The Rest Anyway</figcaption>
+          </figure>
+          
+          <p>Even the basic settings are only a control-panel click away: no need to fiddle with
+          difficult-to-remember configuration tiddlers just to change the name of the folder where you want to store your
+          system tiddlers (those starting with <code>$:/</code> in their titles). Similar, changing the folder
+          where all your drafts go into is just a matter of seconds.</p>
+          
+          <p>Oh, and last but not least, you can even decide whether you want to store all your normal tiddlers
+          either into the same main folder without any hierarchy or you want them to be neatly organized into subfolders and
+          even more subfolders; like turtles all the way down.</p>
+          
+          <p>Need a different folder organization. No problem, you can simply add your own so-called «folder policies»: these
+          control how your tiddlers get organized. Luckily, you don't need to hack our existing code. Instead, you simply write your
+          own new folder policy module following some few simple rules. Simply refer to our default folder policy modules the
+          <span class="plugin nb">ThirdFlow</span> plugin comes with and you'll see how easy writing new organization
+          policies actually is.</p>
+
+		  <p class="clear"></p>
+
+		  <h2><span class="fa fa-rocket"></span>Convinced?</h2>
+          
+		  <p class="clear"></p>
+
+          <p>Test drive our <a class="wiki" target="_blank" href="output/thirdflow.html">ThirdFlow
+		  plugin</a> and when you are convinced, simply install it into your own TiddlyWiki projects. Our plugin
+		  is Open Source. For details, please refer to the documentation included in the
+		  <a href="https://github.com/TheDiveO/ThirdFlow">ThirdFlow plugin github repository</a>.</p>
+
+        </section>
+
+        <aside id="sidebar">
+          <a href="output/thirdflow.tid" class="button">
+            <small>Download TW5 Plugin</small>
+            .tid file
+          </a>
+
+		  <br>
+
+          <a href="https://github.com/TheDiveO/ThirdFlow/zipball/master" class="button">
+            <small>Download Project</small>
+            .zip file
+          </a>
+
+          <a href="https://github.com/TheDiveO/ThirdFlow/tarball/master" class="button">
+            <small>Download Project</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner">The <a href="https://github.com/TheDiveO/ThirdFlow">ThirdFlow project repository</a>
+          is maintained by
+          <a href="https://github.com/TheDiveO">TheDiveO</a>, and there are <a href="http://thediveo.github.io">more projects</a>.</p>
+
+          <p>This project <span class="nb"><i class="fa fa-home"></i>&nbsp;page</span> was generated partly by
+          <span class="nb"><i class="fa fa-github"></i> <a href="https://pages.github.com">GitHub Pages</a></span>
+          using the Architect theme by <a class="ext" href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>

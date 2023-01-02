@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Redbean Tiddlywiki Saver: rpdillon.net
+
+— Rick's Home Online
+</title>
+</head>
+<body class="tc-body">
+<p>
+<nav class="tc-menubar tc-adjust-top-of-scroll">
+<div class="tc-menubar-narrow">
+<ul class="tc-menubar-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="tc-menubar-narrow tc-menubar-item" style="">
+
+
+
+<a href="index.html">rpdillon.net</a>
+
+
+</li>
+
+
+
+</ul>
+</div>
+<div class="tc-menubar-wide">
+<ul class="tc-menubar-list">
+
+
+
+
+
+<li class="tc-menubar-wide tc-menubar-item" style="">
+
+
+
+<a href="index.html">rpdillon.net</a>
+
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="tc-menubar-narrow tc-menubar-item" style="">
+
+
+
+<a href="index.html">rpdillon.net</a>
+
+
+</li>
+
+
+
+</ul>
+</div>
+<div style="clear:both;"></div>
+
+
+
+
+
+</nav>
+
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Tech%20Notes tc-tagged-Tiddlywiki tc-tagged-Redbean" data-tags="[[Tech Notes]] Tiddlywiki Redbean" data-tiddler-title="Redbean Tiddlywiki Saver"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="new here" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-here" title="Create a new tiddler tagged with this one"></button><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Redbean Tiddlywiki Saver</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+
+
+
+<em> 2022-02-24 </em>
+
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">Tiddlywiki</a> is a great tool, but because it runs in the browser, it has only limited access to the filesystem to save changes. This has led to dozens of tools called "savers" that work with Tiddlywiki to save it. These span the gamut, including full fledged desktop apps (most notably <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/static/TiddlyDesktop.html" rel="noopener noreferrer" target="_blank">TiddlyDesktop</a>), browser extensions, and server applications of varying complexity.  But all of these rely on a single capability built-in to Tiddlywiki that allows it to save itself to any WebDAV server. In addition to purpose-built servers, Tiddlywiki can save itself to WebDAV servers available for:</p><ul><li><a class="tc-tiddlylink-external" href="https://nginx.org/en/docs/http/ngx_http_dav_module.html" rel="noopener noreferrer" target="_blank">Nginx</a></li><li><a class="tc-tiddlylink-external" href="https://httpd.apache.org/docs/2.4/mod/mod_dav.html" rel="noopener noreferrer" target="_blank">Apache</a></li><li><a class="tc-tiddlylink-external" href="https://caddyserver.com/docs/modules/http.handlers.webdav" rel="noopener noreferrer" target="_blank">Caddy</a></li></ul><p>I started to consider writing a tiny version of a WebDAV tiddlywiki saver after I ran across jart's phenomenal <a class="tc-tiddlylink-external" href="https://redbean.dev" rel="noopener noreferrer" target="_blank">Redbean</a> project, which is a webserver contained as an αcτµαlly pδrταblε εxεcµταblε. This approach appeals strongly to my love of small, self-contained tools (one of the reasons I love Tiddlywiki!) It's a web server application that is also a zip archive.  By adding Lua code and assets to the zip archive, and then executing it on most any x86_64 system, it provides a self-contained, offline web application.  After reading through the documentation for Redbean, it occurred to me that it should be not only possible, but quite easy to write a Redbean application that not only is a saver for Tiddlywiki, but can bundle the wiki into the application itself, creating a completely self-contained Tiddlywiki application.</p><p>But, I've never worked with Redbean before, so these are my notes on implementing this idea.</p><h2 class="">Redbean's Hello World</h2><p>Here's my hello world in <code>index.lua</code>:</p><pre class="hljs"><code class="lua hljs">Write(<span class="hljs-string">&quot;&lt;html&gt;&quot;</span>)
+Write(<span class="hljs-string">&quot;&lt;head&gt;&lt;title&gt;Redbean Lua Demo&lt;/title&gt;&lt;/head&gt;&quot;</span>)
+Write(<span class="hljs-string">&quot;&lt;body&gt;&quot;</span>)
+Write(<span class="hljs-string">&quot;This is just a demo page...hello, world!&quot;</span>)
+Write(<span class="hljs-string">&quot;&lt;/body&gt;&quot;</span>)
+Write(<span class="hljs-string">&quot;&lt;/html&gt;&quot;</span>)</code></pre><p>I then build the executable using a small script:</p><pre class="hljs"><code class="bash hljs"><span class="hljs-keyword">if</span> [! -f redbean.com ]; <span class="hljs-keyword">then</span>
+    curl https://redbean.dev/redbean-latest.com &gt; redbean.com
+    <span class="hljs-built_in">chmod</span> +x redbean.com
+<span class="hljs-keyword">fi</span>
+<span class="hljs-built_in">cp</span> redbean.com wiki.com
+zip wiki.com index.lua
+./wiki.com</code></pre><h2 class="">Serving a Tiddlywiki</h2><p>Instead of generating HTML in the Lua code, we already have a bundle of HTML to serve: a Tiddlywiki!  This means all the Lua code has to do is serve that asset:</p><pre class="hljs"><code class="lua hljs">ServeAsset(<span class="hljs-string">&quot;wiki.html&quot;</span>)</code></pre><p>Of course, we need to provide that <code>wiki.html</code> file to serve. Let's grab one:</p><pre><code>curl https://tiddlywiki.com/empty.html &gt; wiki.html
+zip wiki.com index.lua wiki.html
+./wiki.com</code></pre><p>Opening <code>localhost:8080</code> in the browser, we can see that the wiki loads, and can be edited, but there's no saving yet. </p><h2 class="">Adding Saving</h2><p>Redbean has a surprisingly comprehensive set of methods available to tackle the saving piece.  In order to enable saving for Tiddlywiki with the built-in DAV tooling, the server needs to understand four major HTTP methods: <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, and <code>PUT</code>.</p><p>To implement <code>HEAD</code>, we want to provide two relevant headers: the <code>Content-Type</code> and the <code>Content-Length</code>.  Right now, the goal is to have Redbean store exactly one wiki, so the path to the resource doesn't matter.  But since we'll have to dispatch on method type, we need to extract that first.  At the same time, we'll hardcode the path to the wiki inside the zip:</p><pre class="hljs"><code class="lua hljs">method = GetMethod()
+WIKI_PATH=<span class="hljs-string">&quot;wiki.html&quot;</span></code></pre><p>To implement <code>GET</code> we simply use the logic from above:</p><pre class="hljs"><code class="lua hljs"><span class="hljs-keyword">if</span> method == <span class="hljs-string">&quot;GET&quot;</span> <span class="hljs-keyword">then</span>
+   ServeAsset(WIKI_PATH)
+<span class="hljs-keyword">end</span></code></pre><p>For <code>HEAD</code>, two headers are required, and they can be set with <code>SetHeader</code>. One is <code>Content-Length</code>, which is dynamic, so it first needs to load the wiki and get its length before setting the headers:</p><pre class="hljs"><code class="lua hljs"><span class="hljs-comment">-- GET method above</span>
+<span class="hljs-keyword">elseif</span> method == <span class="hljs-string">&quot;HEAD&quot;</span> <span class="hljs-keyword">then</span>
+   wiki = LoadAsset(WIKI_PATH)
+   SetStatus(<span class="hljs-number">200</span>)
+   SetHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;text/html&quot;</span>)
+   SetHeader(<span class="hljs-string">&quot;Content-Length&quot;</span>, <span class="hljs-built_in">tostring</span>(#wiki))
+<span class="hljs-keyword">end</span></code></pre><p>Implementing <code>OPTIONS</code> has to emulate WebDAV just enough to trick Tiddlywiki into saving using that mechanism. I based these headers from the very sleek <a class="tc-tiddlylink-external" href="https://gist.github.com/jimfoltz/ee791c1bdd30ce137bc23cce826096da" rel="noopener noreferrer" target="_blank">Ruby saver</a> written by Jim Foltz.</p><pre class="hljs"><code class="lua hljs"><span class="hljs-comment">-- GET and HEAD methods above</span>
+<span class="hljs-keyword">elseif</span> method == <span class="hljs-string">&quot;OPTIONS&quot;</span> <span class="hljs-keyword">then</span>
+   SetStatus(<span class="hljs-number">200</span>)
+   SetHeader(<span class="hljs-string">&quot;allow&quot;</span>, <span class="hljs-string">&quot;GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav&quot;</span>)
+   SetHeader(<span class="hljs-string">&quot;x-api-access-type&quot;</span>, <span class="hljs-string">&quot;file&quot;</span>)
+   SetHeader(<span class="hljs-string">&quot;dav&quot;</span>, <span class="hljs-string">&quot;tw5/put&quot;</span>)
+<span class="hljs-keyword">end</span></code></pre><p>The last method is <code>PUT</code>, which needs to write the payload back to the Redbean archive.  Luckily, Redbean provides a <code>StoreAsset</code> function for exactly this case:</p><pre class="hljs"><code class="lua hljs"><span class="hljs-comment">-- GET, HEAD, and OPTIONS methods above</span>
+<span class="hljs-keyword">elseif</span> method == <span class="hljs-string">&quot;PUT&quot;</span> <span class="hljs-keyword">then</span>
+   length = <span class="hljs-built_in">tonumber</span>(GetHeader(<span class="hljs-string">&quot;Content-Length&quot;</span>))
+   body = GetBody()
+   StoreAsset(WIKI_PATH, body)
+   SetStatus(<span class="hljs-number">200</span>)
+<span class="hljs-keyword">end</span></code></pre><h2 class="">Putting It All Together</h2><p>So, the full script is a compact 21 lines of Lua:</p><pre class="hljs"><code class="lua hljs">method = GetMethod()
+WIKI_PATH=<span class="hljs-string">&quot;wiki.html&quot;</span>
+
+<span class="hljs-keyword">if</span> method == <span class="hljs-string">&quot;GET&quot;</span> <span class="hljs-keyword">then</span>
+   ServeAsset(WIKI_PATH)
+<span class="hljs-keyword">elseif</span> method == <span class="hljs-string">&quot;HEAD&quot;</span> <span class="hljs-keyword">then</span>
+   wiki = LoadAsset(WIKI_PATH)
+   SetStatus(<span class="hljs-number">200</span>)
+   SetHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;text/html&quot;</span>)
+   SetHeader(<span class="hljs-string">&quot;Content-Length&quot;</span>, <span class="hljs-built_in">tostring</span>(#wiki))
+<span class="hljs-keyword">elseif</span> method == <span class="hljs-string">&quot;OPTIONS&quot;</span> <span class="hljs-keyword">then</span>
+   SetStatus(<span class="hljs-number">200</span>)
+   SetHeader(<span class="hljs-string">&quot;allow&quot;</span>, <span class="hljs-string">&quot;GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav&quot;</span>)
+   SetHeader(<span class="hljs-string">&quot;x-api-access-type&quot;</span>, <span class="hljs-string">&quot;file&quot;</span>)
+   SetHeader(<span class="hljs-string">&quot;dav&quot;</span>, <span class="hljs-string">&quot;tw5/put&quot;</span>)   
+<span class="hljs-keyword">elseif</span> method == <span class="hljs-string">&quot;PUT&quot;</span> <span class="hljs-keyword">then</span>
+   length = <span class="hljs-built_in">tonumber</span>(GetHeader(<span class="hljs-string">&quot;Content-Length&quot;</span>))
+   body = GetBody()
+   StoreAsset(WIKI_PATH, body)
+   SetStatus(<span class="hljs-number">200</span>)
+<span class="hljs-keyword">end</span></code></pre><p>Then all that's needed is to inject <code>index.lua</code>, along with a wiki, into the archive and run it:</p><pre><code>zip wiki.com wiki.html index.lua
+./wiki.com</code></pre><p>While this loads and allows editing as before, upon saving, Tiddlywiki throws an error, and the Redbean logs reveal a <code>413</code> error: the payload during the <code>PUT</code> is too large.  This is because a Tiddlywiki is over 1MB, but the maximum payload size of Redbean is 65k.  This can be adjusted during launch...here we'll use 5MB:</p><pre><code>./wiki.com -M 5000000</code></pre><p>This approach allows Tiddlywiki to load and save exactly as expected, and packs everything into a single 2.5M file.</p><h2 class="">Changelog</h2><ul><li>2022-11-19 - Added details about WebDAV saving mechanism after <a class="tc-tiddlylink-external" href="https://news.ycombinator.com/item?id=33673116" rel="noopener noreferrer" target="_blank">feedback on HN</a>.</li></ul></div>
+</div></p>
+</section>
+</body>
+</html>
+

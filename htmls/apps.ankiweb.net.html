@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+
+    
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Anki - powerful, intelligent flashcards
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-docs-min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-size: 16px;
+            padding-top: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .container-narrow {
+            max-width: 50em;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+
+        .nav {
+            margin-top: 5px !important;
+        }
+
+        .logo {
+            float: left;
+/*            margin-left: 14px;*/
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #317eac !important;
+            margin-bottom: 0.25em;
+        }
+
+        h1, h2 {
+            margin-top: 0.7em;
+        }
+
+        .navbar-inner {
+            background: #0059b1 !important;
+            box-shadow: 0px 2px 10px #000 !important;
+        }
+
+        .navbar-inverse .nav>li>a {
+            color: #fff;
+        }
+
+        .navbar-inverse .nav>li>a:hover {
+            background: #444;
+        }
+
+        .tocify-focus { font-weight: bold; }
+
+        div.admonitionblock .icon {
+            vertical-align: top;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #527bbd;
+            padding-right: 0.5em;
+            width: 6em;
+        }
+
+        div.admonitionblock td.content {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            border-left: 3px solid #dddddd;
+        }
+
+        div.quoteblock {
+  margin-top: 1.0em;
+  margin-bottom: 1em;
+  margin-right: 10%;
+  color: #aaa;
+  padding: 0.5em;
+       }        
+
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+    </style>
+</head>
+
+<body>
+
+<div class="container-narrow">
+
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar-inner">
+            <a class="logo hidden-phone" href="/index.html"><img src="/img/anki-logo.png"></a>
+            <ul class="nav pull-right">
+                <li id="navhome"><a href="/">Home</a></li>
+                <li id="navmanual"><a href="/docs/manual.html">Docs</a></li>
+                <li id="navhelp"><a href="https://faqs.ankiweb.net">Support</a></li>
+                <li><a href="https://ankiweb.net/">AnkiWeb</a></li>
+            </ul>
+            <ul class="nav">
+            </ul>
+        </div>
+    </div>
+
+    
+
+<script>
+  document.getElementById("navhome").className += " active";
+</script>
+
+<style>
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  .span4 {
+    text-align: center;
+  }
+
+  .text-heading {
+    color: #317eac;
+  }
+
+  blockquote {
+    text-align: left;
+    color: #aaa;
+    margin-top: 2em;
+  }
+
+  h2 {
+    margin-top: 0.5em;
+  }
+
+  .lead {
+    padding-top: 30px;
+  }
+
+  .tab-pane h3:first-child {
+    margin-top: -5px;
+  }
+</style>
+
+<div class="jumbotron masthead">
+  <p class="lead">
+    Powerful, intelligent flash cards.<br />
+    <span class="hidden-phone"
+      >Remembering things just became much easier.</span
+    >
+  </p>
+
+  <p>
+    <a
+      href="#download"
+      onclick="goToByScroll('download');return false;"
+      class="btn btn-primary btn-large"
+      >Download</a
+    >
+  </p>
+</div>
+
+<!-- main content -->
+
+<hr class="hidden-phone" />
+
+<!-- remember anything/everywhere section -->
+<div class="row-fluid hidden-phone">
+  <div class="span4">
+    <p>
+      <span class="lead text-heading">Remember Anything</span><br />
+      From images to scientific markup, Anki has got you covered.
+    </p>
+  </div>
+  <div class="span4">
+    <p>
+      <span class="lead text-heading">Remember Anywhere</span><br />Review on
+      Windows, Mac, Linux, iOS, Android, and any device with a web browser.
+    </p>
+  </div>
+  <div class="span4">
+    <p>
+      <span class="lead text-heading">Remember Efficiently</span><br />
+      Only practice the material that you're about to forget.
+    </p>
+  </div>
+</div>
+
+<hr class="hidden-phone" />
+
+<!-- main text -->
+<div class="row-fluid">
+  <!-- main column -->
+  <div class="span8">
+    <h2>About Anki</h2>
+
+    <p>
+      Anki is a program which makes remembering things easy. Because it's a lot
+      more efficient than traditional study methods, you can either greatly
+      decrease your time spent studying, or greatly increase the amount you
+      learn.
+    </p>
+
+    <p>
+      Anyone who needs to remember things in their daily life can benefit from
+      Anki. Since it is content-agnostic and supports images, audio, videos and
+      scientific markup (via LaTeX), the possibilities are endless.<br />
+      For example:
+    </p>
+    <ul>
+      <li>Learning a language</li>
+      <li>Studying for medical and law exams</li>
+      <li>Memorizing people's names and faces</li>
+      <li>Brushing up on geography</li>
+      <li>Mastering long poems</li>
+      <li>Even practicing guitar chords!</li>
+    </ul>
+    <h2>Features</h2>
+
+    <div class="row-fluid">
+      <div class="span6">
+        <p>
+          <span class="lead text-heading">Synchronization</span><br />Use the
+          free AnkiWeb synchronization service to keep your cards in sync across
+          multiple devices.
+        </p>
+
+        <p>
+          <span class="lead text-heading">Flexibility</span><br />From card
+          layout to review timing, Anki has a wealth of options for you to
+          customize.
+        </p>
+
+        <p>
+          <span class="lead text-heading">Media-Rich</span><br />Embed audio
+          clips, images, videos and scientific markup on your cards, with
+          precise control over how it's shown.
+        </p>
+      </div>
+      <div class="span6">
+        <p>
+          <span class="lead text-heading">Optimized</span><br />
+          Anki will handle decks of 100,000+ cards with no problems.
+        </p>
+
+        <p>
+          <span class="lead text-heading">Fully Extensible</span><br />
+          There are a large number of add-ons available.
+        </p>
+
+        <p>
+          <span class="lead text-heading">Open Source</span><br />Because the
+          code and storage format is open, your important data is safe.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- sidebar -->
+  <div class="span4 quotebar">
+    <blockquote>
+      <p>
+        "The single biggest change that Anki brings about is that it means
+        memory is no longer a haphazard event, to be left to chance. Rather, it
+        guarantees I will remember something, with minimal effort. That is,
+        <i>Anki makes memory a choice</i>."
+      </p>
+      <small
+        ><a href="http://augmentingcognition.com/ltm.html" target="_blank"
+          >Michael A. Nielsen, "Augmenting Long-term Memory"</a
+        >
+      </small>
+    </blockquote>
+
+    <blockquote>
+      <p>
+        "No other application [...] comes remotely close to Anki in terms of the
+        number and power of features, flexibility in study, or implementation of
+        spaced repetition."
+      </p>
+      <small
+        ><a
+          href="http://foolsworkshop.com/reviews/index.html%3Fp=124.html"
+          target="_blank"
+          >K. M. Lawson, "Anki All the Way"</a
+        >
+      </small>
+    </blockquote>
+    <blockquote>
+      <p>
+        "I've been using Anki for two years now, and I just wanted to thank you
+        personally for contributing to the single most obvious improvement in my
+        quality of life. I'm not being hyperbolic: consistent use of Anki has
+        opened more doors for me intellectually than I could have imagined two
+        years ago. And being a poor student, I'll be forever grateful that
+        you've provided this software open-source and free of charge."
+      </p>
+      <small>Keldin, via email</small>
+    </blockquote>
+  </div>
+</div>
+
+<hr />
+
+<div id="dlarea">
+  <h2 id="download">Download Anki</h2>
+
+  <div class="tabbable">
+    <!-- tabs -->
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="#windows" data-toggle="tab">Windows</a>
+      </li>
+      <li>
+        <a href="#mac" data-toggle="tab">Mac</a>
+      </li>
+      <li>
+        <a href="#linux" data-toggle="tab">Linux</a>
+      </li>
+      <li>
+        <a href="#ios" data-toggle="tab">iPhone/Android</a>
+      </li>
+      <li>
+        <a href="#dev" data-toggle="tab">Development</a>
+      </li>
+    </ul>
+    <!-- tab contents -->
+    <div class="tab-content">
+      <div id="unknown" class="tab-pane">
+        <p>Choose a platform from the left.</p>
+      </div>
+      <div class="tab-pane" id="windows">
+        <h3>Download</h3>
+
+        <p>2.1.54 was the previous release. Two variants are available: <a href="https://docs.ankiweb.net/platform/windows/installing.html#qt5-vs-qt6">Qt5 vs Qt6</a>.
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-windows-qt6.exe"
+            class="btn btn-large"
+            >Download Anki for Windows 10/11 (2.1.54 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-windows-qt5.exe"
+            class="btn"
+            >Download Anki for Windows 10/11 (2.1.54 Qt5)</a
+          >
+        </p>
+
+        <p>2.1.55 was just released.</p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-windows-qt6.exe"
+            class="btn btn-large"
+            >Download Anki for Windows 10/11 (2.1.55 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-windows-qt5.exe"
+            class="btn"
+            >Download Anki for Windows 10/11 (2.1.55 Qt5)</a
+          >
+        </p>
+
+        <p>
+          <a
+            class="btn btn-large btn-info"
+            href="https://docs.ankiweb.net/platform/windows/installing.html"
+            >Installation &amp; troubleshooting guide</a
+          >
+        </p>
+        <p>
+          <a
+            class="btn btn-large btn-info"
+            href="https://github.com/ankitects/anki/releases"
+            >Change notes &amp; older releases</a
+          >
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://apps.ankiweb.net/downloads/archive"
+              >Alternate download site</a
+            >
+          </li>
+          <li>
+            <a href="https://changes.ankiweb.net">Alternate changes site</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="mac">
+        <h3>Downloads</h3>
+
+        <p>2.1.54 was the previous release. If you're on an <a href="https://support.apple.com/en-au/HT211814">M1/M2 Mac</a>, pick the Apple Silicon version for better performance/battery life. Older machines will need to
+            use the Intel version. Two variants of the Intel version are available: <a href="https://docs.ankiweb.net/platform/mac/installing.html#qt5-vs-qt6">Qt5 vs Qt6</a>.
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-mac-intel-qt6.dmg"
+            class="btn btn-large"
+            >Download Anki for macOS 10.14.4+ (Intel, 2.1.54 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-mac-apple-qt6.dmg"
+            class="btn btn-large"
+            >Download Anki for macOS (Apple Silicon, 2.1.54 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-mac-intel-qt5.dmg"
+            class="btn"
+            >Download Anki for macOS 10.13.4+ (Intel, 2.1.54 Qt5)</a
+          >
+        </p>
+
+        <p>2.1.55 was just released.</p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-mac-intel-qt6.dmg"
+            class="btn btn-large"
+            >Download Anki for macOS 10.14.4+ (Intel, 2.1.55 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-mac-apple-qt6.dmg"
+            class="btn btn-large"
+            >Download Anki for macOS (Apple Silicon, 2.1.55 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-mac-intel-qt5.dmg"
+            class="btn"
+            >Download Anki for macOS 10.13.4+ (Intel, 2.1.55 Qt5)</a
+          >
+        </p>
+
+        <p>
+          <a
+            class="btn btn-large btn-info"
+            href="https://docs.ankiweb.net/platform/mac/installing.html"
+            >Installation &amp; troubleshooting guide</a
+          >
+        </p>
+        <p>
+          <a
+            class="btn btn-large btn-info"
+            href="https://github.com/ankitects/anki/releases"
+            >Change notes &amp; older releases</a
+          >
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://apps.ankiweb.net/downloads/archive"
+              >Alternate download site</a
+            >
+          </li>
+          <li>
+            <a href="https://changes.ankiweb.net">Alternate changes site</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="linux">
+        <h3>Downloads</h3>
+
+        <p>2.1.54 was the previous release. Two variants are available: <a href="https://docs.ankiweb.net/platform/linux/installing.html#qt5-vs-qt6">Qt5 vs Qt6</a>.
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-linux-qt6.tar.zst"
+            class="btn btn-large"
+            >Download Anki for 2018+ (2.1.54 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.54/anki-2.1.54-linux-qt5.tar.zst"
+            class="btn"
+            >Download Anki for 2018+ (2.1.54 Qt5)</a
+          >
+        </p>
+
+        <p>2.1.55 was just released.</p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-linux-qt6.tar.zst"
+            class="btn btn-large"
+            >Download Anki for 2018+ (2.1.55 Qt6)</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/ankitects/anki/releases/download/2.1.55/anki-2.1.55-linux-qt5.tar.zst"
+            class="btn"
+            >Download Anki for 2018+ (2.1.55 Qt5)</a
+          >
+        </p>
+
+        <p>
+          <a
+            class="btn btn-large btn-info"
+            href="https://docs.ankiweb.net/platform/linux/installing.html"
+            >Installation &amp; troubleshooting guide</a
+          >
+        </p>
+        <p>
+          <a
+            class="btn btn-large btn-info"
+            href="https://github.com/ankitects/anki/releases"
+            >Change notes &amp; older releases</a
+          >
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://apps.ankiweb.net/downloads/archive"
+              >Alternate download site</a
+            >
+          </li>
+          <li>
+            <a href="https://changes.ankiweb.net">Alternate changes site</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="dev">
+        <h3>Source code</h3>
+
+        <p>
+          Anki's source is available on GitHub. There are instructions for
+          building in the docs/ folder. If you encounter problems with the build
+          system please let us know, but please note the expectation is that you
+          are able to dig into basic issues by yourself. If you have no
+          programming experience, please use the packaged version instead.
+        </p>
+
+        <p>
+          If you encounter bugs while running Anki from source, please check to
+          see if you can reproduce them in the packaged version, as the Qt
+          version or other libraries on your system can be the cause of some
+          problems.
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://github.com/ankitects/anki/releases"
+              >Source tarballs</a
+            >
+          </li>
+          <li><a href="/downloads/archive/">Other old downloads</a></li>
+        </ul>
+
+        <h3>Development</h3>
+
+        <p>
+          The latest code is located on
+          <a href="https://github.com/ankitects/anki">GitHub</a>.
+        </p>
+
+        <p>
+          Please see the files in docs/ for further
+          instructions.
+        </p>
+
+        <h3>Translating Anki</h3>
+
+        Please see
+        <a href="https://translating.ankiweb.net">this page</a> for info on
+        translating Anki into a different language.
+      </div>
+      <div class="tab-pane" id="ios">
+        <h3>iPhone/iPad/iPod Touch</h3>
+
+        <p>
+          <a
+            href="https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387"
+            target="itunes_store"
+            class="btn btn-primary btn-large"
+            >Get AnkiMobile <i class="icon-share-alt icon-white"></i
+          ></a>
+        </p>
+
+        AnkiMobile is a paid companion to the free computer program, for use on
+        Apple devices. By purchasing the app, you help to support Anki's future
+        development.
+
+        <br /><br />
+        If you can't afford the app, you can still use <a href="#">AnkiWeb</a>.
+
+        <h3>Android Devices</h3>
+
+        <p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.ichi2.anki"
+            class="btn btn-primary btn-large"
+            >Get AnkiDroid <i class="icon-share-alt icon-white"></i
+          ></a>
+        </p>
+
+        AnkiDroid is written by a separate group of people. As it was based off
+        the free desktop code I make available, the AnkiDroid developers decided
+        to make the Android version free as well.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 10em"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+  /* based on http://stackoverflow.com/questions/10147283/jump-to-anchor-tag-without-showing-hashtag-in-url */
+  function goToByScroll(id) {
+    // the area may already be on screen, so highlight it
+    $("#dlarea").fadeTo(300, 0.1, function () {
+      $(this).fadeTo(600, 1.0);
+    });
+
+    $("html,body").animate({ scrollTop: $("#" + id).offset().top }, "slow");
+  }
+
+  var os = navigator.platform;
+  var ua = navigator.userAgent;
+  if (os == "Win32") {
+    $("a[href=#windows]").tab("show");
+  } else if (os == "MacIntel") {
+    $("a[href=#mac]").tab("show");
+  } else if (!!os.match(/Linux/i)) {
+    $("a[href=#linux]").tab("show");
+  } else {
+    if (!!(ua.match(/(iPad|iPhone|iPod)/i) || !!ua.match(/Android/i))) {
+      $("a[href=#ios]").tab("show");
+    } else {
+      $("#unknown").show();
+    }
+  }
+</script>
+
+
+    <div style="margin-bottom: 2em;"></div>
+
+</div>
+
+</body>
+</html>

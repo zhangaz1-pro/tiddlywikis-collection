@@ -376,8 +376,6 @@ Error message and password prompt
 
 <li>Oversigt</li>
 
-<li>Øverst</li>
-
 <li>Pins</li>
 
 <li>Planer</li>
@@ -425,6 +423,8 @@ Error message and password prompt
 <li>TitlesWithNumbers.css</li>
 
 <li>Web colors - Wikipedia</li>
+
+<li>Øverst</li>
 
 </ul>
 </p>
@@ -14628,56 +14628,6 @@ Brug firefox til at gennemse filerne på din computer (linux type 'file:///' tr�
 
 &lt;&lt;list-links filter:&quot;[tag[JR]]&quot;&gt;&gt;</pre>
 </div>
-<div bag="default" created="20170415152103696" creator="Birthe" modified="20190829104056092" modifier="Birthe" revision="7" select-bookmark="Vælg bogmærke" tabs-background-color="&lt;&lt;colour tab-background&gt;&gt;" tags="$:/tags/AboveStory" title="Øverst" type="text/vnd.tiddlywiki">
-<pre>&lt;small&gt;&lt;div class=&quot;minibrowser&quot;&gt;
-&lt;$select tiddler=&quot;$:/temp/tag1&quot; class=&quot;fit&quot;&gt;
-&lt;option&gt;{{!!select-bookmark}}&lt;/option&gt;
-   &lt;$list filter=&quot;[has[location]tags[]sort[tag]sort[title]]-[[Notiz]]-[[ClippedImage]]-[[Snaps]]-[[Clipboard]]&quot; variable=&quot;mytag&quot;&gt;
-&lt;optgroup label=&lt;&lt;mytag&gt;&gt;&gt;
-&lt;$list filter=&quot;[tag&lt;mytag&gt;]-[!has[location]]&quot;&gt;
-      &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
- &lt;/$list&gt;  
-&lt;/optgroup&gt;
-&lt;/$list&gt;&lt;/small
-
-&lt;/$select&gt;
-&lt;$tiddler tiddler={{$:/temp/tag1}}&gt;
-&lt;$button tooltip=&quot;Gå til tiddler&quot;&gt;&lt;$action-navigate $to={{!!title}}/&gt;Gå til&lt;/$button&gt;&lt;$button message=&quot;tm-edit-tiddler&quot;  param={{$:/temp/tag1}} tooltip=&quot;Redigér tiddler&quot;&gt;{{$:/core/images/edit-button}}&lt;/$button&gt;
-&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/state/browser&quot; text=&quot;show&quot;&gt;
-&lt;$button tooltip=&quot;Åbn i mini-browser&quot; set=&quot;$:/state/browser&quot; setTo=&quot;show&quot;&gt;{{$:/core/images/preview-open}}&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/browser&quot; text=&quot;show&quot;&gt;
-&lt;$button tooltip={{$:/language/Buttons/Close/Caption}} set=&quot;$:/state/browser&quot; setTo=&quot;hide&quot;&gt;&lt;$action-setfield $tiddler=&quot;$:/temp/tag1&quot; text=&quot;Vælg bogmærke&quot;/&gt;{{$:/core/images/preview-closed}}&lt;/$button&gt;
-&lt;$tiddler tiddler={{$:/temp/tag1}}&gt;
-&lt;$set name=&quot;path&quot; value={{!!location}}&gt;
-&lt;iframe src={{!!location}} width=&quot;100%&quot; height=&quot;385em&quot;/&gt;
-&lt;/$set&gt;
-&lt;/$tiddler&gt;
-&lt;/$reveal&gt;
-&lt;$button tooltip=&quot;Åbn eksternt link i ny fane&quot;&gt;&lt;a href={{!!location}} target=&quot;_blank&quot;&gt;{{$:/core/images/link}}&lt;/a&gt;&lt;/$button&gt;
-&lt;/$tiddler&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-.minibrowser {
-    display:block;
-    background-color:{{!!tabs-background-color}};
-    border:2px {{!!tabs-background-color}} outset;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    border-bottom-left-radius:5px;
-    border-bottom-right-radius:5px;
-    padding:4px;
-}
-&lt;/style&gt;
-
-&lt;style&gt;
-.fit {
-width:225px;
-font-size:12px;
-}
-&lt;/style&gt;</pre>
-</div>
 <div created="20160818170420373" modified="20160818170433427" tags="Tiddlyclip" title="Pins">
 <pre></pre>
 </div>
@@ -14997,6 +14947,56 @@ div.tc-tiddler-body .nr h3::before, div.tc-tiddler-preview-preview .nr h3::befor
 
 
 </pre>
+</div>
+<div bag="default" created="20170415152103696" creator="Birthe" modified="20190829104056092" modifier="Birthe" revision="7" select-bookmark="Vælg bogmærke" tabs-background-color="&lt;&lt;colour tab-background&gt;&gt;" tags="$:/tags/AboveStory" title="Øverst" type="text/vnd.tiddlywiki">
+<pre>&lt;small&gt;&lt;div class=&quot;minibrowser&quot;&gt;
+&lt;$select tiddler=&quot;$:/temp/tag1&quot; class=&quot;fit&quot;&gt;
+&lt;option&gt;{{!!select-bookmark}}&lt;/option&gt;
+   &lt;$list filter=&quot;[has[location]tags[]sort[tag]sort[title]]-[[Notiz]]-[[ClippedImage]]-[[Snaps]]-[[Clipboard]]&quot; variable=&quot;mytag&quot;&gt;
+&lt;optgroup label=&lt;&lt;mytag&gt;&gt;&gt;
+&lt;$list filter=&quot;[tag&lt;mytag&gt;]-[!has[location]]&quot;&gt;
+      &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
+ &lt;/$list&gt;  
+&lt;/optgroup&gt;
+&lt;/$list&gt;&lt;/small
+
+&lt;/$select&gt;
+&lt;$tiddler tiddler={{$:/temp/tag1}}&gt;
+&lt;$button tooltip=&quot;Gå til tiddler&quot;&gt;&lt;$action-navigate $to={{!!title}}/&gt;Gå til&lt;/$button&gt;&lt;$button message=&quot;tm-edit-tiddler&quot;  param={{$:/temp/tag1}} tooltip=&quot;Redigér tiddler&quot;&gt;{{$:/core/images/edit-button}}&lt;/$button&gt;
+&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/state/browser&quot; text=&quot;show&quot;&gt;
+&lt;$button tooltip=&quot;Åbn i mini-browser&quot; set=&quot;$:/state/browser&quot; setTo=&quot;show&quot;&gt;{{$:/core/images/preview-open}}&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/browser&quot; text=&quot;show&quot;&gt;
+&lt;$button tooltip={{$:/language/Buttons/Close/Caption}} set=&quot;$:/state/browser&quot; setTo=&quot;hide&quot;&gt;&lt;$action-setfield $tiddler=&quot;$:/temp/tag1&quot; text=&quot;Vælg bogmærke&quot;/&gt;{{$:/core/images/preview-closed}}&lt;/$button&gt;
+&lt;$tiddler tiddler={{$:/temp/tag1}}&gt;
+&lt;$set name=&quot;path&quot; value={{!!location}}&gt;
+&lt;iframe src={{!!location}} width=&quot;100%&quot; height=&quot;385em&quot;/&gt;
+&lt;/$set&gt;
+&lt;/$tiddler&gt;
+&lt;/$reveal&gt;
+&lt;$button tooltip=&quot;Åbn eksternt link i ny fane&quot;&gt;&lt;a href={{!!location}} target=&quot;_blank&quot;&gt;{{$:/core/images/link}}&lt;/a&gt;&lt;/$button&gt;
+&lt;/$tiddler&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.minibrowser {
+    display:block;
+    background-color:{{!!tabs-background-color}};
+    border:2px {{!!tabs-background-color}} outset;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    padding:4px;
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+.fit {
+width:225px;
+font-size:12px;
+}
+&lt;/style&gt;</pre>
 </div>
 
 </div>

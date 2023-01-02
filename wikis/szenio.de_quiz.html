@@ -148,6 +148,8 @@ Error message and password prompt
 
 <li>$:/state/showeditpreview</li>
 
+<li>$:/state/sidebar</li>
+
 <li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab--1963855381</li>
@@ -197,6 +199,10 @@ Error message and password prompt
 <li>Quiz Cardstack</li>
 
 <li>Quiz Cardstack Test</li>
+
+<li>Quiz Cardstack Version 1</li>
+
+<li>Quizcard design Ideas not working yet</li>
 
 <li>quizcards macros</li>
 
@@ -9005,6 +9011,9 @@ label:hover :checked + .flipcard {
 <div created="20180430100630020" modified="20180430100630020" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
+<div created="20211111161500741" creator="JP" modified="20211111161505930" modifier="JP" title="$:/state/sidebar">
+<pre>yes</pre>
+</div>
 <div created="20180430111455234" creator="JP" modified="20180430212030082" modifier="JP" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
@@ -9023,7 +9032,7 @@ label:hover :checked + .flipcard {
 <div created="20180430105013995" creator="J" modified="20180430105015896" modifier="J" title="$:/status/UserName">
 <pre>JP</pre>
 </div>
-<div list="FieldQuiz Q&amp;AQuiz RandomQuiz DataQuiz [[quizcards macros]]" title="$:/StoryList">
+<div list="[[Quiz Cardstack Version 1]] FieldQuiz Q&amp;AQuiz RandomQuiz DataQuiz [[quizcards macros]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180430102544674" creator="JP" modified="20180501162429680" modifier="JP" title="$:/temp/advancedsearch">
@@ -9042,19 +9051,19 @@ label:hover :checked + .flipcard {
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;http://szenio.de/quiz/&quot;
+            &quot;text&quot;: &quot;https://szen.io/quiz/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;szenio.de&quot;
+            &quot;text&quot;: &quot;szen.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;szenio.de&quot;
+            &quot;text&quot;: &quot;szen.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;http:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9070,7 +9079,7 @@ label:hover :checked + .flipcard {
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;http://szenio.de&quot;
+            &quot;text&quot;: &quot;https://szen.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -9408,7 +9417,143 @@ perferendis ipsam, harum itaque.&lt;/p&gt;
 
 &lt;input type=&quot;radio&quot; name=&quot;cards&quot; class=&quot;card-checkbox&quot; id=&quot;put-cards-down&quot;&gt;</pre>
 </div>
-<div created="20201117171138628" creator="JP" modified="20201118074429298" modifier="JP" tags="" title="Quiz Cardstack Test">
+<div created="20201117171138628" creator="JP" modified="20211111161336953" modifier="JP" tags="" title="Quiz Cardstack Test">
+<pre>&lt;style&gt;
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #181818;
+}
+
+
+.scard-checkbox {
+  display: none;
+}
+
+.scard {
+  box-sizing: border-box;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  width: 640px;
+  height: 428.8px;
+  margin-left: -320px;
+  padding: 1rem;
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+  z-index: 0;
+  background-color: #ddd;
+  color: #181818;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all .75s;
+  transition: all .75s;
+}
+
+.scard-checkbox:first-of-type + .scard, .scard-checkbox:first-of-type:checked ~ .scard-checkbox:nth-of-type(2) + .scard {
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+  z-index: 3;
+  background-color: #fff;
+}
+
+.scard-checkbox:nth-of-type(2) + .scard, .scard-checkbox:first-of-type:checked ~ .scard-checkbox:nth-of-type(3) + .scard, .scard-checkbox:nth-of-type(2):checked ~ .scard-checkbox:nth-of-type(3) + .scard {
+  z-index: 2;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  background-color: #eee;
+}
+
+.scard-checkbox:checked + .scard {
+  margin-top: -240px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  top: 50%;
+  background-color: #fff;
+}
+
+#nav {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  font-size: .95rem;
+  color: #686868;
+}
+#nav li:not(.lowercase) {
+  text-transform: uppercase;
+}
+#nav label {
+  display: block;
+  padding: .75rem 1.25rem;
+  cursor: pointer;
+  -webkit-transition: color .25s;
+  transition: color .25s;
+}
+#nav label:hover {
+  color: #aaa;
+}
+&lt;/style&gt;
+
+
+&lt;body translate=&quot;no&quot;&gt;
+
+	&lt;li class=&quot;lowercase&quot;&gt;&lt;label for=&quot;put-scards-down&quot;&gt;(Put scards down)&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-1&quot;&gt;First scard&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-2&quot;&gt;Second scard&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-3&quot;&gt;Third scard&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-4&quot;&gt;Fourth scard&lt;/label&gt;&lt;/li&gt;
+
+
+&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-1&quot;&gt;
+
+&lt;div class=&quot;scard&quot;&gt;
+ &lt;ul id=&quot;nav&quot;&gt;
+	&lt;li class=&quot;lowercase&quot;&gt;&lt;label for=&quot;put-scards-down&quot;&gt;(Put scards down)&lt;/label&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;label for=&quot;toggle-scard-1&quot;&gt;One&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-2&quot;&gt;Two&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-3&quot;&gt;Three&lt;/label&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;label for=&quot;toggle-scard-4&quot;&gt;Four&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-2&quot;&gt;
+&lt;div class=&quot;scard&quot;&gt;
+	&lt;h2&gt;Second scard&lt;/h2&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+ nihil dolore, cumque molestiae doloribus necessitatibus! Nisi 
+perferendis ipsam, harum itaque.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-3&quot;&gt;
+
+&lt;div class=&quot;scard&quot;&gt;
+	&lt;h2&gt;Third scard&lt;/h2&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+ nihil dolore, cumque molestiae doloribus necessitatibus! Nisi 
+perferendis ipsam, harum itaque.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-4&quot;&gt;
+
+&lt;div class=&quot;scard&quot;&gt;
+	&lt;h2&gt;Fourth scard&lt;/h2&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+ nihil dolore, cumque molestiae doloribus necessitatibus! Nisi 
+perferendis ipsam, harum itaque.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;put-scards-down&quot;&gt;</pre>
+</div>
+<div created="20211111160902869" creator="JP" modified="20211111161301947" modifier="JP" tags="" title="Quiz Cardstack Version 1">
 <pre>&lt;style&gt;
 html {
   font-size: 16px;
@@ -9506,9 +9651,7 @@ body {
 &lt;div class=&quot;scard&quot;&gt;
  &lt;ul id=&quot;nav&quot;&gt;
 	&lt;li class=&quot;lowercase&quot;&gt;&lt;label for=&quot;put-scards-down&quot;&gt;(Put scards down)&lt;/label&gt;&lt;/li&gt;
-        &lt;$radio field=&quot;modifier&quot; value=&quot;JoeBloggs&quot;&gt;One&lt;/$radio&gt;
         &lt;li&gt;&lt;label for=&quot;toggle-scard-1&quot;&gt;One&lt;/label&gt;&lt;/li&gt;
-         &lt;$radio field=&quot;modifier&quot; value=&quot;JoeBloggs&quot;&gt;Two&lt;/$radio&gt;
 	&lt;li&gt;&lt;label for=&quot;toggle-scard-2&quot;&gt;Two&lt;/label&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;label for=&quot;toggle-scard-3&quot;&gt;Three&lt;/label&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;label for=&quot;toggle-scard-4&quot;&gt;Four&lt;/label&gt;&lt;/li&gt;
@@ -9516,16 +9659,13 @@ body {
 
 &lt;/div&gt;
 
-&lt;$radio field=&quot;modifier&quot; value=&quot;JoeBloggs&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-2&quot;&gt;
-&lt;!--&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-2&quot; checked=&quot;checked&quot;&gt;--&gt;
-
+&lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-2&quot;&gt;
 &lt;div class=&quot;scard&quot;&gt;
 	&lt;h2&gt;Second scard&lt;/h2&gt;
 	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
  nihil dolore, cumque molestiae doloribus necessitatibus! Nisi 
 perferendis ipsam, harum itaque.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/$radio&gt;
 
 
 &lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;toggle-scard-3&quot;&gt;
@@ -9549,6 +9689,233 @@ perferendis ipsam, harum itaque.&lt;/p&gt;
 
 
 &lt;input type=&quot;radio&quot; name=&quot;scards&quot; class=&quot;scard-checkbox&quot; id=&quot;put-scards-down&quot;&gt;</pre>
+</div>
+<div created="20211109084126207" creator="JP" modified="20211109101652007" modifier="JP" tab=" " tags="" title="Quizcard design Ideas not working yet">
+<pre>https://codepen.io/ManassehPierce/pen/eBvYVL
+&lt;div class=&quot;bodylotion&quot;&gt;
+&lt;form&gt;
+&lt;$radio id=&quot;menu&quot; field=&quot;tab&quot;  value=&quot; &quot; actions=&lt;&lt;radioActions&gt;&gt; &gt;Menu &lt;/$radio&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;$radio id=&quot;home&quot; field=&quot;tab&quot;  value=&quot;home&quot; actions=&lt;&lt;radioActions&gt;&gt; &gt;Abra &lt;/$radio&gt;
+    &lt;section class=&quot;home&quot;&gt;
+      &lt;h1&gt;Abra&lt;/h1&gt;
+      &lt;label for=&quot;home&quot;&gt;&lt;/label&gt;
+    &lt;/section&gt;
+    &lt;$radio id=&quot;about&quot; field=&quot;tab&quot;  value=&quot;about&quot; actions=&lt;&lt;radioActions&gt;&gt; &gt;Abra &lt;/$radio&gt;
+    &lt;section class=&quot;about&quot;&gt;
+      &lt;h1&gt;About&lt;/h1&gt;
+      &lt;label for=&quot;about&quot;&gt;&lt;/label&gt;
+    &lt;/section&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tab&quot; id=&quot;work&quot;/&gt;
+    &lt;section class=&quot;work&quot;&gt;
+      &lt;h1&gt;Work&lt;/h1&gt;
+      &lt;label for=&quot;work&quot;&gt;&lt;/label&gt;
+    &lt;/section&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tab&quot; id=&quot;contact&quot;/&gt;
+    &lt;section class=&quot;contact&quot;&gt;
+      &lt;h1&gt;Contact&lt;/h1&gt;
+      &lt;label for=&quot;contact&quot;&gt;&lt;/label&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;menu&quot;&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;menu&quot;&gt;&lt;/label&gt;
+      &lt;label for=&quot;home&quot;&gt;&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.bodylotion {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-family: 'Raleway', sans-serif;
+  background: #fff;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.15) 100%);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+input[type='radio'],
+.hide {
+  display: none;
+}
+input[type='radio']:checked + section {
+  top: 0;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  transition: all 500ms;
+  transform-style: preserve-3d;
+}
+.container section {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  height: 100vh;
+  transition: top 500ms;
+  transform-style: preserve-3d;
+}
+.container section.home {
+  background: #2196f3;
+}
+.container section.about {
+  background: #ffc107;
+}
+.container section.work {
+  background: #4caf50;
+}
+.container section.contact {
+  background: #f44336;
+}
+.container section h1 {
+  margin: 0;
+  font-size: 64px;
+  transform: translate(0, 40vh);
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  transition: transform 500ms;
+  transform-style: preserve-3d;
+}
+.container section label {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+.menu {
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  z-index: 1000;
+  transform: 0deg;
+  transition: all 200ms;
+  width: 35px;
+  height: 4px;
+  background: rgba(0,0,0,0.25);
+}
+.menu::before,
+.menu::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  background: rgba(0,0,0,0.25);
+  transition: all 200ms;
+}
+.menu::before {
+  top: 10px;
+}
+.menu::after {
+  top: 20px;
+}
+.menu:hover {
+  background: #fff;
+}
+.menu:hover::before,
+.menu:hover::after {
+  background: #fff;
+}
+.menu div,
+.menu div label:nth-child(1) {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -6px;
+}
+.menu div label:nth-child(2) {
+  display: none;
+}
+#menu:checked + .container {
+  transform: scale(0.65) translateY(-18%);
+  transition: all 500ms;
+  transform-style: preserve-3d;
+}
+#menu:checked + .container section {
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 1;
+  box-shadow: 0 0 40px rgba(0,0,0,0.25);
+  transform-style: preserve-3d;
+}
+#menu:checked + .container section h1 {
+  transform: scale(0.5);
+  transform-style: preserve-3d;
+}
+#menu:checked + .container + .menu {
+  top: 30px;
+  left: 20px;
+  transform: rotate(225deg);
+  transition: all 200ms;
+  transform-origin: center center;
+  background: #646464;
+}
+#menu:checked + .container + .menu::before,
+#menu:checked + .container + .menu::after {
+  background: #646464;
+  transition: all 200ms;
+}
+#menu:checked + .container + .menu::before {
+  opacity: 0;
+  transition: opacity 0s;
+}
+#menu:checked + .container + .menu::after {
+  margin-top: -20px;
+  transform: rotate(90deg);
+}
+#menu:checked + .container + .menu div label:nth-child(2) {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -6px;
+}
+#menu:checked + .container + .menu div label:nth-child(1) {
+  display: none;
+}
+.container section.home {
+  z-index: 99;
+}
+.container section.about {
+  z-index: 98;
+}
+.container section.work {
+  z-index: 97;
+}
+.container section.contact {
+  z-index: 96;
+}
+#menu:checked + .container section.home {
+  top: 192px;
+}
+#menu:checked + .container section.home:hover {
+  top: 188px;
+}
+#menu:checked + .container section.about {
+  top: 132px;
+}
+#menu:checked + .container section.about:hover {
+  top: 128px;
+}
+#menu:checked + .container section.work {
+  top: 72px;
+}
+#menu:checked + .container section.work:hover {
+  top: 68px;
+}
+#menu:checked + .container section.contact {
+  top: 12px;
+}
+#menu:checked + .container section.contact:hover {
+  top: 8px;
+}
+&lt;/style&gt;</pre>
 </div>
 <div created="20180430121553189" creator="JP" modified="20180501161829235" modifier="JP" tags="$:/tags/Macro" title="quizcards macros">
 <pre>\define getanswer() {{$(tiddler)$##$(question)$}}

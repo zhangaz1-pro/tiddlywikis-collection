@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/file-backups/assets/css/style.css?v=007eecafddacb6a23a39abf911d302f060fd19b4">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>File Backup Utility For TiddlyWiki | file-backups</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="File Backup Utility For TiddlyWiki" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="File Save &amp; Backup Utility For TiddlyWiki" />
+<meta property="og:description" content="File Save &amp; Backup Utility For TiddlyWiki" />
+<link rel="canonical" href="https://pmario.github.io/file-backups/" />
+<meta property="og:url" content="https://pmario.github.io/file-backups/" />
+<meta property="og:site_name" content="file-backups" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="File Backup Utility For TiddlyWiki" />
+<script type="application/ld+json">
+{"name":"file-backups","description":"File Save &amp; Backup Utility For TiddlyWiki","url":"https://pmario.github.io/file-backups/","@type":"WebSite","headline":"File Backup Utility For TiddlyWiki","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pmario/file-backups">View on GitHub</a>
+
+          <h1 id="project_title">file-backups</h1>
+          <h2 id="project_tagline">File Save & Backup Utility For TiddlyWiki</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="file-backup-utility-for-tiddlywiki">File Backup Utility For TiddlyWiki</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>This browser add on is designed to let you easily save and backup TiddlyWikis. It is a file-based system for a single user. If you’d like your TiddlyWiki available over the network or in the cloud, please check out other options at “Getting Started With TiddlyWiki”[1].</p>
+
+<p>This add on should work with any browser that supports web-extensions. So far it’s been tested with FireFox 56 … up to FF 74 beta (2020.03.10).</p>
+
+<p>It will save <strong>TiddlyWiki5 and TiddlyWikiClassic</strong> files. For TiddlyWikiClassic the TW internal backup mechanism is switched of!</p>
+
+<p>For an overview of this add on please see the introduction video: https://youtu.be/KVLtID8nElU</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>To install, <strong>go to: <a href="https://addons.mozilla.org/de/firefox/addon/file-backups/">Mozilla AddOn Store</a></strong></p>
+
+<p>If you want to help with the AddOn development. Have a look at the <a href="https://github.com/pmario/file-backups/releases">Beta-versions</a>.</p>
+
+<h2 id="file-storage-locations">File Storage Locations</h2>
+
+<h3 id="main-file-limitations">Main File Limitations</h3>
+
+<p>To help keep you secure, most modern browsers limit writing files to only a few locations.</p>
+
+<p>This means this add on can only write to your “Downloads” folder <strong>and its subdirectories</strong>.</p>
+
+<p>For example on Windows 7 or newer, it’s usually <code class="language-plaintext highlighter-rouge">C:\Users\&lt;name&gt;\Downloads</code></p>
+
+<p>It’s a good idea to keep your TiddlyWiki in it’s own subfolder. So, you’ll end up with something like</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">C:\Users\&lt;name&gt;\Downloads\myWikis\todo.html</code> or</li>
+  <li><code class="language-plaintext highlighter-rouge">C:\Users\&lt;name&gt;\Downloads\myWikis\notes.html</code></li>
+</ul>
+
+<h3 id="the-backup-folder-optional">The Backup Folder (Optional)</h3>
+
+<p>The default backup folder is called <code class="language-plaintext highlighter-rouge">twBackups</code>.  This can be changed in the options.  It’s set globally and is relative to the wiki location.</p>
+
+<p>For example if your TiddlyWiki is
+<code class="language-plaintext highlighter-rouge">C:\Users\&lt;name&gt;\Downloads\myWikis\notes.html</code> 
+the backup folder defaults to 
+<code class="language-plaintext highlighter-rouge">C:\Users\&lt;name&gt;\Downloads\myWikis\twBackups\notes(A).html</code></p>
+
+<h2 id="the-backup-strategy">The Backup Strategy</h2>
+
+<p>The backups are created using a slightly modified “Tower of Hanoi” rotation strategy, similar to some tape based backup software.</p>
+
+<p>The following table shows the numbering system, with 4 different files.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Backup Number</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+      <th>16</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>File A</td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+      <td>A</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File B</td>
+      <td> </td>
+      <td>B</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>B</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>B</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>B</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File C</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>C</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>C</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File D</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>D</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>D</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So the order will be: A, B, A, C, A, B, A, D, A, B, A, C, A, B, A, D, …</p>
+
+<p>As you can see:</p>
+
+<ul>
+  <li>A will be overwritten with every 2nd save</li>
+  <li>B will be written every 4th</li>
+  <li>C 8th</li>
+  <li>D 16th …</li>
+</ul>
+
+<p>The generic order is: 2<sup> n-1</sup>.</p>
+
+<p>Files can be restored from 1, 2, 4, 8, 16, …, 2<sup> n-1</sup> saves ago!</p>
+
+<p>Working with 11 files will result in 512 saves, before K is overwritten the first time. Then it will need another 1024 saves until it is overwritten again.</p>
+
+<p>Eg: Starting with A, if you save your file twice a minute for eight hours, you will still have not overwriten K.
+K is save #1024 and 2 * 60 * 8 = <strong>960</strong>.</p>
+
+<h3 id="the-modification">The Modification</h3>
+
+<p>With the very first save, the plugin detects a new wiki, an “out of order” backup will be created. It looks like this: wiki-name(2019-08-13T11-54-07-179Z).html</p>
+
+<h2 id="news-and-history">News and History</h2>
+
+<ul>
+  <li>Information about the latest version can be found at: <a href="https://pmario.github.io/file-backups/news/latest">News/History</a></li>
+  <li>Older versions: TODO</li>
+</ul>
+
+<h2 id="links">Links</h2>
+
+<p>[1] <a href="https://tiddlywiki.com/#GettingStarted">https://tiddlywiki.com/#GettingStarted</a><br />
+[2] <a href="https://github.com/pmario/file-backups/releases/">Overview Releases</a></p>
+
+<h2 id="license">License</h2>
+
+<p>Copyright Mario Pietsch 2017-2020</p>
+
+<p>CC-BY-NC-SA … <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">https://creativecommons.org/licenses/by-nc-sa/4.0</a></p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">file-backups maintained by <a href="https://github.com/pmario">pmario</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

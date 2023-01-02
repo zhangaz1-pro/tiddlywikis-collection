@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>TiddlyMap | TW5-TiddlyMap</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="TiddlyMap" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Map drawing and topic visualization for your wiki" />
+<meta property="og:description" content="Map drawing and topic visualization for your wiki" />
+<link rel="canonical" href="http://felixhayashi.github.io/TW5-TiddlyMap/" />
+<meta property="og:url" content="http://felixhayashi.github.io/TW5-TiddlyMap/" />
+<meta property="og:site_name" content="TW5-TiddlyMap" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://felixhayashi.github.io/TW5-TiddlyMap/","headline":"TiddlyMap","name":"TW5-TiddlyMap","description":"Map drawing and topic visualization for your wiki","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/TW5-TiddlyMap/assets/css/style.css?v=60f4311ea77df37dca26bcde5980847c2e36b763">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://felixhayashi.github.io/TW5-TiddlyMap/">TW5-TiddlyMap</a></h1>
+      
+
+      <h1 id="tiddlymap">TiddlyMap</h1>
+
+<p><img src="https://cloud.githubusercontent.com/assets/4307137/9981521/384afc1a-5fc0-11e5-92bc-2c2ce5996766.png" width="24%" /> <img src="https://cloud.githubusercontent.com/assets/4307137/9981522/3863033c-5fc0-11e5-9c2d-f27762f51f8b.png" width="24%" /> <img src="https://cloud.githubusercontent.com/assets/4307137/9981524/386d61b0-5fc0-11e5-9485-94f75be5e049.png" width="24%" /> <img src="https://cloud.githubusercontent.com/assets/4307137/9981523/386d00a8-5fc0-11e5-9006-11ed7abce725.png" width="24%" /></p>
+
+<p>TiddlyMap is a TiddlyWiki plugin that turns your favourite personal note taking software in a <em>wiki-concept-map hybrid</em>. Yes, you will be able to do both: drawing maps and putting down knowledge in a wiki way. TiddlyMap will allow you to visually link and create wiki topics in order to create <em>clickable graphs</em>, e.g. <em>concept maps</em> or <em>dependency graphs</em>. Moreover it will automatically <em>visualize your topic structures</em> so you get an immediate grasp of topics and relations.</p>
+
+<h2 id="demo">Demo</h2>
+
+<p>A demo with several examples and explanations can be found at the project’s website <a href="http://tiddlymap.org">tiddlymap.org</a>. While TiddlyMap also works with mobile devices, it is written for larger screens (&gt;= 1440px width), since concept mapping requires space.</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>The motivation behind TiddlyMap is to combine the strengths of wikis and concept maps in the realms of personal knowledge management in a single application.</p>
+
+<p>Have you ever created mind- or concept maps and later wished you could turn them into a wiki because they became too complex and too hard to maintain? On the contrary, have you ever worked with a wiki and felt that it is lacking visual means to express your thoughts and to relate your content? – If yes, then TiddlyMap is certainly what you are looking for.</p>
+
+<h2 id="fundaments">Fundaments</h2>
+
+<p>TiddlyMap is based on two popular open-source projects.</p>
+
+<p><strong>TiddlyWiki</strong>, a personal wiki software developed by Jeremy Ruston, is used as runtime environment.  TiddlyWiki is a unique non-linear notebook for capturing, organising and sharing complex information. It is a highly interactive application that is stored in a single file.</p>
+
+<blockquote>
+  <p>TiddlyWiki has bought unprecedented freedom to people to keep their precious information under their own control.
+– <a href="http://tiddlywiki.com/#TiddlyWiki">tiddlywiki.com</a></p>
+</blockquote>
+
+<p><strong>Vis.js</strong> is used for graph visualization and manipulation. Vis.js is <em>a dynamic, browser based visualization library</em> actively developed and maintained by a team of great developers working at <a href="http://almende.com">Almende B.V</a>.</p>
+
+<blockquote>
+  <p>The library is designed to be easy to use, handle large amounts of dynamic data, and enable manipulation of the data
+– <a href="http://visjs.org/">visjs.org</a></p>
+</blockquote>
+
+<h2 id="license">License</h2>
+
+<p>TiddlyMap is distributed under the <a href="http://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause License</a>.
+By using this plugin you agree to the product’s <a href="https://github.com/felixhayashi/TW5-TiddlyMap/blob/master/LICENSE">License Terms</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>There are two ways to install TiddlyMap and TiddlyWiki. If you are a beginner or not a techie person, you should probably go with the standalone installation.</p>
+
+<p><strong>Option 1 – Drag &amp; drop installation of the plugin</strong></p>
+
+<p>This is the most simply and common method, especially when using TiddlyWiki in standalone. You can also use this method when TiddlyWiki is run under <a href="https://nodejs.org/en">Node.js</a>. Please follow the instructions given <a href="http://tiddlymap.org/#Installation">here</a>. Maybe this <a href="https://youtu.be/dmeIxuN0L5w">introductory video</a> also helps.</p>
+
+<p><strong>Option 2 – Include the plugin in the TiddlyWiki plugin-folder</strong></p>
+
+<p>This method requires you to have TiddlyWiki running as server using <a href="https://nodejs.org/en">Node.js</a>. For general information on how to set up TiddlyWiki5 with Node.js visit <a href="http://tiddlywiki.com">tiddlywiki.com</a>. Installing TiddlyMap this way has the benefit that the same TiddlyMap plugin can be included in several wikis served by Node.js.</p>
+
+<ol>
+  <li>
+    <p>On your computer, go to the place where TiddlyWiki is installed. The place may vary, e.g. in linux the path is <code class="language-plaintext highlighter-rouge">/usr/lib/node_modules/tiddlywiki/</code> in case you installed TiddlyWiki globally using <code class="language-plaintext highlighter-rouge">npm -g tiddlywiki</code>. Make sure the folder <code class="language-plaintext highlighter-rouge">tiddlywiki/plugins/</code> has write access.</p>
+  </li>
+  <li>
+    <p>For each link below, visit the GitHub repositories it points to and click “Download ZIP”.</p>
+  </li>
+</ol>
+
+<ul>
+  <li><a href="https://github.com/felixhayashi/TW5-TiddlyMap">TiddlyMap</a>
+    <ul>
+      <li>This is the core TiddlyMap plugin.</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/felixhayashi/TW5-Vis.js">TW5-Vis.js</a>
+    <ul>
+      <li>This plugin will install vis.js which is required for the graph’s rendering.</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/felixhayashi/TW5-HotZone">TW5-HotZone</a>
+    <ul>
+      <li>This plugin is necessary when you want to use the live view.</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/felixhayashi/TW5-TopStoryView">TW5-TopStoryView</a>
+    <ul>
+      <li>Unless you are using the zoomin or stacked story view, install this plugin to achieve a better live view experience.</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>For every zip file, open the file and copy everything that lies in the zip’s <code class="language-plaintext highlighter-rouge">dist/</code> path into <code class="language-plaintext highlighter-rouge">tiddlywiki/plugins/</code> (or create symlinks).</li>
+</ol>
+
+<p>Now in every wiki you want TiddlyMap to appear in, you need to update the plugin section of your wiki’s <code class="language-plaintext highlighter-rouge">tiddlywiki.info</code> file, which resides in the root of your wiki, to contain the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">plugins</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">felixhayashi/tiddlymap</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">felixhayashi/vis</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">felixhayashi/hotzone</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">felixhayashi/topstoryview</span><span class="dl">"</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="http://jsonlint.com/">Make sure</a> your <code class="language-plaintext highlighter-rouge">tiddlywiki.info</code> file is correctly formated and contains valid JSON and always remember to restart your tiddlywiki server to reflect the changes.</p>
+
+<h2 id="build">Build</h2>
+
+<p>If you want to compile your own TiddlyMap plugin from souce, follow the steps below.</p>
+
+<p><strong>Note:</strong> In case you want to contribute code to the project, make sure you read <a href="https://github.com/felixhayashi/TW5-TiddlyMap/blob/master/CONTRIBUTING.md">Contributing to TiddlyMap</a> and signed the CLA before creating a pull request.</p>
+
+<p>First, make sure you have <a href="https://nodejs.org/en">Node.js</a> and its package manager (npm) installed. Now, start a terminal and clone the repository using the command below. This may take a while, so relax or make yourself a tea…</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git://github.com/felixhayashi/TW5-TiddlyMap.git
+</code></pre></div></div>
+
+<p>Open the root directory of the just cloned repository…</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd TW5-TiddlyMap
+</code></pre></div></div>
+
+<p>…and execute the command below. Again, this may take a minute or two. So instead of looking at the screen, maybe do <a href="https://www.google.de/search?q=office+desk+exercises">some exercises</a> in between (please notice the rhyme here, it took me a while to develop it).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+</code></pre></div></div>
+
+<p>Now use one of the following commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># build for production (compressing files)
+gulp --production
+
+# build for testing (without compression)
+gulp
+
+# build and automatically rebuild on changes
+gulp watch
+</code></pre></div></div>
+
+<p>The build produces a few folders, i.e. <code class="language-plaintext highlighter-rouge">docs</code>, <code class="language-plaintext highlighter-rouge">bundle</code>, <code class="language-plaintext highlighter-rouge">dist</code>, in the local repository’s root. To test the compiled plugin, follow the installation instructions given in the previous section.</p>
+
+<p><strong>Some tips:</strong></p>
+
+<ul>
+  <li>For a quick test of the build result drag &amp; drop the <code class="language-plaintext highlighter-rouge">tiddlymap.json</code> file residing in the <code class="language-plaintext highlighter-rouge">bundle</code> folder into one of your wikis to install the compiled plugin. Of course you <em>need to make sure(!)</em> that this wiki also has all the plugins installed TiddlyMap depends on (most importantly <a href="https://github.com/felixhayashi/TW5-Vis.js">TW5-Vis.js</a>). So for testing purposes, you could drag your compiled plugin into http://tiddlymap.org, which satisfies all dependencies already.</li>
+  <li>If you need to build and test TiddlyMap often, it makes sense to consider setting up “Option 2” (see installation instructions) using symlinks. So in your <code class="language-plaintext highlighter-rouge">tiddlywiki/plugins/</code> directory create symlinks to your local repository’s dist folder.</li>
+  <li>To have the source code documentation displayed as website, open the <code class="language-plaintext highlighter-rouge">index.html</code> inside the <code class="language-plaintext highlighter-rouge">docs</code> folder. Please note: docs may be outdated or incomplete.</li>
+</ul>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/felixhayashi/TW5-TiddlyMap/edit/gh-pages/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
