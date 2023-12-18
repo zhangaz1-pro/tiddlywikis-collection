@@ -233,8 +233,6 @@ Error message and password prompt
 
 <li>$:/.tb/ui/AdvancedSearch/Field</li>
 
-<li>$:/ak/drift</li>
-
 <li>$:/ak/drift/changelog</li>
 
 <li>$:/ak/plugins/DailyNotes</li>
@@ -323,6 +321,8 @@ Error message and password prompt
 
 <li>$:/palette</li>
 
+<li>$:/plugins/ak/drift</li>
+
 <li>$:/plugins/jd/mob/button/search</li>
 
 <li>$:/plugins/jd/mob/config/config</li>
@@ -336,6 +336,8 @@ Error message and password prompt
 <li>$:/SiteTitle</li>
 
 <li>$:/SplashScreen</li>
+
+<li>$:/state/plugin-info--1128306242-$:/ak/drift---801593788</li>
 
 <li>$:/state/searchtab-1444756290</li>
 
@@ -362,6 +364,8 @@ Error message and password prompt
 <li>$:/StoryList</li>
 
 <li>$:/tags/SideBarSegment</li>
+
+<li>$:/temp/advancedsearch</li>
 
 <li>$:/temp/info-plugin</li>
 
@@ -569,173 +573,6 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/dl&gt;
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
-</div>
-<div bag="default" created="20200518090028282" description="Collect. Organize. Grow. your ideas" list="changelog" modified="20200716095134332" name="Drift" plugin-priority="1" plugin-type="plugin" revision="0" tags="" title="$:/ak/drift" type="application/json" version="0.3.0">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/ak/drift/macros/cross-list-links-draggable&quot;: {
-            &quot;text&quot;: &quot;\\define cross-list-links-draggable-drop-actions()\n&lt;$vars sourceTiddler={{{ [&lt;actionTiddler&gt;listed[]] +[limit[1]]}}}&gt;\n    &lt;$list filter=\&quot;[&lt;sourceTiddler&gt;] -[&lt;targetTiddler&gt;]\&quot;&gt;\n        &lt;$action-listops $tiddler=&lt;&lt;sourceTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=\&quot;-[&lt;actionTiddler&gt;]\&quot;        /&gt;\n    &lt;/$list&gt;\n    &lt;$action-listops $tiddler=&lt;&lt;targetTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=\&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]\&quot;/&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define drop-actions()\n&lt;$vars oldFolder={{{ [&lt;actionTiddler&gt;listed[]] +[subfilter&lt;folders&gt;] +[limit[1]]}}}&gt;\n&lt;$action-listops $tiddler=&lt;&lt;oldFolder&gt;&gt;       $field=\&quot;list\&quot; $subfilter=\&quot;-[&lt;actionTiddler&gt;]\&quot;        /&gt;\n&lt;$action-listops $tiddler=&lt;&lt;__folder__&gt;&gt; $subfilter='+[insertbefore:currentTiddler&lt;actionTiddler&gt;]'/&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define cross-list-links-draggable(tiddler,field:\&quot;list\&quot;,type:\&quot;ul\&quot;,subtype:\&quot;li\&quot;,class:\&quot;\&quot;,itemTemplate)\n\\whitespace trim\n&lt;span class=\&quot;tc-links-draggable-list\&quot;&gt;\n&lt;$vars targetTiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; targetField=\&quot;\&quot;\&quot;$field$\&quot;\&quot;\&quot;&gt;\n&lt;$type$ class=\&quot;$class$\&quot;&gt;\n&lt;$list filter=\&quot;[list[$tiddler$!!$field$]]\&quot;&gt;\n&lt;$droppable actions=&lt;&lt;cross-list-links-draggable-drop-actions&gt;&gt; tag=\&quot;\&quot;\&quot;$subtype$\&quot;\&quot;\&quot; enable=&lt;&lt;tv-enable-drag-and-drop&gt;&gt;&gt;\n&lt;div class=\&quot;tc-droppable-placeholder\&quot;/&gt;\n&lt;div&gt;\n&lt;$transclude tiddler=\&quot;\&quot;\&quot;$itemTemplate$\&quot;\&quot;\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;$transclude field=\&quot;caption\&quot;&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$transclude&gt;\n&lt;/$link&gt;\n&lt;/$transclude&gt;\n&lt;/div&gt;\n&lt;/$droppable&gt;\n&lt;/$list&gt;\n&lt;/$type$&gt;\n&lt;$tiddler tiddler=\&quot;\&quot;&gt;\n&lt;$droppable actions=&lt;&lt;cross-list-links-draggable-drop-actions&gt;&gt; tag=\&quot;div\&quot; enable=&lt;&lt;tv-enable-drag-and-drop&gt;&gt;&gt;\n&lt;div class=\&quot;tc-droppable-placeholder\&quot;&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;div style=\&quot;height:0.5em;\&quot;/&gt;\n&lt;/$droppable&gt;\n&lt;/$tiddler&gt;\n&lt;/$vars&gt;\n&lt;/span&gt;\n\\end\n&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/macros/cross-list-links-draggable&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;modified&quot;: &quot;20200514092718704&quot;,
-            &quot;keywords&quot;: &quot;Week&quot;,
-            &quot;created&quot;: &quot;20200514050011521&quot;
-        },
-        &quot;$:/ak/drift/macros/spoiler&quot;: {
-            &quot;text&quot;: &quot;\\define spoiler(text)\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWSpoilerState\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=\&quot;hide\&quot;&gt;\n   &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWSpoilerState\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;[...]&lt;/$button&gt; \n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWSpoilerState\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=\&quot;hide\&quot; &gt;\n   &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWSpoilerState\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot;&gt; [$text$]\n&lt;/$button&gt; \n&lt;/$reveal&gt;\n\\end&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/macros/spoiler&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;modified&quot;: &quot;20200514053357027&quot;,
-            &quot;keywords&quot;: &quot;[[Example: Spoiler]]&quot;,
-            &quot;created&quot;: &quot;20200514051115471&quot;
-        },
-        &quot;$:/ak/drift/stylesheet&quot;: {
-            &quot;created&quot;: &quot;20200504140221596&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/ak/drift/TweaksDB]getindex[showulil]] -[[false]]\&quot; variable=showulil&gt;\nul, li {\n    list-style-position: inside;\n}\n\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[[$:/ak/drift/TweaksDB]getindex[wrapulil]] -[[false]]\&quot; variable=wrapulil&gt;\nul, li {\n   white-space: normal !important;\n   text-align: justify;\n}\n&lt;/$list&gt;\n\nli &gt; p {\n  display: inline;\n}\nmark.blue { background-color: #15f4ee; } \nmark.green { background-color: #39ff14; }\nmark.yellow { background-color: #ccff00; }\nmark.orange { background-color: #FF9933; }\nmark.pink { background-color: #ff69b4; }\n&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;7&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/stylesheet&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;modified&quot;: &quot;20200716093722259&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        },
-        &quot;$:/ak/drift/TweaksDB&quot;: {
-            &quot;created&quot;: &quot;20200504142801555&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;text&quot;: &quot;{\n    \&quot;showulil\&quot;: \&quot;true\&quot;,\n    \&quot;wrapulil\&quot;: \&quot;true\&quot;\n}&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;21&quot;,
-            &quot;type&quot;: &quot;application/json&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/TweaksDB&quot;,
-            &quot;modified&quot;: &quot;20200716093731481&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        },
-        &quot;$:/ak/drift/TweaksPanel&quot;: {
-            &quot;created&quot;: &quot;20200504132533468&quot;,
-            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/ak/drift/TweaksDB\&quot; index=\&quot;showulil\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; Show Bullets &amp; Numbers&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/drift/TweaksDB\&quot; index=\&quot;wrapulil\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; Check this box if you use long bullet or numbered lists &lt;/$checkbox&gt;\n\n,,&lt;div style=\&quot;float:right\&quot;&gt;Drift vesion: {{$:/ak/drift!!version}}&lt;/div&gt;,,&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/TweaksPanel&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Appearance&quot;,
-            &quot;modified&quot;: &quot;20200518092431074&quot;,
-            &quot;caption&quot;: &quot;Drift Tweaks&quot;
-        },
-        &quot;$:/ak/drift/ui/transclude.css&quot;: {
-            &quot;text&quot;: &quot;.tc-sidebar-lists button.tc-btn-mini { \n   color: rgb(179,179,179);\n}\n.tooltip {\n  position: relative;\n  display: inline-block;\n}\n\n.tooltip .tooltiptext {\n  visibility: hidden;\n  overflow: hidden;\n  margin-top: -2em;\n  padding: 5px;\n  display: block;\n  \n  /* Position the tooltip */\n  position: absolute;\n  z-index: 80;\n  \n  /*  \n  top: 20px;\n  left: 20px;  */\n\n  float: right;  \n  opacity: 0;\n  \n   /* transition: opacity 0.3s; */\n}\n\n.tooltip .tooltiptext::after {\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  border: 1px;\n}\n\n.tooltip:hover &gt; .tooltiptext {\n   margin-top:-5px;\n  visibility: visible;\n  opacity: 1;\n  width: 100vw;\n  max-width: 32em;\n  height: 100vw;\n  max-height: 32em;\n}\n\n.resp-iframe {\n    position: rel;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    border: 1px;\n}\n&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;type&quot;: &quot;text/css&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/ui/transclude.css&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;modified&quot;: &quot;20200505112301926&quot;,
-            &quot;created&quot;: &quot;20200427215400270&quot;
-        },
-        &quot;$:/ak/drift/changelog&quot;: {
-            &quot;created&quot;: &quot;20200518090927118&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;modified&quot;: &quot;20200716094210556&quot;,
-            &quot;title&quot;: &quot;$:/ak/drift/changelog&quot;,
-            &quot;text&quot;: &quot;''v0.3.0'' - 2020-07-16\n\n* Bugfix  for lists display when using markdown format\n\n''v0.2.0'' - 2020-05-25\n\n* Drift has now a \&quot;side-by-side\&quot; view option, not as elegant as a real 2 stories but it works for now\n\n''v0.1.0'' - 2020-05-16\n\n* Drift is now a plugin for ease of updates\n\n''v0.0.30'' - 2020-05-14\n\n* Added [[$:/ak/drift/macros/cross-list-links-draggable]] macro\n* Added [[$:/ak/drift/macros/spoiler]] macro\n\n''v0.0.21'' - 2020-05-13\n\n* Enabling Daily Notes button in the top toolbar \n\n''v0.0.15'' - 2020-05-08\n\n* Highlighted text \n* Bug fix\n\n''v0.0.10'' - 2020-05-05\n\n* Bug fix\n\n''v0.0.9'' - 2020-05-05\n\n* Added a fix for long Bullet and list items under \&quot;Control Panel\&quot; -&gt; \&quot;Appearance\&quot;  -&gt; \&quot;Drift Tweaks\&quot;\n\n\n''v0.0.8'' - 2020-05-04\n\n* Fixed pop-up transclude bug\n\n''v0.0.6'' - 2020-05-04\n\n* Added \&quot;Drift Tweaks\&quot; under \&quot;Control Panel\&quot; -&gt; \&quot;Appearance\&quot; \n* Added option to show the Bullet Points and Numbers can be found under  \&quot;Control Panel\&quot; -&gt; \&quot;Appearance\&quot;  -&gt; \&quot;Drift Tweaks\&quot;\n\n''v0.0.4'' - 2020-05-04\n\n* Enabled a \&quot;Light Palette\&quot; and the toggle switch {{$:/themes/jd/Mono/Buttons/switch-palette}} is now in the top bar, give it a try\n\n''v0.0.2'' - 2020-05-02\n\n* Fixing view on mobile when \&quot;Zoomin\&quot; Story view is selected\n\n''v0.0.1'' - 2020-05-02\n\n*Initial release&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        },
-        &quot;$:/drift/side-by-side&quot;: {
-            &quot;text&quot;: &quot;&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;,
-            &quot;modified&quot;: &quot;20200608090902302&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;created&quot;: &quot;20200525062621816&quot;,
-            &quot;caption&quot;: &quot;Pinned&quot;
-        },
-        &quot;$:/drift/side-by-side/Buttons/close&quot;: {
-            &quot;created&quot;: &quot;20200525073739149&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side/Buttons/close&quot;,
-            &quot;caption&quot;: &quot;{{$:/core/images/close-button}} {{$:/language/Buttons/Close/Caption}}&quot;,
-            &quot;description&quot;: &quot;{{$:/language/Buttons/Close/Hint}}&quot;,
-            &quot;modified&quot;: &quot;20200525181555610&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\whitespace trim\n&lt;$button tooltip={{$:/language/Buttons/Close/Hint}} aria-label={{$:/language/Buttons/Close/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n    &lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]\&quot;&gt;\n        {{$:/core/images/close-button}}\n    &lt;/$list&gt;\n    &lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]\&quot;&gt;\n        &lt;span class=\&quot;tc-btn-text\&quot;&gt;\n            &lt;$text text={{$:/language/Buttons/Close/Caption}}/&gt;\n        &lt;/span&gt;\n    &lt;/$list&gt;\n\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; tags=\&quot;\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth\&quot; text=\&quot;350px\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/sidebar\&quot; text=\&quot;no\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/tab/sidebar--595412856\&quot; text=\&quot;$:/drift/side-by-side\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; text=\&quot;\&quot; /&gt;\n&lt;/$button&gt;&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        },
-        &quot;$:/drift/side-by-side/Buttons/pin&quot;: {
-            &quot;created&quot;: &quot;20200525050747068&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side/Buttons/pin&quot;,
-            &quot;list-before&quot;: &quot;$:/core/ui/Buttons/close&quot;,
-            &quot;modified&quot;: &quot;20200525181423207&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\whitespace trim\n\\define side-by-side-body()\n{{ $(currentTiddler)$ ||$:/drift/side-by-side/ViewTemplate }}\n\\end\n\n&lt;$button message=\&quot;tm-close-tiddler\&quot;  tooltip=\&quot;See Side-by-Side\&quot; aria-label=\&quot;See Side-by-Side\&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]\&quot;&gt;\n          {{$:/drift/side-by-side/images/side-by-side}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]\&quot;&gt;\n        &lt;span class=\&quot;tc-btn-text\&quot;&gt;\n        &lt;$text text=\&quot; \&quot;/&gt;\n        &lt;$text text=\&quot;See Side-by-Side\&quot; /&gt;\n    &lt;/span&gt;\n&lt;/$list&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; tags=\&quot;$:/tags/SideBar\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth\&quot; text=\&quot;630px\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/sidebar\&quot; text=\&quot;yes\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/tab/sidebar--595412856\&quot; text=\&quot;$:/drift/side-by-side\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; text=&lt;&lt;side-by-side-body&gt;&gt; /&gt;\n&lt;/$button&gt;&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;bag&quot;: &quot;default&quot;
-        },
-        &quot;$:/drift/side-by-side/images/side-by-side&quot;: {
-            &quot;created&quot;: &quot;20200525050148795&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side/images/side-by-side&quot;,
-            &quot;modified&quot;: &quot;20200525181452790&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;&lt;svg class=\&quot;tc-image tc-image-button\&quot; width=\&quot;22pt\&quot; height=\&quot;22pt\&quot; viewBox=\&quot;0 0 357.5 412\&quot; enable-background=\&quot;new 0 0 512 512\&quot;&gt;\n&lt;path\n   clip-path=\&quot;none\&quot;\n   d=\&quot;M 71.8125,0 0,71.6875 l 71.8125,71.7188 0,-35.4375 c 0.001,0.001 93.11575,-0.8691 144.59375,54.25 C 192.22625,56.9228 71.8125,35.4063 71.8125,35.4063 L 71.8125,0 z m 92.71875,40.9688 c 15.678,10.654 29.3675,22.7272 40.9375,36.0312 L 321.5,77 l 0,298.9688 -149.875,0 c -53.005,0 -31.5,-68.5313 -31.5,-68.5313 0,0 -70.1875,22.7805 -70.1875,-34.0625 l 0,-89.4687 C 40.6515,154.6683 50.51425,164.5488 33.90625,147.9688 l 0,128.5312 c 0,55.295 75.8005,135.5 137.1875,135.5 l 186.40625,0 0,-371.0312 -192.96875,0 z M 108.375,182.625 l 0,27.0313 174.6875,0 0,-27.0313 -174.6875,0 z m -0.0313,58.9063 0,27.0312 174.71875,0 0,-27.0312 -174.71875,0 z\&quot;/&gt;\n&lt;/svg&gt;\n&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;bag&quot;: &quot;default&quot;
-        },
-        &quot;$:/drift/side-by-side/stylesheet&quot;: {
-            &quot;created&quot;: &quot;20200525085622139&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side/stylesheet&quot;,
-            &quot;modified&quot;: &quot;20200525181540496&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;div.tc-tiddler-body.tc-reveal a.tc-tiddlylink  {\n   color: &lt;&lt;colour tiddler-link-foreground&gt;&gt;;\n}\n\ndiv.tc-tiddler-body.tc-reveal {\n\tcolor: &lt;&lt;colour foreground&gt;&gt;;\n}\n&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        },
-        &quot;$:/drift/side-by-side/ViewTemplate&quot;: {
-            &quot;created&quot;: &quot;20200525074313554&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side/ViewTemplate&quot;,
-            &quot;list&quot;: &quot;$:/drift/side-by-side/ViewTemplate/title $:/core/ui/ViewTemplate/subtitle $:/core/ui/ViewTemplate/tags $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/ak/plugins/TWCrossLinks/ui/footer.kwd&quot;,
-            &quot;modified&quot;: &quot;20200525175407221&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define folded-state()\n$:/state/folded/$(currentTiddler)$\n\\end\n\n&lt;$vars storyTiddler=&lt;&lt;currentTiddler&gt;&gt; tiddlerInfoState=&lt;&lt;qualify \&quot;$:/state/popup/tiddler-info\&quot;&gt;&gt;&gt;&lt;div data-tiddler-title=&lt;&lt;currentTiddler&gt;&gt; data-tags={{!!tags}} class={{{ tc-tiddler-frame tc-tiddler-view-frame [&lt;currentTiddler&gt;is[tiddler]then[tc-tiddler-exists]] [&lt;currentTiddler&gt;is[missing]!is[shadow]then[tc-tiddler-missing]] [&lt;currentTiddler&gt;is[shadow]then[tc-tiddler-exists tc-tiddler-shadow]] [&lt;currentTiddler&gt;is[shadow]is[tiddler]then[tc-tiddler-overridden-shadow]] [&lt;currentTiddler&gt;is[system]then[tc-tiddler-system]] [{!!class}] [&lt;currentTiddler&gt;tags[]encodeuricomponent[]addprefix[tc-tagged-]] +[join[ ]] }}}&gt;\n    &lt;$list filter=\&quot;[list[$:/drift/side-by-side/ViewTemplate]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$vars&gt;\n\n\n&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        },
-        &quot;$:/drift/side-by-side/ViewTemplate/title&quot;: {
-            &quot;created&quot;: &quot;20200525073529278&quot;,
-            &quot;creator&quot;: &quot;akhater&quot;,
-            &quot;title&quot;: &quot;$:/drift/side-by-side/ViewTemplate/title&quot;,
-            &quot;modified&quot;: &quot;20200525181440740&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\whitespace trim\n\\define title-styles()\nfill:$(foregroundColor)$;\n\\end\n\\define config-title()\n$:/config/ViewToolbarButtons/Visibility/$(listItem)$\n\\end\n&lt;div class=\&quot;tc-tiddler-title\&quot;&gt;\n&lt;div class=\&quot;tc-titlebar\&quot;&gt;\n&lt;span class=\&quot;tc-tiddler-controls\&quot;&gt;\n&lt;$list filter=\&quot;[[$:/drift/side-by-side/Buttons/close]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;config-title&gt;&gt; text=\&quot;hide\&quot;&gt;&lt;$set name=\&quot;tv-config-toolbar-class\&quot; filter=\&quot;[&lt;tv-config-toolbar-class&gt;] [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]]\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$set&gt;&lt;/$reveal&gt;&lt;/$list&gt;\n&lt;/span&gt;\n&lt;$set name=\&quot;tv-wikilinks\&quot; value={{$:/config/Tiddlers/TitleLinks}}&gt;\n&lt;$link&gt;\n&lt;$set name=\&quot;foregroundColor\&quot; value={{!!color}}&gt;\n&lt;span class=\&quot;tc-tiddler-title-icon\&quot; style=&lt;&lt;title-styles&gt;&gt;&gt;\n&lt;$transclude tiddler={{!!icon}}&gt;\n&lt;$transclude tiddler={{$:/config/DefaultTiddlerIcon}}/&gt;\n&lt;/$transclude&gt;\n&lt;/span&gt;\n&lt;/$set&gt;\n&lt;$list filter=\&quot;[all[current]removeprefix[$:/]]\&quot;&gt;\n&lt;h2 class=\&quot;tc-title\&quot; title={{$:/language/SystemTiddler/Tooltip}}&gt;\n&lt;span class=\&quot;tc-system-title-prefix\&quot;&gt;$:/&lt;/span&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/h2&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[all[current]!prefix[$:/]]\&quot;&gt;\n&lt;h2 class=\&quot;tc-title\&quot;&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/h2&gt;\n&lt;/$list&gt;\n&lt;/$link&gt;\n&lt;/$set&gt;\n&lt;/div&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; class=\&quot;tc-tiddler-info tc-popup-handle\&quot; animate=\&quot;yes\&quot; retain=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerInfoSegment]!has[draft.of]] [[$:/core/ui/TiddlerInfo]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;/&gt;&lt;/$list&gt;\n\n&lt;/$reveal&gt;\n&lt;/div&gt;&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;modifier&quot;: &quot;akhater&quot;
-        }
-    }
-}</pre>
 </div>
 <div bag="default" created="20200518090927118" modified="20200525183414159" revision="0" title="$:/ak/drift/changelog" type="text/vnd.tiddlywiki">
 <pre>''v0.2.0'' - 2020-05-25
@@ -11016,6 +10853,173 @@ very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 <div bag="default" created="20190202142805411" creator="jd" modified="20210303021313544" modifier="jd" revision="0" title="$:/palette" type="text/vnd.tiddlywiki">
 <pre>$:/palettes/Vanilla</pre>
 </div>
+<div bag="default" created="20200518090028282" description="Collect. Organize. Grow. your ideas" list="changelog" modified="20231002110246822" name="Drift" plugin-priority="1" plugin-type="plugin" revision="0" tags="" title="$:/plugins/ak/drift" type="application/json" version="0.3.0">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/ak/drift/macros/cross-list-links-draggable&quot;: {
+            &quot;text&quot;: &quot;\\define cross-list-links-draggable-drop-actions()\n&lt;$vars sourceTiddler={{{ [&lt;actionTiddler&gt;listed[]] +[limit[1]]}}}&gt;\n    &lt;$list filter=\&quot;[&lt;sourceTiddler&gt;] -[&lt;targetTiddler&gt;]\&quot;&gt;\n        &lt;$action-listops $tiddler=&lt;&lt;sourceTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=\&quot;-[&lt;actionTiddler&gt;]\&quot;        /&gt;\n    &lt;/$list&gt;\n    &lt;$action-listops $tiddler=&lt;&lt;targetTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=\&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]\&quot;/&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define drop-actions()\n&lt;$vars oldFolder={{{ [&lt;actionTiddler&gt;listed[]] +[subfilter&lt;folders&gt;] +[limit[1]]}}}&gt;\n&lt;$action-listops $tiddler=&lt;&lt;oldFolder&gt;&gt;       $field=\&quot;list\&quot; $subfilter=\&quot;-[&lt;actionTiddler&gt;]\&quot;        /&gt;\n&lt;$action-listops $tiddler=&lt;&lt;__folder__&gt;&gt; $subfilter='+[insertbefore:currentTiddler&lt;actionTiddler&gt;]'/&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define cross-list-links-draggable(tiddler,field:\&quot;list\&quot;,type:\&quot;ul\&quot;,subtype:\&quot;li\&quot;,class:\&quot;\&quot;,itemTemplate)\n\\whitespace trim\n&lt;span class=\&quot;tc-links-draggable-list\&quot;&gt;\n&lt;$vars targetTiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; targetField=\&quot;\&quot;\&quot;$field$\&quot;\&quot;\&quot;&gt;\n&lt;$type$ class=\&quot;$class$\&quot;&gt;\n&lt;$list filter=\&quot;[list[$tiddler$!!$field$]]\&quot;&gt;\n&lt;$droppable actions=&lt;&lt;cross-list-links-draggable-drop-actions&gt;&gt; tag=\&quot;\&quot;\&quot;$subtype$\&quot;\&quot;\&quot; enable=&lt;&lt;tv-enable-drag-and-drop&gt;&gt;&gt;\n&lt;div class=\&quot;tc-droppable-placeholder\&quot;/&gt;\n&lt;div&gt;\n&lt;$transclude tiddler=\&quot;\&quot;\&quot;$itemTemplate$\&quot;\&quot;\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;$transclude field=\&quot;caption\&quot;&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$transclude&gt;\n&lt;/$link&gt;\n&lt;/$transclude&gt;\n&lt;/div&gt;\n&lt;/$droppable&gt;\n&lt;/$list&gt;\n&lt;/$type$&gt;\n&lt;$tiddler tiddler=\&quot;\&quot;&gt;\n&lt;$droppable actions=&lt;&lt;cross-list-links-draggable-drop-actions&gt;&gt; tag=\&quot;div\&quot; enable=&lt;&lt;tv-enable-drag-and-drop&gt;&gt;&gt;\n&lt;div class=\&quot;tc-droppable-placeholder\&quot;&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;div style=\&quot;height:0.5em;\&quot;/&gt;\n&lt;/$droppable&gt;\n&lt;/$tiddler&gt;\n&lt;/$vars&gt;\n&lt;/span&gt;\n\\end\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/macros/cross-list-links-draggable&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;modified&quot;: &quot;20200514092718704&quot;,
+            &quot;keywords&quot;: &quot;Week&quot;,
+            &quot;created&quot;: &quot;20200514050011521&quot;
+        },
+        &quot;$:/ak/drift/macros/spoiler&quot;: {
+            &quot;text&quot;: &quot;\\define spoiler(text)\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWSpoilerState\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=\&quot;hide\&quot;&gt;\n   &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWSpoilerState\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;[...]&lt;/$button&gt; \n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWSpoilerState\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=\&quot;hide\&quot; &gt;\n   &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWSpoilerState\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot;&gt; [$text$]\n&lt;/$button&gt; \n&lt;/$reveal&gt;\n\\end&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/macros/spoiler&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;modified&quot;: &quot;20200514053357027&quot;,
+            &quot;keywords&quot;: &quot;[[Example: Spoiler]]&quot;,
+            &quot;created&quot;: &quot;20200514051115471&quot;
+        },
+        &quot;$:/ak/drift/stylesheet&quot;: {
+            &quot;created&quot;: &quot;20200504140221596&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/ak/drift/TweaksDB]getindex[showulil]] -[[false]]\&quot; variable=showulil&gt;\nul, li {\n    list-style-position: inside;\n}\n\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[[$:/ak/drift/TweaksDB]getindex[wrapulil]] -[[false]]\&quot; variable=wrapulil&gt;\nul, li {\n   white-space: normal !important;\n   text-align: justify;\n}\n&lt;/$list&gt;\n\nli &gt; p {\n  display: inline;\n}\nmark.blue { background-color: #15f4ee; } \nmark.green { background-color: #39ff14; }\nmark.yellow { background-color: #ccff00; }\nmark.orange { background-color: #FF9933; }\nmark.pink { background-color: #ff69b4; }\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;7&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/stylesheet&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;modified&quot;: &quot;20200716093722259&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        },
+        &quot;$:/ak/drift/TweaksDB&quot;: {
+            &quot;created&quot;: &quot;20200504142801555&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;text&quot;: &quot;{\n    \&quot;showulil\&quot;: \&quot;true\&quot;,\n    \&quot;wrapulil\&quot;: \&quot;true\&quot;\n}&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;21&quot;,
+            &quot;type&quot;: &quot;application/json&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/TweaksDB&quot;,
+            &quot;modified&quot;: &quot;20200716093731481&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        },
+        &quot;$:/ak/drift/TweaksPanel&quot;: {
+            &quot;created&quot;: &quot;20200504132533468&quot;,
+            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/ak/drift/TweaksDB\&quot; index=\&quot;showulil\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; Show Bullets &amp; Numbers&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/drift/TweaksDB\&quot; index=\&quot;wrapulil\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; Check this box if you use long bullet or numbered lists &lt;/$checkbox&gt;\n\n,,&lt;div style=\&quot;float:right\&quot;&gt;Drift vesion: {{$:/ak/drift!!version}}&lt;/div&gt;,,&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/TweaksPanel&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Appearance&quot;,
+            &quot;modified&quot;: &quot;20200518092431074&quot;,
+            &quot;caption&quot;: &quot;Drift Tweaks&quot;
+        },
+        &quot;$:/ak/drift/ui/transclude.css&quot;: {
+            &quot;text&quot;: &quot;.tc-sidebar-lists button.tc-btn-mini { \n   color: rgb(179,179,179);\n}\n.tooltip {\n  position: relative;\n  display: inline-block;\n}\n\n.tooltip .tooltiptext {\n  visibility: hidden;\n  overflow: hidden;\n  margin-top: -2em;\n  padding: 5px;\n  display: block;\n  \n  /* Position the tooltip */\n  position: absolute;\n  z-index: 80;\n  \n  /*  \n  top: 20px;\n  left: 20px;  */\n\n  float: right;  \n  opacity: 0;\n  \n   /* transition: opacity 0.3s; */\n}\n\n.tooltip .tooltiptext::after {\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  border: 1px;\n}\n\n.tooltip:hover &gt; .tooltiptext {\n   margin-top:-5px;\n  visibility: visible;\n  opacity: 1;\n  width: 100vw;\n  max-width: 32em;\n  height: 100vw;\n  max-height: 32em;\n}\n\n.resp-iframe {\n    position: rel;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    border: 1px;\n}\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/css&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/ui/transclude.css&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;modified&quot;: &quot;20200505112301926&quot;,
+            &quot;created&quot;: &quot;20200427215400270&quot;
+        },
+        &quot;$:/ak/drift/changelog&quot;: {
+            &quot;created&quot;: &quot;20200518090927118&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;modified&quot;: &quot;20200716094210556&quot;,
+            &quot;title&quot;: &quot;$:/ak/drift/changelog&quot;,
+            &quot;text&quot;: &quot;''v0.3.0'' - 2020-07-16\n\n* Bugfix  for lists display when using markdown format\n\n''v0.2.0'' - 2020-05-25\n\n* Drift has now a \&quot;side-by-side\&quot; view option, not as elegant as a real 2 stories but it works for now\n\n''v0.1.0'' - 2020-05-16\n\n* Drift is now a plugin for ease of updates\n\n''v0.0.30'' - 2020-05-14\n\n* Added [[$:/ak/drift/macros/cross-list-links-draggable]] macro\n* Added [[$:/ak/drift/macros/spoiler]] macro\n\n''v0.0.21'' - 2020-05-13\n\n* Enabling Daily Notes button in the top toolbar \n\n''v0.0.15'' - 2020-05-08\n\n* Highlighted text \n* Bug fix\n\n''v0.0.10'' - 2020-05-05\n\n* Bug fix\n\n''v0.0.9'' - 2020-05-05\n\n* Added a fix for long Bullet and list items under \&quot;Control Panel\&quot; -&gt; \&quot;Appearance\&quot;  -&gt; \&quot;Drift Tweaks\&quot;\n\n\n''v0.0.8'' - 2020-05-04\n\n* Fixed pop-up transclude bug\n\n''v0.0.6'' - 2020-05-04\n\n* Added \&quot;Drift Tweaks\&quot; under \&quot;Control Panel\&quot; -&gt; \&quot;Appearance\&quot; \n* Added option to show the Bullet Points and Numbers can be found under  \&quot;Control Panel\&quot; -&gt; \&quot;Appearance\&quot;  -&gt; \&quot;Drift Tweaks\&quot;\n\n''v0.0.4'' - 2020-05-04\n\n* Enabled a \&quot;Light Palette\&quot; and the toggle switch {{$:/themes/jd/Mono/Buttons/switch-palette}} is now in the top bar, give it a try\n\n''v0.0.2'' - 2020-05-02\n\n* Fixing view on mobile when \&quot;Zoomin\&quot; Story view is selected\n\n''v0.0.1'' - 2020-05-02\n\n*Initial release&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        },
+        &quot;$:/drift/side-by-side&quot;: {
+            &quot;text&quot;: &quot;&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;,
+            &quot;modified&quot;: &quot;20200608090902302&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;created&quot;: &quot;20200525062621816&quot;,
+            &quot;caption&quot;: &quot;Pinned&quot;
+        },
+        &quot;$:/drift/side-by-side/Buttons/close&quot;: {
+            &quot;created&quot;: &quot;20200525073739149&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side/Buttons/close&quot;,
+            &quot;caption&quot;: &quot;{{$:/core/images/close-button}} {{$:/language/Buttons/Close/Caption}}&quot;,
+            &quot;description&quot;: &quot;{{$:/language/Buttons/Close/Hint}}&quot;,
+            &quot;modified&quot;: &quot;20200525181555610&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\whitespace trim\n&lt;$button tooltip={{$:/language/Buttons/Close/Hint}} aria-label={{$:/language/Buttons/Close/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n    &lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]\&quot;&gt;\n        {{$:/core/images/close-button}}\n    &lt;/$list&gt;\n    &lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]\&quot;&gt;\n        &lt;span class=\&quot;tc-btn-text\&quot;&gt;\n            &lt;$text text={{$:/language/Buttons/Close/Caption}}/&gt;\n        &lt;/span&gt;\n    &lt;/$list&gt;\n\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; tags=\&quot;\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth\&quot; text=\&quot;350px\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/sidebar\&quot; text=\&quot;no\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/tab/sidebar--595412856\&quot; text=\&quot;$:/drift/side-by-side\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; text=\&quot;\&quot; /&gt;\n&lt;/$button&gt;&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        },
+        &quot;$:/drift/side-by-side/Buttons/pin&quot;: {
+            &quot;created&quot;: &quot;20200525050747068&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side/Buttons/pin&quot;,
+            &quot;list-before&quot;: &quot;$:/core/ui/Buttons/close&quot;,
+            &quot;modified&quot;: &quot;20200525181423207&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define side-by-side-body()\n{{ $(currentTiddler)$ ||$:/drift/side-by-side/ViewTemplate }}\n\\end\n\n&lt;$button message=\&quot;tm-close-tiddler\&quot;  tooltip=\&quot;See Side-by-Side\&quot; aria-label=\&quot;See Side-by-Side\&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]\&quot;&gt;\n          {{$:/drift/side-by-side/images/side-by-side}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]\&quot;&gt;\n        &lt;span class=\&quot;tc-btn-text\&quot;&gt;\n        &lt;$text text=\&quot; \&quot;/&gt;\n        &lt;$text text=\&quot;See Side-by-Side\&quot; /&gt;\n    &lt;/span&gt;\n&lt;/$list&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; tags=\&quot;$:/tags/SideBar\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth\&quot; text=\&quot;630px\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/sidebar\&quot; text=\&quot;yes\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/state/tab/sidebar--595412856\&quot; text=\&quot;$:/drift/side-by-side\&quot; /&gt;\n    &lt;$action-setfield $tiddler=\&quot;$:/drift/side-by-side\&quot; text=&lt;&lt;side-by-side-body&gt;&gt; /&gt;\n&lt;/$button&gt;&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;bag&quot;: &quot;default&quot;
+        },
+        &quot;$:/drift/side-by-side/images/side-by-side&quot;: {
+            &quot;created&quot;: &quot;20200525050148795&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side/images/side-by-side&quot;,
+            &quot;modified&quot;: &quot;20200525181452790&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;&lt;svg class=\&quot;tc-image tc-image-button\&quot; width=\&quot;22pt\&quot; height=\&quot;22pt\&quot; viewBox=\&quot;0 0 357.5 412\&quot; enable-background=\&quot;new 0 0 512 512\&quot;&gt;\n&lt;path\n   clip-path=\&quot;none\&quot;\n   d=\&quot;M 71.8125,0 0,71.6875 l 71.8125,71.7188 0,-35.4375 c 0.001,0.001 93.11575,-0.8691 144.59375,54.25 C 192.22625,56.9228 71.8125,35.4063 71.8125,35.4063 L 71.8125,0 z m 92.71875,40.9688 c 15.678,10.654 29.3675,22.7272 40.9375,36.0312 L 321.5,77 l 0,298.9688 -149.875,0 c -53.005,0 -31.5,-68.5313 -31.5,-68.5313 0,0 -70.1875,22.7805 -70.1875,-34.0625 l 0,-89.4687 C 40.6515,154.6683 50.51425,164.5488 33.90625,147.9688 l 0,128.5312 c 0,55.295 75.8005,135.5 137.1875,135.5 l 186.40625,0 0,-371.0312 -192.96875,0 z M 108.375,182.625 l 0,27.0313 174.6875,0 0,-27.0313 -174.6875,0 z m -0.0313,58.9063 0,27.0312 174.71875,0 0,-27.0312 -174.71875,0 z\&quot;/&gt;\n&lt;/svg&gt;\n&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;bag&quot;: &quot;default&quot;
+        },
+        &quot;$:/drift/side-by-side/stylesheet&quot;: {
+            &quot;created&quot;: &quot;20200525085622139&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side/stylesheet&quot;,
+            &quot;modified&quot;: &quot;20200525181540496&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;div.tc-tiddler-body.tc-reveal a.tc-tiddlylink  {\n   color: &lt;&lt;colour tiddler-link-foreground&gt;&gt;;\n}\n\ndiv.tc-tiddler-body.tc-reveal {\n\tcolor: &lt;&lt;colour foreground&gt;&gt;;\n}\n&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        },
+        &quot;$:/drift/side-by-side/ViewTemplate&quot;: {
+            &quot;created&quot;: &quot;20200525074313554&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side/ViewTemplate&quot;,
+            &quot;list&quot;: &quot;$:/drift/side-by-side/ViewTemplate/title $:/core/ui/ViewTemplate/subtitle $:/core/ui/ViewTemplate/tags $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/ak/plugins/TWCrossLinks/ui/footer.kwd&quot;,
+            &quot;modified&quot;: &quot;20200525175407221&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define folded-state()\n$:/state/folded/$(currentTiddler)$\n\\end\n\n&lt;$vars storyTiddler=&lt;&lt;currentTiddler&gt;&gt; tiddlerInfoState=&lt;&lt;qualify \&quot;$:/state/popup/tiddler-info\&quot;&gt;&gt;&gt;&lt;div data-tiddler-title=&lt;&lt;currentTiddler&gt;&gt; data-tags={{!!tags}} class={{{ tc-tiddler-frame tc-tiddler-view-frame [&lt;currentTiddler&gt;is[tiddler]then[tc-tiddler-exists]] [&lt;currentTiddler&gt;is[missing]!is[shadow]then[tc-tiddler-missing]] [&lt;currentTiddler&gt;is[shadow]then[tc-tiddler-exists tc-tiddler-shadow]] [&lt;currentTiddler&gt;is[shadow]is[tiddler]then[tc-tiddler-overridden-shadow]] [&lt;currentTiddler&gt;is[system]then[tc-tiddler-system]] [{!!class}] [&lt;currentTiddler&gt;tags[]encodeuricomponent[]addprefix[tc-tagged-]] +[join[ ]] }}}&gt;\n    &lt;$list filter=\&quot;[list[$:/drift/side-by-side/ViewTemplate]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$vars&gt;\n\n\n&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        },
+        &quot;$:/drift/side-by-side/ViewTemplate/title&quot;: {
+            &quot;created&quot;: &quot;20200525073529278&quot;,
+            &quot;creator&quot;: &quot;akhater&quot;,
+            &quot;title&quot;: &quot;$:/drift/side-by-side/ViewTemplate/title&quot;,
+            &quot;modified&quot;: &quot;20200525181440740&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define title-styles()\nfill:$(foregroundColor)$;\n\\end\n\\define config-title()\n$:/config/ViewToolbarButtons/Visibility/$(listItem)$\n\\end\n&lt;div class=\&quot;tc-tiddler-title\&quot;&gt;\n&lt;div class=\&quot;tc-titlebar\&quot;&gt;\n&lt;span class=\&quot;tc-tiddler-controls\&quot;&gt;\n&lt;$list filter=\&quot;[[$:/drift/side-by-side/Buttons/close]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;config-title&gt;&gt; text=\&quot;hide\&quot;&gt;&lt;$set name=\&quot;tv-config-toolbar-class\&quot; filter=\&quot;[&lt;tv-config-toolbar-class&gt;] [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]]\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;&lt;/$set&gt;&lt;/$reveal&gt;&lt;/$list&gt;\n&lt;/span&gt;\n&lt;$set name=\&quot;tv-wikilinks\&quot; value={{$:/config/Tiddlers/TitleLinks}}&gt;\n&lt;$link&gt;\n&lt;$set name=\&quot;foregroundColor\&quot; value={{!!color}}&gt;\n&lt;span class=\&quot;tc-tiddler-title-icon\&quot; style=&lt;&lt;title-styles&gt;&gt;&gt;\n&lt;$transclude tiddler={{!!icon}}&gt;\n&lt;$transclude tiddler={{$:/config/DefaultTiddlerIcon}}/&gt;\n&lt;/$transclude&gt;\n&lt;/span&gt;\n&lt;/$set&gt;\n&lt;$list filter=\&quot;[all[current]removeprefix[$:/]]\&quot;&gt;\n&lt;h2 class=\&quot;tc-title\&quot; title={{$:/language/SystemTiddler/Tooltip}}&gt;\n&lt;span class=\&quot;tc-system-title-prefix\&quot;&gt;$:/&lt;/span&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/h2&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[all[current]!prefix[$:/]]\&quot;&gt;\n&lt;h2 class=\&quot;tc-title\&quot;&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/h2&gt;\n&lt;/$list&gt;\n&lt;/$link&gt;\n&lt;/$set&gt;\n&lt;/div&gt;\n\n&lt;$reveal type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=&lt;&lt;tiddlerInfoState&gt;&gt; class=\&quot;tc-tiddler-info tc-popup-handle\&quot; animate=\&quot;yes\&quot; retain=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerInfoSegment]!has[draft.of]] [[$:/core/ui/TiddlerInfo]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;/&gt;&lt;/$list&gt;\n\n&lt;/$reveal&gt;\n&lt;/div&gt;&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;modifier&quot;: &quot;akhater&quot;
+        }
+    }
+}</pre>
+</div>
 <div bag="default" caption="{{$:/core/images/advanced-search-button}} search" created="20171122115403541" creator="JD" description="Toggle searchbar visibility" modified="20200430205248593" modifier="JD" revision="0" tags="$:/tags/jd/mobbutton" title="$:/plugins/jd/mob/button/search" type="text/vnd.tiddlywiki">
 <pre>&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/plugins/jd/mob/config/config##searchbar&quot; text=&quot;yes&quot;&gt;
 &lt;$button class=&quot;tc-btn-invisible&quot; tooltip=&quot;Show searchbar&quot; set=&quot;$:/plugins/jd/mob/config/config##searchbar&quot; setTo=&quot;yes&quot;&gt;
@@ -11292,22 +11296,25 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
+<div created="20231002110143423" modified="20231002110143423" title="$:/state/plugin-info--1128306242-$:/ak/drift---801593788">
+<pre>contents</pre>
+</div>
 <div bag="default" created="20200716095325587" modified="20200716095325587" revision="1" title="$:/state/searchtab-1444756290">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div bag="default" created="20200716095430403" modified="20200716095430403" revision="1" title="$:/state/sidebar">
-<pre>no</pre>
+<div bag="default" created="20200716095430403" modified="20231002122028323" revision="1" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20210303021244389" modified="20210303021316584" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/StoryView</pre>
 </div>
-<div created="20210303021242909" modified="20210303021242909" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20210303021242909" modified="20231002110136679" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20210303021237038" modified="20210303021331036" title="$:/state/tab-524460307">
 <pre>$:/ak/plugins/DailyNotes/viewEntries</pre>
 </div>
-<div bag="default" created="20200716095337660" modified="20200716095423541" revision="2" title="$:/state/tab/sidebar--595412856">
+<div bag="default" created="20200716095337660" modified="20231002122030975" revision="2" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/IsAnonymous">
@@ -11325,10 +11332,13 @@ html body.tc-body {
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20210303021234866" list="$:/ak/plugins/DailyNotes/ui/capture" modified="20210303021241498" title="$:/StoryList">
+<div created="20231002121954117" list="[[Welcome to Drift]]" modified="20231002121954117" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" revision="0" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki">
+<pre></pre>
+</div>
+<div created="20231002122020526" modified="20231002122021337" title="$:/temp/advancedsearch">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11344,7 +11354,7 @@ html body.tc-body {
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;http://localhost:10085/work/wikis//akhater.github.io_drift.html&quot;
+            &quot;text&quot;: &quot;http://localhost:10085/work/wikis/akhater.github.io_drift.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -11364,7 +11374,7 @@ html body.tc-body {
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/work/wikis//akhater.github.io_drift.html&quot;
+            &quot;text&quot;: &quot;/work/wikis/akhater.github.io_drift.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -11376,11 +11386,11 @@ html body.tc-body {
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;2560&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1440&quot;
+            &quot;text&quot;: &quot;1200&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
