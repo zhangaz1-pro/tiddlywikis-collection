@@ -536,6 +536,10 @@ Error message and password prompt
 
 <li>$:/plugins/TWaddle/SideEditor/Metrics</li>
 
+<li>$:/plugins/TWaddle/Stamper</li>
+
+<li>$:/plugins/TWaddle/Stamper/Stylesheet</li>
+
 <li>$:/plugins/twmat/googlesheets/_spreadsheetid</li>
 
 <li>$:/SiteSubtitle</li>
@@ -627,6 +631,8 @@ Error message and password prompt
 <li>$:/state/toc/TableOfContents-Drive-263827834</li>
 
 <li>$:/state/Tree structure for Drive folder</li>
+
+<li>$:/status/IsLoggedIn</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -10861,7 +10867,7 @@ $actions$&lt;$transclude tiddler="""$icon$"""/&gt;&lt;$view tiddler=&lt;&lt;__ta
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/TiddlyGoo/DriveTree]]</pre>
+# [[$:/plugins/TWaddle/Stamper]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -11910,6 +11916,89 @@ Convert
 <div created="20160514163926446" creator="Mat von TWaddle" left="59" modified="20210401201236631" modifier="Mat von TWaddle" tags="" title="$:/plugins/TWaddle/SideEditor/Metrics" top="35">
 <pre></pre>
 </div>
+<div author="Mat von TWaddle" created="20170406195849971" creator="Mat von TWaddle" description="Stamper - because EVERYBODY needs a rubber stamp" list="readme" modified="20170410105737605" modifier="Mat von TWaddle" plugin-type="plugin" title="$:/plugins/TWaddle/Stamper" type="application/json" version="0.0.4">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/TWaddle/Stamper/icon": {
+            "created": "20170406110719169",
+            "creator": "Mat von TWaddle",
+            "text": "{{$:/core/images/stamp}}",
+            "title": "$:/plugins/TWaddle/Stamper/icon",
+            "tags": "",
+            "modifier": "Mat von TWaddle",
+            "modified": "20170406163436441"
+        },
+        "$:/plugins/TWaddle/Stamper/readme": {
+            "created": "20170406102346856",
+            "creator": "Mat von TWaddle",
+            "text": "This sets various values in the [[Stamper plugin stylesheet|$:/plugins/TWaddle/Stamper/Stylesheet]]\n&lt;table class=\"stamper-table\"&gt;\n&lt;tr&gt;\n&lt;td&gt;stamp text&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"stamp\"/&gt;&lt;/td&gt;\n&lt;td&gt;//`[[links]]` no worky//&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;text colour&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"colour\"/&gt;&lt;/td&gt;\n&lt;td&gt;//eg `#c00` or `grey`//&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;before/after title&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"beforeafter\"/&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;vertical offset&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"margin-top\"/&gt;&lt;/td&gt;\n&lt;td&gt;''px''&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;horizontal offset&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"margin-left\"/&gt;&lt;/td&gt;\n&lt;td&gt;''px''&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;rotate&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"rotate\"/&gt;&lt;/td&gt;\n&lt;td&gt;''deg''&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;font&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"font\"/&gt;&lt;/td&gt;\n&lt;td&gt;//eg `'Vollkorn', serif`//&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;font size&lt;/td&gt;\n&lt;td&gt;&lt;$edit-text tiddler=\"$:/plugins/TWaddle/Stamper/Stylesheet\" field=\"font-size\"/&gt;&lt;/td&gt;\n&lt;td&gt;''px''&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;",
+            "title": "$:/plugins/TWaddle/Stamper/readme",
+            "tags": "",
+            "modifier": "Mat von TWaddle",
+            "modified": "20170406195206915",
+            "caption": "Settings"
+        },
+        "$:/plugins/TWaddle/Stamper/Stylesheet": {
+            "created": "20170122103257891",
+            "creator": "twMat",
+            "text": "&lt;pre&gt;\n/* Rubber stamp showing custom text */\n/* Cred: https://codepen.io/chris22smith/pen/kDtiE  */\n\n.tc-site-title:{{!!beforeafter}} {\n    content:\"{{$:/plugins/TWaddle/Stamper/Stylesheet!!stamp}}\";\n    position:absolute;\n    margin-top:{{!!margin-top}}px;\n    margin-left:{{!!margin-left}}px;\n    z-index:1;\n    font-family:Arial,sans-serif;\n    -webkit-transform: rotate({{!!rotate}}deg); /* Safari */\n    -moz-transform: rotate({{!!rotate}}deg); /* Firefox */\n    -ms-transform: rotate({{!!rotate}}deg); /* IE */\n    -o-transform: rotate({{!!rotate}}deg); /* Opera */\n    transform: rotate({{!!rotate}}deg);\n    font-size:{{!!font-size}}px;\n    color:{{!!colour}};\n    background:#fff;\n    border:solid 4px {{!!colour}};\n    padding:0 5px 7px;\n    border-radius:10px;\n    zoom:1;\n    filter:alpha(opacity=20);\n    opacity:0.6;\n    -webkit-text-shadow: 0 0 2px {{!!colour}};\n    text-shadow: 0 0 2px {{!!colour}};\n    box-shadow: 0 0 2px {{!!colour}};\n    font-family: {{!!font}};\n    font-weight: bold;\n}\n.stamper-table {width:100%; }\n.stamper-table,.stamper-table tr, .stamper-table td {border:0px solid red;}\n.stamper-table input { border:5px solid red, color:red;}\n&lt;/pre&gt;\n\n",
+            "title": "$:/plugins/TWaddle/Stamper/Stylesheet",
+            "tags": "$:/tags/Stylesheet",
+            "summary": "Cred: https://codepen.io/chris22smith/pen/kDtiE",
+            "stamp": "stamper",
+            "rotate": "20",
+            "modifier": "Mat von TWaddle",
+            "modified": "20170406172703140",
+            "margin-top": "-20",
+            "margin-left": "-100",
+            "font-size": "30",
+            "font": "'Vollkorn', serif",
+            "colour": "#c00",
+            "beforeafter": "after",
+            "list-after": "$:/plugins/TWaddle/ListTree/Stylesheet"
+        }
+    }
+}</pre>
+</div>
+<div beforeafter="after" colour="#c00" created="20170122103257891" creator="twMat" font="'Vollkorn', serif" font-size="30" list-after="$:/plugins/TWaddle/ListTree/Stylesheet" margin-left="-130" margin-top="-0" modified="20230711094622933" modifier="Mat von TWaddle" rotate="20" stamp="not working anymore" summary="Cred: https://codepen.io/chris22smith/pen/kDtiE" tags="$:/tags/Stylesheet" title="$:/plugins/TWaddle/Stamper/Stylesheet">
+<pre>&lt;pre&gt;
+/* Rubber stamp showing custom text */
+/* Cred: https://codepen.io/chris22smith/pen/kDtiE  */
+
+.tc-site-title:{{!!beforeafter}} {
+    content:"{{$:/plugins/TWaddle/Stamper/Stylesheet!!stamp}}";
+    position:absolute;
+    margin-top:{{!!margin-top}}px;
+    margin-left:{{!!margin-left}}px;
+    z-index:1;
+    font-family:Arial,sans-serif;
+    -webkit-transform: rotate({{!!rotate}}deg); /* Safari */
+    -moz-transform: rotate({{!!rotate}}deg); /* Firefox */
+    -ms-transform: rotate({{!!rotate}}deg); /* IE */
+    -o-transform: rotate({{!!rotate}}deg); /* Opera */
+    transform: rotate({{!!rotate}}deg);
+    font-size:{{!!font-size}}px;
+    color:{{!!colour}};
+    background:#fff;
+    border:solid 4px {{!!colour}};
+    padding:0 5px 7px;
+    border-radius:10px;
+    zoom:1;
+    filter:alpha(opacity=20);
+    opacity:0.6;
+    -webkit-text-shadow: 0 0 2px {{!!colour}};
+    text-shadow: 0 0 2px {{!!colour}};
+    box-shadow: 0 0 2px {{!!colour}};
+    font-family: {{!!font}};
+    font-weight: bold;
+}
+.stamper-table {width:100%; }
+.stamper-table,.stamper-table tr, .stamper-table td {border:0px solid red;}
+.stamper-table input { border:5px solid red, color:red;}
+&lt;/pre&gt;
+
+</pre>
+</div>
 <div created="20200513094354585" creator="twMat" modified="20210303095019383" modifier="twMat" sheet-id="Sheet1" title="$:/plugins/twmat/googlesheets/_spreadsheetid">
 <pre>sheetbitmojis</pre>
 </div>
@@ -11985,8 +12074,8 @@ Convert
 <div created="20210331171107716" modified="20210401154301089" title="$:/state/plugin-info-1369265406-$:/plugins/tiddlygoo/sheetsin">
 <pre>yes</pre>
 </div>
-<div created="20210316092747310" modified="20210420185740831" title="$:/state/plugin-info-1369265406-$:/plugins/tiddlygoo/sheetsin--1344991190">
-<pre>ifaq</pre>
+<div created="20210316092747310" modified="20230711094746219" title="$:/state/plugin-info-1369265406-$:/plugins/tiddlygoo/sheetsin--1344991190">
+<pre>readme</pre>
 </div>
 <div created="20210328110718701" modified="20210328110718701" title="$:/state/plugin-info-77428190-$:/plugins/TWaddle/ListTree---1247627675">
 <pre>contents</pre>
@@ -12048,10 +12137,11 @@ Convert
 <div created="20210330092100948" modified="20210330092106848" title="$:/state/Tree structure for Drive folder">
 <pre>hide</pre>
 </div>
+<div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210801092319822" list="About" modified="20210801092319822" title="$:/StoryList">
+<div created="20230711094525494" list="About" modified="20230711094742064" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210317071914676" list="$:/core/ui/Buttons/delete $:/plugins/telmiger/EditButtons/Buttons/cancel-and-close $:/plugins/telmiger/EditButtons/Buttons/save-and-close $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save $:/plugins/telmiger/EditButtons/Buttons/save-open" modified="20210317071925808" title="$:/tags/EditToolbar">
@@ -14103,7 +14193,6 @@ The tiddlers have an `id` field with the image Google ID, presumably from a ~She
 </div>
 
 
-<div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 </div>
 
 

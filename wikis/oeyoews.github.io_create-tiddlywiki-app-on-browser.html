@@ -1,0 +1,352 @@
+<html class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>TiddlyWiki Starter</title>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        darkMode: "class",
+      };
+    </script>
+    <script type="module">
+      /* From https://github.com/jakearchibald/idb-keyval */
+      /* Retreived 2020-04-10 */
+
+      let idbKeyval = (function (exports) {
+        "use strict";
+
+        class Store {
+          constructor(dbName = "keyval-store", storeName = "keyval") {
+            this.storeName = storeName;
+            this._dbp = new Promise((resolve, reject) => {
+              const openreq = indexedDB.open(dbName, 1);
+              openreq.onerror = () => reject(openreq.error);
+              openreq.onsuccess = () => resolve(openreq.result);
+              // First time setup: create an empty object store
+              openreq.onupgradeneeded = () => {
+                openreq.result.createObjectStore(storeName);
+              };
+            });
+          }
+          _withIDBStore(type, callback) {
+            return this._dbp.then(
+              (db) =>
+                new Promise((resolve, reject) => {
+                  const transaction = db.transaction(this.storeName, type);
+                  transaction.oncomplete = () => resolve();
+                  transaction.onabort = transaction.onerror = () =>
+                    reject(transaction.error);
+                  callback(transaction.objectStore(this.storeName));
+                })
+            );
+          }
+        }
+        let store;
+        function getDefaultStore() {
+          if (!store) store = new Store();
+          return store;
+        }
+        function get(key, store = getDefaultStore()) {
+          let req;
+          return store
+            ._withIDBStore("readonly", (store) => {
+              req = store.get(key);
+            })
+            .then(() => req.result);
+        }
+        function set(key, value, store = getDefaultStore()) {
+          return store._withIDBStore("readwrite", (store) => {
+            store.put(value, key);
+          });
+        }
+        function del(key, store = getDefaultStore()) {
+          return store._withIDBStore("readwrite", (store) => {
+            store.delete(key);
+          });
+        }
+        function clear(store = getDefaultStore()) {
+          return store._withIDBStore("readwrite", (store) => {
+            store.clear();
+          });
+        }
+        function keys(store = getDefaultStore()) {
+          const keys = [];
+          return store
+            ._withIDBStore("readonly", (store) => {
+              // This would be store.getAllKeys(), but it isn't supported by Edge or Safari.
+              // And openKeyCursor isn't supported by Safari.
+              (store.openKeyCursor || store.openCursor).call(store).onsuccess =
+                function () {
+                  if (!this.result) return;
+                  keys.push(this.result.key);
+                  this.result.continue();
+                };
+            })
+            .then(() => keys);
+        }
+
+        exports.Store = Store;
+        exports.get = get;
+        exports.set = set;
+        exports.del = del;
+        exports.clear = clear;
+        exports.keys = keys;
+
+        return exports;
+      })({});
+
+      /*
+       * Returns a function which can be used as a TiddlyWiki saver.
+       * The saver will write the given text to the given fileHandle
+       */
+      function createTwCustomSaver(fileHandle) {
+        return function (text, method, callback) {
+          fileHandle
+            .createWritable()
+            .then((writable) => {
+              writable.write(text);
+              return writable;
+            })
+            .then((writable) => {
+              writable.close();
+              callback(null);
+            })
+            .catch((error) => {
+              callback(error);
+            });
+          return true;
+        };
+      }
+
+      /* This saver is used when a local file is opened from disk */
+      function setTwCustomSaver(fileHandle) {
+        // Tiddlywiki Version 5.1.23 introduced the "custom saver" which will call
+        // a window.$tw.customSaver.save function from its current frame
+        // or parent frame.
+        window.$tw = { customSaver: { save: createTwCustomSaver(fileHandle) } };
+      }
+
+      /*
+       * This "SaveAs" saver is used when new wiki is loaded from url.
+       * The user is not prompted for a file to save to until the first save
+       */
+      function setTwCustomSaveAsSaver() {
+        let writeTw;
+        let save = function (text, method, callback) {
+          if (writeTw) {
+            writeTw(text, method, callback);
+          } else {
+            // writeTw function is empty, so prompt the user for file handle
+            // and create the writeTw function
+            window.showSaveFilePicker().then((fileHandle) => {
+              writeTw = createTwCustomSaver(fileHandle);
+              writeTw(text, method, callback);
+              twFileManager.addRecent(fileHandle);
+            });
+          }
+          return true;
+        };
+        window.$tw = { customSaver: { save: save } };
+      }
+
+      const twFileManager = {
+        openFile: async function (fileHandle) {
+          if (fileHandle) {
+            // fileHandle may have come from indexDB in which case permission must be re-queried
+            const options = { mode: "read" };
+            if ((await fileHandle.queryPermission(options)) !== "granted") {
+              await fileHandle.requestPermission(options);
+            }
+          } else {
+            // No fileHandle given. Prompt user to choose one from disk
+            [fileHandle] = await window.showOpenFilePicker({
+              types: [
+                {
+                  description: "HTML files",
+                  accept: {
+                    "text/html": [".html", ".htm"],
+                  },
+                },
+              ],
+              multiple: false,
+              // excludeAcceptAllOption: true,
+            });
+          }
+          const file = await fileHandle.getFile();
+          const contents = await file.text();
+          setTwCustomSaver(fileHandle);
+          return { fileHandle, contents };
+        },
+
+        openFromUrl: async function (url) {
+          const contents = await fetch(url).then((res) => res.text());
+          setTwCustomSaveAsSaver();
+          return { contents };
+        },
+
+        /* This code modified from https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/menu-recent.js */
+        /* as retrieved on 2022/03/20 */
+        /*
+         * File handles can be serialized, but only to IndexDB. Localstorage is not supported.
+         */
+        addRecent: async function (fileHandle) {
+          let recentFiles = (await idbKeyval.get("recentFiles")) || [];
+
+          // If isSameEntry isn't available, we can't store the file handle
+          if (!fileHandle.isSameEntry) {
+            console.warn("Saving of recents is unavailable.");
+            return recentFiles;
+          }
+
+          // Loop through the list of recent files and make sure the file we're
+          // adding isn't already there. This is gross.
+          const inList = await Promise.all(
+            recentFiles.map((f) => {
+              return fileHandle.isSameEntry(f);
+            })
+          );
+          if (inList.some((val) => val)) {
+            return recentFiles;
+          }
+
+          // Add the new file handle to the top of the list, and remove any old ones.
+          recentFiles.unshift(fileHandle);
+          if (recentFiles.length > 5) {
+            recentFiles.pop();
+          }
+
+          // Save the list of recent files.
+          idbKeyval.set("recentFiles", recentFiles);
+          return recentFiles;
+        },
+
+        getRecent: async function () {
+          return (await idbKeyval.get("recentFiles")) || [];
+        },
+      };
+
+      // Allow indexdb to be disabled
+      if (window.location.hash.search("norecent") >= 0) {
+        const noop = async () => {
+          return [];
+        };
+        twFileManager.addRecent = noop;
+        twFileManager.getRecent = noop;
+      }
+
+      // Prevent errors if the browser doesn't support file system api
+      if (!window.showOpenFilePicker) {
+        twFileManager.openFile = async () => {
+          window.alert("This browser doesn't support opening files");
+          return {};
+        };
+      }
+      if (!window.showSaveFilePicker) {
+        setTwCustomSaveAsSaver = () => {};
+      }
+
+      function replacePageContents(contents) {
+        if (contents) {
+          document.open();
+          document.write(contents);
+          document.close();
+        }
+      }
+
+      window.openFile = async function (fileHandle) {
+        const btn = document.getElementById("open-from-local");
+        btn?.classList?.add("cursor-wait");
+        const file = await twFileManager.openFile(fileHandle);
+        replacePageContents(file.contents);
+        if (file.fileHandle) {
+          twFileManager.addRecent(file.fileHandle);
+        }
+        btn.classList.remove("cursor-wait");
+        return file;
+      };
+
+      window.openFromUrl = async function (url) {
+        const btn = document.getElementById("open-from-url");
+        btn.classList.add("cursor-wait");
+        btn.innerText = "Loading...";
+        btn.disabled = true;
+        const file = await twFileManager.openFromUrl(url);
+        replacePageContents(file.contents);
+        return file;
+      };
+
+      function displayRecentFiles() {
+        const elem = document.getElementById("recent-files");
+        if (elem) {
+          twFileManager.getRecent().then((recentFiles) => {
+            if (recentFiles && recentFiles.length > 0) {
+              const list = document.createElement("ul");
+              for (const recent of recentFiles) {
+                const li = document.createElement("li"),
+                  button = Object.assign(document.createElement("button"), {
+                    onclick: openFile.bind(null, recent),
+                    innerText: recent.name,
+                  });
+                button.classList.add(
+                  "btn",
+                  "!bg-transparent",
+                  "cursor-pointer"
+                );
+                li.appendChild(button);
+                list.appendChild(li);
+              }
+              elem.appendChild(list);
+            }
+          });
+        }
+      }
+      window.onload = () => {
+        displayRecentFiles();
+      };
+    </script>
+
+    <style type="text/tailwindcss" media="screen">
+      .btn {
+        @apply border-none bg-neutral-100 hover:bg-neutral-200 transition-all text-black py-1 px-2 rounded m-1;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="prose m-1 md:mx-auto w-full md:w-max-4/5 dark:prose-invert bg-white text-black"
+    >
+      <h1>
+        TiddlyWiki5
+        <iconify-icon icon="simple-icons:tiddlywiki" class="align-middle" />
+      </h1>
+
+      <div class="">
+        <h2>选择文件</h2>
+        <!-- local -->
+        <button onclick="openFile()" class="btn" id="open-from-local">
+          选择已有的文件
+        </button>
+        <!-- online -->
+        <button
+          class="btn"
+          id="open-from-url"
+          onclick="openFromUrl('https://oeyoews.github.io/create-tiddlywiki-app-on-browser/empty-external-core.html')"
+        >
+          新建tiddlywiki文件(external)
+        </button>
+        <!-- tiddlywiki-starter-kit -->
+      </div>
+
+      <!-- recent -->
+      <div>
+        <h2>最近打开过的文件</h2>
+        <div id="recent-files"></div>
+      </div>
+    </div>
+  </body>
+</html>
