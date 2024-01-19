@@ -1792,5 +1792,7 @@
   "self-publishing.tiddlyhost.com.html": "http://self-publishing.tiddlyhost.com",
   "tiddlywiki-starter-kit.tiddlyhost.com.html": "http://tiddlywiki-starter-kit.tiddlyhost.com",
   "plm.tiddlyhost.com.html": "http://plm.tiddlyhost.com",
-  "recent-sys.tiddlyhost.com.html": "http://recent-sys.tiddlyhost.com"
+  "recent-sys.tiddlyhost.com.html": "http://recent-sys.tiddlyhost.com",
+  "images.tiddlyhost.com.html": "http://images.tiddlyhost.com",
+  "externaljs-with-official-tw-core-and-unofficial-theme.tiddlyhost.com.html": "http://externaljs-with-official-tw-core-and-unofficial-theme.tiddlyhost.com"
 }
