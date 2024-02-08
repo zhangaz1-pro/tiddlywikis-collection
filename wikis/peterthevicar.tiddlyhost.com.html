@@ -179,6 +179,8 @@ Error message and password prompt
 
 <li>$:/state/folded/GettingStarted</li>
 
+<li>$:/state/folded/Setting up Octoprint on Linux Ubuntu</li>
+
 <li>$:/state/folded/Start Page</li>
 
 <li>$:/state/folded/Using droidcam for mobile phone as a USB webcam</li>
@@ -247,6 +249,8 @@ Error message and password prompt
 
 <li>Acer laptop can't get into BIOS after Linux install</li>
 
+<li>Adding a pyscript analyser to Home Assistant</li>
+
 <li>Adding page numbers to pdf files</li>
 
 <li>After installing new Android ROM</li>
@@ -270,6 +274,8 @@ Error message and password prompt
 <li>Automounting USB disks if they are there</li>
 
 <li>Autorotate photos according to EXIF settings</li>
+
+<li>Avoiding snap firefox in Ubuntu</li>
 
 <li>awk one-liners</li>
 
@@ -330,6 +336,8 @@ Error message and password prompt
 <li>DefaultTiddlers</li>
 
 <li>Device not found on ubuntu with chromecast</li>
+
+<li>Dialling in a 3D printer</li>
 
 <li>Disk image using dd</li>
 
@@ -395,6 +403,8 @@ Error message and password prompt
 
 <li>Headings markup</li>
 
+<li>How to chromecast your screen with sound in Linux, e.g. Zoom</li>
+
 <li>How to convert to TiddlyWiki 5</li>
 
 <li>How to get chromecast working on Ubuntu</li>
@@ -426,6 +436,8 @@ Error message and password prompt
 <li>Installing java8 with oracle-java8-installer after a failure</li>
 
 <li>Keyboard layouts explained</li>
+
+<li>Levelling 3D printer Ender 3 S1 Pro</li>
 
 <li>LibreOffice Base doesn't allow hyphens in names</li>
 
@@ -529,11 +541,19 @@ Error message and password prompt
 
 <li>Set up new Manjaro system</li>
 
+<li>Set up Octoprint on Ubuntu Linux</li>
+
 <li>Set up RPi from scratch</li>
 
 <li>Set up STC-lights from scratch on RPi</li>
 
 <li>Setting kdenlive menu fonts size</li>
+
+<li>Setting timers on SunSynk inverter from Home Assistant</li>
+
+<li>Setting up HAOS for Home Assistant</li>
+
+<li>Setup Kubuntu</li>
 
 <li>SiteSubtitle</li>
 
@@ -560,6 +580,8 @@ Error message and password prompt
 <li>SystemSettings variables</li>
 
 <li>Tables markup</li>
+
+<li>Tanscribing an audio file for free</li>
 
 <li>Testing an older version of LibreOffice alongside the current one</li>
 
@@ -642,6 +664,8 @@ Error message and password prompt
 <li>WiFi dongle fails with SME: Deauth request to the driver failed</li>
 
 <li>WiFi signal strength from the command line</li>
+
+<li>Working with Jupyter and Pyscript</li>
 
 <li>X events, keycodes and Caps Lock</li>
 
@@ -10695,6 +10719,9 @@ very-muted-foreground: #888888</pre>
 <div created="20210315215202548" creator="Peter" modified="20210315215224294" modifier="Peter" title="$:/state/folded/GettingStarted">
 <pre>show</pre>
 </div>
+<div created="20230301001736576" creator="peterthevicar" modified="20230301001736576" modifier="peterthevicar" title="$:/state/folded/Setting up Octoprint on Linux Ubuntu">
+<pre>hide</pre>
+</div>
 <div created="20210315220155886" creator="Peter" modified="20210315220155886" modifier="Peter" title="$:/state/folded/Start Page">
 <pre>show</pre>
 </div>
@@ -10731,7 +10758,7 @@ very-muted-foreground: #888888</pre>
 <div created="20210315214454600" creator="Peter" modified="20210315214521945" modifier="Peter" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20210315213436864" creator="Peter" modified="20210315220201823" modifier="Peter" title="$:/state/tab/sidebar--595412856">
+<div created="20210315213436864" creator="Peter" modified="20230301002619455" modifier="peterthevicar" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210315222039416" creator="Peter" modified="20210315222123194" modifier="Peter" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10744,7 +10771,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/UserName">
 <pre>peterthevicar</pre>
 </div>
-<div created="20221208133012408" creator="peterthevicar" list="[[Set up new Manjaro system]] [[Useful Pages]]" modified="20221208133012408" modifier="peterthevicar" title="$:/StoryList">
+<div created="20240201163938106" creator="peterthevicar" list="[[Adding a pyscript analyser to Home Assistant]] [[Useful Pages]]" modified="20240201163938106" modifier="peterthevicar" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210315214255366" creator="Peter" modified="20210315214255366" modifier="Peter" title="$:/theme">
@@ -10943,6 +10970,260 @@ To get the laptop to boot Linux:
 #`F10` to save and exit
 #`F2` to re-enter BIOS
 #On boot tab should be able to re-arrange entries as you wish</pre>
+</div>
+<div created="20240104220125170" creator="peterthevicar" modified="20240201164015895" modifier="peterthevicar" tags="" title="Adding a pyscript analyser to Home Assistant">
+<pre># Install HACS add-on Pyscript
+# Restart HA
+# Go to Integrations and add Pyscript
+# Configure, select both options
+# File editor create a file `agile_analyse.py` in `config/pyscript`
+```
+DEBUG = False
+import datetime
+
+# Whether we have the Octopus integration installed
+_OCTOPUS_INTEGRATION = True
+
+# Whether we have the SunSynk integration installed
+_SUNSYNK_INTEGRATION = True
+_DEF_BATT_TEMP = 15 # Without SunSynk integration we have to say what the battery temperature is going to be when charging
+_batt_temp = None
+
+_SUPER_CHEAP = 7 # Price (pence) at which it's worth filling up the battery even if it's not needed
+
+# Set these to roughly mirror the inverter / battery performance
+_DISCHARGE_PER_SLOT = 2.0 # how many percent it normally drops in a half an hour slot (adjusted up at peak)
+_CHARGE_PER_SLOT = 19 # how much it can charge up in 30 mins if temperature and SOC allow
+
+def _calc_batt_charge(soc):
+    """
+    Charging is slower at low battery temperatures and high SOCs
+    This function returns a multiplier according to the current temperature and SOC
+    Of course the battery temperature will change, but it's hard to predict
+    and we keep re-calculating, so the upcoming slots will be nearly correct
+    """
+    temp_p_limit = (4.7 if _batt_temp &gt; 9 else 2.7 if _batt_temp &gt; 7 else 2) / 4.7
+    soc_p_limit = (4.7 if soc &lt; 60 else (11.525 - 0.115*soc)) / 4.7 # use linear regression as the steps are not predictable
+    #soc_p_limit = (4.7 if soc &lt; 80 else 2.7 if soc &lt; 98 else 1.2) / 4.7
+    return (min(temp_p_limit, soc_p_limit) * _CHARGE_PER_SLOT)
+def _calc_batt_discharge(t):
+    # Adjust usage over the day
+    if t.hour &gt;= 18 and t.hour &lt;= 23: # peak hours
+        return _DISCHARGE_PER_SLOT * 1.75
+    else:
+        return _DISCHARGE_PER_SLOT 
+
+
+_SOLAR_PERCENT_PER_KWH = 4 # Approx percent battery charge for each solar kWh predicted
+
+def _calc_solar_percent(slot_time):
+    """
+    Guess the solar incoming.
+    Divide up the expected solar between the 'sunshine hours' from 10 to (just before) 4
+    """
+    solar_percent = 0
+    if slot_time.hour &gt;= 10 and slot_time.hour &lt; 16:
+        if slot_time.day == _now.day: # It's today, so use remaining solar forecast kWh spread over the remaining sunshine hours
+            solar = 'sensor.energy_production_today_remaining'
+            sun_slots = min(12, (_now.replace(hour=16, minute=0) - _now) / datetime.timedelta(minutes=30))
+        else:
+            solar = 'sensor.energy_production_tomorrow'
+            sun_slots = 12
+        kWh_expected = float(state.get(solar))
+        solar_percent = (kWh_expected * _SOLAR_PERCENT_PER_KWH) / sun_slots # Divide equally over sunshine slots
+    #if DEBUG: log.debug(f"Solar percent: {solar_percent}")
+    return solar_percent
+
+# Data structure for storing slot information
+_slots = []
+# slots [SOC, charge, cost, start_time]
+SOC, CHARGE, PRICE, TIME = 0, 1, 2, 3
+
+# Set at the start of the analysis so everything works with the same instant
+_now = None
+
+# Set up an entity for storing the output
+mystate = 'pyscript.agile_analyse'
+state.set(mystate)
+myprint_attr = mystate + '.myprint'
+
+# myprint sends its ouput to a state attribute so it can be picked up by dashboard cards
+def myprint(out_text="", clear=False):
+    if clear:
+        state.setattr(myprint_attr, [ ])
+    # Add the text to the end of the output list
+    state.setattr(myprint_attr, state.get(myprint_attr) + [ out_text ])
+
+# Get the pricing data from Octopus
+def _get_octopus_data():
+    # Fill in prices, times etc for each slot that hasn't yet happened
+    global _slots
+    _slots = []
+    half_hour_ago = _now - datetime.timedelta(minutes=30)
+    
+    if _OCTOPUS_INTEGRATION:
+        # Integration with Octopus is running so use their data
+        for day in ["current", "next"]:
+            res = state.get('event.octopus_energy_electricity_20m1084206_2000008459536_'+day+'_day_rates.rates')
+            for x in res:
+                # Avoid a comparison of TZ aware with naive
+                slot_time = x['start'].replace(tzinfo=None)
+                if slot_time &gt; half_hour_ago:
+                    _slots += [[0, 0, x['value_inc_vat'] * 100, slot_time]]
+    else:
+        # DIY method - make the call to the web API
+        import urllib.request
+        import json
+        with task.executor(urllib.request.urlopen,"https://api.octopus.energy/v1/products/AGILE-18-02-21/electricity-tariffs/E-1R-AGILE-18-02-21-H/standard-unit-rates/") as response:
+            html = response.read()
+        res = json.loads(html)['results']
+        for x in res:
+            slot_time = datetime.datetime.strptime(x['valid_from'], "%Y-%m-%dT%H:%M:%SZ")
+            if slot_time &gt; half_hour_ago:
+                _slots.insert(0, [0, 0, x['value_inc_vat'], slot_time]) # API returns slots in reverse order for some reason
+
+# Debug function
+def _dump_slots():
+    for i, s in enumerate(_slots):
+        myprint(f"i:{i}, s:{s}")
+
+# Go through the slots looking for the lowest priced remaining slot we can reach before the battery runs out
+def _lowest_price(start_i):
+    min_price = 1000
+    min_price_i = 0
+    for i in range(start_i, len(_slots)):
+        s = _slots[i]
+        if s[SOC] &gt;= 20 and s[PRICE] &lt;= min_price and s[CHARGE] == 0:
+            min_price = s[PRICE]
+            min_price_i = i
+    return(min_price_i)
+
+def _update_socs(start_i):
+    '''
+    Update SOC for all slots from start_i, modelling charge and discharge
+    Terminates when the final SOC reaches 20% (i.e. we can make it to the end of the day)
+    Returns the index of the latest slot with 100% SOC - no point charging before that
+    '''
+    full_i = 0 # Return value. Index of latest full slot
+    for i in range(start_i, len(_slots)):
+        s = _slots[i]
+        if i == start_i:
+            next_soc = s[SOC]
+        else:
+            s[SOC] = next_soc
+
+        # This might be the slot we're actually part way through (slot time before now)
+        fraction_of_slot = 1.0 if s[TIME] &gt; _now else ((s[TIME] + datetime.timedelta(minutes=30) - _now) / datetime.timedelta(minutes=30))
+
+        solar_percent = _calc_solar_percent(s[TIME])
+
+        if s[CHARGE] &gt; 0:
+            # Charging slot so add on charge percentage (halves when soc over 70%)
+            charge_amount = fraction_of_slot * (solar_percent + _calc_batt_charge(next_soc))
+            next_soc += charge_amount
+            if next_soc &gt;= 100:
+                full_i = i+1
+                next_soc = 100
+        else:
+            # Take off the calculated net discharge
+            discharge = fraction_of_slot * (_calc_batt_discharge(s[TIME]) - solar_percent)
+            next_soc = min(next_soc - discharge, 100)
+            
+        if next_soc &lt; 20:
+            break
+    return full_i
+    
+def agile_analyse_worker():
+    
+    # Set the globals
+    global _batt_temp, _now
+    
+    # Read current battery temperature 
+    _batt_temp = float(sensor.sunsynk_usable_temp.battery) if _SUNSYNK_INTEGRATION else _DEF_BATT_TEMP
+    
+    # Keep to one instant
+    _now = datetime.datetime.now()
+    
+    # Get the SOC from the SunSync integration
+    current_soc = float(state.get("sensor.sunsynk_battery_soc"))
+
+    _get_octopus_data()
+    if len(_slots) &lt; 4:
+        # Something gone wrong with getting price data
+        myprint(f"Octopus update failed: {_now:%Y-%m-%d %H:%M:%S}", clear=False)
+        return
+    else:
+        # Clear the output buffer and print the update time
+        myprint(f"Updated: {_now:%Y-%m-%d %H:%M:%S}", clear=True)
+    
+    # Current SOC into first slot
+    s = _slots[0]
+    s[SOC] = current_soc
+    # Fill in SOC for the rest of the slots, allowing for fractional first slot
+    _update_socs(0)
+    
+    # Loop round till we have charge to the end of the data set and have used all the cheap slots
+    start_i = 0
+    n_charge_slots = 0
+    while start_i &lt; len(_slots):
+        lpi = _lowest_price(start_i)
+        # Check to see if we've got charge to the end and we're not missing silly prices
+        if (_slots[-1][SOC] &gt;= 20 and _slots[lpi][PRICE] &gt; _SUPER_CHEAP):
+            break
+        # Keep going. Set this cheapest slot to charge
+        n_charge_slots += 1
+        _slots[lpi][CHARGE] = n_charge_slots
+        #log.debug(f"Called _update_socs with lpi = {lpi} and n_charge_slots = {n_charge_slots}")
+        start_i = _update_socs(lpi) # returns index of latest slot which is charged to 100%
+        #log.debug(f"..returned {start_i}")
+
+    # Print the results (it will be picked up by a template card so use Markdown)
+    # While we're going through, copy out the first three charge slots for setting the inverter
+    inverter_charge_times=[]
+    START, END = 0, 1 # offsets in above
+    max_price = -100.0
+    for s in _slots:
+        if s[CHARGE] &gt; 0:
+            markup = "`"+f"{s[CHARGE]:2d}"+" `"
+            max_price = max(max_price, s[PRICE])
+            prev_slot = len(inverter_charge_times) - 1
+            slot_start = s[TIME]
+            slot_end = slot_start + datetime.timedelta(minutes=30)
+            if prev_slot &lt; 0 \
+            or inverter_charge_times[prev_slot][END] != slot_start \
+            or inverter_charge_times[prev_slot][START].weekday() != slot_start.weekday():
+                # First charge slot, or not contiguous, or spanning midnight, so add new charge slot (up to max 3 slots)
+                if len(inverter_charge_times) &lt; 3:
+                    inverter_charge_times.append([slot_start, slot_end])
+            else:
+                # contiguous with previous charge slot so just update end time to end of current charge slot
+                inverter_charge_times[prev_slot][END] = slot_end
+        else: 
+            markup = "` - `"
+        myprint(f"{markup}{s[TIME]:%H:%M}, {s[PRICE]:.02f}p, ({s[SOC]:.2f}%)")
+        
+    if len(inverter_charge_times) &gt; 0:
+        myprint(f"Max price: {max_price:.2f}, "
+            f"Battery: {_batt_temp:.2f}°C")
+        myprint("Inverter charge times")
+        for s,e in inverter_charge_times:
+            myprint(f"{s:%H:%M} - {e:%H:%M}")
+    else:
+        myprint("No charging scheduled")
+    if not DEBUG:
+        pyscript.set_inverter_charge_times(inverter_charge_times = inverter_charge_times)
+    else:
+        myprint("DEBUG enabled, no settings sent")
+        log.debug("agile_analyse complete")
+# Set up as a time-triggered service
+if not DEBUG:
+    @time_trigger("period(00:01, 10min)")
+    @service
+    def agile_analyse():
+        agile_analyse_worker()
+else:
+    agile_analyse_worker()
+```</pre>
 </div>
 <div changecount="6" created="20140410121800000" creator="Peter" modified="20210705203727858" modifier="Peter" title="Adding page numbers to pdf files" type="text/vnd.tiddlywiki">
 <pre>OR, easy way, use https://pdfcandy.com/add-page-numbers.html
@@ -11145,6 +11426,26 @@ Also see [[Doing something after a resume from suspend]] as I found I had to man
 </div>
 <div changecount="1" created="20151124204100000" creator="Peter" modifier="Peter" title="Autorotate photos according to EXIF settings" type="text/x-tiddlywiki">
 <pre>use `exiftran -ia &lt;image-file&gt;` to automatically rotate in place according to the EXIF tags</pre>
+</div>
+<div created="20231215202827453" creator="peterthevicar" modified="20231216224920458" modifier="peterthevicar" tags="" title="Avoiding snap firefox in Ubuntu">
+<pre>Summary: install firefox-esr (stands for extended support release) from mozillateam PPA. This is a more stable version of firefox and also has the advantage because of its slightly different name of being proof against Ubuntu 'upgrading' your proper firefox to the broken snap one.
+
+*In the snap firefox go to about:profiles to find the directory of your current profile (usually somewhere in ~/snap/firefox/common/.mozilla/firefox, we'll call it snap-prof)
+*Install firefox-esr from PPA:
+
+```
+sudo add-apt-repository ppa:mozillateam/ppa
+sudo apt install firefox-esr
+
+```
+*Run firefox-esr which will generate a profiles directory in .mozilla/firefox-esr: `firefox-esr`
+*In firefox-esr check in about:profiles to see directory of current profile (we'll call it esr-prof)
+*Close both versions of firefox
+*Delete the firefox-esr profile: `rm -r esr-prof`
+*Copy the snap firefox profile to where the firefox-esr profile was: `cp -a snap-prof esr-prof`
+*Move the snap profile out of the way in case you accidentally start snap firefox: `mv ~/snap/firefox ~/snap/firefox-pre-esr`
+*Open firefox-esr. If you get a message about downgrading, use `firefox-esr --allow-downgrade` the first time you start it.
+*Enjoy being able to access your installed applications from firefox, and save to anywhere you have permissions to save to. Freedom!!</pre>
 </div>
 <div changecount="5" created="20141031234900000" creator="Peter" modified="20220406205657711" modifier="peterthevicar" title="awk one-liners" type="text/vnd.tiddlywiki">
 <pre>Must use single quotes as the dollars have to get through to awk.
@@ -11884,6 +12185,42 @@ If you've made a lot of changes to the configuration it's a good backup policy t
 iptables -I INPUT -p udp -m udp --dport 32768:61000 -j ACCEPT
 ```
 But I think it was rebooting the chromecast that actually did it!
+</pre>
+</div>
+<div created="20230324200609421" creator="peterthevicar" modified="20230324213551226" modifier="peterthevicar" tags="" title="Dialling in a 3D printer">
+<pre>These are the steps in priority order to dial in a 3D printer if making functional parts. I use Prusaslicer but other slicers have similar settings.
+
+#Bed levelling
+##Really important for first layer adhesion
+##Even with auto bed levelling (ABL) it's worth getting the bed as level as possible with ABL switched off. ABL works by adjusting the Z position of the extruder to stay the same height above the uneven bed. If there's a slope to the bed, there will be a slope to the bottom layer.
+##With or without ABL you can use paper shims to even out the surface, again better than relying on ABL for the same reasons. See [[Levelling 3D printer Ender 3 S1 Pro]]
+#First layer adhesion
+##This will depend on the material you are printing. Different surfaces work best with different materials. I usually use glue stick, even with a PEI surface
+##Whatever you use, get that adhesion working before you go any further with dialling in other settings. Key settings are:
+###nozzle temperature - often higher temperature helps adhesion
+###bed temperature - higher usually helps, but too high can keep the first layer too liquid so it slides off
+###first layer height - a thicker layer may help, it also allows more latitude for Z offset adjustment
+###Z offset - the more negative the more 'squished' the first layer becomes and the better it sticks, UNTIL the nozzle is so close to the bed it actually starts scraping the first layer back up again.
+###first layer print speed - slow speeds (say 10mm/s) will allow a good first layer, especially if it has complex small diameter curves. HOWEVER that doesn't mean it has necessarily stuck well enough to support a large print. Think of this setting as more about accuracy than adhesion.
+#Extrusion multiplier
+##This varies slightly according to the reel of filament as it depends on the precise diameter of the filament
+##You often need two different settings: one to give dimensional accuracy with items using sparse infill, and one for solid prints. This is because the slicer overlaps the infill with the walls of the print and with a solid print there's nowhere for that overlap to go so the print ends up too large and puffy on top.
+##To get the dimensionally accurate setting, print a spiral vase 10mm cube and measure the wall thickness. It should be exactly what your slicer wall setting is set to.
+##To get the solid part setting, lower the multiplier so that a small solid part is the right size and has a flat top surface
+##As an example the difference between the two on my printer (with the same filament) is 0.97 for dimensional accuracy and 0.86 for solid parts, around 10-15% difference. I use the default 25% Infill/perimeters overlap.
+#Elephant Foot (EF)
+##Print a small test item, eg 10x3x2mm and measure the difference in width when including or not including the first layer
+##The first layer will be a bit bigger due to the 'squish' caused by lowering the Z offset for first layer adhesion (see above)
+##Use half the extra width as your Elephant Foot compensation. E.g if your piece is 3mm wide for the top layers and 3.5 for the first layers, set EF compensation to 0.25mm
+##Print the piece again and see if the first layer is exactly the same size as the other layers
+#Dimensional accuracy
+##Print a cube with the same infill and extrusion multiplier you will be using for your final object. Measure the cube once it's cooled. Due to inaccuracies in the printer setup or shrinkage as the filament cools you may find it's not quite the right size
+##If so you need to scale the print to get the correct size. Use the Scale factor boxes in the plater to sort this.
+#Hole sizes
+##Very sadly Prusaslicer doesn't support adjusting the hole sizes in one parameter (Cura slicer DOES, Superslicer DOES)
+##With PS you have to use the XY compensation which expands or shrinks all the printed components in the XY axes. So a positive value gives a bigger part and smaller holes, a negative value gives a smaller part with larger holes. For a negative value -v, the X and Y dimensions are both DEcreased by 2v and every hole has its diameter INcreased by 2v.
+##If you don't care about the overall dimensions you can stop there (I find about -0.2 gives accurate holes).
+##Otherwise you need to add 2v to the X and Y dimensions in the plater Scale factors boxes. That should bring the external dimensions back to spec
 </pre>
 </div>
 <div changecount="1" created="20131014151900000" creator="Peter" modifier="Peter" title="Disk image using dd" type="text/x-tiddlywiki">
@@ -12947,6 +13284,17 @@ On balance I think I'll go with RF 25 and Preset faster</pre>
 |Heading level 5|&lt;html&gt;&lt;h5&gt;text&lt;/h5&gt;&lt;/html&gt;|`!!!!!text`|
 </pre>
 </div>
+<div created="20230526202800693" creator="peterthevicar" modified="20230526203141395" modifier="peterthevicar" tags="" title="How to chromecast your screen with sound in Linux, e.g. Zoom">
+<pre>There's a brilliant bit of software called `mkchromecast` which can do this. Install it from repos (AUR for Manjaro). The GUI only handles audio so run it from a terminal:
+
+```
+mkchromecast --video --screencast
+```
+
+If you only have one chromecast on your LAN this will work straight away. The downside is a 5-6 second delay but it's fine for 'attending' zoom meetings etc with your TV as a big screen.
+
+If you want to know about all the other options use `mkchromecast -h | less`</pre>
+</div>
 <div changecount="8" created="20171027215400000" creator="Peter" modified="20171027222000000" modifier="Peter" title="How to convert to TiddlyWiki 5" type="text/x-tiddlywiki">
 <pre>Not many changes to the markup language, mainly:
 *In TWC line ends are line ends. In TW5 you need TWO returns to start a new paragraph, single line ends are ignored unless you enclose a block with lines of (only) three double quotes `"""`
@@ -13137,6 +13485,64 @@ sudo /var/lib/dpkg/info/oracle-java8-installer.postinst configure
 <pre>Excellent web page at: https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions
 How to show a keyboard layout graphically (the example shows the intl sub-layout of the us layout which has to be separated by a tab character)
 `gkbd-keyboard-display -l $'us\tintl'`</pre>
+</div>
+<div created="20230131155524840" creator="peterthevicar" modified="20230325222854491" modifier="peterthevicar" tags="" title="Levelling 3D printer Ender 3 S1 Pro">
+<pre>Lots of problems with this reported online, especially auto bed levelling (ABL)
+
+!!Update March 2023
+
+I've now switched firmware to https://github.com/synman/Ender-3-S1-Pro-Firmware (ABL version) (huge thanks to synman for getting this together). This has 25-point ABL enabled and sets the bed size to 235x225x270. Actually X235 is off the bed but 225x225 is fine. Using the procedure below I first levelled the bed as best I could, then I cut pieces of paper to go between the bed and the flexible plate. Each layer of paper provides about 0.1mm correction. It's an iterative process of course but I got to a pretty level bed in the end:
+
+#I finally adopted a manual method because the automatic sensor can't reach two of the edges of the bed
+#Format two templates, one for the left the other for the right side. Column widths are 28.125, 56.25, 56.25 for LHS, reverse for RHS. Row heights are 28.125, 56.25*3, 28.125.
+#Make up a feeler gauge by folding a piece of paper to have areas 1, 2, 3 and 4 sheets thick
+#Switch off bed levelling (M420 S0)
+#Level the four extreme corners 0,0, 0,225, 225,225, and 225,0 using the wheels to 1 thickness of paper (move using G0 commands). It's worth doing this well.
+#Go over the remaining 21 points using the feeler gauge and note the numbers
+#Subtract 1 from each number to give how many paper thicknesses the shim for that area needs to be
+#Print the left and right templates, enough copies for the highest number
+#Cut one sheet for all the &gt;=1s, another sheet for all the &gt;=2s etc.
+#Stack them all together with a light smear of stick glue to get them to stay in alignment
+#Put the stack under the flexible build plate
+#Run the ABL and Octoprint bed visualisation plugin to see if there are any obvious problems. Don't forget the ABL doesn't measure the whole area. Change the bed vis parameters to accentuate the bumps.
+
+Notes:
+
+*Heating remained about as even as it was without the paper (measured with a FLIR)
+*It's always going to be a bit dodgy at the edges as you don't get measurements for the RHS or the rear of the bed due to the sensor offset.
+
+!!Things I've learnt:
+
+#You need to set up a USB control link rather than try to use the touchscreen for this as it involves sending G-codes to the printer and looking at the returned results. I used Octoprint AUR on Manjaro - needed to reboot after install to get the octoprint user recognised as having access to /dev/ttyUSB0
+#Useful G-codes to send:
+##M420 V; Shows if auto levelling is in operation or not and prints the current state of the mesh co-ordinates
+##M420 S0; Switch off ABL. S1 switches it on. Adding Z10 means the effects of the mesh fade away (linear interpolation) over the first 10mm Z height of printing
+##M114; report where the printer thinks the nozzle is
+##G29 V4; auto calibrate ABL. V4 means give max info including the coordinates of the points probed.
+##G30 Xnn Ynn; probe the bed height at that point. Note that's where the nozzle is, not the probe; also this switches OFF ABL. You can use this to test the repeatability of the probe results and also check the heights from the G29 auto probe. On my printer it varied by about 0.005 on average so plenty accurate enough
+#Interesting things:
+##Looking at the "Leveling Grid" reported to the G-code monitor, the figures are laid out as though you're looking at the underside of the plate, with the handle at the top of the grid. Each row has the same X value, each column has the same Y value. In terms of position, 0=3, 1=62, 2=121, 3=180.
+##ABL calibration, whether from G-code or the touchscreen, automatically stores the mesh data into the EEPROM so no need to do that yourself.
+##ABL is switched OFF when you first turn the printer on, but switched ON by a normal G28 home G-code which is part of most slicers' starting G-code.
+#To check if the printer is applying the mesh, go to any point, check the Z position, turn ABL on/off (M420 S1/0) and re-check the Z pos. Z should change by the mesh correction at that point, faded according to the fade distance. E.g. if the mesh is 0.1mm at that point and your Z is at 5mm of a 10mm ABL fade the Z should change by 0.1*5/10 = 0.05mm
+
+!!Levelling
+
+#First rough leveling:
+##Go into settings/leveling
+##wait for homing to finish
+##go into manual leveling
+##move to each corner and see if any one is pinching a piece of paper
+##change the Z offset to just pinch a piece of paper in the tightest corner, then adjust the other corners to match
+#Now auto levelling
+##Note: ABL probing is relative to the Z offset in the settings (it's the Z offset between the probe and the nozzle). In terms of levelling that means you are aiming for a mesh where all the values are as similar as possible to each other rather than necessarily close to 0. The Z offset should actually be kept a bit high (i.e. less negative) while experimenting as the ABL calibration G29 in this firmware ends with a move to Z0 and you don't want it crashing into the plate! Once ABL setup is complete you can do a first layer print test to set the Z offset correctly.
+##G0 Z10 to raise the head well off the bed; G28 to home the axes, G29 V4 to do an auto bed levelling
+##Copy the resulting mesh table into a spreadsheet
+##Get a base level of all the points - MIN(A1:D4)
+##Make a normalised copy of the table where each value is the original value minus the base
+##In the normalised mesh look for a corner that stands out. If it's a higher number than the others turn its knob anti-clockwise (clockwise if it's too low). I found one "knurl" changes the height by between 0.05 and 0.1mm. Of course this will disturb other corners so it's an iterative process.
+##(If you want a rough visualisation of the bed contours you can create a 3D "Area" chart in libreoffice of the normalised mesh data)
+##The ABL will even out any irregularities anyway but it's good to get as flat as possible. On my bed there was a 0.162mm difference between the lowest and highest point measured - plenty to prevent good adhesion.</pre>
 </div>
 <div changecount="2" created="20161203014900000" creator="Peter" modified="20161203022000000" modifier="Peter" title="LibreOffice Base doesn't allow hyphens in names" type="text/x-tiddlywiki">
 <pre>If you use hyphens (minus signs) in names of tables or databases in """LibreOffice""" it stops mail merge working properly and you get the same label over and over again, as though you didn't have a &lt;Next record&gt; field.</pre>
@@ -14519,54 +14925,97 @@ If this doesn't work (try `sane-find-scanner`) you may need to edit /etc/sane.d/
 **Put lines into fstab: `//192.168.1.4/media /Disks/Archive cifs rw,username=peter,password=naspw,nofail 0 2
 **reboot and test</pre>
 </div>
-<div created="20221124150817802" creator="peterthevicar" modified="20221208133103328" modifier="peterthevicar" tags="" title="Set up new Manjaro system">
+<div created="20221124150817802" creator="peterthevicar" modified="20231201215922488" modifier="peterthevicar" tags="" title="Set up new Manjaro system">
 <pre>*Install Manjaro (KDE)
+*Partition disk to make room for Data partition
+
 *UI tweaks
-**Workspace behaviour single click to open files
+**Dolphin file manager: reduce compact view icon size to minimum
 **Panel to LHS, width 68
 **replace default launcher with "Application Menu" widget (gives "recently used" section)
+**add memory, disk usage, CPU usage widgets, set to horizontal bar
+**Get new widget "Command Output"
+***configure to execute `top-mon.sh 2 9` with 9pt ~DejaVu Sans font
 **Pin favourite apps to Task Manager
-**Add "System Monitor" in Settings/Keyboard shortcuts and set its shortcut to Ctrl-Esc
-*Copy over the Data partition
-*Make mount directories in `/mnt`
-*Edit fstab to add in Data and network drives
+**Set up widget monitors for CPU, memory, HDD activity, network speed set to horizontal bars
 
-```
-* NFS mounts on NAS
-192.168.0.20:/media/hdd	 /mnt/nasmedia nfs	rw,_netdev,nofail,nolock		0		2
-192.168.0.20:/media/nasdata /mnt/nasdata nfs	rw,_netdev,nofail,nolock		0		2
-```
-*`mount -av`
-*Install extras:  gimp, krename, libreoffice-fresh, hyphen-en, posterazor, qalculate-qt (set larger fonts, special application settings 80% opacity, always on top), recoll, ocrfeeder, ~FreeCAD, prusa-slicer, zenity
-*Enable AUR to install:
-**gimp-plugin-saveforweb, gimp-plugin-resynthesizer-git (takes AGES!), autokey-qt, gpx-git (for 3D print), realvnc-vnc-viewer
-*Enable Flatpak to install:
-**Audacity, ~MEGASync
-*Use HP Device Manager to find the HP network printer
+*File system
+**Make mount directories in `/mnt`, i.e. `Backup Data nasdata nasmedia`
+**Copy over the Data partition, /Links
+**Open a copy of /etc/fstab to edit new fstab and add in Data and network drives
+**Network mounts look like this: `192.168.0.20:/media/hdd	 /mnt/nasmedia nfs	rw,_netdev,nofail,nolock		0		2`
+**Need to install nfs-common to mount nfs shares
+**`mount -av`
+
+*Install extras, use "Add/Remove Software" application
+**Gimp, krename, libreoffice-fresh-en-gb, hyphen-en, posterazor, qalculate-qt (set larger fonts, special application settings 80% opacity, always on top), recoll, ocrfeeder, ~FreeCAD, prusa-slicer, hplip (for HP Device Manager, launch it and connect to printer), audacity, backintime, kompare, simple-scan, evince, transmission-qt, thunderbird, avidemux-qt, pdfarrager, gnome-disk-utility (for benchmarking disks), musescore, ventoy (for multiboot USB sticks)
+
+**Enable AUR to install: gimp-plugin-saveforweb, gimp-plugin-resynthesizer-git (takes AGES as it has to build and test python2, maybe install python-gimp first?), autokey-qt, [gpx-git (for old 3D printer)], realvnc-vnc-viewer, pdfbooklet 
+
+**Enable Flatpak to install: MEGASync, Flatseal (then use Flatseal to allow megasync to access file system), Chrome, Zoom
+
 *Copy across:
-**`/home/peter/.config/autokey` (Autokey should work without further ado)
-**`/home/peter/.config/libreoffice/4/user` to `.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user`. Then need to start ~LibreOffice and edit a macro to get all the macros recognised, then choose their icons.
-**`/Links`
-**`/root/.config/backintime` (then test backintime)
 **`/usr/local/bin`
+**/usr/share/applications/pdfbooklet.desktop
+**`~/.config/autokey` (Autokey should work without further ado)
 **`.local/share/fonts` (symlinks so need to use ext4 or archive to preserve
-*Set up recoll - create a `recoll` directory for Data and nasdata then use `recoll -c &lt;recoll dir&gt;` for each to set up
-*Set up `megasync` to sync `sync-box` (nothing else till backup is sorted)
-*`ln -s ~/MEGAsync/sync-box/3d-printing/FreeCAD-config/FreeCAD ~/.config` and try ~FreeCAD
-*`ln -s ~/MEGAsync/sync-box/3d-printing/PrusaSlicer-config/PrusaSlicer ~/.config` and try Prusaslicer
+**`~/.config/libreoffice/4/user` (MAY need to start ~LibreOffice and edit a macro to get all the macros recognised, then choose their icons)
+**`~/.recoll` (Then set `Preferences/Indexing Schedule` for the local index. To set up the external indexes' schedules use `recoll -c &lt;recoll dir&gt;` for each (Data, nasdata) to set up)
+**`/root/.config/backintime` (then test backintime and change all the schedules to get them written into cron files)
+**`~/Desktop/Reset-monitor.desktop`
+
+*Set up `megasync` to sync `sync-box` (nothing else till backup is sorted). Wait for sync to finish then:
+**`ln -s ~/MEGAsync/sync-box/3D-printing/FreeCAD-config/FreeCAD ~/.config` and try ~FreeCAD
+**`ln -s ~/MEGAsync/sync-box/3D-printing/PrusaSlicer-config/PrusaSlicer ~/.config` and try Prusaslicer
+
+*System settings search for language packs and install en-gb
+
 *Set up firefox:
 **On old system:
-***export tabs (using Tab Session Manager) and bookmarks (as html)
+***Export tabs (using Tab Session Manager)
+***Export bookmarks (as html)
 **On new system:
+***Set to restart where it left off, ask about downloads, set up pdf etc to ask, other files ask, email to gmail
 ***Add "Tree Style Tabs" and "Tab Session Manager"
 ***Open Session Manager settings and tick Tree Style Tabs support
 ***Close firefox and reopen to make sure TST comes up by default
+***If sidebar is dark, go into add-ons and themes, select themes, then the theme called 'Light'
 ***Import session from previous system using TSM
 ***Add "Auto Tab Discard"
-***Add British English dictionary
-***Add password manager addon
+***Add password manager browser addon (and pin from jigsaw piece to toolbar?)
+***Disable tab bar:
+****In `about:config` search for  toolkit.legacyUserProfileCustomizations.stylesheets and enable
+****copy `userChrome.css` from old system `.mozilla/firefoz/&lt;default&gt;/chrome` or type it in again. Must be in chrome subdir:
+
+```
+/* Hide Tab Bar to make way for Tree Style Tab */
+#TabsToolbar {
+	visibility: collapse;
+}
+```
+
 *Set up password manager
-**Set UI option to minimise and exit to tray</pre>
+**Set UI option to minimise and exit to tray
+**Enable browser integration
+**In browser click on add-on icon to connect</pre>
+</div>
+<div created="20230301002754570" creator="peterthevicar" modified="20230301004008059" modifier="peterthevicar" tags="" title="Set up Octoprint on Ubuntu Linux">
+<pre>#Go to Octoprint website which links to the installer script at https://github.com/paukstelis/octoprint_install
+#Follow the instructions there but
+##You have to manually install the python package as it asks for too old a version - the error messages are clear
+##It didn't seem to set up the camera server service with the right device so look in /etc/systemd/system/cam_octoprint.service and amend as required. I used `/dev/v4l/by-id/usb-Chicony_Electronics_Co.__Ltd._Integrated_Camera-video-index0` to make sure I got the right camera
+
+Things I've learnt:
+
+#Octo4a (Octoprint for Android) is a brilliant piece of work that makes it seem possible you could use a phone as an Octoprint server and also webcam but:
+##Most phones don't let you use the USB socket to control the printer (OTG mode) and charge the phone at the same time. I tried a Y splitter but it didn't work
+##Even when it's working (on battery) it seemed to stutter and stall when doing small circles so not good for quality (I created a test piece with three cones from the ~PrusaSlicer shape library scaled 25% X and Y, 100% Z, and it was fine at the bottom and top but not in the middle. Go figure!). I tried to debug this but there was no sign of CPU overload on the phone (using `top` via ssh to the phone) and nothing in the Octoprint logs to suggest anything was amiss. Such a shame. Maybe it's something to do with the OTG implementation on my particular phone, a Nexus 5X.
+##The connection to the printer was a bit flakey
+#Camera streaming
+##The octoprint installer gives you a self-contained binary for `mjpg-streamer` so you don't have to install it
+##To play with it, I downloaded mjpg-streamer as a snap (install snapd then `snap install mjpg-streamer`) and then connect it to the 'camera slot' (`snap connect mjpg-streamer camera`) to allow it to have permission to access the camera device. That connection only seemed to work for user 1000. Didn't bother any further. Not sure I like snaps!
+##When you use mjpg-streamer the stream URL is `http://&lt;your IP&gt;:&lt;port specified in -p on command line&gt;?action=stream` and the snapshot URL is the same with `snapshot` instead of `stream`
+##I did try unsuccessfully to use vlc as the streamer</pre>
 </div>
 <div changecount="8" created="20180901153300000" creator="Peter" modified="20181017120200000" modifier="Peter" title="Set up RPi from scratch" type="text/x-tiddlywiki">
 <pre>#Download Raspbian sketch lite from https://www.raspberrypi.org/downloads/raspbian/
@@ -14622,6 +15071,284 @@ git push --set-upstream origin master
 </div>
 <div changecount="1" created="20141125180700000" creator="Peter" modifier="Peter" title="Setting kdenlive menu fonts size" type="text/x-tiddlywiki">
 <pre>Installing kdenlive has by default very small fonts for the menu bar and other labels. The xfce settings have no effect. To fix this install systemsettings and run it from a terminal (it doesn't seem to work launching it from the xfce settings panel even though it's there). Adjust the fonts, restart kdenlive and all should be well.</pre>
+</div>
+<div created="20240107221405155" creator="peterthevicar" modified="20240109225304956" modifier="peterthevicar" tags="" title="Setting timers on SunSynk inverter from Home Assistant">
+<pre>Install pyscript and create a file along these lines:
+
+```
+import requests
+import datetime
+import json
+
+_bearer_token = None
+def _get_bearer_token():
+    jsn = """{
+    "areaCode": "sunsynk",
+    "client_id": "csp-web",
+    "grant_type": "password",
+    "password": "xxxx",
+    "source": "sunsynk",
+    "username": "xxx@xxx.com"
+    }"""
+
+    headers = {'accept': 'application/json', 'content-type': 'application/json'}
+    r = task.executor(requests.post, 'https://api.sunsynk.net/oauth/token', data=jsn, headers=headers)
+
+    response_dict = r.json()
+    global _bearer_token
+    _bearer_token = response_dict['data']['access_token']
+
+def _get_current_inverter_state():
+    url = 'https://api.sunsynk.net/api/v1/common/setting/2212052408/read'
+    headers = {'User-Agent': "Mozilla/5.0(Windows NT 10.0; Win64; x64; rv: 120.0) Gecko/20100101 Firefox/120.0",
+               'Accept': "application/json",
+               'Accept-Language': "en-US, en; q=0.5",
+               'Accept-Encoding': "gzip, deflate, br",
+               'Content-Type': "application/json;charset=UTF-8",
+               'Authorization': "Bearer " + _bearer_token,
+               'Origin': "https://setting.inteless.com",
+               'Connection': "keep-alive",
+               'Referer': "https://setting.inteless.com/",
+               'Sec-Fetch-Dest': "empty",
+               'Sec-Fetch-Mode': "cors",
+               'Sec-Fetch-Site': "same-site",
+               'TE': "trailers"
+               }
+
+    r = task.executor(requests.get, url, headers=headers)
+    return r.json()['data']
+
+@service
+def set_inverter_charge_times(inverter_charge_times=[]):
+    
+    # Need a bearer token to authorise the setting of inverter parameters
+    _get_bearer_token()
+
+    # Set up a dictionary for all the timer settings
+    request_dict = {}
+    for charge_slot in range(3):
+        tn = str(charge_slot*2 + 1) # charge slot 0 goes from timer 1 to timer 2 and so on
+        try:
+            st = inverter_charge_times[charge_slot]
+            start_time = f"{st:%H:%M}"
+            end_time = f"{st + datetime.timedelta(minutes=30):%H:%M}"
+            charge_enable = 1
+            soc = 100
+        except IndexError: # Means no further slots specified so switch off
+            start_time = "24:00"
+            end_time = start_time
+            charge_enable = 0
+            soc = 20
+
+        request_dict["time"+tn+"on"] = charge_enable # Whether to charge
+        request_dict["sellTime"+tn] = start_time # Time slot begins
+        request_dict["cap"+tn] = soc # SOC to aim for
+        request_dict["genTime"+tn+"on"] = 0 # Need to spcify this for the request to be accepted
+        # Now the end of the slot (and start of the next)
+        tn = str(charge_slot*2 + 2)
+        request_dict["time"+tn+"on"] = 0
+        request_dict["sellTime"+tn] = end_time
+        request_dict["cap"+tn] = 20
+        request_dict["genTime"+tn+"on"] = 0
+
+
+    url = 'https://api.sunsynk.net/api/v1/common/setting/2212052408/set'
+    payload = json.dumps(request_dict)
+ 
+    headers = {'User-Agent': "Mozilla/5.0(Windows NT 10.0; Win64; x64; rv: 120.0) Gecko/20100101 Firefox/120.0",
+               'Accept': "application/json",
+               'Accept-Language': "en-GB,en;q=0.5",
+               'Accept-Encoding': "gzip, deflate, br",
+               'Content-Type': "application/json;charset=UTF-8",
+               'Authorization': "Bearer " + _bearer_token,
+               'Origin': "https://setting.inteless.com",
+               'Connection': "keep-alive",
+               'Referer': "https://setting.inteless.com/",
+               'Sec-Fetch-Dest': "empty",
+               'Sec-Fetch-Mode': "cors",
+               'Sec-Fetch-Site': "cross-site",
+               'TE': "trailers"
+               }
+    r = task.executor(requests.post, url, data=payload, headers=headers)
+    state.set("pyscript.simple_sunsynk")
+    state.setattr("pyscript.simple_sunsynk.response", f"Response: {r.json()['msg']} at {datetime.datetime.now():%H:%M:%S}")
+```</pre>
+</div>
+<div created="20240101154405279" creator="peterthevicar" modified="20240103212448172" modifier="peterthevicar" tags="" title="Setting up HAOS for Home Assistant">
+<pre>!!!Initial installation
+
+#Download the image from https://www.home-assistant.io/installation/generic-x86-64/ onto a Ventoy persistent storage area
+#Boot from Ventoy into Ubuntu
+#Run the Disks app
+#From the overflow menu choose restore disk image and write the image from the persistent area to the hard drive
+#Restart
+#Configure ~WiFi using:
+##`login`
+##`nmcli device wifi connect “YOUR_SSID” password “YOUR_WIFI_PASSWORD”`
+#Find the IP address of the HA server: `ip addr`
+#Connect to the server from another PC by pointing a browser at `http://192.168.xx.xx:8123`
+
+!!!Once you're connected, set things up:
+
+#Enter user name and password
+#Enter home location
+#Go to user settings and enable advanced mode
+#Install any updates and restart HA
+#Go to Settings/Add-ons and install Terminal&amp;SSH
+##Check all the options, especially show in sidebar
+##Open WEBIF, type ` cd /config; wget -O - https://get.hacs.xyz | bash -`
+#Restart HA
+#Settings/Integrations, install HACS
+##Log into github to authorize
+#Make a full backup
+
+!!!Add in Octopus:
+
+#In HACS, install Home Assistant Octopus Energy
+##Restart HA
+##Settings/Integrations, add Octopus Energy and configure it
+#Make a full backup
+
+!!!Put in Agile pricing card:
+
+#Overview, Edit Dashboard, take control
+#Add a markdown card
+```
+{%set d_soc = 3.5 %}
+Assume SOC falls by {{d_soc}}% per slot
+{%set ns = namespace(soc=10, slot0=true) %}
+{%set ns.soc = states.sensor.sunsynk_battery_soc.state | float %}
+{%set now = now() %}
+{{as_timestamp(now) | timestamp_custom("%H:%M")}} ({{ns.soc}}%): {{"%0.2f" | format(float(states.sensor.octopus_energy_electricity_20m1084206_2000008459536_current_rate.state) * 100)}}p
+{%for day in ["current", "next"] %}
+  {%set r = state_attr('event.octopus_energy_electricity_20m1084206_2000008459536_'+day+'_day_rates', 'rates') %}
+  {%for x in r if x.start &gt; now - timedelta(minutes = 30) -%}
+    {%if ns.slot0 %}
+      {%set ns.slot0 = false %}
+      {%set ns.soc = ns.soc - d_soc * (1 - ((as_timestamp(now) - as_timestamp(x.start))/60/30)) %}
+    {%else %}
+      {{-as_timestamp(x.start) | timestamp_custom("%H:%M")}} ({{"%0.1f" | format(ns.soc)}}%): {{"%0.2f" | format(x.value_inc_vat * 100)}}{{"p" -}}
+      {%set ns.soc = ns.soc - d_soc -%}
+    {%endif %}
+  {%endfor %}
+  ---
+{%endfor %}
+```
+
+!!!Add in sunsynk stuff from https://github.com/gdwaterworth/Home-Assistant---E-Linter-Logger---Sunsynk
+
+#Install node red
+##Settings/Add-ons, node red, install
+##Tick all options
+##Configuration: disable SSL
+##Start node-red
+##Menu/Manage Pallettes/Install node_red_contrib_hass
+#Download latest code from github
+#Settings/Add-ons install file editor, tick all options, start
+#Use file editor to put in the config stuff
+#Use file editor to put in secrets and fill in username, password
+#get a long-term credential from profile and put into configuration node for localhost
+#In node-red: Import the two flows and deploy
+#Complete the secrets.yaml from the global config data as described in the file
+#Restart HA
+
+!!!Other things
+
+*Install Power Flow Card Plus card from HACS
+*Set up integration helper for SOC changes, then a divide by two helper to get per slot measurement
+*HAC install Tapo integration
+*Set up automations for car charge on and off
+
+!!!Node red
+
+Function node to access current state:
+
+```
+msg.payload = { "event_type": "state_changed", "entity_id": "input_boolean.sunsynk_time1on"}
+msg.payload.event = {"entity_id":"input_boolean.sunsynk_time1on"};
+msg.payload.event.new_state = {"state": "true"};
+return msg;
+```
+
+ </pre>
+</div>
+<div created="20231201215937433" creator="peterthevicar" modified="20231204173840689" modifier="peterthevicar" tags="" title="Setup Kubuntu">
+<pre>*Install Kubuntu
+*Partition disk to make room for Data partition
+
+*UI tweaks
+**Panel to LHS, width 68
+**replace default launcher with "Application Menu" widget (gives "recently used" section)
+**add memory, disk activity, CPU usage, network activity widgets
+**Set up widget monitors for CPU, memory, HDD activity, network speed set to horizontal bars
+**Get new widget "Command Output"
+***configure to execute `top-mon.sh 2 9` with 9pt ~DejaVu Sans font
+
+*File system
+**Make mount directories in `/mnt`, i.e. `cd /mnt; mkdir Backup Data nasdata nasmedia`
+**Copy over the Data partition, /Links
+**Open a copy of /etc/fstab to edit new fstab and add in Data and network drives
+**Network mounts look like this: `192.168.0.20:/media/hdd	 /mnt/nasmedia nfs	rw,_netdev,nofail,nolock		0		2`
+**Need to install nfs-common to mount nfs shares
+**`mount -av`
+
+*Install extras:
+**sudo apt install audacity autokey-gtk backintime-qt boomaga chromium-browser evince freecad gimp gimp-plugin-saveforweb gnome-disk-utility hplip inkscape kompare krename megasync musescore ocrfeeder pdfarranger posterazor prusa-slicer qalculate-gtk recoll simple-scan thunderbird transmission-qt
+***boomaga does pdf booklet printing rather well
+***xournal allows addition of images, e.g. signatures, to pdf documents
+***gnome-disk-utility is good for benchmarking disks if required
+**Set up things
+***qalculate set larger fonts, special application settings 80% opacity, always on top
+***[hplip for HP Device Manager, launch it and connect to printer]?
+**Install non-repository extras if wanted:
+*** avidemux (video editing) `sudo add-apt-repository ppa:xtradeb/apps`
+***ventoy (multi-distro usb sticks) go to https://www.ventoy.net/en/download.html
+***realvnc-vnc-viewer go to https://www.realvnc.com/en/connect/download/viewer/linux/
+***Chrome (have chromium anyway)  Google it!
+***Zoom go to https://zoom.us/download
+
+*Copy across:
+**`/usr/local/bin`
+**/usr/share/applications/pdfbooklet.desktop
+**`~/.config/autokey` (Autokey should work without further ado)
+**`.local/share/fonts` (symlinks so need to use ext4 or archive to preserve
+**`~/.config/libreoffice/4/user` (MAY need to start ~LibreOffice and edit a macro to get all the macros recognised, then choose their icons)
+**`~/.recoll` (Then set `Preferences/Indexing Schedule` for the local index. To set up the external indexes' schedules use `recoll -c &lt;recoll dir&gt;` for each (Data, nasdata) to set up)
+**`/root/.config/backintime` (then test backintime and change all the schedules to get them written into cron files)
+**`~/Desktop/Reset-monitor.desktop`
+
+*Set up `megasync` to sync `sync-box` (nothing else till backup is sorted). Wait for sync to finish then:
+**`ln -s ~/MEGA/sync-box/3D-printing/FreeCAD-config/FreeCAD ~/.config` and try ~FreeCAD
+**`ln -s ~/MEGA/sync-box/3D-printing/PrusaSlicer-config/PrusaSlicer ~/.config` and try Prusaslicer
+
+*Set up firefox:
+**On old system:
+***Export tabs (using Tab Session Manager)
+***Export bookmarks (as html)
+**On new system:
+***Set to restart where it left off, ask about downloads, set up pdf etc to ask, other files ask, email to gmail
+***Add "Tree Style Tabs" and "Tab Session Manager"
+***Open Session Manager settings and tick Tree Style Tabs support
+***Close firefox and reopen to make sure TST comes up by default
+***If sidebar is dark, go into add-ons and themes, select themes, then the theme called 'Light'
+***Import session from previous system using TSM
+***Add "Auto Tab Discard"
+***Add password manager browser addon (and pin from jigsaw piece to toolbar?)
+***Disable tab bar:
+****In `about:config` search for  toolkit.legacyUserProfileCustomizations.stylesheets and enable
+****copy `userChrome.css` from old system `.mozilla/firefoz/&lt;default&gt;/chrome` or type it in again. Must be in chrome subdir:
+
+```
+/* Hide Tab Bar to make way for Tree Style Tab */
+#TabsToolbar {
+	visibility: collapse;
+}
+```
+
+*Set up password manager
+**Set UI option to minimise and exit to tray
+**Enable browser integration
+**In browser click on add-on icon to connect</pre>
 </div>
 <div changecount="3" created="20121118211200000" creator="Peter" modified="20121118224600000" modifier="Peter" title="SiteSubtitle" type="text/x-tiddlywiki">
 <pre>[[TiddlySpot|http://tiddlyspot.com]]&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;&lt;newTiddler&gt;&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;&lt;newJournal&gt;&gt;</pre>
@@ -14871,6 +15598,17 @@ chkSaveBackups: true</pre>
 |Caption `|Caption|c`|c
 
 """*"""Default vertical alignment is centred</pre>
+</div>
+<div created="20240124092011297" creator="peterthevicar" modified="20240124092322352" modifier="peterthevicar" tags="" title="Tanscribing an audio file for free">
+<pre>There's a snap for the Whisper speech to text program which is easy to use in Ubuntu. Usual snap crap about not being able to access directories away from `home`.
+https://snapcraft.io/install/whisper-gael/kubuntu
+
+```
+sudo snap install whisper-gael
+whisper-gael.whisper --help
+mkdir whisper
+whisper-gael.whisper --model small --language en --output_format txt --task transcribe --output_dir whisper Monologue.ogg 
+```</pre>
 </div>
 <div changecount="3" created="20170127195900000" creator="Peter" modified="20170127200100000" modifier="Peter" title="Testing an older version of LibreOffice alongside the current one" type="text/x-tiddlywiki">
 <pre>#Download debs from http://downloadarchive.documentfoundation.org/libreoffice/old
@@ -15930,6 +16668,25 @@ wifi.scan-rand-mac-address=no
 <pre>`
 watch -n 1 cat /proc/net/wireless
 `</pre>
+</div>
+<div created="20240122185741234" creator="peterthevicar" modified="20240122205552039" modifier="peterthevicar" tags="" title="Working with Jupyter and Pyscript">
+<pre>*Install Jupyter in a virtual environment:
+
+```
+mkdir jupyter
+python3 -m venv jupyter
+jupyter/bin/pip install jupyter
+jupyter/bin/pip install hass_pyscript_kernel
+jupyter/bin/jupyter pyscript install
+installed new pyscript kernel in ..../share/jupyter/kernels/pyscript
+you will need to update the settings in ..../share/jupyter/kernels/pyscript/pyscript.conf
+```
+
+*Get a long-lived token from HASS
+*Update the conf file with HASS IP, port, token etc
+*Check it can see the pyscript kernel `jupyter/bin/jupyter kernelspec list`
+*Check info you've given is registered correctly `jupyter/bin/jupyter pyscript info`
+*Run jupyter `jupyter/bin/jupyter mnotebook` - opens a new tab in your browser with web interface to jupyter</pre>
 </div>
 <div changecount="2" created="20130707212600000" creator="Peter" modified="20130707213700000" modifier="Peter" title="X events, keycodes and Caps Lock" type="text/x-tiddlywiki">
 <pre>run xev and have fun!

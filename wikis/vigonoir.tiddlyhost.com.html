@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>Vigo Noir</title>  <meta name="version" content="Warbler_1.7.1"> <meta name="application-name" content="Feather Wiki"> <style id="s">html{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif}html,button,input,select,option,textarea{font-size:12pt;background:#fff;color:#000}html,body{margin:0;padding:0}:focus{outline:2px solid #000}*{box-sizing:border-box;position:relative;max-width:100vw}*+*,p,.ed-content>*:not(:first-child){margin:.5rem 0}main>*{padding:1rem 1.5rem 2rem}#g:not([open]),.sb .n{display:none}input,select,textarea{padding:.5rem;tab-size:4}h1,h2,h3,h4,h5,h6,.t{font-weight:700;margin:.5rem 0}h1{font-size:1.8rem}h2{font-size:1.65rem}h3,.t{font-size:1.5rem}h4{font-size:1.35rem}h5{font-size:1.2rem}h6{font-size:1.05rem}.np{max-width:8rem}button,summary:is(.np,.b){text-align:center;color:#fff;padding:5px 12px;background-color:#65a;border:0;border-radius:1rem;z-index:2}a,button,summary,.noti{cursor:pointer}a{text-decoration:none;color:#65a}:is(a,button):is(:hover,:active,:visited){opacity:.8}a.e{color:red}a.l{visibility:hidden}:is(h1,h2,h3,h4,h5,h6):hover a.l,a.l:is(:focus,:active){visibility:visible}a:is([target="_blank"],.e):after{font-size:70%;vertical-align:top;margin-left:3px}a[target=_blank]:after{content:"\29c9"}a.e:after{content:"!"}nav ul{list-style:none}ul,ol{padding:0 0 0 1rem}nav li summary{text-indent:-1rem}label{display:block}blockquote{margin-left:2rem;padding-left:1rem;border-left:3px solid #888}.uc pre{font-size:80%;padding:1em;border-radius:6px;background-color:#eee;line-height:1.5;overflow-x:auto}abbr[title]{cursor:help}.sb{background:#ddd}.w1,.w34,.w12,.w14,.r,main{width:100%}.tabs>*{border:2px solid #65A;border-bottom:0;border-radius:.5rem .5rem 0 0;margin:0}.a{background:#87C;color:#fff}@media (min-width:50rem){.r,main{display:table;border-spacing:1rem 0}.r.ns,main{border-spacing:0}.c,main>*{display:table-cell!important;vertical-align:top}.sb{width:20%;min-width:200px;max-width:500px;height:100vh;overflow-y:auto}.sb .n{display:unset}.sbt{display:none}.w34{width:75%}.w12{width:50%}.w13{width:33%}.w14{width:25%}body>footer{position:absolute;inset:auto 1.5rem 0}form,.mw,#g,input,select,textarea,.ed{max-width:1000px}.tr{text-align:right}.fr{float:right}}.sr{visibility:hidden;height:0;width:0;position:absolute}.tr:not(.ml){text-align:right}.fr:not(.ml){float:right}.chg,.del{background:red}.del{opacity:.8}.h,.del{font-size:.8rem}.db{display:block}.il{display:inline}.ib{display:inline-block}.at{vertical-align:top}.pb{margin:0 0 1.5rem!important}.uc a{text-decoration:underline}.notis{position:fixed;inset:1vw 40vw auto}.noti{padding:1em;box-shadow:3px 3px 5px #555}#g,input,select,textarea,.ed,.noti{border:1px solid #000;border-radius:3px}.ed *{margin:unset}.ed-content,textarea,#g,.g{width:100%;overflow-y:auto;padding:10px;margin:0 auto}.ed-content,textarea{height:50vh;min-height:300px;max-height:600px}.ed-content nowiki{background:#EEE}:is(.ed-content,textarea,.uc) *{max-width:100%}.ed-actionbar{border-bottom:1px solid #000}.ed-button{background:transparent;color:#000;vertical-align:middle}.ed-selected{background:#ddd} </style> <style id="c">html, select, option, textarea { font-size: 18px; background: #313131; color: #EFEFEF; line-height: 1.53em; font-family: monospace; word-break: break-word; hyphens: auto; text-shadow: 1px 1px 2px #000000;}
+
+main section article.uc { text-align: justify; }
+
+html { margin-right: auto; max-width: 1200px; }
+
+select { max-width: 300px !important; border: 2px solid #737373 !important; }
+
+blockquote { color: #BABABA; font-size: 0.83em; margin-top: 1.1em; margin-bottom: 1.1em; }
+
+mark { background: #737373; color: #EFEFEF; }
+
+p { margin-bottom: 23px; }
+
+.sb { background: #000000; font-size: 0.89em; min-width: 300px; text-align: left !important; }
+
+.pb { color: #BABABA; }
+
+hr { margin-top: 1.7em; margin-bottom: 1.7em; border: 0; border-top: 1px dotted #FFBB33; }
+
+ul, ol { line-height: 1.41em; margin-bottom: 23px; }
+
+ol {margin-left: 23px; }
+
+input, textarea { font-size: 1em; background: #313131; color: #EFEFEF; border: 2px solid #737373; }
+
+h1 { font-size: 2.1em !important; line-height: 1.31em !important; }
+h2 { font-size: 1.5em !important; line-height: 1.31em !important; }
+h3 { font-size: 1.3em !important; line-height: 1.31em !important; }
+h4 { font-size: 1.1em !important; line-height: 1.31em !important; }
+h5, h6 { font-size: 1.0em !important; line-height: 1.31em !important; }
+h1 { color: #EFEFEF !important; text-decoration-line: underline; font-weight: 999 !important; text-shadow: 3px 3px 7px #000000; text-align: left !important; }
+h2, h3, h4, h5, h6 { color: #EFEFEF; font-weight: 999 !important; text-shadow: 2px 2px 5px #000000; background: #535353; padding: 0.33em 0.45em; text-align: left !important; }
+.t { font-size: 2.1em; color: #FFBB33 !important; font-weight: 999 !important; background: #000000 !important; }
+
+.tabs>* { border: 3px solid #FFBB33; margin-right: -7px; }
+.tabs .a { border: 3px solid #FFBB33; background: #000000; color: #FFBB33; text-shadow: 1px 1px 5px #FFBB33; }
+button, summary:is(.np,.b) { font-size: 0.89em; font-weight: bold; color: #000000; text-shadow: 1px 1px 5px #000000; background-color: #FFBB33; }
+button:active, summary:active { background: #000000 !important; }
+button:not(.a):hover, summary:is(.np,.b):hover { color: #FFBB33; background: #737373; }
+
+a, .a { color: #FFBB33; text-decoration: 2px underline; }
+a:visited { color: #FFBB33; background: #737373; } 
+a:link { color: #FFBB33; }
+a:active, a:hover { text-decoration-line: underline; text-decoration-style: double; color: #000000; background: #FFBB33; }
+
+img { display: block; border: 2px solid #737373; border-radius: 2px; margin-left: auto; margin-right: auto; margin-top: 3px; margin-bottom: 3px; box-shadow: #000000 7px 7px; }
+
+time { font-size: 0.77em; color: #BABABA; text-shadow: 1px 1px 3px #000000; }
+
+.fr { font-size: 0.67em; }
+
+.c { color: #BABABA; text-shadow: 1px 1px 3px #000000; }</style> <script id="p" type="application/json">{"A":"Vigo Noir","B":"","K":[{"C":"[M}8pw{_y","A":"Introducción","D":"introducción","E":1696004595159,"F":"![Vigo al anochecer](https://i.postimg.cc/ZR8dq70y/vigo.jpg) \n\n<big><center>**Descubre la ciudad.<br />Resuelve cada caso. <br />Alcanza la redención.**</center></big>\n\n---\n\nUna ciudad hostil y atestada de crímenes. Personajes sin escrúpulos, desequilibrados, asesinos, mercenarios o ricachones de dudosa reputación campan a sus anchas. El lugar más crudo que puedas imaginar. Una comisaría de policía corrupta y en plena decadencia...\n\nY un pequeño grupo de detectives que tendrán que resolver, con poca ayuda, casos importantes. Casos que marcarán sus vidas y por los que serán recordados. Detectives para los que la ciudad solo tiene odio, violencia y perdición.  \n\n---\n\n## Secciones\n\n- [[Introducción]]\n- [[Personajes]]\n- [[Localizaciones]]\n- [[Reglas]]\n\n","G":"md","H":1702877894222,"I":"ambientación,introducción"},{"C":"}{}Aq\"P{.","A":"Decálogo del Noir","D":"decálogo_del_noir","E":1702755147804,"I":"ambientación,introducción","J":"[M}8pw{_y","G":"md","H":1702877333868,"F":"Existen una serie de características básicas sobre las que se asienta gran parte\ndel género policíaco y noir que pretende emular este juego. Son también un conjunto de recomendaciones para jugar esta Balada triste de la ciudad:\n\n1. La ley y la moral nunca siguen el mismo camino.\n2. Corrupción en las instituciones.\n3. Violencia y amenaza de muerte continua.\n4. Rechazo a la ley.\n5. Personajes extremos y cínicos.\n6. Espacios urbanos y suburbiales.\n7. Historias trágicas y sucias.\n8. Evolución y adaptación narrativa.\n9. Oscuridad, lluvia y suciedad.\n10. El paso del tiempo impertérrito."},{"C":"Y`@*\\l8XQ","A":"Manifiesto de la Ciudad","D":"manifiesto_de_la_ciudad","E":1702823522642,"F":"> _**Leedlo antes de comenzar cualquier partida.**_\n\nLa ciudad es un lugar triste, lúgubre y decadente. Una lluvia incesante cala vuestros trajes y vuestros corazones, al tiempo que una perenne neblina parece querer ocultar el mal que se ha ido gestando durante años de corrupción.\n\nEn la ciudad, no existe la esperanza para las buenas personas. Todo te pide y nada te ofrece. Es como la droga. El mundo sabe que es horrible, pero una vez dentro no puedes salir de ella sin ayuda. No os equivoquéis, nadie va a ayudaros dentro de la ciudad.\n\nLlegasteis a la comisaría de este lugar hace algún tiempo con la idea de pasar unos meses, para luego marcharos todo lo lejos que vuestros pies os permitieran. Sin embargo, una serie de malas decisiones os dejaron atrapados en esta ciudad repleta de crímenes y oscuridad.\n\nAhora ya formáis parte de ella, y solo podréis recuperar vuestro honor a través de la redención. Si es que aún queda algo que recuperar.\n","I":"ambientación,introducción","J":"[M}8pw{_y","G":"md","H":1702877341804},{"C":"39bx/E\"dV","A":"Personajes","D":"personajes","E":1702126888125,"G":"md","H":1703008957796,"I":"pj,pnj","F":"## PJs\n\n- Inspectora XXX\n\n## PNJs"},{"C":"DWv04X*+M","A":"Localizaciones","D":"localizaciones","E":1702113126945,"G":"md","H":1702877392124,"F":"La Ciudad se divide en **cuatro zonas**, cada una de ellas con varias localizaciones de relevancia.\n\n![Zonas de Vigo](https://i.postimg.cc/sygby9Rs/Mapa-Vigo.png)","I":"localización"},{"C":"~i7xZN^@@","A":"Zona Este","D":"zona_este","E":1702113867338,"J":"DWv04X*+M","G":"md","H":1702877403476,"F":"#### Características relevantes:\n\n- \n- \n\n#### Controlada por:\n\n- \n","I":"localización,zona este"},{"C":"P^Em;S#]v","A":"Zona Norte","D":"zona_norte","E":1702113776987,"J":"DWv04X*+M","G":"md","H":1702877414188,"F":"#### Características relevantes:\n\n- \n- \n\n#### Controlada por:\n\n- \n","I":"localización,zona norte"},{"C":"Has%FQaky","A":"Zona Oeste","D":"zona_oeste","E":1702113884378,"J":"DWv04X*+M","G":"md","H":1702877423460,"F":"#### Características relevantes:\n\n- \n- \n\n#### Controlada por:\n\n- \n","I":"localización,zona oeste"},{"C":"[+o2+aVm6","A":"Zona Sur","D":"zona_sur","E":1702113859394,"J":"DWv04X*+M","G":"md","H":1702877435572,"F":"#### Características relevantes:\n\n- \n- \n\n#### Controlada por:\n\n- \n","I":"localización,zona sur"},{"C":"FJ84aY8&n","A":"Reglas","D":"reglas","E":1702058683398,"I":"reglamento","G":"md","H":1702058691200},{"C":"6^ohB6^md","A":"Comenzar a Jugar","D":"comenzar_jugar","E":1696005057009,"F":"Pasos a seguir guiados por el jugador que interpreta a la Ciudad:\n\n1. [[La Ciudad|construid_ciudad]]\n2. [[Los Detectives|cread_detectives_protagonistas]]\n3. [[Las Relaciones|cread_relaciones_detectives]]\n4. [[El Primer Caso|comenzad_primer_caso]]\n\n","I":"reglamento","G":"md","H":1702127762553,"J":"FJ84aY8&n"},{"C":"l3gH\\%|*7","A":"1. Construid la Ciudad","D":"construid_ciudad","E":1701971855918,"F":"1. **¿En qué contexto (año, lugar, temática) se encuentra la ciudad? ¿Qué nombre tiene la ciudad?**\n2. **¿Cómo de oscura y lúgubre es la ciudad?** En toda ciudad existen 4 zonas (norte, sur, este y oeste). Indicad (entre todos los jugadores) con qué nombre es conocida cada zona, definidla con 2 características y designad al grupo criminal (o persona) que la controla\n3. **¿Qué localizaciones representativas tiene la ciudad y en qué zona se enmarcan?**\n  - Localizaciones comunes siempre presentes (a ubicar en las 4 zonas): \n    - [[afueras]]\n    - [[anticuario]]\n    - [[biblioteca]]\n    - [[cementerio]]\n    - [[comisaría]] \n    - cuatro bloques de viviendas ([[E|viviendas_zona_este]] / [[N|viviendas_zona_norte]] / [[O|viviendas_zona_oeste]] / [[S|viviendas_zona_sur]])\n    - [[hostal]]\n    - [[iglesia]] local\n    - [[morgue]]\n    - pequeño [[hospital]]\n    - [[periódico]] local\n    - [[psiquiátrico]]\n    - [[suburbio]]\n    - [[taberna]] \n  - Posteriormente, cread 4 localizaciones extras (1 en cada zona).\n    - **E:** [[ETEA]]\n    - **N:** [[Castro de Vigo]]\n    - **S:** [[Universidad|universidad]]\n    - **O:** [[Oceanográfico|oceanográfico]]\n\n> Utilizad una tarjeta para cada zona y localización y colocadlas en su lugar correspondiente, conformando el mapa de la ciudad.\n","I":"reglamento","G":"md","H":1702877995502,"J":"6^ohB6^md"},{"C":"i,i1]S<F9","A":"2. Cread a los Detectives Protagonistas","D":"cread_detectives_protagonistas","E":1701971934093,"F":"1. Preséntalos de manera cinematográfica, sitúalos dentro de la comisaría esperando su primer caso (siempre es así en la primera partida después de construir la ciudad). Uno a uno, los jugadores tendrán que contestar: **¿Quién es? ¿Qué idea de personaje tiene? ¿Cuáles son sus trasfondos? ¿Cómo llegó a ser detective dentro de la comisaría?**\n2. **¿Qué 2 objetos lleva siempre consigo \"X\"?** ¿Por qué son importantes para él y lo definen como detective y persona? \n3. **¿A qué se encomienda \"X\" para mantener la calma dentro de la ciudad (personas y lugares)?** Ese lugar podrá ser una localización ya existente o crear una nueva. Del mismo modo, tras definir a la persona, tendrán que ubicarla en una localización ya creada o nueva.\n4. **¿Cuál es la motivación de \"X\" para ejercer de detective de policía dentro de esta maldita ciudad?**\n5. **¿Qué triste historia has escuchado de \"Y\" (un compañero)? ¿Crees que es cierta?**\n\n","I":"reglamento","G":"md","H":1702878003030,"J":"6^ohB6^md"},{"C":"$(!j>@)*@","A":"3. Cread las Relaciones entre los Detectives","D":"cread_relaciones_detectives","E":1701971986805,"F":"1. ¿Cuál fue el primer caso que compartieron \"X\" y \"Y\"?\n2. ¿Cuándo fue la primera vez que \"X\" y \"Y\" coincidieron en la comisaría?\n3. ¿Cuándo supo \"X\" que \"Y\" era un tipo en quien confiar?\n4. ¿Cuándo demostró \"X\" a \"Y\" que era alguien incorruptible?\n5. ¿Qué quiere \"X\" de \"Y\" y por qué motivo es complicado que suceda?\n6. ¿Quién es el comisario?\n7. ¿Por qué desconfiáis de vuestro comisario y compañeros de la comisaría?\n\n","I":"reglamento","G":"md","H":1702878009332,"J":"6^ohB6^md"},{"C":"R~7q^{48a","A":"4. Comenzad con el Primer caso y recuerda","D":"comenzad_primer_caso","E":1701972084487,"F":"1. **La ciudad se descubre, el caso se resuelve.** Esta es la premisa básica. Cada culpable, cada contacto y cada PNJ tiene una vida más allá del caso que están tratando de esclarecer los detectives protagonistas.\n2. La ciudad es un gran **«cajón de arena»**.\n3. Ofrece **tratos a los detectives** protagonistas cuando más lo necesiten a cambio de estados con la ciudad.\n4. Genera **[[favores]]** vinculados a los encuentros aleatorios o a PNJ.\n5. Genera **encuentros aleatorios** cuando visiten [[localizaciones]].\n6. **Al terminar** cada caso y antes de comenzar el siguiente, haz las **preguntas de epílogos e interludios**. Y otorga los **puntos de [[reconocimiento]]**.","I":"reglamento","G":"md","H":1702877985974,"J":"6^ohB6^md"},{"C":"\\rRZuFZ]h","A":"Cigarrillos","D":"cigarrillos","E":1702059043399,"F":"Los cigarrillos se pueden usar de las siguientes formas:\n\n### Conozco a un tipo que...\n\nEl detective crea un contacto. \n\nEsta persona: tendrá 1 pista (que tendrá que ser revelada con una tirada de perseguir el crimen) o podrá redireccionar a los detectives a una o varias [[localizaciones]] donde haya pistas (la Ciudad elegirá). \n\nUbicadlo en una localización.\n\n### Aquí han pasado cosas turbias»\n\nEl detective ha escuchado rumores de una localización en concreto. Antes de visitarla, contará una historia turbia de aquel lugar. De este modo, pone a sus compañeros en preaviso y les otorga un +2 en una [[tirada de riesgo|tirada_de_riesgo]] o de [[perseguir el crimen|tirada_de_perseguir_el_crimen]] (antes de la tirada y solo en una de las dos tiradas).\n\n### Una calada me da la sangre fría que necesito\n\nEl detective obtiene +2 antes de hacer una [[tirada de riesgo|tirada_de_riesgo]] o de [[perseguir el crimen|tirada_de_perseguir_el_crimen]]. Tiene que existir la opción de emular cómo saca el cigarrillo de la cajetilla y se lo fuma.","I":"reglamento","J":"FJ84aY8&n","G":"md","H":1702113477210},{"C":"k=Bq9?bM_","A":"Consecuencias","D":"consecuencias","E":1696005641889,"F":"Se aplican directamente o como elección durante un trueque.\n\n### La ciudad se revuelve:\n\n1. <mark>**El crimen se propaga:**</mark> El entorno se pone en contra de los detectives. Una traición, un estallido, violencia... _¿Qué ha sucedido y cómo el entorno se pone en su contra?_ El [[Dado del Crimen|dado_del_crimen]] aumenta en 1.\n2. <mark>**Indeseables:**</mark> Los detectives llamarán la atención de algunos indeseables que darán la voz de alarma. _¿Qué han hecho para llamar la atención?_ Aparece un grupo de enemigos.\n3. <mark>**Señalado:**</mark> Uno de los contactos de los detectives o un PNJ queda expuesto. _¿Cómo ha quedado expuesto?_ Un contacto o un PNJ muere o queda marcado gravemente a ojos de la ciudad.\n4. <mark>**Descuido:**</mark> Los detectives dejarán un rastro visible que algún indeseable descubrirá. _¿Qué imprudencia han cometido que permitirá que alguien observe sus movimientos?_ El [[tiempo de investigación|paso_del_tiempo]] en el caso se acorta (la Ciudad decide cuánto) y el culpable se aleja de ellos.\n\n### Pagar el precio:\n\n1. <mark>**En problemas:**</mark> Esto va a costar un problema personal. _¿Cómo han sufrido las consecuencias de sus actos?_ El detective o un compañero adquiere un estado personal.\n2. <mark>**La ciudad recuerda:**</mark> La ciudad no va a quitar el ojo de encima a un detective. _¿Qué deuda ha adquirido con la ciudad?_ El detective adquiere un estado con la ciudad.\n3. <mark>**Sacrificio:**</mark> Conseguir lo que se propone le va a suponer un sacrificio. _¿Cuál es el coste de sus acciones?_ La Ciudad elige: \n  - Pierde la mitad de sus [[cigarrillos]];\n  - Tendrá que [[invertir más tiempo|paso_del_tiempo]] aquí;\n  - Perderá 1 punto de [[reconocimiento]] por sus métodos.\n4. <mark>**Tu cara me suena:**</mark> Alguien conoce al ser querido o el lugar que trae paz al detective. Y no dudará en hacerle una visita para dejar un recado. _¿De qué conocía su pilar de estabilidad?_ El pilar de estabilidad aumenta en 1 su tensión.","I":"reglamento","G":"md","H":1702112885936,"J":"FJ84aY8&n"},{"C":"B:xh}fgF)","A":"Dado del Crimen","D":"dado_del_crimen","E":1702111960348,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1702112393742,"F":"El valor del dado marca la situación en que se encuentra la ciudad frente al crimen:\n\n#### [1] El departamento de policía se hace fuerte \n\nLa honradez impera sobre el crimen y, poco a poco, las extorsiones, asesinatos, trapicheos y chanchullos van reduciéndose. Solo se dan en ciertos suburbios o garitos de mala muerte por los que aún merodea algún viejo líder que sin duda vivió tiempos mejores.\n\n#### [2] Algunos polis corruptos \n\nExtorsiones en oscuros callejones. Atracos a negocios locales. Asesinatos\nal amparo de la oscuridad. El día a día de la ciudad. El crimen está presente, pero aún no se ha hecho con el control total. Para eso están los detectives de la comisaría, para mantenerlo a raya.\n\n#### [3] El crimen ya no tiene miedo a la policía\n\nY eso es un problema. La mayoría de los policías de la comisaría son corruptos, se perpetran asesinatos a plena luz del día y las bandas criminales exigen impuestos a los comercios a cambio de su protección.\n\n#### [4] La ciudad aún no está perdida, pero la amargura, la decadencia y la oscuridad campan a sus anchas. \n\n¿Será el departamento de policía capaz de detenerla?"},{"C":" J-UeLa}2","A":"Favores","D":"favores","E":1702112913118,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1702112942072,"F":"**Deudas que PNJ o grupos de la ciudad contraen con los detectives** si estos le han prestado su ayuda. \n\nEse favor puede ser cobrado cuando se cumplan las condiciones narrativas, y se traduce en un éxito directo en una tirada."},{"C":"[scP!RLP;","A":"Paso del Tiempo","D":"paso_del_tiempo","E":1702112592038,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1702877470627,"F":"Los casos tienen un **tiempo límite** para ser resueltos: desde los 3 días (caso corto) hasta los 6 días (caso largo) completos de investigación.\n\nCada día de investigación se divide en 3 franjas:\n\n- Mañana, tarde y noche. \n\nVisitar una localización emula el paso del tiempo de una franja.\n\nLas franjas habituales para visitar localizaciones serán la mañana y la tarde. Por la noche la ciudad es mucho más dura (los detectives que quieran investigar de noche deben fumar 1 [[cigarrillo|cigarrillos]] para espabilarse y tendrán un [[penalizador]] en las tiradas).\n\nSi descansan por la noche, recuperan 1 [[cigarrillo|cigarrillos]].\n"},{"C":",]p5jPfa1","A":"Penalizador","D":"penalizador","E":1702112721568,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1702112817151,"F":"En las situaciones en que los protagonistas se encuentren en desventaja, **añade 1d10 a la tirada y cuenta el dado de menor valor.** \n\nRecuerda que durante la **noche** todas las tiradas son con penalizador."},{"C":"z4snU4P\">","A":"Pilares de Estabilidad","D":"pilares_de_estabilidad","E":1702113062638,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1702113108065,"F":"Los protagonistas tienen la posibilidad de **«Sobreexponerse»**: \n\n- Aumenta 1 punto de tensión en uno de sus pilares de estabilidad para volver a lanzar 1d10 después de una tirada.\n\n"},{"C":"T]+0uH9=>","A":"Pistas e Información","D":"pistas_e_información","E":1702113223583,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1703943018223,"F":"Las **pistas** se ofrecerán a los detectives protagonistas después de realizar una tirada de perseguir el crimen. Con una doble función:\n\n- Ofrecen información para desvelar la verdad que oculta el caso y cada 3 pistas acumuladas.\n- Se reduce en 1 el valor del dado del crimen.\n\n"},{"C":"4eZ8\\-;*c","A":"Realizar una Detención","D":"realizar_una_detención","E":1703942408352,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1703942481219,"F":"Para **hacer una acusación** hay que haber conseguido, como mínimo, 6 pistas. Esto sucede justo antes de proceder a la detención y hay dar respuesta a estas tres preguntas:\n\n- ¿A quién se va a detener?\n- ¿De qué delito se le acusa?\n- ¿Por qué cometió este delito?\n\n\nContestado únicamente el **Quién** y el **Qué** podrán detener a alguien y finalizar el caso. \n\nAdemás responder correctamente estas preguntas otorgará puntos de [[Reconocimiento]]"},{"C":"E^Z,qx:Pe","A":"Reconocimiento","D":"reconocimiento","E":1702111878204,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1703943041565,"F":"Se puede usar de las siguientes formas:\n\n#### [1] Durante el transcurso de un caso: \n\nPuede gastar 1 punto de reconocimiento a cambio de conseguir un +2 antes de una [[tirada de riesgo]] o de una [[tirada de perseguir el crimen]], esta acción se denomina: **«Aquí yo soy la ley»**.\n\n#### [2] Entre casos (interludios) y gastando 1 punto de reconocimiento, puede elegir:\n\n- Disminuir en 1 la tensión de un [[pilar de estabilidad|pilares_de_estabilidad]] (narrar cómo sucede).\n- Eliminar 1 estado con la ciudad (narrar cómo sucede).\n- Eliminar 1 estado personal.\n- Reponer 2 [[cigarrillos]] de su cajetilla.\n\n#### [3] Entre casos (interludios) y gastando 2 puntos de reconocimiento, puede elegir:\n\n- Recuperar un paquete completo de [[cigarrillos]] (9 con 2 detectives y 6 con 3 detectives).\n- Conseguir el [[favor|favores]] de un grupo criminal o PNJ (narrar cómo sucede y determinar si será válido para solventar una situación de riesgo o para conseguir [[información|pistas_e_información]]).\n\n#### [4] Entre casos (interludios) y gastando 3 puntos de reconocimiento:\n\n- Puede añadir 1 trasfondo más a su personaje, para sumar 1d10 en las tiradas.\n"},{"C":"|j|s|=G/>","A":"Tirada de Perseguir el Crimen","D":"tirada_de_perseguir_el_crimen","E":1702058873111,"F":"Cuando te enfrentes a una situación donde se puede desvelar una pista.\n\n- 1d10 siempre disponible.\n- 1d10 si un trasfondo puede serte de ayuda.\n- Puedes gastar 1 solo [[cigarrillo|cigarrillos]] (+2) o 1 solo punto de reconocimiento (+2). No ambas.\n- Se resta el valor del dado del crimen, a no ser que el detective use su \"objeto representativo\".\n\n#### Resultado de tirada de perseguir el crimen\n\n- <mark>**4-**</mark> El detective protagonista conseguirá encontrar una pista, pero sucede algo nefasto. El grupo ya no podrá buscar más [[pistas|pistas_e_información]] en esta localización. El crimen se propaga de forma automática (+1 al valor del [[dado del crimen|dado_del_crimen]]). La Ciudad puede aplicar una [[consecuencia|consecuencias]] extra.\n- <mark>**5-8**</mark> El detective protagonista conseguirá encontrar una [[pista|pistas_e_información]], pero algo no va como pensaba y tendrá que hacer un [[trueque|consecuencias]]. El resto del grupo podrá buscar más [[pistas|pistas_e_información]] en esta localización.\n- <mark>**9+**</mark> El detective protagonista conseguirá encontrar una [[pista|pistas_e_información]] sin consecuencias. El resto del grupo podrá buscar más [[pistas|pistas_e_información]] en esta localización.","I":"reglamento","J":"FJ84aY8&n","G":"md","H":1703944310436},{"C":"$/;U3cB@e","A":"Tirada de Riesgo","D":"tirada_de_riesgo","E":1702058751709,"F":"Cuando te enfrentes a una situación delicada que implique un peligro para tí mismo o para tu entorno.\n\n- 1d10 siempre disponible.\n- 1d10 si un trasfondo puede serte de ayuda.\n- Puedes gastar 1 solo [[cigarrillo|cigarrillos]] (+2) **o** 1 solo punto de [[reconocimiento]] (+2). No ambas.\n\n#### Resultado de tirada de riesgo\n\n- <mark>**4-**</mark> La Ciudad determinará el futuro de la acción. Además, elegirá 1 [[consecuencia|consecuencias]] negativa que se aplicará inmediatamente.\n- <mark>**5-8**</mark> El detective protagonista conseguirá superar la situación pero realizando un [[trueque|consecuencias]] con la Ciudad.\n- <mark>**9+**</mark> El detective protagonista conseguirá superar la situación sin consecuencias en su contra. Narra cómo lo ha conseguido. \n","I":"reglamento","J":"FJ84aY8&n","G":"md","H":1703944327734},{"C":"Y0(D#&DUX","A":"Afueras","D":"afueras","E":1702123922439,"F":"## Afueras de Vigo\n","I":"localización,zona este","J":"~i7xZN^@@","G":"md","H":1702123948160},{"C":"p$)U5XGpx","A":"Anticuario","D":"anticuario","E":1702124426993,"F":"## Pazo Los Escudos","G":"md","H":1702124644066,"I":"localización,zona oeste","J":"Has%FQaky"},{"C":"dq;4Y<z[s","A":"Biblioteca","D":"biblioteca","E":1702123197787,"F":"## Biblioteca Pública Juan Compañel\n","I":"localización,zona norte","J":"P^Em;S#]v","G":"md","H":1702123231084},{"C":"Pde}S?rXm","A":"Castro de Vigo","D":"castro_de_vigo","E":1702125665398,"G":"md","H":1702125817208,"F":"## Castro de Vigo","I":"localización,zona norte","J":"P^Em;S#]v"},{"C":"$+P8Lh8Bl","A":"Cementerio","D":"cementerio","E":1702116958016,"F":"## Cementerio Municipal de Pereiró\n\n","I":"localización,zona oeste","J":"Has%FQaky","G":"md","H":1702117800826},{"C":"mo}[>'G2i","A":"Comisaría","D":"comisaría","E":1702118024299,"F":"## Comisaría Dirección Xeral da Policía","I":"localización,zona norte","J":"P^Em;S#]v","G":"md","H":1702118045300},{"C":",B3,zDo=k","A":"ETEA","D":"etea","E":1702125647432,"G":"md","H":1702125728288,"F":"## ETEA: Escola de Transmisións e Electrónica da Armada","I":"localización,zona este","J":"~i7xZN^@@"},{"C":"U\\yHn4'][","A":"Hospital","D":"hospital","E":1702117844346,"F":"## Hospital do Meixoeiro\n","I":"localización,zona este","J":"~i7xZN^@@","G":"md","H":1702117892794},{"C":"y~h8Rm$>+","A":"Hostal","D":"hostal","E":1702124958337,"F":"## O Largo Rooms\n","I":"localización,zona sur","J":"[+o2+aVm6","G":"md","H":1702125251949},{"C":"WASxzZ{V%","A":"Iglesia","D":"iglesia","E":1702123007411,"F":"## Ermita da Nosa Señora da Guía\n","I":"localización,zona este","J":"~i7xZN^@@","G":"md","H":1702123035739},{"C":"4PGIG#bR\\","A":"Morgue","D":"morgue","E":1702117711146,"F":"## Tanatorio Vigo Memorial","I":"localización,zona sur","J":"[+o2+aVm6","G":"md","H":1702117813153},{"C":":+M[<5tDv","A":"Oceanográfico","D":"oceanográfico","E":1702125674687,"G":"md","H":1702876887354,"F":"## IIM-CSIC: Instituto de Investigacións Mariñas\n\n","I":"localización,zona oeste","J":"Has%FQaky"},{"C":"1|f\\:_ ,t","A":"Periódico","D":"periódico","E":1702125072980,"F":"## Diario Atlántico\n","I":"localización,zona norte","J":"P^Em;S#]v","G":"md","H":1702125152821},{"C":"mMAAqn t*","A":"Psiquiátrico","D":"psiquiátrico","E":1702124085743,"F":"## Hospital do Rebullón\n","I":"localización,zona sur","J":"[+o2+aVm6","G":"md","H":1702124104456},{"C":"AsM95}xI3","A":"Suburbio","D":"suburbio","E":1702123786983,"F":"## Zona \"chunga\" de Coia\n","I":"localización,zona oeste","J":"Has%FQaky","G":"md","H":1702123814935},{"C":"Oj~vTi1w@","A":"Taberna","D":"taberna","E":1702123381396,"F":"## Taberna das Ánimas Perdidas\n","I":"localización,zona norte","J":"P^Em;S#]v","G":"md","H":1702123664670},{"C":"#0c5qsOhZ","A":"Universidad","D":"universidad","E":1702122428216,"F":"## Campus Universitario de Vigo\n","I":"localización,zona sur","J":"[+o2+aVm6","G":"md","H":1702122505648},{"C":"vw>Oe!aTA","A":"Viviendas (Este)","D":"viviendas_zona_este","E":1702113999245,"I":"localización,zona este","J":"~i7xZN^@@","G":"md","H":1702122528351,"F":"## Bloque de Viviendas en la Zona Este\n"},{"C":"lt@Ueh]/z","A":"Viviendas (Norte)","D":"viviendas_zona_norte","E":1702114072963,"I":"localización,zona norte","J":"P^Em;S#]v","G":"md","H":1702122539062,"F":"## Bloque de Viviendas en la Zona Norte\n"},{"C":"Om%v_.<:-","A":"Viviendas (Oeste)","D":"viviendas_zona_oeste","E":1702114054474,"I":"localización,zona oeste","J":"Has%FQaky","G":"md","H":1702122549254,"F":"## Bloque de Viviendas en la Zona Oeste\n"},{"C":"CyO>4XHEc","A":"Viviendas (Sur)","D":"viviendas_zona_sur","E":1702114100403,"I":"localización,zona sur","J":"[+o2+aVm6","G":"md","H":1702122561150,"F":"## Bloque de Viviendas en la Zona Sur\n"},{"C":"z!GQ{Oc\"+","A":"Un Trago Tranquilo","D":"un_trago_tranquilo","E":1704039397879,"I":"reglamento","J":"FJ84aY8&n","G":"md","H":1704040061680,"F":"Durante el caso los protagonistas pueden tomar un trago tranquilo, hasta 2 veces por investigación.\n\n1. No implica gastar tiempo y si se hace por la noche, no hará falta gastar un cigarrillo.\n2. Elige una de estas dos opciones:\n  - Recuperar 2 [[cigarrillos]].\n  - Recuperar un [[estado personal|estados]].\n\n---\n\n\nA continuación, tendrán que responder a esta pregunta: <mark>Ahora que has conseguido un poco de tranquilidad, ¿qué\ncrees que está pasando en este caso?</mark> crear una escena con el objetivo de elucubrar una hipótesis sobre\nmanos. Lo harán como grupo todos SOT jugadores\nel caso que tienen entre\nque interpretan a los detectives protagonistas, aunque SOT personajes estén\nCiudad determinará Si están en el camino correcto O no:\nseparados.\n>\nV\nEn caso de seguir el camino correcto del caso, el dado del crimen\nse mantendrá en su valor.\nEn caso de seguir un camino equivocado, el dado del crimen au-\nmentará su valor en 1, pues el crimen no les dejará ver con claridad\nsuS verdaderos planes A continuará Propagándose por 2T ciudad.\n"}],"L":{},"M":false,"N":false,"O":"[M}8pw{_y","P":"&lt;a rel=\"me\" href=\"https://paquita.masto.host/@niyes\"&gt;@niyes@paquita.masto.host&lt;/a&gt;\n\n&lt;b&gt;Este sitio necesita javascript para funcionar correctamente.&lt;/b&gt;\n","_":{"A":"name","B":"desc","C":"id","D":"slug","E":"cd","F":"content","G":"editor","H":"md","I":"tags","J":"parent","K":"pages","L":"img","M":"static","N":"published","O":"home","P":"head"}}</script> <script id="a">(()=>{function Fa(a){if(!a)return"";var c=[],b=0,l=[],k=0,f=a.length;"\n"!==a[f-1]&&"\n"!==a[f-2]&&(a+="\n\n");a=a.replace(/\\(.)/g,(e,d)=>L[d]||e).replace(/```(.*)\n([^\0]+?)```(?!```)/gm,(e,d,h)=>(c[b]={lang:d,block:H(h)},`{code-${b++}}`)).replace(/`([^`]+?)`/g,(e,d)=>`<code>${H(d)}</code>`).replace(/<([^>\s]+(\/\/|@)[^>\s]+)>/g,(e,d,h)=>`[${d}](${"@"===h?"mailto:":""}${d})`).replace(/(!?)\[([^\]]*?)\]\(([^\s\n]*)(?:| "(.*)")\)/gm,(e,d,h,g,m)=>{h=H(h);try{g=decodeURI(g)}catch(p){}return g=encodeURI(g),
+m=m?` title="${H(m)}"`:"",d?`<img src="${g}" alt="${h}"${m}>`:`<a href="${g}"${m}>${h}</a>`}).replace(/(<\/?[a-zA-Z]+[^>]*>)/gm,(e,d)=>(l[k]=d,`{html-${k++}}`)).replace(/^[ \t]*>+ (.*)/gm,"<blockquote>\n$1\n</blockquote>").replace(/(<\/blockquote>\n?<blockquote>)+?/g,"").replace(/^(#+) +(.*)/gm,(e,d,h)=>`<h${d.length}>${h}</h${d.length}>`).replace(/^([^\n\t ])(.*)\n====+/gm,"<h1>$1$2</h1>").replace(/^([^\n\t ])(.*)\n----+/gm,"<h2>$1$2</h2>").replace(/\n( *[-*]){3,}\n/gm,"<hr>").replace(/\[( |x)\]/g,
+(e,d)=>`<input type="checkbox" disabled${"x"===d.toLowerCase()?" checked":""}>`).replace(/  +\n/gm,"<br>").replace(/^([^-\+\*\d<\t \n])([^]*?)(?:\n\n)/gm,(e,d,h)=>`<p>${d}${h}</p>
+`).replace(/^([\t ]*)(?:(-|\+|\*)|(\d+(?:\)|\.))) (.*)/gm,(e,d,h,g,m)=>{d=d.replace(/  /g,"\t");e=g?"o":"u";return`${d}<${e}l><li>${m}</li></${e}l>`});for(f=/<\/li><\/(u|o)l>\n(\t+)<(u|o)l><li>(.*)<\/li><\/(u|o)l>/;a.match(f);)a=a.replace(f,function(e,d,h,g,m,p){return 0<h.length&&(h=h.substring(1),0<h.length&&(h="\n"+h)),`${h}<${g}l><li>${m}</li></${p}l></li></${d}l>`});a=a.replace(/(<\/ul>\n?[ \t]*<ul>)+?/g,"").replace(/(<\/ol>\n?[ \t]*<ol>)+?/g,"").replace(/\*\*([^\n*]+?)\*\*/g,"<strong>$1</strong>").replace(/__([^\n_]+?)__/g,
+"<strong>$1</strong>").replace(/\*([^\n*]+?)\*/g,"<em>$1</em>").replace(/_([^\n_]+?)_/g,"<em>$1</em>").replace(/(?:~~)([^~]+?)(?:~~)/g,"<del>$1</del>");for(f=0;f<k;f++)a=a.replace(`{html-${f}}`,l[f]);for(f=0;f<b;f++){let {lang:e,block:d}=c[f];a=a.replace(`{code-${f}}`,`<pre><code${e?` class="language-${e}"`:""}>${H(d)}</code></pre>`)}return a.trim()}function M(){if(!(this instanceof M))return new M;this.ready=a=>{"complete"===document.readyState||"interactive"===document.readyState?a():document.addEventListener("DOMContentLoaded",
+a)};this._events={ONLOAD:"DOMContentLoaded",TITLE:"DOMTitleChange",RENDER:"render",GO:"go"};this._loaded=!1;this._tree=null;this._view=()=>{};this.emitter=Ga("choo.emit");this.emit=this.emitter.emit.bind(this.emitter);this.state={events:this._events,title:document.title,query:aa()};this.emitter.prependListener(this._events.TITLE,a=>{this.state.title=document.title=a})}function Ha(a){if("Tab"===a.key){let k=this;var c=g=>{document.activeElement!==k&&k.focus();(""===g?document.execCommand("delete"):
+document.execCommand("insertText",!1,g))||(k.setRangeText(g,k.selectionStart||0,k.selectionEnd||0,"end"),k.dispatchEvent(new InputEvent("input",{text:g,inputType:"insertText"})))};let {selectionStart:f,selectionEnd:e,value:d}=k,h=d.lastIndexOf("\n",f-1)+1;if(a.shiftKey){var b=d.lastIndexOf("\n",e-1)+1,l="\t"!==d.charAt(b)?e:b+1;b=k.value.slice(h,l);let g=b.replace(/(^|\n)(\t| {1,2})/g,"$1");b=b.length-g.length;k.setSelectionRange(h,l);c(g);c=(c=/\t| {1,2}/.exec(d.slice(h,f)))?c[0].length:0;k.setSelectionRange(f-
+c,Math.max(f-c,e-b))}else l=d.slice(f,e),0<(null===(b=/\n/g.exec(l))||void 0===b?void 0:b.length)?(l=k.value.slice(h,e-1),b=l.replace(/^|\n/g,"$&\t"),l=b.length-l.length,k.setSelectionRange(h,e-1),c(b),k.setSelectionRange(f+1,e+l)):c("\t");a.preventDefault()}}function U(a,c,b){b=`\\s<${c} id=${b}>`;a=a.match(new RegExp(b+`.+?(?=</${c}>)`,"s"));return(null!=a?a:[]).length?a[0].replace(b.replace("\\s",""),"").trim():""}function Ia(a){return ba(this,null,function*(){let c=Object.keys(a);return c.length&&
+!a[c[0]].img&&(yield Promise.all(c.map(b=>new Promise(l=>{let k=new Image;k.src=a[b];k.onload=()=>{a[b]={img:a[b],alt:"image",size:[k.width,k.height]};l()}})))),a})}function Ja(a,c=()=>{}){!confirm("Inserting images increases your wiki's file size. Continue?")||FW.upload("image/*",b=>{ca(b,(l,k,f)=>{if(l){let e=FW.hash.string(l);a.p.img[e.toString()]={alt:prompt("Alt text:",b.name),size:[k,f],img:l};c({img:l,id:e})}})})}function Ka(a,c,b=()=>{}){a.preventDefault();document.getElementById("g").close();
+b(c)}function La(a){return a.replace(/(?:<img src=")[^"]+#([-\d]+)(?=")/g,'<img src="img:$1:img')}function Ma(a,c){return c?a.replace(/<img /g,"<im "):a.replace(/<im /g,"<img ")}function ca(a,c=()=>{}){let b=new FileReader;b.onload=l=>{let k=new Image;k.src=l.target.result;k.onload=()=>{let f=document.createElement("canvas"),e=k.width,d=k.height,h=prompt("Max width pixels:","400");h=null!=h&&h.length?parseInt(h):400;let g=prompt("Max height pixels:","350");g=null!=g&&g.length?parseInt(g):350;e>d?
+e>h&&(d*=h/e,e=h):d>g&&(e*=g/d,d=g);f.width=e;f.height=d;f.getContext("2d").drawImage(k,0,0,e,d);c(f.toDataURL(a.type),e,d)}};b.onerror=l=>{c(null)};b.readAsDataURL(a)}function da(a){var c=0,b;if(0===a.length)return c;for(b=0;b<a.length;b++){var l=a.charCodeAt(b);c=(c<<5)-c+l;c|=0}return c}function Na(a){return da(JSON.stringify(a))}function Oa(a){var c;let b=null!=a?a:null;return b&&(null!=(c=null==a?void 0:a.match(/\[\[.+?(?=\]\])/g))?c:[]).forEach(l=>{var k;let f=l.replace("[[","").split("|"),
+e=f[1]?f[0]:f[0].split("#")[0],d=(null!=(k=f[1])?k:f[0]).trim().split("#");f[1]||(d[0]=FW.slug(d[0]));k=FW.state.p.pages.some(h=>h.slug===d[0])||"undefined"!=typeof FW.state.views[d[0]];b=b.replace(`${l}]]`,`<a internal href="?page=${d.join("#")}"${k?"":" class=e"}>${e}</a>`)}),b}function Pa(a,c=!1){var b;let l=null!=a?a:null;return l&&(null!=(b=null==a?void 0:a.match(/img:.+?(?=:img)/g))?b:[]).forEach(k=>{id=k.replace("img:","");let f=FW.state.p.img[id];"undefined"!=typeof f&&(l=l.replace(`${k}:img`,
+f.img+(c?`#${id}`:"")+`" alt="${f.alt}`))}),l}function Qa(a){var c;let b=null!=a?a:null;return b&&(null!=(c=null==a?void 0:a.match(/<a href="[^"]+">/gi))?c:[]).forEach(l=>{b=b.replace(l,l.replace(">",'target="_blank" rel="noopener noreferrer">'))}),b}function Ra(a){var c;let b=null!=a?a:null;return b&&(null!=(c=null==a?void 0:a.match(/<h\d>.+?<\/h\d>/gi))?c:[]).forEach(l=>{let k=l.match(/<h(\d)>(.+)<\/h\d>/i),f=FW.slug(k[2]);b=b.replace(l,`<h${k[1]} id=${f}>${k[2]} <a class=l href=#${f}>#</a></h${k[1]}>`)}),
+b}function Sa(a,c=!1){var b;return null!=(b=c?null==a?void 0:a.replace(/&[lg]t;/g,l=>{var k;return null!=(k={"&lt;":"<","&gt;":">"}[l])?k:l}):null==a?void 0:a.replace(/[<>]/g,l=>{var k;return null!=(k={"<":"&lt;",">":"&gt;"}[l])?k:l}))?b:""}function ea(a,c,b){"boolean"==typeof c?(b=c,c=void 0):b="undefined"!=typeof b?b:!1;"undefined"==typeof c&&(N=-1);c=c||[];if(Array.isArray(a)){var l=b,k;b=0;for(k=a.length;b<k;b++)a[b]=ea(a[b],c,l)}else{var f;c=fa(ha(a,c));!0===b&&(c=ia(c));b=JSON.stringify(a);
+k=c.length;for(f=0;f<k;f++)a=c[f],b=b.replace(new RegExp('(?:"'+a[1].replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&")+'"):',"g"),'"'+a[0]+'":');a=(l=JSON.parse(b),l._=Ta(c),l)}return a}function ja(a){a=JSON.parse(JSON.stringify(a));if(Array.isArray(a)){var c;var b=0;for(c=a.length;b<c;b++)a[b]=ja(a[b])}else{var l=JSON.parse(JSON.stringify(a._));delete a._;c=JSON.stringify(a);for(b in l)"undefined"!=typeof l[b]&&(c=c.replace(new RegExp('(?:"'+b+'"):',"g"),'"'+l[b]+'":'));l=c}return l?JSON.parse(l):a}function ka(a,
+c){var b,l=a.length;for(b=0;b<l;b++)if(a[b][1]===c)return!0;return!1}function fa(a){var c,b=a.length,l=[];for(c=0;c<b;c++)ka(l,a[c][1])||l.push(a[c]);return l}function Ta(a){return a.reduce((c,b)=>(c[b[0]]=b[1],c),{})}function la(a,c,b=0){var l=[];for(c=c||71;a>=c;)l.push("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=_!?()*".charCodeAt(a%c+b)),a=Math.floor(a/c-1);return l.push("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=_!?()*".charCodeAt(a+b)),l.reverse()}
+function ha(a,c){var b,l,k;for(l in a)"undefined"!=typeof a[l]&&(k=a[l],((null==k?void 0:k.constructor)===Object||Array.isArray(k))&&(c=c.concat(fa(ha(k,c)))),isNaN(Number(l))&&(ka(c,l)||(N+=1,b=[String.fromCharCode.apply(String,la(N)),l],c.push(b))));return c}function ia(a){var c,b=a.length,l={};for(c=0;c<b;c++)l[a[c][0]]=c;for(c=0;c<b;c++){var k=a[c][1];if("undefined"!=typeof l[k])return c=l[k],N+=1,a[c][0]=String.fromCharCode.apply(String,la(N)),l[c]=a[c][0],delete l[k],ia(a)}return a}var O=Object.defineProperty,
+Ua=Object.defineProperties,Va=Object.getOwnPropertyDescriptor,Wa=Object.getOwnPropertyDescriptors,Xa=Object.getOwnPropertyNames,ma=Object.getOwnPropertySymbols,na=Object.prototype.hasOwnProperty,Ya=Object.prototype.propertyIsEnumerable,oa=(a,c,b)=>c in a?O(a,c,{enumerable:!0,configurable:!0,writable:!0,value:b}):a[c]=b,E=(a,c)=>{for(var b in c||={})na.call(c,b)&&oa(a,b,c[b]);if(ma)for(b of ma(c))Ya.call(c,b)&&oa(a,b,c[b]);return a},I=(a,c)=>Ua(a,Wa(c)),J=(a,c)=>()=>(a&&(c=a(a=0)),c),C=(a,c)=>()=>
+(c||a((c={exports:{}}).exports,c),c.exports),D=(a,c)=>{for(var b in c)O(a,b,{get:c[b],enumerable:!0})},Za=(a,c,b,l)=>{if(c&&"object"==typeof c||"function"==typeof c)for(let k of Xa(c))!na.call(a,k)&&k!==b&&O(a,k,{get:()=>c[k],enumerable:!(l=Va(c,k))||l.enumerable});return a},P=a=>Za(O({},"__esModule",{value:!0}),a),ba=(a,c,b)=>new Promise((l,k)=>{var f=h=>{try{d(b.next(h))}catch(g){k(g)}},e=h=>{try{d(b.throw(h))}catch(g){k(g)}},d=h=>h.done?l(h.value):Promise.resolve(h.value).then(f,e);d((b=b.apply(a,
+c)).next())}),$a=C((a,c)=>{c.exports=function(b,l,k){var f=b.length;if(!(l>=f||0===k)){k=l+k>f?f-l:k;for(f-=k;l<f;++l)b[l]=b[l+k];b.length=f}}}),K=C((a,c)=>{function b(l,k){if(!l)throw Error(k||"AssertionError");}b.notEqual=function(l,k,f){b(l!=k,f)};b.notOk=function(l,k){b(!l,k)};b.equal=function(l,k,f){b(l==k,f)};b.ok=b;c.exports=b}),ab=C((a,c)=>{function b(f){this.method=(this.hasIdle=(this.hasWindow=f)&&window.requestIdleCallback)?window.requestIdleCallback.bind(window):this.setTimeout;this.scheduled=
+!1;this.queue=[]}var l=K(),k="undefined"!=typeof window;b.prototype.push=function(f){l.equal(typeof f,"function","nanoscheduler.push: cb should be type function");this.queue.push(f);this.schedule()};b.prototype.schedule=function(){if(!this.scheduled){this.scheduled=!0;var f=this;this.method(function(e){for(var d;f.queue.length&&0<e.timeRemaining();)d=f.queue.shift(),d(e);f.scheduled=!1;f.queue.length&&f.schedule()})}};b.prototype.setTimeout=function(f){setTimeout(f,0,{timeRemaining:function(){return 1}})};
+c.exports=function(){var f;return k?(window._nanoScheduler||(window._nanoScheduler=new b(!0)),f=window._nanoScheduler):f=new b,f}}),bb=C((a,c)=>{function b(d){function h(p){var n="end-"+g+"-"+d;e.mark(n);k.push(function(){var r=null;try{e.measure(d+" ["+g+"]",m,n),e.clearMarks(m),e.clearMarks(n)}catch(q){r=q}p&&p(r,d)})}if(f.equal(typeof d,"string","nanotiming: name should be type string"),b.disabled)return l;var g=(1E4*e.now()).toFixed()%Number.MAX_SAFE_INTEGER,m="start-"+g+"-"+d;e.mark(m);return h.uuid=
+g,h}function l(d){d&&k.push(function(){d(Error("nanotiming: performance API unavailable"))})}var k=ab()(),f=K();b.disabled=!0;try{var e=window.performance;b.disabled="true"===window.localStorage.DISABLE_NANOTIMING||!e.mark}catch(d){}c.exports=b}),cb=C((a,c)=>{function b(e){if(!(this instanceof b))return new b(e);this._name=e||"nanobus";this._starListeners=[];this._listeners={}}var l=$a(),k=bb(),f=K();c.exports=b;b.prototype.emit=function(e){f.ok("string"==typeof e||"symbol"==typeof e,"nanobus.emit: eventName should be type string or symbol");
+for(var d=[],h=1,g=arguments.length;h<g;h++)d.push(arguments[h]);h=k(this._name+"('"+e.toString()+"')");g=this._listeners[e];return g&&0<g.length&&this._emit(this._listeners[e],d),0<this._starListeners.length&&this._emit(this._starListeners,e,d,h.uuid),h(),this};b.prototype.on=b.prototype.addListener=function(e,d){return f.ok("string"==typeof e||"symbol"==typeof e,"nanobus.on: eventName should be type string or symbol"),f.equal(typeof d,"function","nanobus.on: listener should be type function"),"*"===
+e?this._starListeners.push(d):(this._listeners[e]||(this._listeners[e]=[]),this._listeners[e].push(d)),this};b.prototype.prependListener=function(e,d){return f.ok("string"==typeof e||"symbol"==typeof e,"nanobus.prependListener: eventName should be type string or symbol"),f.equal(typeof d,"function","nanobus.prependListener: listener should be type function"),"*"===e?this._starListeners.unshift(d):(this._listeners[e]||(this._listeners[e]=[]),this._listeners[e].unshift(d)),this};b.prototype.once=function(e,
+d){function h(){d.apply(g,arguments);g.removeListener(e,h)}f.ok("string"==typeof e||"symbol"==typeof e,"nanobus.once: eventName should be type string or symbol");f.equal(typeof d,"function","nanobus.once: listener should be type function");var g=this;this.on(e,h);return this};b.prototype.prependOnceListener=function(e,d){function h(){d.apply(g,arguments);g.removeListener(e,h)}f.ok("string"==typeof e||"symbol"==typeof e,"nanobus.prependOnceListener: eventName should be type string or symbol");f.equal(typeof d,
+"function","nanobus.prependOnceListener: listener should be type function");var g=this;this.prependListener(e,h);return this};b.prototype.removeListener=function(e,d){function h(g,m){if(g&&(m=g.indexOf(m),-1!==m))return l(g,m,1),!0}return(f.ok("string"==typeof e||"symbol"==typeof e,"nanobus.removeListener: eventName should be type string or symbol"),f.equal(typeof d,"function","nanobus.removeListener: listener should be type function"),"*"===e)?(this._starListeners=this._starListeners.slice(),h(this._starListeners,
+d)):("undefined"!=typeof this._listeners[e]&&(this._listeners[e]=this._listeners[e].slice()),h(this._listeners[e],d))};b.prototype.removeAllListeners=function(e){return e?"*"===e?this._starListeners=[]:this._listeners[e]=[]:(this._starListeners=[],this._listeners={}),this};b.prototype.listeners=function(e){e="*"!==e?this._listeners[e]:this._starListeners;var d=[];if(e)for(var h=e.length,g=0;g<h;g++)d.push(e[g]);return d};b.prototype._emit=function(e,d,h,g){if("undefined"!=typeof e&&0!==e.length)for(void 0===
+h&&(h=d,d=null),d&&(void 0!==g?h=[d].concat(h,g):h=[d].concat(h)),d=e.length,g=0;g<d;g++){var m=e[g];m.apply(m,h)}}}),db=C((a,c)=>{var b=K(),l=/(noopener|noreferrer) (noopener|noreferrer)/,k=/^[\w-_]+:/;c.exports=function(f,e){b.notEqual(typeof window,"undefined","nanohref: expected window to exist");e=e||window.document;b.equal(typeof f,"function","nanohref: cb should be type function");b.equal(typeof e,"object","nanohref: root should be type object");window.addEventListener("click",function(d){if(!(d.button&&
+0!==d.button||d.ctrlKey||d.metaKey||d.altKey||d.shiftKey||d.defaultPrevented)){var h=function p(m){if(m&&m!==e)return"a"!==m.localName||void 0===m.href?p(m.parentNode):m}(d.target);!h||window.location.protocol!==h.protocol||window.location.hostname!==h.hostname||window.location.port!==h.port||h.hasAttribute("data-nanohref-ignore")||h.hasAttribute("download")||"_blank"===h.getAttribute("target")&&l.test(h.getAttribute("rel"))||k.test(h.getAttribute("href"))||(d.preventDefault(),f(h))}})}}),eb=C((a,
+c)=>{c.exports="onclick ondblclick onmousedown onmouseup onmouseover onmousemove onmouseout onmouseenter onmouseleave ontouchcancel ontouchend ontouchmove ontouchstart ondragstart ondrag ondragenter ondragleave ondragover ondrop ondragend onkeydown onkeypress onkeyup onunload onabort onerror onresize onscroll onselect onchange onsubmit onreset onfocus onblur oninput onanimationend onanimationiteration onanimationstart oncontextmenu onfocusin onfocusout".split(" ")}),fb=C((a,c)=>{function b(f,e,d){f[d]!==
+e[d]&&(e[d]=f[d],f[d]?e.setAttribute(d,""):e.removeAttribute(d))}var l=eb(),k=l.length;c.exports=function(f,e){var d=f.nodeType,h=f.nodeName;if(1===d){for(var g=e.attributes,m=f.attributes,p=null,n,r=null,q=null,u,t=m.length-1;0<=t;--t)u=m[t],q=u.name,p=u.namespaceURI,n=u.value,p?(q=u.localName||q,r=e.getAttributeNS(p,q),r!==n&&e.setAttributeNS(p,q,n)):e.hasAttribute(q)?(r=e.getAttribute(q),r!==n&&("null"===n||"undefined"===n?e.removeAttribute(q):e.setAttribute(q,n))):e.setAttribute(q,n);for(m=g.length-
+1;0<=m;--m)u=g[m],!1!==u.specified&&(q=u.name,p=u.namespaceURI,p?(q=u.localName||q,f.hasAttributeNS(p,q)||e.removeAttributeNS(p,q)):f.hasAttributeNS(null,q)||e.removeAttribute(q))}3!==d&&8!==d||e.nodeValue===f.nodeValue||(e.nodeValue=f.nodeValue);"INPUT"===h?(d=f.value,h=e.value,b(f,e,"checked"),b(f,e,"disabled"),f.indeterminate!==e.indeterminate&&(e.indeterminate=f.indeterminate),"file"!==e.type&&(d!==h&&(e.setAttribute("value",d),e.value=d),"null"===d&&(e.value="",e.removeAttribute("value")),f.hasAttributeNS(null,
+"value")?"range"===e.type&&(e.value=d):e.removeAttribute("value"))):"OPTION"===h?b(f,e,"selected"):"TEXTAREA"===h&&(d=f.value,(d!==e.value&&(e.value=d),!e.firstChild||e.firstChild.nodeValue===d)||""===d&&e.firstChild.nodeValue===e.placeholder||(e.firstChild.nodeValue=d));for(d=0;d<k;d++)h=l[d],f[h]?e[h]=f[h]:e[h]&&(e[h]=void 0)}}),gb=C((a,c)=>{function b(d,h){return h?d?d.isSameNode&&d.isSameNode(h)?h:d.tagName!==h.tagName||(d.dataset?d.dataset.nanomorphComponentId:void 0)!==(h.dataset?h.dataset.nanomorphComponentId:
+void 0)?d:(e(d,h),l(d,h),h):null:d}function l(d,h){for(var g,m,p,n,r=0,q=0;g=h.childNodes[q],m=d.childNodes[q-r],g||m;q++)if(m)if(g)if(k(m,g))p=b(m,g),p!==g&&(h.replaceChild(p,g),r++);else{n=null;for(var u=q;u<h.childNodes.length;u++)if(k(h.childNodes[u],m)){n=h.childNodes[u];break}n?(p=b(m,n),p!==n&&r++,h.insertBefore(p,g)):m.id||g.id?(h.insertBefore(m,g),r++):(p=b(m,g),p!==g&&(h.replaceChild(p,g),r++))}else h.appendChild(m),r++;else h.removeChild(g),q--}function k(d,h){return d.id?d.id===h.id:d.isSameNode?
+d.isSameNode(h):d.tagName!==h.tagName?!1:3===d.type?d.nodeValue===h.nodeValue:!1}var f=K(),e=fb();c.exports=function(d,h,g){return f.equal(typeof d,"object","nanomorph: oldTree should be an object"),f.equal(typeof h,"object","nanomorph: newTree should be an object"),g&&g.childrenOnly?(l(h,d),d):(f.notEqual(h.nodeType,11,"nanomorph: newTree should have one root node (which is not a DocumentFragment)"),b(h,d))}}),hb=C((a,c)=>{var b=K();c.exports=function(l,k){b.equal(typeof l,"function","nanoraf: render should be a function");
+b.ok("function"==typeof k||"undefined"==typeof k,"nanoraf: raf should be a function or undefined");k||=window.requestAnimationFrame;var f=!1,e=null;return function(){null===e&&!f&&(f=!0,k(function(){f=!1;for(var d=e.length,h=Array(d),g=0;g<d;g++)h[g]=e[g];l.apply(l,h);e=null}));e=arguments}}}),V,W,X=J(()=>{V=(a,c,b={})=>{function l(h,g){if(h.preventDefault(),!confirm("Permanently delete image from all pages in wiki?"))return!1;delete a.p.img[g.id];0<g.pgs.length&&(a.p.pages=a.p.pages.map(m=>(m.content&&
+(m.content=m.content.replaceAll(`img:${g.id}:img`,"deleted")),m)));c(k.CHECK_CHANGED)}let {events:k}=a,{showDelete:f=!1,showUsed:e=!1,insert:d=null}=b;b=function(){let {pages:h,img:g}=a.p;return Object.keys(g).map(m=>I(E({id:m},g[m]),{pgs:e?h.filter(p=>{var n;return null==(n=p.content)?void 0:n.includes(`img:${m}:img`)}):[]}))}();return html`<section> <h1>Existing Images</h1> ${b.map(h=>html`<div class="ib at ed w14"> <div class=g> <img src=${h.img} class=w1 aria-describedby=alt> <span id=alt class=db>${h.alt} (${h.size[0]}x${h.size[1]}px)</span> <div class=pb> <button onclick=${g=>
+{var m=h.img;g.preventDefault();g=new Image;g.src=m;window.open("").document.write(g.outerHTML)}}>View</button> ${f?html`<button onclick=${g=>{var m;g.preventDefault();a.p.img[h.id].alt=null!=(m=prompt("Alt text:",h.alt))?m:h.alt;c(k.CHECK_CHANGED)}}>Edit Alt</button>`:""} ${f?html`<button class=del onclick=${g=>l(g,h)}>Delete</button>`:""} ${d?html`<button onclick=${g=>d(g,h)}>Insert</button>`:""} </div> ${e?[html`<details> <summary class=b>Used in ${h.pgs.length} pages</summary> <ul> ${h.pgs.map(g=>
+html`<li><a href="?page=${g.slug}">${g.name}</a></li>`)} </ul> </details>`]:""} </div> </div>`)} </section>`};W=(a,c)=>html`<dialog id=g> <form class=fr method=dialog> <button>Close</button> </form> ${V(a,()=>{},{insert:(b,l)=>FW.img.put(b,l,c)})} </dialog>`}),Y,pa,qa=J(()=>{Y=a=>{var c;let {img:b,pg:l,out:k,hLink:f}=FW.inject,e=[],d=0,h=(null!=(c=a.content)?c:"").replace(RegExp("(<nowiki>.*<\\/nowiki>)","gs"),(g,m)=>(e[d]=m,`{nowiki-${d++}}`));h=l(FW.img.fix(h));h="md"===a.editor?md(h):h;h=b(f(k(h)));
+for(a=0;a<d;a++)h=h.replace(`{nowiki-${a}}`,e[a]);return h};pa=(a,c)=>{var b;let {help:l}=a;a=Y(c);let k=l.getChildren(c,!0);return[null!=c&&c.e||null==(b=null==c?void 0:c.tags)||!b.length?"":html`<aside> <dl class="db r"> <dt class=c><b>Tagged:</b></dt> <dd class=c> ${c.tags.replace(/,/g,", ")} </dd> </dl> </aside>`,html`<article class=uc> ${a?html.raw(a):"No Page Content"} </article>`,0<k.length?html`<footer> <h2>Sub Pages</h2> <ul> ${k.map(f=>l.getChildList(f,!0))} </ul> </footer>`:null]}}),ra=
+{};D(ra,{editor:()=>sa});var sa,ib=J(()=>{qa();X();sa=a=>{function c({id:f}){f=`![](img:${f}:img)`;if(document.activeElement!==k&&k.focus(),document.selection)document.selection.createRange().text=f;else if(k.selectionStart||0===k.selectionStart){var e=k.selectionStart,d=k.selectionEnd;k.value=k.value.substring(0,e)+f+k.value.substring(d,k.value.length);k.selectionStart=e+f.length;k.selectionEnd=e+f.length}else k.value+=f;l({target:k})}let b=html`<div class="ed ed-content" style=display:none></div>`,
+l=f=>{a.edits.content=f.target.value;clearTimeout(a.debounce);a.debounce=setTimeout(()=>{b.innerHTML=Y(I(E({},a.edits),{editor:"md"}))},500)},k=html`<textarea oninput=${l}>${a.edits.content}</textarea>`;return l({target:k}),[k,html`<button onclick=${f=>{f.preventDefault();b.style.display="none"==b.style.display?"block":"none"}}>Preview</button>`,html`<button onclick=${f=>{f.preventDefault();FW.img.upload(a,c)}}>Insert Image from File</button>`,html`<button onclick=${f=>{f.preventDefault();document.getElementById("g").showModal()}}>Add Existing Image</button>`,
+b,W(a,c)]}}),ta={};D(ta,{editor:()=>ua});var ua,jb=J(()=>{X();ua=(a,c)=>{function b(g){let m=h.children[1];document.activeElement!==m&&m.focus();k("insertHTML",`<p><img src="${g.img}#${g.id}"></p>`)}let {init:l,exec:k}=ed,{src:f,edits:e}=a,{content:d}=e,h=document.querySelector("#e");f?h=html`<textarea onchange=${g=>a.edits.content=g.target.value}>${FW.img.abbr(d)}</textarea>`:(h||(h=l({element:html`<div id=e class=ed></div>`,onChange:g=>a.edits.content=g,insert:()=>FW.img.upload(a,b)}),h.isSameNode=
+()=>!0),h.content.innerHTML=d.includes("<img ")?FW.inject.img(d,!0):d);return[h,html`<div class="w1 tr pb"> <button onclick=${(function(g){g.preventDefault();a.src=!f;c(a.events.RENDER)})}>${f?"Show Editor":"Show HTML"}</button> </div>`,W(a,b)]}}),kb=C((a,c)=>{c.exports=function(l){return function(k,f,e){for(var d in f)d in b&&(f[b[d]]=f[d],delete f[d]);return l(k,f,e)}};var b={class:"className",for:"htmlFor","http-equiv":"httpEquiv"}}),lb=C((a,c)=>{var b=kb();c.exports=function(k,f){function e(h){return"function"==
+typeof h||"string"==typeof h||h&&"object"==typeof h||null==h?h:d("",h)}f||={};var d=f.concat||function(h,g){return String(h)+String(g)};return!1!==f.attrToProp&&(k=b(k)),function(h){function g(z){var y=[];7===m&&(m=4);for(var F=0;F<z.length;F++){var w=z.charAt(F);1===m&&"<"===w?(p.length&&y.push([1,p]),p="",m=2):">"===w&&9!==m&&10!==m&&13!==m?(2===m&&p.length?y.push([2,p]):5===m?y.push([5,p]):8===m&&p.length&&y.push([8,p]),y.push([3]),p="",m=1):13===m&&/-$/.test(p)&&"-"===w?(f.comments&&y.push([8,
+p.substr(0,p.length-1)]),p="",m=1):2===m&&/^!--$/.test(p)?(f.comments&&y.push([2,p],[5,"comment"],[11]),p=w,m=13):1===m||13===m?p+=w:2===m&&"/"===w&&p.length||(2===m&&/\s/.test(w)?(p.length&&y.push([2,p]),p="",m=4):2===m?p+=w:4===m&&/[^\s"'=/]/.test(w)?(m=5,p=w):4===m&&/\s/.test(w)?(p.length&&y.push([5,p]),y.push([12])):5===m&&/\s/.test(w)?(y.push([5,p]),p="",m=6):5===m&&"="===w?(y.push([5,p],[11]),p="",m=7):5===m?p+=w:6!==m&&4!==m||"="!==w?6!==m&&4!==m||/\s/.test(w)?7===m&&'"'===w?m=10:7===m&&"'"===
+w?m=9:10===m&&'"'===w?(y.push([8,p],[12]),p="",m=4):9===m&&"'"===w?(y.push([8,p],[12]),p="",m=4):7!==m||/\s/.test(w)?8===m&&/\s/.test(w)?(y.push([8,p],[12]),p="",m=4):(8===m||9===m||10===m)&&(p+=w):(m=8,F--):(y.push([12]),/[\w-]/.test(w)?(p+=w,m=5):m=4):(y.push([11]),m=7))}return 1===m&&p.length?(y.push([1,p]),p=""):8===m&&p.length?(y.push([8,p]),p=""):10===m&&p.length?(y.push([8,p]),p=""):9===m&&p.length?(y.push([8,p]),p=""):5===m&&(y.push([5,p]),p=""),y}for(var m=1,p="",n=arguments.length,r=[],
+q=0;q<h.length;q++)if(q<n-1){var u=arguments[q+1],t=g(h[q]),v=m;10===v&&(v=8);9===v&&(v=8);7===v&&(v=8);4===v&&(v=5);2===v?"/"===p?(t.push([2,"/",u]),p=""):t.push([2,u]):13===v&&f.comments?p+=String(u):13!==v&&t.push([0,v,u]);r.push.apply(r,t)}else r.push.apply(r,g(h[q]));n=[null,{},[]];u=[[n,-1]];for(q=0;q<r.length;q++){v=u[u.length-1][0];t=r[q];var A=t[0];if(2===A&&/^\//.test(t[1]))t=u[u.length-1][1],1<u.length&&(u.pop(),u[u.length-1][0][2][t]=k(v[0],v[1],v[2].length?v[2]:void 0));else if(2===A)t=
+[t[1],{},[]],v[2].push(t),u.push([t,v[2].length-1]);else if(5===A||0===A&&5===t[1]){t="";for(var x;q<r.length;q++)if(5===r[q][0])t=d(t,r[q][1]);else if(0===r[q][0]&&5===r[q][1])if("object"!=typeof r[q][2]||t)t=d(t,r[q][2]);else for(x in r[q][2])r[q][2].hasOwnProperty(x)&&!v[1][x]&&(v[1][x]=r[q][2][x]);else break;11===r[q][0]&&q++;for(A=q;q<r.length;q++)if(8===r[q][0]||5===r[q][0])v[1][t]?""===r[q][1]||(v[1][t]=d(v[1][t],r[q][1])):v[1][t]=e(r[q][1]);else if(0!==r[q][0]||8!==r[q][1]&&5!==r[q][1]){!t.length||
+v[1][t]||q!==A||3!==r[q][0]&&12!==r[q][0]||(v[1][t]=t.toLowerCase());3===r[q][0]&&q--;break}else v[1][t]?""===r[q][2]||(v[1][t]=d(v[1][t],r[q][2])):v[1][t]=e(r[q][2])}else if(5===A)v[1][t[1]]=!0;else if(0===A&&5===t[1])v[1][t[2]]=!0;else if(3===A)l.test(v[0])&&u.length&&(t=u[u.length-1][1],u.pop(),u[u.length-1][0][2][t]=k(v[0],v[1],v[2].length?v[2]:void 0));else if(0===A&&1===t[1])void 0===t[2]||null===t[2]?t[2]="":t[2]||(t[2]=d("",t[2])),Array.isArray(t[2][0])?v[2].push.apply(v[2],t[2]):v[2].push(t[2]);
+else if(1===A)v[2].push(t[1]);else if(11!==A&&12!==A)throw Error("unhandled: "+A);}if(1<n[2].length&&/^\s*$/.test(n[2][0])&&n[2].shift(),2<n[2].length||2===n[2].length&&/\S/.test(n[2][1])){if(f.createFragment)return f.createFragment(n[2]);throw Error("multiple root elements must be wrapped in an enclosing tag");}return Array.isArray(n[2][0])&&"string"==typeof n[2][0][0]&&Array.isArray(n[2][0][2])&&(n[2][0]=k(n[2][0][0],n[2][0][1],n[2][0][2])),n[2][0]}};var l=RegExp("^(area|base|basefont|bgsound|br|col|command|embed|frame|hr|img|input|isindex|keygen|link|meta|param|source|track|wbr|!--|animate|animateTransform|circle|cursor|desc|ellipse|feBlend|feColorMatrix|feComposite|feConvolveMatrix|feDiffuseLighting|feDisplacementMap|feDistantLight|feFlood|feFuncA|feFuncB|feFuncG|feFuncR|feGaussianBlur|feImage|feMergeNode|feMorphology|feOffset|fePointLight|feSpecularLighting|feSpotLight|feTile|feTurbulence|font-face-format|font-face-name|font-face-uri|glyph|glyphRef|hkern|image|line|missing-glyph|mpath|path|polygon|polyline|rect|set|stop|tref|use|view|vkern)(?:[.#][a-zA-Z0-9\u007f-\uffff_:-]+)*$")}),
+mb=C((a,c)=>{var b=/\n[\s]+$/,l=/^\n[\s]+/,k=/[\s]+$/,f=/^[\s]+/,e=/[\n\s]+/g,d="a abbr b bdi bdo br cite data dfn em i kbd mark q rp rt rtc ruby s amp small span strong sub sup time u var wbr".split(" "),h=["code","pre","textarea"];c.exports=function n(m,p){if(Array.isArray(p))for(var r=m.nodeName.toLowerCase(),q=!1,u,t,v=0,A=p.length;v<A;v++){var x=p[v];if(Array.isArray(x))n(m,x);else{("number"==typeof x||"boolean"==typeof x||"function"==typeof x||x instanceof Date||x instanceof RegExp)&&(x=x.toString());
+var z=m.childNodes[m.childNodes.length-1];"string"==typeof x?(q=!0,z&&"#text"===z.nodeName?z.nodeValue+=x:(x=m.ownerDocument.createTextNode(x),m.appendChild(x),z=x),v===A-1&&(q=!1,-1===d.indexOf(r)&&-1===h.indexOf(r)?(u=z.nodeValue.replace(l,"").replace(k,"").replace(b,"").replace(e," "),""===u?m.removeChild(z):z.nodeValue=u):-1===h.indexOf(r)&&(t=0===v?"":" ",u=z.nodeValue.replace(l,t).replace(f," ").replace(k,"").replace(b,"").replace(e," "),z.nodeValue=u))):x&&x.nodeType&&(q&&(q=!1,-1===d.indexOf(r)&&
+-1===h.indexOf(r)?(u=z.nodeValue.replace(l,"").replace(b," ").replace(e," "),""===u?m.removeChild(z):z.nodeValue=u):-1===h.indexOf(r)&&(u=z.nodeValue.replace(f," ").replace(l,"").replace(b," ").replace(e," "),z.nodeValue=u)),(z=x.nodeName)&&(r=z.toLowerCase()),m.appendChild(x))}}}}),nb=C((a,c)=>{c.exports="svg altGlyph altGlyphDef altGlyphItem animate animateColor animateMotion animateTransform circle clipPath color-profile cursor defs desc ellipse feBlend feColorMatrix feComponentTransfer feComposite feConvolveMatrix feDiffuseLighting feDisplacementMap feDistantLight feFlood feFuncA feFuncB feFuncG feFuncR feGaussianBlur feImage feMerge feMergeNode feMorphology feOffset fePointLight feSpecularLighting feSpotLight feTile feTurbulence filter font font-face font-face-format font-face-name font-face-src font-face-uri foreignObject g glyph glyphRef hkern image line linearGradient marker mask metadata missing-glyph mpath path pattern polygon polyline radialGradient rect set stop switch symbol text textPath title tref tspan use view vkern".split(" ")}),
+ob=C((a,c)=>{c.exports="async autofocus autoplay checked controls default defaultchecked defer disabled formnovalidate hidden ismap loop multiple muted novalidate open playsinline readonly required reversed selected".split(" ")}),pb=C((a,c)=>{c.exports=["indeterminate"]}),qb=C((a,c)=>{var b=lb(),l=mb(),k=nb(),f=ob(),e=pb();c.exports=function(d){function h(p,n,r){var q;-1!==k.indexOf(p)&&(n.namespace="http://www.w3.org/2000/svg");var u=!1;n.namespace&&(u=n.namespace,delete n.namespace);var t=!1;if(n.is&&
+(t=n.is,delete n.is),u)t?q=d.createElementNS(u,p,{is:t}):q=d.createElementNS(u,p);else{if("!--"===p)return d.createComment(n.comment);t?q=d.createElement(p,{is:t}):q=d.createElement(p)}for(var v in n)if(n.hasOwnProperty(v)){p=v.toLowerCase();t=n[v];if("classname"===p&&(p="class",v="class"),"htmlFor"===v&&(v="for"),-1!==f.indexOf(p))if("true"===String(t))t=p;else if("false"===String(t))continue;"on"===p.slice(0,2)||-1!==e.indexOf(p)?q[v]=t:u?"xlink:href"===v?q.setAttributeNS("http://www.w3.org/1999/xlink",
+v,t):/^xmlns($|:)/i.test(v)||q.setAttributeNS(null,v,t):q.setAttribute(v,t)}return l(q,r),q}function g(p){for(var n=d.createDocumentFragment(),r=0;r<p.length;r++)null!=p[r]&&(Array.isArray(p[r])?n.appendChild(g(p[r])):("string"==typeof p[r]&&(p[r]=d.createTextNode(p[r])),n.appendChild(p[r])));return n}var m=b(h,{comments:!0,createFragment:g});return m.default=m,m.createComment=h,m}}),rb=C((a,c)=>{c.exports=qb()(document)}),sb=C((a,c)=>{c.exports=function(b){var l=document.createElement("div");l.innerHTML=
+b;b=l.childNodes;return Array.isArray(b)?b:[].slice.call(b)}}),va={};D(va,{default:()=>wa,exec:()=>B,init:()=>Z});var Q,R,S,G,B,Z,wa,tb=J(()=>{Q=(a,c,b)=>a.addEventListener(c,b);R=(a,c)=>a.appendChild(c);S=a=>document.createElement(a);G=a=>document.queryCommandState(a);B=(a,c=null)=>document.execCommand(a,!1,c);Z=a=>{let c=[{icon:"\u2612",title:"Clear Formatting",result:()=>B("removeFormat")},{icon:"<b>B</b>",title:"Bold",state:()=>G("bold"),result:()=>B("bold")},{icon:"<i>I</i>",title:"Italic",state:()=>
+G("italic"),result:()=>B("italic")},{icon:"<u>U</u>",title:"Underline",state:()=>G("underline"),result:()=>B("underline")},{icon:"<b>H</b>",title:"Heading",result:()=>B("formatBlock","<h2>")},{icon:"<b>H<sub>2</sub></b>",title:"Sub-Heading",result:()=>B("formatBlock","<h3>")},{icon:"\u00b6",title:"Paragraph",result:()=>B("formatBlock","<p>")},{icon:"\u21a6",title:"Align Left",state:()=>G("justifyLeft"),result:()=>B("justifyLeft")},{icon:"\u2194",title:"Align Center",state:()=>G("justifyCenter"),result:()=>
+B("justifyCenter")},{icon:"\u21a4",title:"Align Right",state:()=>G("justifyRight"),result:()=>B("justifyRight")},{icon:"#",title:"Number List",result:()=>B("insertOrderedList")},{icon:"\u2022",title:"Bullet List",result:()=>B("insertUnorderedList")},{icon:"\u201c \u201d",title:"Quote",result:()=>B("formatBlock","<blockquote>")},{icon:"\u2015",title:"Separator",result:()=>B("insertHorizontalRule")},{icon:"\ud83d\udd17",title:"Link",result:()=>{let k=window.prompt("Link URL:");k&&B("createLink",k)}},
+{title:"Link External Image",icon:"\ud83d\uddbc\ufe0f",result:()=>{let k=window.prompt("Image URL:");k&&B("insertImage",k)}},{title:"Insert Image from File",icon:"\ud83d\udcf8",result:a.insert},{title:"Add Existing Image",icon:"\ud83d\udcce",result:()=>document.getElementById("g").showModal()}],b=S("div");b.className="ed-actionbar";b.role="toolbar";R(a.element,b);let l=a.element.content=S("div");return l.contentEditable=!0,l.className="ed-content",l.oninput=({target:{firstChild:k}})=>{k&&3===k.nodeType?
+B("formatBlock","<p>"):"<br>"===l.innerHTML&&(l.innerHTML="");a.onChange(l.innerHTML)},l.onkeydown=k=>{"Enter"===k.key&&"blockquote"===document.queryCommandValue("formatBlock")&&setTimeout(()=>B("formatBlock","<p>"),0)},R(a.element,l),c.forEach(k=>{let f=S("button");if(f.className="ed-button",f.innerHTML=k.icon,f.title=k.title,f.setAttribute("type","button"),f.onclick=()=>k.result()&&l.focus(),k.state){let e=()=>f.classList[k.state()?"add":"remove"]("ed-selected");Q(l,"keyup",e);Q(l,"mouseup",e);
+Q(f,"click",e)}R(b,f)}),B("defaultParagraphSeparator","p"),a.element};wa={exec:B,init:Z}}),xa={};D(xa,{default:()=>Fa});var L,ya,H,ub=J(()=>{L={"<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","&":"&amp;","[":"&#91;","]":"&#93;","(":"&#40;",")":"&#41;",_:"&#95;","*":"&ast;","`":"&#96;"};ya=Object.keys(L).filter(a=>"&"!=a).map(a=>L[a].replace("&"!=a?"&":"",""));H=a=>a.replace(/[<>&\(\)\[\]"']/g,c=>L[c]||c).replace(new RegExp(`&amp;(${ya.join("|")})`,"g"),"&$1")}),Ga=cb(),vb=db(),za=gb(),wb=hb(),aa=()=>
+{let a={};return(new URLSearchParams(window.location.search)).forEach((c,b,l)=>{c=l.getAll(b);a[b]=1<c.length?c:c[0]}),a},xb={};M.prototype.start=function(){let a=()=>{let b=document.getElementById(location.hash.substring(1));return b?(null==b||b.scrollIntoView(),!0):!1};this.emitter.prependListener(this._events.GO,(b=null,l="push")=>{b&&history[l+"State"](xb,this.state.title,b);this.state.query=aa();this._loaded&&this.emit(this._events.RENDER,()=>{a()||window.scroll(0,0)})});window.onpopstate=()=>
+{this.emit(this._events.GO)};vb(({href:b})=>{b!==window.location.href&&this.emit(this._events.GO,b)});var c=()=>this._view(this.state,this.emit);return this._tree=c(),this._rq=[],this._rd=null,this.emitter.prependListener(this._events.RENDER,b=>{"function"==typeof b&&this._rq.push(b);null!==this._rd&&clearTimeout(this._rd);this._rd=setTimeout(wb(()=>{var l=c();for(za(this._tree,l);0<this._rq.length;)this._rq.shift()()}),9)}),this.ready(()=>{this.emit(this._events.ONLOAD);this._loaded=!0;a()}),this._tree};
+M.prototype.mount=function(a){this.ready(()=>{var c=this.start();"string"==typeof a?this._tree=document.querySelector(a):this._tree=a;za(this._tree,c)})};var yb=(a,c)=>{let {p:b,help:l}=a;return[html`<header> <h1>All Pages</h1> </header>`,html`<article> <p>This wiki has ${b.pages.length} page${1!==b.pages.length?"s":""}:</p> <ul> ${b.pages.filter(k=>!k.parent).map(k=>l.getChildList(k))} </ul> </article>`]};X();var zb=(a,c)=>{function b(){FW.upload("text/html",n=>{FW.xtr(n,r=>{r&&(a.p=r[0],l(r[1]),
+k(r[2]),c(d.ONLOAD),c(d.CHECK_CHANGED),c(d.NOTIFY,"Wiki Loaded"))})})}function l(n){let r=document.getElementById("c");n.trim()?(a.c=n,r?r.innerHTML=n:document.head.innerHTML+=`<style id=c>${n}</style>`):(delete a.c,r&&document.head.removeChild(r))}function k(n){n.trim()?(a.j!==n&&alert("You must save & reload to run your JavaScript"),a.j=n):delete a.j}var f,e;let {events:d,p:h,c:g,j:m}=a,p=h.pages.map(n=>n.slug).join("\n");return[html`<header> <h1>Wiki Settings</h1> </header>`,html`<article class=mw> <form onsubmit=${(function(n){n.preventDefault();
+n=n.currentTarget;let r=n.wTitle.value.trim();if(1>r.length)return alert("Title is required");a.p.name=r;a.p.desc=n.wDesc.value.trim();1<n.home.value.length?a.p.home=n.home.value:delete a.p.home;let q=n.wPo.value.split("\n").map(u=>u.trim());a.p.pages.sort((u,t)=>q.indexOf(u.slug)<q.indexOf(t.slug)?-1:1);l(n.wCss.value);k(n.wJs.value);n.wHead.value.trim()?a.p.head=FW.inject.esc(n.wHead.value):delete a.p.head;a.p.static=n.wOut.checked;a.p.published=n.wPub.checked;c(d.CHECK_CHANGED);c(d.NOTIFY,"Settings updated")})} class=pb> <label for=wTitle>Wiki Title</label> <input class=w1 id=wTitle value=${h.name} minlength=1 required> <label for=wDesc>Wiki Description</label> <input class=w1 id=wDesc value=${h.desc}> <label for=home>Home Page</label> <select id=home> <option value="" selected=${!h.home}>All Pages (default)</option> ${h.pages.map(n=>
+html`<option selected=${n.id===h.home} value=${n.id}>${n.name} (${n.slug})</option>`)} </select> <label for=wPo>Page Order</label> <textarea id=wPo class=notab>${p}</textarea> <label for=wCss>Custom CSS</label> <textarea id=wCss>${g}</textarea> <label for=wJs>Custom JS</label> <span class=h>Only runs once on wiki load. To test, save wiki & load that file.</span> <textarea id=wJs>${m}</textarea> <label for=wHead>Custom Head</label> <span class=h>Add HTML directly to <code>${html.raw("&lt;head&gt;")}</code>. To test, save wiki & load that file. Be careful! Malformed HTML will break wiki.</span> <textarea id=wHead>${FW.inject.esc(h.head,
+!0)}</textarea> <label for=wOut>Include Static HTML</label> <input id=wOut type=checkbox checked=${null!=(f=h.static)?f:!1}> <span class=h>Include your wiki content in simple HTML for non-JS browsers. Nearly doubles output size.</span> <label for=wPub>Publish</label> <input id=wPub type=checkbox checked=${null!=(e=h.published)?e:!1}> <span class=h>Hides Save, New Page, & Wiki Settings buttons. You will need to manually visit <code>?page=s</code> to unset this when set.</span> <div class=tr> <button type=submit>Update</button> </div> </form> <div class=tr> <p class="pb h"> Feather Wiki Version: Warbler_1.7.1 </p> <p> <button class=del onclick=${()=>
+b()}>Import & Overwrite with Other Feather Wiki file</button> </p> </div> ${V(a,c,{showDelete:!0,showUsed:!0})} </article>`]},Ab=(a,c)=>{let {p:b,query:l}=a;a=b.pages.filter(k=>{var f;return null==(f=k.tags)?void 0:f.includes(l.tag)});return[html`<header> <h1>Pages Tagged <code>${l.tag}</code></h1> </header>`,html`<article> ${0<a.length?html`<ul> ${a.map(k=>html`<li><a href="?page=${k.slug}">${k.name}</a></li>`)} </ul>`:"None Found"} </article>`]};qa();var Bb=(a,c,b)=>{function l(n){n=n.target;a.edits[n.id]=
+n.value;c(f.RENDER)}function k(){return FW.tidy(document.getElementById("tags").value.split(","))}let {events:f,edits:e,p:d,help:h}=a,g=h.getChildren(b).map(n=>n.id),m=!d.pages.some(n=>n.id===b.id);var {useMd:p}=e;p=[html`<div class="w1 tr"> <button onclick=${(function(n){n.preventDefault();let {useMd:r,content:q}=e;r?confirm('Convert Markdown to HTML?\n("Cancel" to go without converting)')&&(a.edits.content=md(q)):a.edits.content=FW.img.abbr(q);a.edits.useMd=!r;c(f.RENDER)})}>${p?"Use Editor":"Use Markdown"}</button> </div>`,
+(p?(ib(),P(ra)):(jb(),P(ta))).editor(a,c)];return html`<form onsubmit=${(function(n){n.preventDefault();n=n.currentTarget;let r=n.name.value.trim();if(1>r.length)return alert("Page Title cannot be blank.");let q=n.slug.value.trim();if(2>q.length)return alert("Page Slug must be more than 1 character long.");let u=E({},b);u.name=r;u.slug=FW.slug(q);u.content=FW.img.fix(FW.img.abbr(a.edits.content),!0);u.tags=k().join(",");u.parent=n.parent.value;n.hide.checked?u.hide=!0:delete u.hide;e.useMd?u.editor=
+"md":delete u.editor;c(f.UPDATE_PAGE,u)})}> <header> <h1>Edit Page</h1> <div class=r> <div class="c w12"> <label for=name>Page Title</label> <input id=name value=${e.name} required minlength=2 onchange=${l}> </div> <div class="c w12"> <label for=slug>Page Slug</label> <input id=slug value=${e.slug} required minlength=2 onchange=${l}> <button onclick=${(function(n){n.preventDefault();document.getElementById("slug").value=FW.slug(document.getElementById("name").value.trim())})}>Slugify Title</button> </div> </div></header> <span class=h style=float:left>Internal links (hash optional): [[Page Title]] or [[text|page_slug#heading]].</span> ${p} <footer class=r> <div class="c w13"> <label for=tags>Page Tags</label> <input id=tags value=${e.tags} placeholder="Comma, Separated, List" onchange=${l}> <select onchange=${(function(n){let r=
+n.target.value;if(0<r.length){let q=k();q.includes(r)||(e.tags+=(0<q.length?",":"")+r,c(f.RENDER))}n.target.value=""})}> <option value="" selected=selected disabled=disabled>Add Existing Tag</option> ${a.t.filter(n=>!e.tags.split(",").includes(n)).map(n=>html`<option>${n}</option>`)} </select> </div> <div class="c w13"> <label for=parent>Parent</label> <select id=parent onchange=${l}> <option value="" selected=${""===e.parent}>None</option> ${d.pages.filter(n=>n.id!==(null==b?void 0:b.id)&&!g.includes(n.id)).map(n=>
+html`<option selected=${n.id===e.parent} value=${n.id}>${n.name} (${n.slug})</option>`)} </select> <label>Hide Page <input type=checkbox id=hide onchange=${n=>a.edits.hide=n.target.checked} checked=${e.hide}></label> </div> <div class="c w13 tr"> <div class=pb><button type=submit>Save</button></div> ${m?"":[html`<div class=pb><button onclick=${n=>{n.preventDefault();c(f.CANCEL_EDIT)}}>Cancel</button></div>`,html`<div><button class=del onclick=${n=>{n.preventDefault();confirm("You can't undo this after saving your wiki! Delete this page?")&&
+c(f.DELETE_PAGE,b.id)}}>Delete</button></div>`]} </div> </footer> </form>`},Cb=(a,c,b)=>{let {edit:l,help:k,p:f,events:e}=a,{cd:d,md:h}=b;if(l)return Bb(a,c,b);let g=k.breadcrumb(b),m=FW.date(new Date(d)),p=new Date(null!=h?h:d),n=FW.date(p);return[html`<header> ${html.raw(g.map(r=>`<a href="?page=${r.slug}">${r.name}</a> /`).join(" "))} <div class="r ns"> <h1 class=c>${b.name}</h1> ${b.e?"":html`<div class="c w14 tr"> <time datetime=${p.toISOString()}> ${m!==n?html`<abbr title="Created: ${m}">${n}</abbr>`:
+n} </time> ${f.published?"":html`<button onclick=${()=>c(e.START_EDIT)}>Edit</button> `} </div>`} </div> </header>`,pa(a,b)]},Db=(a,c)=>{a=a.help.missing();return[html`<header> <h1>Missing Pages</h1> </header>`,html`<article> <p>This wiki has ${a.length} page${1!==a.length?"s":""} referenced that don't exist:</p> <ul> ${a.map(b=>html`<li>${b}</li>`)} </ul> </article>`]},Eb=a=>{var c,b,l,k;a.root=location.pathname||"/";a.sb=!1;a.sbTab="Pages";a.sbx=new Set;a.recent=[];a.edit=!1;a.edits=null;a.keep=
+!1;a.src=!1;a.notis={};a.canSave=!1;a.help={find:(f,e="slug")=>a.p.pages.find(d=>d[e]===f),getPage:()=>{let {query:f,help:e,p:d}=a;return!f.page&&d.home?e.find(d.home,"id"):e.find(f.page)},getParent:f=>a.p.pages.find(e=>e.id===(null==f?void 0:f.parent)),getChildren:(f,e)=>a.p.pages.filter(d=>d.parent===(null==f?void 0:f.id)&&(!e||!d.hide)),getChildList:(f,e)=>{var d;if(e&&f.hide)return"";let {getChildren:h,getChildList:g}=a.help;var m=h(f,e);let p=null==(d=a.pg)?void 0:d.slug,n=p===f.slug,r=q=>{var u;
+return n||a.sbx.has(f.id)||(null!=(u=q.find(t=>t.slug===p||r(h(t,e))))?u:!1)};d=[html`<a href="?page=${f.slug}" class=${n?"a":""}>${f.name}</a>`,0<m.length?html`<ul>${m.map(q=>g(q,e))}</ul>`:""];m=e&&d[1]?html`<details open=${r(m)} onclick=${q=>a.sbx.add(f.id)} ontoggle=${q=>{q.target.open||a.sbx.delete(f.id)}}> <summary>${d[0]}</summary> ${d[1]} </details>`:d;return html`<li> ${m} </li>`},missing:()=>a.p.pages.reduce((f,e)=>{let d=document.createElement("div");d.innerHTML=FW.inject.pg(e.content);
+e=[...d.getElementsByClassName("e")].filter(h=>f.every(g=>g.href!==h.href));return[...f,...e]},[]).sort(),breadcrumb:f=>{let e=[];for(f=a.help.getParent(f);f;)e.unshift(f),f=a.help.getParent(f);return e}};a.events=I(E({},a.events),{HANDLE_404:"404",CREATE_PAGE:"cp",START_EDIT:"se",CANCEL_EDIT:"ce",UPDATE_PAGE:"up",DELETE_PAGE:"dp",COLLECT_TAGS:"ct",CHECK_CHANGED:"cc",SAVE_WIKI:"sw",NOTIFY:"n",REMOVE_NOTI:"rn"});a.events=I(E({},a.events),{PUT_SAVE_WIKI:"psw",DETECT_PUT_SUPPORT:"dps"});a.views={a:yb,
+s:zb,t:Ab,p:Cb,m:Db};a.c=null!=(b=null==(c=document.querySelector("style#c"))?void 0:c.innerHTML)?b:"";a.j=null!=(k=null==(l=document.querySelector("script#j"))?void 0:l.innerHTML)?k:"";try{a.p=FW.json.decompress(JSON.parse(document.querySelector("script#p").innerHTML))}catch(f){a.p={name:"New Wiki",desc:"",pages:[],img:{}}}a.pg=a.help.getPage();c=a.p.pages.find(f=>{var e;return f.id===(null==(e=a.recent[0])?void 0:e.p)});return a.useMd="md"===(null==c?void 0:c.editor),a.t=[],a.prev=FW.hash.object(a.p),
+a.now=a.prev,a.changed=!1,a},Fb=(a,c)=>{let {events:b,help:l,root:k,views:f}=a,e=()=>c.emit(...[b.TITLE,a.p.name+(a.pg?" | "+a.pg.name:"")]),d=()=>setTimeout(()=>document.querySelectorAll("textarea:not(.notab)").forEach(g=>g.onkeydown=Ha),300),h=()=>a.edits&&!confirm("Lose unsaved changes?");return c.on(b.ONLOAD,()=>{c.emit(...[b.HANDLE_404]);e();a.recent=a.p.pages.map(g=>{var m;return{p:g.id,t:null!=(m=g.md)?m:g.cd}}).sort((g,m)=>g.t>m.t?-1:1);c.emit(...[b.COLLECT_TAGS]);a.t.length?c.emit(...[b.RENDER]):
+d();c.emit(...[b.DETECT_PUT_SUPPORT])}),c.on(b.RENDER,d),c.on(b.HANDLE_404,()=>{var {page:g}=a.query;if(1<(null==g?void 0:g.length)){let m=FW.slug(g);l.find(m)||f[m]||(g=g.split("_").map(p=>p[0].toUpperCase()+p.substring(1)).join(" "),c.emit(...[b.CREATE_PAGE,g,!1]))}else 0<(null==g?void 0:g.length)&&!f[g]&&(a.pg={e:!0,name:"404",content:"<p>Page not found</p>"},c.emit(...[b.RENDER]))}),c.on(b.GO,()=>{var g;let {p:m,pg:p}=a,n=null!=(g=a.query.page)?g:null;g=(null==p?void 0:p.slug)===n||!n&&(null==
+p?void 0:p.id)===m.home;if(!g&&h())return history.go(-1);g||(a.edit=!1,a.edits=null,a.pg=l.getPage(),c.emit(...[b.HANDLE_404]),e())}),c.on(b.CREATE_PAGE,(g,m=!0)=>{if(!(2>g.length||h())){a.edit=!1;a.edits=null;var {p,query:n}=a,r=()=>{let v=[];for(let A=0;9>A;A++)v.push(String.fromCharCode(Math.round(94*Math.random())+32));return v.join("")};do var q=r();while(0<=p.pages.findIndex(v=>v.id===q));r=0;var u=FW.slug(g);do{var t=u+(0<r?"_"+r:"");r++}while(p.pages.some(v=>v.slug===t));g={id:q,name:g,slug:t,
+cd:Date.now()};a.showNewPageField=!1;m?(a.p.pages.push(g),a.recent.unshift({p:g.id,t:g.cd}),c.emit(...[b.CHECK_CHANGED]),c.emit(...[b.GO,k+"?page="+t,n.page!==t?"replace":"push"])):a.pg=g;c.emit(...[b.START_EDIT])}}),c.on(b.START_EDIT,()=>{var g,m,p,n,r;let {pg:q}=a;a.edit=!0;let u={name:null!=(g=q.name)?g:"",slug:null!=(m=q.slug)?m:"",content:FW.img.fix(null!=(p=q.content)?p:""),tags:null!=(n=q.tags)?n:"",parent:null!=(r=q.parent)?r:"",hide:!!q.hide};u.useMd="md"===q.editor||!u.content&&a.useMd;
+a.edits=u;a.src=!1;c.emit(...[b.RENDER])}),c.on(b.CANCEL_EDIT,()=>{h()||(a.edit=!1,a.edits=null,c.emit(...[b.RENDER]))}),c.on(b.UPDATE_PAGE,g=>{let {p:m}=a;if(m.pages.some(n=>n.slug===g.slug&&n.id!==g.id))return alert('A page with the slug "'+g.slug+'" already exists!');let p=m.pages.findIndex(n=>n.id===g.id);Object.keys(g).forEach(n=>{1>g[n].length&&delete g[n]});g.md=Date.now();-1<p?m.pages[p]=g:m.pages.push(g);a.recent=[{p:g.id,t:g.md},...a.recent.filter(n=>n.p!==g.id)];a.edit=!1;a.edits=null;
+a.useMd="md"===g.editor;c.emit(...[b.COLLECT_TAGS]);a.pg=l.getPage();c.emit(...[b.CHECK_CHANGED])}),c.on(b.DELETE_PAGE,g=>{a.p.pages=a.p.pages.map(m=>(m.parent===g&&delete m.parent,m)).filter(m=>m.id!==g);a.recent=a.recent.filter(m=>m.p!==g);a.edit=!1;a.edits=null;c.emit(...[b.COLLECT_TAGS]);delete a.pg;c.emit(...[b.GO,k]);c.emit(...[b.CHECK_CHANGED])}),c.on(b.COLLECT_TAGS,()=>{a.t=FW.tidy(a.p.pages.reduce((g,m)=>{var p,n;return[...g,...(null!=(n=null==(p=m.tags)?void 0:p.split(","))?n:[])]},[]))}),
+c.on(b.CHECK_CHANGED,g=>{a.now=FW.hash.object(a.p);a.changed=a.prev!==a.now;c.emit(...[b.RENDER,g])}),c.on(b.NOTIFY,(g,m=5E3,p="background:#ddd; color:#000")=>{let n=Date.now();g=html`<div class=noti style=${p} id=${n} onclick=${()=>c.emit(...[b.REMOVE_NOTI,n])} title="Click to close"> <span role=alert>${g}</span><span class=fr>\u00d7</span> </div>`;a.notis[n]=g;0<m&&setTimeout(()=>c.emit(...[b.REMOVE_NOTI,n]),m);document.querySelector(".notis").appendChild(g)}),c.on(b.REMOVE_NOTI,g=>{let m=a.notis[g];
+null==m||m.parentNode.removeChild(m);delete a.notis[g]}),c.on(b.SAVE_WIKI,()=>{var g=FW.gen(a);let m=document.createElement("a");m.setAttribute("href","data:text/html;charset=utf-8,"+encodeURIComponent(g));g=/\/$/.test(k)?"index.html":decodeURI(k.substring(k.lastIndexOf("/")+1));m.setAttribute("download",g);document.body.appendChild(m);m.click();document.body.removeChild(m)}),c.on(b.PUT_SAVE_WIKI,()=>{let g=FW.gen(a),{p:m}=a;fetch(k,{method:"PUT",body:g}).then(p=>p.text().then(n=>({ok:p.ok,status:p.status,
+text:n}))).then(p=>{if(!p.ok)throw p.text?p.text:`Status ${p.status}.`;c.emit(...[b.NOTIFY,"Saved."]);a.prev=FW.hash.object(m);c.emit(...[b.CHECK_CHANGED])}).catch(p=>{c.emit(...[b.NOTIFY,`Save failed! ${p}`,9999,"background:#e88"])})}),c.on(b.DETECT_PUT_SUPPORT,()=>{!location.protocol.startsWith("http")||a.canSave||fetch(k,{method:"OPTIONS"}).then(g=>{g.ok&&g.headers.get("dav")?(a.canSave=!0,c.emit(...[b.RENDER])):c.emit(...[b.NOTIFY,"Cannot save to server.",9999,"background:#e88"])}).catch(g=>{})}),
+c},Aa=(a,c)=>{function b(w){w.preventDefault();w=w.currentTarget.np.value.trim();if(2>w.length)return alert("Enter more than 1 character to create a new page.");c(n.CREATE_PAGE,w.trim())}function l(w){a.sbTab=w.target.innerText;c(n.RENDER)}var k,f;let {root:e,help:d,pg:h,p:g,t:m,recent:p,events:n,query:r,changed:q,sb:u,sbTab:t,views:v,notis:A}=a,x=!g.published||"s"===r.page,z=g.pages.filter(w=>!w.parent),y=p.map(w=>g.pages.find(T=>T.id===w.p)),F=h?v.p(a,c,h):(null!=(f=v[null!=(k=r.page)?k:"a"])?f:
+()=>{})(a,c);r.tag&&(F=v.t(a,c));k=[q?html`<div>Wiki has changed!</div>`:""];return a.canSave?k=[...k,html`<div><button class=${q?"chg":""} title="Save wiki to ${location.origin}${e}" onclick=${()=>c(n.PUT_SAVE_WIKI)}>Save Wiki to Server</button></div>`,html`<div><button title="Download wiki in its current state" onclick=${()=>c(n.SAVE_WIKI)}>Save Wiki Locally</button></div>`]:k=[...k,html`<div><button class=${q?"chg":""} title="Download wiki in its current state" onclick=${()=>c(n.SAVE_WIKI)}>Save Wiki</button></div>`],
+html`<body> <main> <div class=sb> <span class=db><a href=? class=t>${g.name}</a></span> ${g.desc?html`<p class=pb>${g.desc}</p>`:""} ${x?k:""} <button class=sbt onclick=${()=>{a.sb=!a.sb;c(n.RENDER)}}>${u?"Hide":"Show"} Menu</button> <nav class=${u?"":"n"}> ${x?[html`<p><a href="?page=s">Wiki Settings</a></p>`,html`<details class=pb ontoggle=${()=>document.getElementById("np").focus()}> <summary class=np>New Page</summary> <form onsubmit=${b}> <label class=sr for=np>New Page Title</label> <input id=np placeholder="New Page Title" autocomplete=off> <button type=submit>Create</button> </form> </details>`]:
+""} <div class=tabs> <button class=${"Pages"===t&&"a"} onclick=${l}>Pages</button> ${0<m.length?html`<button class=${"Tags"===t&&"a"} onclick=${l}>Tags</button>`:""} <button class=${"Recent"===t&&"a"} onclick=${l}>Recent</button> </div> ${"Pages"===t?html`<ul> ${z.map(w=>d.getChildList(w,!0))} <li><a href="?page=a">All Pages</a></li> ${0<d.missing().length?html`<li><a href="?page=m">Missing Pages</a></li>`:""} </ul>`:""} ${"Tags"===t?html`<ul> ${m.map(w=>html`<li><a href="?tag=${w}">${w}</a></li>`)} </ul>`:
+""} ${"Recent"===t?html`<ul style=padding:0> ${y.map(w=>{var T;return html`<li> <a href="?page=${w.slug}">${w.name}</a> <p class=h style=margin:0>${FW.date(new Date(null!=(T=w.md)?T:w.cd))}</p> </li>`})} </ul>`:""} </nav> </div> <section>${F}</section> </main> <footer> <span class=fr>Powered by <a href=https://feather.wiki title="Version: Warbler_1.7.1" target=_blank rel="noopener noreferrer">Feather Wiki</a></span> </footer> <div class=notis> ${Object.values(A)} </div> </body>`},Ba={};D(Ba,{abbr:()=>
+La,fix:()=>Ma,put:()=>Ka,resizeImage:()=>ca,upload:()=>Ja});var Ca={};D(Ca,{object:()=>Na,string:()=>da});var Da={};D(Da,{esc:()=>Sa,hLink:()=>Ra,img:()=>Pa,out:()=>Qa,pg:()=>Oa});var Ea={};D(Ea,{compress:()=>ea,decompress:()=>ja});var N=-1;window.html=rb();html.raw=sb();window.ed=(tb(),P(va)).default;window.md=(ub(),P(xa)).default;window.FW=M();FW.slug=a=>null==a?void 0:a.toLowerCase().replace(/\s/g,"_").replace(/[\x00-\x2F\x3A-\x40[\\\]^`\x7B-\x7F]/g,"-");FW.date=a=>a.toLocaleString();FW.tidy=a=>
+a.map(c=>c.trim()).filter((c,b,l)=>c.length&&l.indexOf(c)===b).sort();FW.xtr=function(a,c=()=>{}){let b=new FileReader;b.onload=l=>ba(this,null,function*(){let k=l.target.result;var f=U(k,"script","p type=application/json");if(!f.length||"{"!==f[0])return alert("Could not find Feather Wiki data.");f=FW.json.decompress(JSON.parse(f));f.img=yield Ia(f.img);c([f,U(k,"style","c"),U(k,"script","j")])});b.onerror=function(l){c(null)};b.readAsText(a)};FW.gen=function(a){function c(f){return html`<section> ${l.pages.map(e=>
+{let d=a.views.p(f,"",e);return d[0].querySelector("h1").id="page="+e.slug,html`<article> ${d[0]} <div class=uc>${html.raw(d[1][1].innerHTML)}</div> </article>`})} </section>`}let {c:b,p:l,j:k}=a;return`<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1"> <title>${l.name}</title> ${l.desc?`<meta name="description" content="${l.desc.replace(/"/g,'\\"')}">`:""} <meta name=version content=Warbler_1.7.1> <meta name=application-name content="Feather Wiki"> <style id=s>${document.getElementById("s").innerHTML}</style> ${b?
+`<style id=c>${b}</style>`:""} <script id=p type=application/json>${JSON.stringify(FW.json.compress(l))}<\/script> <script id=a>${document.getElementById("a").innerHTML}<\/script> ${FW.inject.esc(l.head,!0)} </head> <body> ${(function(){let f=I(E({},a),{edit:!1,sb:!0,sbx:new Set,pg:void 0,query:{page:"a"},p:I(E({},l),{published:!0})}),e=Aa(f);if(e.querySelector(".sb .tabs").remove(),l.static){let d=e.querySelector("main>section");d.parentElement.replaceChild(c(f),d);e.querySelector(".sb>nav>ul>li:last-child,.sbt").remove()}return e.querySelectorAll("a").forEach(d=>
+{d.classList.remove("a");d.href=d.href.includes("#")?d.href.replace(/.+(#.+)$/,"$1"):d.href.includes("page=")?d.href.replace(/.+(page=.+)(&.+)*?$/,l.static?"#$1":"?$1"):d.href.replace(location.toString().split("?")[0],"")}),e.querySelector("main").outerHTML})()} <footer><a href=https://src.feather.wiki/#versions>JavaScript required to edit</a></footer> ${k?`<script id=j>${k}<\/script>`:""} </body> </html>`};FW.img=Ba;FW.hash=Ca;FW.inject=Da;FW.json=Ea;FW.upload=(a,c)=>{a=html`<input type=file accept=${a} onchange=${b=>
+{b=b.target.files;0<b.length&&c(b[0])}}>`;document.body.appendChild(a);a.click();document.body.removeChild(a)};FW.ready(()=>{Eb(FW.state);Fb(FW.state,FW.emitter)});FW._view=Aa;FW.mount("body");window.addEventListener("beforeunload",a=>{if(FW.state.changed)return a.preventDefault(),a.returnValue="Lose unsaved changes?"},{capture:!0})})(); </script> </head>
+<body>
+<a rel="me" href="https://paquita.masto.host/@niyes">@niyes@paquita.masto.host</a>
+
+<b>Este sitio necesita javascript para funcionar correctamente.</b>
+   <main> <div class="sb"> <span class="db"><a href="?" class="t">Vigo Noir</a></span> <button class="sbt">Hide Menu</button> <nav class="">  <ul> <li> <details> <summary><a href="?page=introducci%C3%B3n" class="">Introducción</a></summary> <ul>
+<li> <a href="?page=dec%C3%A1logo_del_noir" class="">Decálogo del Noir</a>
+</li>
+<li> <a href="?page=manifiesto_de_la_ciudad" class="">Manifiesto de la Ciudad</a>
+</li>
+</ul></details>
+</li>
+<li> <a href="?page=personajes" class="">Personajes</a>
+</li>
+<li> <details> <summary><a href="?page=localizaciones" class="">Localizaciones</a></summary> <ul>
+<li> <details> <summary><a href="?page=zona_este" class="">Zona Este</a></summary> <ul>
+<li> <a href="?page=afueras" class="">Afueras</a>
+</li>
+<li> <a href="?page=etea" class="">ETEA</a>
+</li>
+<li> <a href="?page=hospital" class="">Hospital</a>
+</li>
+<li> <a href="?page=iglesia" class="">Iglesia</a>
+</li>
+<li> <a href="?page=viviendas_zona_este" class="">Viviendas (Este)</a>
+</li>
+</ul></details>
+</li>
+<li> <details> <summary><a href="?page=zona_norte" class="">Zona Norte</a></summary> <ul>
+<li> <a href="?page=biblioteca" class="">Biblioteca</a>
+</li>
+<li> <a href="?page=castro_de_vigo" class="">Castro de Vigo</a>
+</li>
+<li> <a href="?page=comisar%C3%ADa" class="">Comisaría</a>
+</li>
+<li> <a href="?page=peri%C3%B3dico" class="">Periódico</a>
+</li>
+<li> <a href="?page=taberna" class="">Taberna</a>
+</li>
+<li> <a href="?page=viviendas_zona_norte" class="">Viviendas (Norte)</a>
+</li>
+</ul></details>
+</li>
+<li> <details> <summary><a href="?page=zona_oeste" class="">Zona Oeste</a></summary> <ul>
+<li> <a href="?page=anticuario" class="">Anticuario</a>
+</li>
+<li> <a href="?page=cementerio" class="">Cementerio</a>
+</li>
+<li> <a href="?page=oceanogr%C3%A1fico" class="">Oceanográfico</a>
+</li>
+<li> <a href="?page=suburbio" class="">Suburbio</a>
+</li>
+<li> <a href="?page=viviendas_zona_oeste" class="">Viviendas (Oeste)</a>
+</li>
+</ul></details>
+</li>
+<li> <details> <summary><a href="?page=zona_sur" class="">Zona Sur</a></summary> <ul>
+<li> <a href="?page=hostal" class="">Hostal</a>
+</li>
+<li> <a href="?page=morgue" class="">Morgue</a>
+</li>
+<li> <a href="?page=psiqui%C3%A1trico" class="">Psiquiátrico</a>
+</li>
+<li> <a href="?page=universidad" class="">Universidad</a>
+</li>
+<li> <a href="?page=viviendas_zona_sur" class="">Viviendas (Sur)</a>
+</li>
+</ul></details>
+</li>
+</ul></details>
+</li>
+<li> <details open="open"> <summary><a href="?page=reglas" class="">Reglas</a></summary> <ul>
+<li> <details> <summary><a href="?page=comenzar_jugar" class="">Comenzar a Jugar</a></summary> <ul>
+<li> <a href="?page=construid_ciudad" class="">1. Construid la Ciudad</a>
+</li>
+<li> <a href="?page=cread_detectives_protagonistas" class="">2. Cread a los Detectives Protagonistas</a>
+</li>
+<li> <a href="?page=cread_relaciones_detectives" class="">3. Cread las Relaciones entre los Detectives</a>
+</li>
+<li> <a href="?page=comenzad_primer_caso" class="">4. Comenzad con el Primer caso y recuerda</a>
+</li>
+</ul></details>
+</li>
+<li> <a href="?page=cigarrillos" class="">Cigarrillos</a>
+</li>
+<li> <a href="?page=consecuencias" class="">Consecuencias</a>
+</li>
+<li> <a href="?page=dado_del_crimen" class="">Dado del Crimen</a>
+</li>
+<li> <a href="?page=favores" class="">Favores</a>
+</li>
+<li> <a href="?page=paso_del_tiempo" class="">Paso del Tiempo</a>
+</li>
+<li> <a href="?page=penalizador" class="">Penalizador</a>
+</li>
+<li> <a href="?page=pilares_de_estabilidad" class="">Pilares de Estabilidad</a>
+</li>
+<li> <a href="?page=pistas_e_informaci%C3%B3n" class="">Pistas e Información</a>
+</li>
+<li> <a href="?page=realizar_una_detenci%C3%B3n" class="">Realizar una Detención</a>
+</li>
+<li> <a href="?page=reconocimiento" class="">Reconocimiento</a>
+</li>
+<li> <a href="?page=tirada_de_perseguir_el_crimen" class="">Tirada de Perseguir el Crimen</a>
+</li>
+<li> <a href="?page=tirada_de_riesgo" class="">Tirada de Riesgo</a>
+</li>
+<li> <a href="?page=un_trago_tranquilo" class="">Un Trago Tranquilo</a>
+</li>
+</ul></details>
+</li> <li><a href="?page=a">All Pages</a></li> <li><a href="?page=m">Missing Pages</a></li>
+</ul></nav>
+</div> <section><header> <h1>All Pages</h1></header><article> <p>This wiki has 49 pages:</p> <ul> <li> <a href="?page=introducci%C3%B3n" class="">Introducción</a><ul>
+<li> <a href="?page=dec%C3%A1logo_del_noir" class="">Decálogo del Noir</a>
+</li>
+<li> <a href="?page=manifiesto_de_la_ciudad" class="">Manifiesto de la Ciudad</a>
+</li>
+</ul>
+</li>
+<li> <a href="?page=personajes" class="">Personajes</a>
+</li>
+<li> <a href="?page=localizaciones" class="">Localizaciones</a><ul>
+<li> <a href="?page=zona_este" class="">Zona Este</a><ul>
+<li> <a href="?page=afueras" class="">Afueras</a>
+</li>
+<li> <a href="?page=etea" class="">ETEA</a>
+</li>
+<li> <a href="?page=hospital" class="">Hospital</a>
+</li>
+<li> <a href="?page=iglesia" class="">Iglesia</a>
+</li>
+<li> <a href="?page=viviendas_zona_este" class="">Viviendas (Este)</a>
+</li>
+</ul>
+</li>
+<li> <a href="?page=zona_norte" class="">Zona Norte</a><ul>
+<li> <a href="?page=biblioteca" class="">Biblioteca</a>
+</li>
+<li> <a href="?page=castro_de_vigo" class="">Castro de Vigo</a>
+</li>
+<li> <a href="?page=comisar%C3%ADa" class="">Comisaría</a>
+</li>
+<li> <a href="?page=peri%C3%B3dico" class="">Periódico</a>
+</li>
+<li> <a href="?page=taberna" class="">Taberna</a>
+</li>
+<li> <a href="?page=viviendas_zona_norte" class="">Viviendas (Norte)</a>
+</li>
+</ul>
+</li>
+<li> <a href="?page=zona_oeste" class="">Zona Oeste</a><ul>
+<li> <a href="?page=anticuario" class="">Anticuario</a>
+</li>
+<li> <a href="?page=cementerio" class="">Cementerio</a>
+</li>
+<li> <a href="?page=oceanogr%C3%A1fico" class="">Oceanográfico</a>
+</li>
+<li> <a href="?page=suburbio" class="">Suburbio</a>
+</li>
+<li> <a href="?page=viviendas_zona_oeste" class="">Viviendas (Oeste)</a>
+</li>
+</ul>
+</li>
+<li> <a href="?page=zona_sur" class="">Zona Sur</a><ul>
+<li> <a href="?page=hostal" class="">Hostal</a>
+</li>
+<li> <a href="?page=morgue" class="">Morgue</a>
+</li>
+<li> <a href="?page=psiqui%C3%A1trico" class="">Psiquiátrico</a>
+</li>
+<li> <a href="?page=universidad" class="">Universidad</a>
+</li>
+<li> <a href="?page=viviendas_zona_sur" class="">Viviendas (Sur)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="?page=reglas" class="">Reglas</a><ul>
+<li> <a href="?page=comenzar_jugar" class="">Comenzar a Jugar</a><ul>
+<li> <a href="?page=construid_ciudad" class="">1. Construid la Ciudad</a>
+</li>
+<li> <a href="?page=cread_detectives_protagonistas" class="">2. Cread a los Detectives Protagonistas</a>
+</li>
+<li> <a href="?page=cread_relaciones_detectives" class="">3. Cread las Relaciones entre los Detectives</a>
+</li>
+<li> <a href="?page=comenzad_primer_caso" class="">4. Comenzad con el Primer caso y recuerda</a>
+</li>
+</ul>
+</li>
+<li> <a href="?page=cigarrillos" class="">Cigarrillos</a>
+</li>
+<li> <a href="?page=consecuencias" class="">Consecuencias</a>
+</li>
+<li> <a href="?page=dado_del_crimen" class="">Dado del Crimen</a>
+</li>
+<li> <a href="?page=favores" class="">Favores</a>
+</li>
+<li> <a href="?page=paso_del_tiempo" class="">Paso del Tiempo</a>
+</li>
+<li> <a href="?page=penalizador" class="">Penalizador</a>
+</li>
+<li> <a href="?page=pilares_de_estabilidad" class="">Pilares de Estabilidad</a>
+</li>
+<li> <a href="?page=pistas_e_informaci%C3%B3n" class="">Pistas e Información</a>
+</li>
+<li> <a href="?page=realizar_una_detenci%C3%B3n" class="">Realizar una Detención</a>
+</li>
+<li> <a href="?page=reconocimiento" class="">Reconocimiento</a>
+</li>
+<li> <a href="?page=tirada_de_perseguir_el_crimen" class="">Tirada de Perseguir el Crimen</a>
+</li>
+<li> <a href="?page=tirada_de_riesgo" class="">Tirada de Riesgo</a>
+</li>
+<li> <a href="?page=un_trago_tranquilo" class="">Un Trago Tranquilo</a>
+</li>
+</ul>
+</li>
+</ul></article></section></main> <footer><a href="https://src.feather.wiki/#versions">JavaScript required to edit</a></footer> <script id="j">// BUSCAR //
+(function featherSearchExtension () {
+  if (!window.FW._loaded) return setTimeout(featherSearchExtension, 1); 
+  const { state, emitter } = window.FW;
+  console.log('running featherSearchExtension');
+  state.searchDebounce = null;
+  ['DOMContentLoaded', 'render'].forEach(ev => {
+    emitter.on(ev, () => {
+      setTimeout(() => { 
+        renderSearchBar();
+      }, 50);
+    });
+  });
+  emitter.emit('DOMContentLoaded');
+
+  function renderSearchBar () {
+    if (!!document.getElementById('featherSearch')) return;
+    const input = html`<div id=featherSearch>
+      <input id=featherSearchBar type=search placeholder="Buscar..." onsearch=${e => search(e)} oninput=${e => search(e)} onblur=${() => {
+        setTimeout(() => document.getElementById('featherSearchResults').style.display = 'none', 300);
+      }} onfocus=${() => {
+        if (document.getElementById('featherSearchResults').innerHTML.length > 0) document.getElementById('featherSearchResults').style.display = null;
+      }} />
+      <div id=featherSearchResults style="display:none;"></div>
+      <style>
+        #featherSearch{position:relative;}
+        #featherSearchResults{
+          position: absolute;
+          background: #313131;
+          border: 2px solid #737373;
+          top: calc(12pt + .5rem + 2px);
+          left: 0;
+          width: 100%;
+          max-height: 400px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          padding: 3px;
+          border-radius: 3px;
+          z-index: 10;
+        }
+        #featherSearchResults a{
+          display: block;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 6px 10px;
+          margin: 2px 0;
+          color: #EFEFEF !important;
+          line-height: 1.21em !important;
+        }
+        #featherSearchResults a:hover{color:#FFBB33 !important;background:#575757;}
+      </style>
+    </div>`;
+    const nav = document.querySelector('.sb nav');
+    nav.parentNode.insertBefore(input, nav);
+  }
+
+  function search (e) {
+    if (state.searchDebounce !== null) clearTimeout(state.searchDebounce);
+    state.searchDebounce = setTimeout(() => {
+      const val = e.target.value.trim().toLowerCase();
+      const resultsContainer = document.getElementById('featherSearchResults');
+      resultsContainer.innerHTML = '';
+      if (val.length < 2) return resultsContainer.style.display = 'none';
+      const index = state.p.pages.map(p => {
+        const { id, name, slug, content, editor } = p;
+        const contentHtml = (html`<div></div>`);
+        contentHtml.innerHTML = FW.inject.pg((typeof md !== 'undefined' && editor === 'md') ? md(content) : content, state);
+        const textContent = contentHtml.innerText.trim();
+        return { id, name, searchName: name.toLowerCase(), slug, content: textContent, searchContent: textContent.toLowerCase() };
+      });
+      const matches = [];
+      [
+        ...index.filter(p => p.searchName.startsWith(val)),
+        ...index.filter(p => p.searchContent.startsWith(val)),
+        ...index.filter(p => p.searchName.endsWith(val)),
+        ...index.filter(p => p.searchContent.endsWith(val)),
+        ...index.filter(p => p.searchName.includes(val)),
+        ...index.filter(p => p.searchContent.includes(val)),
+      ].forEach(p => {
+        if (!matches.find(m => m.id === p.id)) matches.push(p);
+      });
+      const markMatch = m => {
+        const start = m.toLowerCase().indexOf(val);
+        if (start < 0) return m;
+        const end = start + val.length;
+        return m.substring(0, start) + '<mark>' + m.substring(start, end) + '</mark>' + m.substring(end);
+      };
+      resultsContainer.innerHTML = matches.map(p => {
+        let contentSnippet = '';
+        let contentStart = p.searchContent.indexOf(val);
+        if (contentStart >= 0) {
+          const pad = 20;
+          let contentEnd = contentStart + val.length + pad;
+          if (contentEnd > p.searchContent.length) contentEnd = p.searchContent.length;
+          contentStart -= pad;
+          if (contentStart < 0) contentStart = 0;
+          contentSnippet = p.content.substring(contentStart, contentEnd);
+          if (contentStart > 0) contentSnippet = '...' + contentSnippet;
+          if (contentEnd < p.searchContent.length) contentSnippet += '...';
+        }
+        return `<a href="?page=${p.slug}">${markMatch(p.name)}${contentSnippet.length > 0 ? '<div class=h>' + markMatch(contentSnippet) + '</div>' : ''}</a>`;
+      }).join('');
+      resultsContainer.style.display = null;
+    }, 500);
+  }
+})();
+
+
+// CLONAR PÁGINA
+(function clonePageExtension () {
+  if (!window.FW._loaded) return setTimeout(clonePageExtension, 1); // wait until FW is mounted
+  const { state, emitter } = window.FW;
+  console.log('running clonePageExtension');
+
+  ['DOMContentLoaded', 'render'].forEach(ev => {
+    emitter.on(ev, () => {
+      setTimeout(() => { 
+        renderClonePageButton();
+      }, 50);
+    });
+  });
+  emitter.emit('DOMContentLoaded');
+
+  function renderClonePageButton () {
+    const editButton = Array.from(document.querySelectorAll('main > section > header button')).find(el => el.textContent === 'Edit');
+    if (!editButton || !!document.querySelector('#cloneButton')) return;
+    const pg = { ...state.pg };
+    const cloneButton = html`<button id="cloneButton" style="background-color:#fff;border:1px solid #000;color:#000;margin-left:8px;" onclick=${() => {
+      let newName = prompt('Nombre de la página clonada:', pg.name + ' Clon');
+      if (!newName) return;
+      newName = newName.trim();
+      if (newName.length < 2) return alert('Enter more than 1 character to create a new page.');
+      emitter.emit(state.events.CREATE_PAGE, newName);
+      const wait = setInterval(() => {
+        if (state.pg.id !== pg.id) {
+          clearInterval(wait);
+          state.pg = {...pg, ...state.pg};
+          emitter.emit(state.events.START_EDIT);
+        }
+      }, 100);
+    }}>Clonar</button>`;
+    editButton.parentElement.insertBefore(cloneButton, editButton.nextSibling);
+  }
+})();</script>  </body>
+</html>
