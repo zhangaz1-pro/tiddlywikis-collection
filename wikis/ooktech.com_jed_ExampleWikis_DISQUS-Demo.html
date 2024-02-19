@@ -177,8 +177,6 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>Draft of '$:/plugins/inmysocks/DISQUS Comments'</li>
-
 <li>Example tiddler thread 1</li>
 
 <li>Example tiddler thread 2</li>
@@ -5740,7 +5738,7 @@ Error message and password prompt
 <div modified="20150622191756979" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="[[What is going on?]] [[Example tiddler thread 1]] [[Example tiddler thread 2]] [[Non-macro button examples]] [[$:/plugins/inmysocks/DISQUS Comments]]" title="$:/StoryList">
+<div list="[[$:/plugins/inmysocks/DISQUS Comments]] [[What is going on?]] [[Example tiddler thread 1]] [[Example tiddler thread 2]] [[Non-macro button examples]] [[$:/plugins/inmysocks/DISQUS Comments]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -5760,8 +5758,8 @@ Error message and password prompt
 <div created="20150620150301383" modified="20150622165744861" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
-<div created="20150622041729564" modified="20150622041733276" title="$:/temp/search">
-<pre></pre>
+<div created="20150622041729564" modified="20240218125709813" title="$:/temp/search">
+<pre>Draft of </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.8">
 <pre>{
@@ -5856,40 +5854,6 @@ Error message and password prompt
         &quot;$:/themes/tiddlywiki/vanilla/sticky&quot;: {
             &quot;title&quot;: &quot;$:/themes/tiddlywiki/vanilla/sticky&quot;,
             &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/themes/tiddlywiki/vanilla/options/stickytitles\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n``\n.tc-tiddler-title {\n\tposition: -webkit-sticky;\n\tposition: -moz-sticky;\n\tposition: -o-sticky;\n\tposition: -ms-sticky;\n\tposition: sticky;\n\ttop: 0px;\n\tbackground: ``&lt;&lt;colour tiddler-background&gt;&gt;``;\n\tz-index: 500;\n}\n``\n&lt;/$reveal&gt;\n&quot;
-        }
-    }
-}</pre>
-</div>
-<div author="inmysocks" core-version="&gt;=5.0.8" dependents="" description="A plugin to add DISQUS comments to TiddlyWiki" draft.of="$:/plugins/inmysocks/DISQUS Comments" draft.title="$:/plugins/inmysocks/DISQUS Comments" modified="20150622191508628" plugin-type="plugin" source="" title="Draft of '$:/plugins/inmysocks/DISQUS Comments'" type="application/json" version="0.1.0">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/inmysocks/DISQUS Comments/DISQUS Comments&quot;: {
-            &quot;title&quot;: &quot;$:/plugins/inmysocks/DISQUS Comments/DISQUS Comments&quot;,
-            &quot;caption&quot;: &quot;&lt;$reveal type='nomatch' state='$:/settings/DISQUS Settings!!sidebar_tab_name' text=''&gt;{{$:/settings/DISQUS Settings!!sidebar_tab_name}}&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/settings/DISQUS Settings!!sidebar_tab_name' text=''&gt;Comments&lt;/$reveal&gt;&quot;,
-            &quot;tags&quot;: &quot;$:/tags/SideBar&quot;,
-            &quot;text&quot;: &quot;&lt;div style='color:black'&gt;\n&lt;$reveal type='nomatch' state='$:/settings/DISQUS Comments!!current_comments' text=''&gt;\nComments for {{$:/settings/DISQUS Comments!!current_comments}}\n\n&lt;div id=\&quot;disqus_thread\&quot;&gt;&lt;/div&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type='match' state='$:/settings/DISQUS Comments!!current_comments' text=''&gt;\nGo to the tiddler you want to leave comments on and click the `(Re)load Comment Thread` button to load a comment thread.\n&lt;/$reveal&gt;\n&lt;/div&gt;&quot;
-        },
-        &quot;$:/plugins/inmysocks/DISQUS Comments/DISQUS Reload Comments Macro&quot;: {
-            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;title&quot;: &quot;$:/plugins/inmysocks/DISQUS Comments/DISQUS Reload Comments Macro&quot;,
-            &quot;text&quot;: &quot;\\define MakeDisqusReloadButtonActionWidget()\n&lt;$action-reload-comments newid=&lt;&lt;currentTiddler&gt;&gt; permalink=\&quot;\&quot;\&quot;$(SiteURL)$#!$(CurrentTiddler)$\&quot;\&quot;\&quot; threadTitle=&lt;&lt;currentTiddler&gt;&gt; language={{$:/settings/DISQUS Comments!!language}}/&gt;\n\\end\n\n\\define ReloadDisqusComments()\n&lt;$button&gt;\n&lt;$reveal type='nomatch' state='$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings!!button_label' text=''&gt;{{$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings!!button_label}}&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings!!button_label' text=''&gt;(Re)load Comment Thread&lt;/$reveal&gt;\n&lt;$action-setfield $tiddler='$:/state/tab/sidebar--1835078512' text='$:/plugins/inmysocks/DISQUS Comments/DISQUS Comments'/&gt;\n&lt;$action-setfield $tiddler='$:/settings/DISQUS Comments' $field=current_comments $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;$set name=CurrentTiddler value=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&lt;$set name=SiteURL value={{$:/settings/DISQUS Settings!!site_url}}&gt;\n&lt;&lt;MakeDisqusReloadButtonActionWidget&gt;&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$button&gt;\n&lt;$button class='tc-btn-invisible' popup='$:/state/Show DISQUS Comments Info'&gt;^^(?)^^&lt;/$button&gt;\n\n&lt;$reveal type='popup' state='$:/state/Show DISQUS Comments Info'&gt;\n&lt;div class='tc-drop-down' style='position:absolute'&gt;\n\nThis button will reload the comment thread so that the comments for the current tiddler are displayed. The comment thread will open in the sidebar, so the sidebar has to be open.\n\n&lt;/div&gt;\n&lt;/$reveal&gt;\n\\end&quot;
-        },
-        &quot;$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings&quot;: {
-            &quot;caption&quot;: &quot;DISQUS&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ControlPanel&quot;,
-            &quot;title&quot;: &quot;$:/plugins/inmysocks/DISQUS Comments/DISQUS Settings&quot;,
-            &quot;text&quot;: &quot;''For the initial setup you still need to edit the [[DISQUS JavaScript|$:/plugins/inmysocks/DISQUS Comments/Disqus JavaScript]] manually.'' You need to replace the line `var disqus_shortname = 'ooktechcomjedexternalbrain';` so the shortname is the one associated with your site. See [[http://ooktech.com/jed/ExampleWikis/DISQUS Demo/]] for more in-depth instructions.\n\n|!Setting |!Value |!Note |\n|Site URL |&lt;$edit-text tiddler='$:/settings/DISQUS Settings' field='site_url'/&gt; |This is the URL used by DISQUS, set it to the URL of your wiki |\n|Label for the sidebar tab |&lt;$edit-text tiddler='$:/settings/DISQUS Settings' field='sidebar_tab_name'/&gt; |The sidebar tab is labeled `Comments` by default, you can change that here |\n|Default language |&lt;$edit-text tiddler='$:/settings/DISQUS Settings' field='language'/&gt; |For this you use ISO language codes, it will be something like `en` (english), `es` (spanish) or `fr` (french). |\n|Load Comments Button Label |&lt;$edit-text tiddler='$:/settings/DISQUS Settings' field='button_label'/&gt; |This will be displayed on the buttons that set which comment thread is loaded |&quot;
-        },
-        &quot;$:/plugins/inmysocks/DISQUS Comments/Disqus JavaScript&quot;: {
-            &quot;tags&quot;: &quot;$:/tags/RawMarkup&quot;,
-            &quot;title&quot;: &quot;$:/plugins/inmysocks/DISQUS Comments/Disqus JavaScript&quot;,
-            &quot;text&quot;: &quot;&lt;script type=\&quot;text/javascript\&quot;&gt;\n    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */\n    var disqus_shortname = 'ooktechcomjedexternalbrain';\n    var disqus_identifier = 'thing1';\n    var disqus_url = 'http://ooktech.com/jed/ExampleWikis/DISQUS%20Demo/';\n\tvar disqus_config = function () { \n\t  this.language = \&quot;en\&quot;;\n\t};\n    /* * * DON'T EDIT BELOW THIS LINE * * */\n    (function() {\n        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';\n        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n    })();\n    /* * * Disqus Reset Function * * */\n    var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {\n        DISQUS.reset({\n            reload: true,\n            config: function () {\n                this.page.identifier = newIdentifier;\n                this.page.url = newUrl;\n                this.page.title = newTitle;\n                this.language = newLanguage;\n            }\n        });\n    };\n&lt;/script&gt;&quot;
-        },
-        &quot;$:/plugins/inmysocks/DISQUS Comments/action-reload-comments.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/inmysocks/DISQUS Comments/action-reload-comments.js\ntype: application/javascript\nmodule-type: widget\n\nAction widget that reloads disqus comment threads.\n\n\\*/\n\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n/*\nvar dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\ndsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';\n(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n*/\nvar IncrementWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nIncrementWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nIncrementWidget.prototype.render = function(parent,nextSibling) {\n\tthis.computeAttributes();\n\tthis.execute();\n};\n\n/*\nCompute the internal state of the widget\n*/\nIncrementWidget.prototype.execute = function() {\n\tthis.newid = this.getAttribute(\&quot;newid\&quot;,this.getVariable(\&quot;currentTiddler\&quot;));\n\tthis.permalink = this.getAttribute(\&quot;permalink\&quot;);\n\tthis.threadtitle = this.getAttribute(\&quot;title\&quot;);\n\tthis.threadLanguage = this.getAttribute(\&quot;language\&quot;,\&quot;en\&quot;);\n};\n\n/*\nRefresh the widget by ensuring our attributes are up to date\n*/\nIncrementWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes[\&quot;newid\&quot;] || changedAttributes[\&quot;permalink\&quot;] || changedAttributes[\&quot;title\&quot;] || changedAttributes[\&quot;language\&quot;]) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t}\n\treturn this.refreshChildren(changedTiddlers);\n};\n\n/*\nInvoke the action associated with this widget\n*/\nIncrementWidget.prototype.invokeAction = function(triggeringWidget,event) {\n\treset(this.newid, this.permalink, this.threadTitle, this.threadLanguage);\t\n\treturn true; // Action was invoked\n};\n\n/* * * Disqus Reset Function * * */\nvar reset = function (newIdentifier, newUrl, newTitle, newLanguage) {\n    DISQUS.reset({\n        reload: true,\n        config: function () {\n            this.page.identifier = newIdentifier;\n            this.page.url = newUrl;\n            this.page.title = newTitle;\n            this.language = newLanguage;\n        }\n    });\n};\n\nexports[\&quot;action-reload-comments\&quot;] = IncrementWidget;\n\n})();&quot;,
-            &quot;title&quot;: &quot;$:/plugins/inmysocks/DISQUS Comments/action-reload-comments.js&quot;,
-            &quot;type&quot;: &quot;application/javascript&quot;,
-            &quot;module-type&quot;: &quot;widget&quot;
         }
     }
 }</pre>
